@@ -3,4 +3,6 @@ emacs.d/.emacs.d/bookmarks
 emacs.d/.emacs.d/projectile-bookmarks.eld
 emacs.d/.emacs.d/transient/history.el
 emacs.d/.emacs.d/eshell/history
+emacs.d/.emacs.d/auto-save-list/
+emacs.d/.emacs.d/eshell/
 zsh/.zsh-exports

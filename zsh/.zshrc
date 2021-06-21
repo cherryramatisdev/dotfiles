@@ -4,6 +4,7 @@ alias ..="cd .."
 alias tmux="tmux -2"
 alias t="tmux new-session -A -s main"
 alias vim="nvim"
+alias e="emacs -nw"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"

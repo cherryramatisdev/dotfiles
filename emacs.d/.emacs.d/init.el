@@ -25,6 +25,7 @@
   (font-lock-add-keywords nil hexcolour-keywords))
 (add-hook 'evil-mode-hook 'hexcolour-add-to-font-lock)
 
+(electric-pair-mode)
 (show-paren-mode 1)
 
 ;; Relative line numbers -------------------------------------------------------
@@ -90,6 +91,9 @@
     (key! "<leader> j" 'windmove-down)
     (key! "<leader> k" 'windmove-up)
     (key! "<leader> l" 'windmove-right)
+    (key! "<leader> Hf" 'counsel-describe-function)
+    (key! "<leader> Hv" 'counsel-describe-variable)
+    (key! "<leader> Hk" 'describe-key)
     (global-set-key (kbd "<escape>") 'keyboard-escape-quit))
 
   ;; Evil bindings on org mode
@@ -149,14 +153,18 @@
   (global-set-key (kbd "C-c V") 'ivy-pop-view))
 
 ;; Theme
-(use-package badger-theme
+(use-package doom-themes
   :config
-  (load-theme 'badger t)
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (load-theme 'doom-tomorrow-night t)
   (set-cursor-color "#dc322f")
-  (set-face-attribute 'region nil :background "#666" :foreground "#ffffff"))
 
-;; (set-frame-parameter (selected-frame) 'alpha '(90 90))
-;; (add-to-list 'default-frame-alist '(alpha 90 90))
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config))
 
 (use-package org-bullets
   :config
@@ -237,6 +245,7 @@
 ;; To disable the menu bar, place the following line in your .emacs file:
 (menu-bar-mode -1)
 ;; To disable the scroll bar, use the following line:
+(scroll-bar-mode -1)
 (toggle-scroll-bar -1)
 ;; To disable the toolbar, use the following line:
 (tool-bar-mode -1)
@@ -308,32 +317,53 @@
 (set-frame-font "Fira Code 16" nil t)
 
 ;; Modeline ---------------------------------------------------------
-;; Use minibuffer as modeline for better space efficience
-(use-package mini-modeline
-  :init
-  (setq mini-modeline-r-format
-	(list
-	 ;; value of `mode-name'
-	 ;; value of current buffer name
-	 '(:eval (propertize "%b, " 'face 'font-lock-variable-name-face))
-	 '(:eval (propertize (if (eq 'emacs evil-state) "  " "  ")
-			     'face 'epa-validity-high))
-	 ;; value of current line number
-	 "l:%l "
-	 ;; major mode
-	 "%m: "
-	 "                 "
-	 ;; ;; spaces to align right
-	 ;; '(:eval (propertize
-	 ;; 		" " 'display
-	 ;; 		`((space :align-to (- (+ right right-fringe right-margin)
-	 ;; 				      ,(+ 10 (string-width mode-name)))))))
-	 ;; value of use
-	 '(:eval (propertize
-		  (format-time-string "%a, %b %d %I:%M%p")
-		  'face 'change-log-list))))
+
+(use-package doom-modeline
+  :hook (after-init . doom-modeline-mode))
+
+;; Eshell config ------------------------------------------------------------
+(defun cherry:configure-eshell ()
+  ;; Save command history when commands are entered
+  (add-hook 'eshell-pre-command-hook 'eshell-save-some-history)
+
+  ;; Truncate buffer for performance
+  (add-to-list 'eshell-output-filter-functions 'eshell-truncate-buffer)
+
+  ;; Bind some useful keys for evil-mode
+  (evil-define-key '(normal insert visual) eshell-mode-map (kbd "C-r") 'counsel-esh-history)
+  (evil-define-key '(normal insert visual) eshell-mode-map (kbd "<home>") 'eshell-bol)
+  (evil-normalize-keymaps)
+
+  (setq eshell-history-size         10000
+        eshell-buffer-maximum-lines 10000
+        eshell-hist-ignoredups t
+        eshell-scroll-to-bottom-on-input t))
+
+(use-package eshell-git-prompt
+  :after eshell)
+
+(use-package eshell
+  :ensure nil
+  :hook (eshell-first-time-mode . cherry:configure-eshell)
   :config
-  (mini-modeline-mode t))
+  (with-eval-after-load 'esh-opt
+    (setq eshell-destroy-buffer-when-process-dies t)
+    (setq eshell-visual-commands '("htop" "zsh" "vim")))
+
+  (eshell-git-prompt-use-theme 'robbyrussell)
+  (add-hook 'eshell-mode-hook (progn (global-company-mode -1)))
+
+  (defun cherry:quit-eshell () 
+    (when (not (one-window-p))
+      (progn
+	(global-company-mode 1)
+	(delete-window))))
+
+  (advice-add 'eshell-life-is-too-much :after 'cherry:quit-eshell))
+
+(use-package esh-autosuggest
+  :hook (eshell-mode . esh-autosuggest-mode))
+;; Eshell config END --------------------------------------------------------
 
 ;; Poor man harpoon ----------------------------------------------------------
 (defun eshell-with-name (name)
@@ -387,6 +417,7 @@
 
 ;; Projectile ------------------------------------------------------------
 (use-package projectile
+  :custom ((projectile-completion-system 'ivy))
   :config
   (setq projectile-switch-project-action #'projectile-dired)
   (projectile-mode)
@@ -399,3 +430,8 @@
 (key! "<leader> pt" 'projectile-run-eshell)
 (key! "<leader> p!" 'projectile-run-async-shell-command-in-root)
 ;; Projectile END --------------------------------------------------------
+
+;; Which key -------------------------------------------------------------
+(use-package which-key
+  :init (which-key-mode))
+;; Which key END --------------------------------------------------------

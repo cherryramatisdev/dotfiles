@@ -5,7 +5,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(company-box eglot web-mode typescript-mode evil-goggles dired-single mini-modeline evil-magit edwina magit org-bullets badger-theme clipetty counsel evil-surround evil-commentary evil-collection evil undo-fu use-package))
+   '(which-key diminish simple-modeline doom-themes base16-theme eshell-git-prompt esh-autosuggest company-box eglot web-mode typescript-mode evil-goggles dired-single mini-modeline evil-magit edwina magit org-bullets badger-theme clipetty counsel evil-surround evil-commentary evil-collection evil undo-fu use-package))
  '(select-enable-clipboard t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
