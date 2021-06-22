@@ -30,6 +30,7 @@ Utils.noremap("n", "<leader>,", '<cmd>lua require("telescope.builtin").buffers(r
 Utils.noremap("n", "<leader>.", '<cmd>lua require("telescope.builtin").file_browser(require("telescope.themes").get_dropdown({}))<CR>', { noremap = true })
 Utils.noremap("n", "<leader>H", '<cmd>lua require("telescope.builtin").help_tags(require("telescope.themes").get_dropdown({}))<CR>', { noremap = true })
 Utils.noremap("n", "<leader>ss", '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({}))<CR>', { noremap = true })
+Utils.noremap("n", "<leader>gs", '<cmd>lua require("telescope.builtin").git_status(require("telescope.themes").get_dropdown({}))<CR>', { noremap = true })
 
 local M = {}
 

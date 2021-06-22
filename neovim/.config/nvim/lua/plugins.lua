@@ -21,7 +21,7 @@ return require("packer").startup(
     use "tpope/vim-rhubarb"
     use "shumphrey/fugitive-gitlab.vim"
     use "tpope/vim-rsi"
-    use "tpope/vim-capslock"
+    -- use "tpope/vim-capslock"
     use {"tpope/vim-commentary", requires = {{'JoosepAlviste/nvim-ts-context-commentstring'}}}
 
     -- Kana plugins
