@@ -114,7 +114,7 @@
           elisp-mode-hook
           markdown-mode)
   (add-hook it 'turn-on-smartparens-mode))
-p
+
 ;; Utils functions
 (require 'utils-defuns)
 

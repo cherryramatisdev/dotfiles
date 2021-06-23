@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- eglot-code-actions
  eglot
  company-mode
  eval-buffer
  tide-setup
  prettier-js-mode
  eshell
+ projectile-add-known-project
 )
 
 ;; ----- smex-data -----
