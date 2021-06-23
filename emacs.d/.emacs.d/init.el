@@ -7,6 +7,7 @@
 (add-to-list 'load-path defuns-dir)
 
 ;; General settings
+(require 'setup-package)
 (require 'general)
 (require 'appearance)
 
@@ -22,18 +23,21 @@
 ;; Don't write lock-files
 (setq create-lockfiles nil)
 
+(require-package 'dash)
+
+(require 'dash)
+
 ;; Save point position between sessions
 (require 'saveplace)
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
-
-(require 'setup-package)
 
 ;; Install extensions if they're missing
 (defun init--install-packages ()
   (packages-install
    '(
      css-eldoc
+     smex
      elisp-slime-nav
      f
      fill-column-indicator
@@ -67,8 +71,8 @@
      prettier-js
      typescript-mode
      web-mode
-     auto-complete
-     tide
+     company
+     eglot
      zencoding-mode
      )))
 
@@ -84,10 +88,8 @@
 ;; Are we on a mac?
 (setq is-mac (equal system-type 'darwin))
 
-;; Setup environment variables from the user's shell.
-;; (when is-mac
-;;   (require-package 'exec-path-from-shell)
-;;   (exec-path-from-shell-initialize))
+(require-package 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
 
 ;; Setup extensions
 (eval-after-load 'ido '(require 'setup-ido))
@@ -112,18 +114,24 @@
           elisp-mode-hook
           markdown-mode)
   (add-hook it 'turn-on-smartparens-mode))
-
+p
 ;; Utils functions
 (require 'utils-defuns)
 
 ;; Setup keybindingsnx
 (require 'key-bindings)
 
+;; Setup lsp
+(require 'setup-lsp)
+
 ;; Setup completion
 (require 'setup-completion)
 
 ;; Setup languages
 (require 'setup-typescript)
+
+;; Setup workspaces
+(require 'setup-perspective)
 
 ;; Some general hooks
 (require 'general-hooks)

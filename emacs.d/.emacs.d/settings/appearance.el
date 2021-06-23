@@ -50,5 +50,8 @@
 (eval-after-load "auto-complete" '(diminish 'auto-complete-mode))
 (eval-after-load "eldoc" '(diminish 'eldoc-mode))
 (eval-after-load "tide" '(diminish 'tide-mode))
+(eval-after-load "company" '(diminish 'company-mode))
+(eval-after-load "prettier-js" '(diminish 'prettier-js-mode))
+(eval-after-load "flymake" '(diminish 'flymake-mode))
 
 (provide 'appearance)

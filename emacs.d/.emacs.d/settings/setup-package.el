@@ -1,5 +1,5 @@
 (require 'package)
-(require 'dash)
+;; (require 'dash)
 
 (setq package-archives
       '(("melpa" . "https://melpa.org/packages/")
@@ -8,16 +8,16 @@
 
 ;; (package-initialize)
 
+(package-initialize)
+
+(unless (file-exists-p "~/.emacs.d/elpa/archives/melpa")
+  (package-refresh-contents))
+
 (setq use-package-always-ensure t)
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
 (setq package-pinned-packages '())
-
-(package-initialize)
-
-(unless (file-exists-p "~/.emacs.d/elpa/archives/melpa")
-  (package-refresh-contents))
 
 ;; Better defaults
 (use-package better-defaults)

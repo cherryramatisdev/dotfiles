@@ -13,3 +13,4 @@ zsh/.zsh-exports
 /emacs.d/.emacs.d/ido.last
 /emacs.d/.emacs.d/places
 /emacs.d/.emacs.d/projects
+/emacs.d/.emacs.d/.mc-lists.el

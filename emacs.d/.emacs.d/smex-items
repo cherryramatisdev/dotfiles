@@ -1,19 +1,19 @@
 
 ;; ----- smex-history -----
 (
- prettier-js
- projectile-ripgrep
+ eglot-code-actions
+ eglot
+ company-mode
+ eval-buffer
+ tide-setup
  prettier-js-mode
- web-mode
- indented-text-mode
- electric-indent-mode
- nodejs-repl
+ eshell
 )
 
 ;; ----- smex-data -----
 (
- (eval-buffer . 16)
- (shell . 2)
+ (eval-buffer . 17)
+ (shell . 3)
  (persp-switch . 3)
  (persp-kill . 1)
  (find-file-in-project . 1)
@@ -23,10 +23,10 @@
  (iy-go-to-char . 1)
  (sp-change-inner . 3)
  (recentf-open-files . 1)
- (eshell . 1)
+ (eshell . 3)
  (org-capture . 1)
  (org-agenda-file-to-front . 1)
- (projectile-add-known-project . 5)
+ (projectile-add-known-project . 6)
  (projectile-remove-known-project . 1)
  (yas-global-mode . 2)
  (yas-new-snippet . 3)
@@ -36,12 +36,19 @@
  (projectile-ripgrep . 3)
  (projectile-compile-project . 2)
  (persp-switch-to-buffer* . 1)
- (persp-rename . 1)
- (prettier-js-mode . 2)
+ (persp-rename . 2)
+ (prettier-js-mode . 4)
  (projectile-grep . 1)
  (prettier-js . 2)
  (nodejs-repl . 3)
  (electric-indent-mode . 2)
  (indented-text-mode . 2)
  (web-mode . 1)
+ (tide-setup . 2)
+ (persp-mode . 2)
+ (company-mode . 1)
+ (tide-refactor . 1)
+ (tide-organize-imports . 1)
+ (eglot . 1)
+ (eglot-code-actions . 2)
 )

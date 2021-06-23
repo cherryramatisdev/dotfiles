@@ -1,4 +1,4 @@
-plocal Utils = require("cherry.utils")
+local Utils = require("cherry.utils")
 
 Utils.noremap("n", ";", ":", {noremap = true})
 Utils.noremap('n', 'gl', '$', { noremap = true })
