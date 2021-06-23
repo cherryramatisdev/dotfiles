@@ -1,7 +1,10 @@
 ;; Set path to dependencies
 (setq settings-dir
       (expand-file-name "settings" user-emacs-directory))
+(setq defuns-dir
+      (expand-file-name "defuns" user-emacs-directory))
 (add-to-list 'load-path settings-dir)
+(add-to-list 'load-path defuns-dir)
 
 ;; General settings
 (require 'general)
@@ -58,6 +61,15 @@
      whitespace-cleanup-mode
      yasnippet
      find-file-in-project
+     multiple-cursors
+     ace-jump-mode
+     expand-region
+     prettier-js
+     typescript-mode
+     web-mode
+     auto-complete
+     tide
+     zencoding-mode
      )))
 
 (condition-case nil
@@ -73,14 +85,45 @@
 (setq is-mac (equal system-type 'darwin))
 
 ;; Setup environment variables from the user's shell.
-(when is-mac
-  (require-package 'exec-path-from-shell)
-  (exec-path-from-shell-initialize))
+;; (when is-mac
+;;   (require-package 'exec-path-from-shell)
+;;   (exec-path-from-shell-initialize))
 
 ;; Setup extensions
 (eval-after-load 'ido '(require 'setup-ido))
 (eval-after-load 'dired '(require 'setup-dired))
-(eval-after-load 'org '(require 'setup-org))
 (eval-after-load 'magit '(require 'setup-magit))
 (eval-after-load 'yasnippet '(require 'setup-yasnippet))
 (eval-after-load 'perspective '(require 'setup-perspective))
+
+(require 'setup-org)
+
+(require 'setup-ffip)
+
+;; Font lock dash.el
+(eval-after-load "dash" '(dash-enable-font-lock))
+
+;; Default setup of smartparens
+(require 'smartparens-config)
+(setq sp-autoescape-string-quote nil)
+(--each '(css-mode-hook
+          restclient-mode-hook
+          js-mode-hook
+          elisp-mode-hook
+          markdown-mode)
+  (add-hook it 'turn-on-smartparens-mode))
+
+;; Utils functions
+(require 'utils-defuns)
+
+;; Setup keybindingsnx
+(require 'key-bindings)
+
+;; Setup completion
+(require 'setup-completion)
+
+;; Setup languages
+(require 'setup-typescript)
+
+;; Some general hooks
+(require 'general-hooks)

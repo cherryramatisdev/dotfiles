@@ -1,16 +1,47 @@
 
 ;; ----- smex-history -----
 (
- eval-buffer
- cd
- 5x5
- arp
- dbx
- dig
- erc
+ prettier-js
+ projectile-ripgrep
+ prettier-js-mode
+ web-mode
+ indented-text-mode
+ electric-indent-mode
+ nodejs-repl
 )
 
 ;; ----- smex-data -----
 (
- (eval-buffer . 1)
+ (eval-buffer . 16)
+ (shell . 2)
+ (persp-switch . 3)
+ (persp-kill . 1)
+ (find-file-in-project . 1)
+ (smartparens-mode . 1)
+ (turn-on-smartparens-mode . 1)
+ (package-install . 1)
+ (iy-go-to-char . 1)
+ (sp-change-inner . 3)
+ (recentf-open-files . 1)
+ (eshell . 1)
+ (org-capture . 1)
+ (org-agenda-file-to-front . 1)
+ (projectile-add-known-project . 5)
+ (projectile-remove-known-project . 1)
+ (yas-global-mode . 2)
+ (yas-new-snippet . 3)
+ (yas/new-snippet . 1)
+ (yas-insert-snippet . 1)
+ (paredit-mode . 1)
+ (projectile-ripgrep . 3)
+ (projectile-compile-project . 2)
+ (persp-switch-to-buffer* . 1)
+ (persp-rename . 1)
+ (prettier-js-mode . 2)
+ (projectile-grep . 1)
+ (prettier-js . 2)
+ (nodejs-repl . 3)
+ (electric-indent-mode . 2)
+ (indented-text-mode . 2)
+ (web-mode . 1)
 )

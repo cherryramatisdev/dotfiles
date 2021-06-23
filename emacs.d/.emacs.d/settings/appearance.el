@@ -45,7 +45,10 @@
   (package-install 'diminish))
 
 (require 'diminish)
-;; (eval-after-load "yasnippet" '(diminish 'yas-minor-mode))
+(eval-after-load "yasnippet" '(diminish 'yas-minor-mode))
+(eval-after-load "projectile" '(diminish 'projectile-mode))
+(eval-after-load "auto-complete" '(diminish 'auto-complete-mode))
 (eval-after-load "eldoc" '(diminish 'eldoc-mode))
+(eval-after-load "tide" '(diminish 'tide-mode))
 
 (provide 'appearance)
