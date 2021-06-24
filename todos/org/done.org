@@ -1,0 +1,64 @@
+* DONE Bloquear dias interiores ao dia atual no calendario de vencimento app vendedor :cdc:
+CLOSED: <2021-06-07 Mon 10:02> DEADLINE: <2021-06-07 Mon 05:00>
+  Exemplo:
+  #+BEGIN_QUOTE
+  Se hoje eh dia 17, os dias 1 a 16 vao ficar bloqueados para clique.
+  #+END_QUOTE
+* DONE subir isso para master e avisar o mendes :conductor:
+CLOSED: <2021-06-07 Mon 11:54> SCHEDULED: <2021-06-07 Mon 13:00>
+[[file:~/Documents/projects/conductor-backend/src/ormconfig.ts::password: process.env.DATABASE_PASSWORD,]]
+* DONE Conversar com augusto sobre subir apenas o update de senha por enquanto no app cliente :cdc:
+CLOSED: <2021-06-07 Mon 11:54> SCHEDULED: <2021-06-07 Mon 12:00>
+Para isso vou precisar tirar a visualizacao da data de vencimento do app cliente(apenas comenta as linhas)
+* DONE Validar com mendes o prazo de frontend para conductor :conductor:
+CLOSED: <2021-06-09 Wed 09:40> SCHEDULED: <2021-06-08 Tue 09:30>
+[[https://hagens.invisionapp.com/overview/Conductor---Acesso---Desk-ckookkbrq0492013rgqop0vrn/screens?sortBy=1&sortOrder=1&viewLayout=2]]
+* DONE Adaptar app cliente para atualizar apenas o fluxo de esqueci minha senha :cdc:
+CLOSED: <2021-06-07 Mon 14:15> SCHEDULED: <2021-06-07 Mon 14:00>
+Para isso vou precisar tirar a visualizacao da data de vencimento do app cliente(apenas comenta as linhas)
+* DONE Alinhar layout para novo cliente(primetek) :cdc:
+- [ ] Parametrizar logos e cores do app CDC em um objeto compartilhado
+CLOSED: [2021-06-16 Wed 09:06]
+* DONE Discutir com leo e mendes :cdc:
+
+1. Avaliar uso do Webhook para atualizar situacao da home em tempo real
+Pois via certa nao envia SMS quando proposta eh pendenciada
+2. No envio dos documentos, oferecer ao cliente a possibilidade de escolher uma
+foto do documento na galeria
+CLOSED: [2021-06-15 Tue 11:04]
+:LOGBOOK:
+CLOCK: [2021-06-14 Mon 19:36]--[2021-06-14 Mon 19:37] => 00:01
+:END:
+* DONE Incluir mudanças de layout sugeridas pelo leo
+
+Padronizar todas as inputs do app com o mesmo height e com o placeholder dentro da input(ao inves de em cima)
+CLOSED: [2021-06-16 Wed 13:26]
+:LOGBOOK:
+CLOCK: [2021-06-16 Wed 09:08]--[2021-06-16 Wed 09:10] => 00:02
+:END:
+* DONE Preparar um invision com todas as telas do novo layout de primetek
+CLOSED: [2021-06-21 Mon 08:35]
+:LOGBOOK:
+CLOCK: [2021-06-16 Wed 09:10]--[2021-06-16 Wed 09:10] => 00:00
+:END:
+* DONE Corrigir layout app cdc :cdc:
+1. No fundo de SOL, optar pelo degrade de fundo(background-image: linear-gradient(#e83f32, #9c1e2d, #52000a) !important;)
+2. Em SOL, trocar a cor dos botoes para preto(criar uma variavel em theme chamada buttonColor para ficar legal)
+CLOSED: [2021-06-16 Wed 14:17]
+:LOGBOOK:
+CLOCK: [2021-06-16 Wed 13:26]--[2021-06-16 Wed 13:28] => 00:02
+:END:
+* DONE Fazer reuniao com conductor para testar se o login esta funcionando ao readme.io :conductor:
+CLOSED: [2021-06-17 Thu 16:13]
+:LOGBOOK:
+CLOCK: [2021-06-16 Wed 14:17]--[2021-06-16 Wed 14:17] => 00:00
+:END:
+* DONE todos para conductor dashboard
+
+- [X] No ultimo login, trocar pierpro e pierflex por PierPro e PierFlex
+- [X] Diminuir um pouco o font-size no footer
+- [X] Centralizar a paginação
+CLOSED: [2021-06-18 Fri 15:35]
+:LOGBOOK:
+CLOCK: [2021-06-18 Fri 14:55]--[2021-06-18 Fri 14:56] => 00:01
+:END:

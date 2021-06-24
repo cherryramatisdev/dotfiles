@@ -1,0 +1,31 @@
+* Tasks
+** TODO Fluxo para atualizar status da proposta                         :cdc:
+   DEADLINE: <2021-06-23 Wed 12:00>
+ :LOGBOOK:
+ CLOCK: [2021-06-21 Mon 16:09]--[2021-06-21 Mon 16:19] => 00:10
+ :END:
+ 1. Permitir que usuario so possa atualizar o status a cada X minutos(prover um auxilio via mensagens)
+ 2. Permitir um numero fixo de vezes para o usuario atualizar o status
+** TODO Terminar layout da tela login                                   :btr:
+   DEADLINE: <2021-06-23 Wed 18:00>
+** TODO Perguntar para o guilherme sobre o CRM usado em Gente&Gente para reutilizar em btr varese
+   DEADLINE: <2021-06-23 Wed 13:00>
+** TODO Adicionar no cadastro de BTR
+   DEADLINE: <2021-06-23 Wed 16:00>
+ campo cargo - uma lista
+ com cargos acima de gerente(pesquisar)
+ tela entre dados de assistente e passaporte
+ title: produto btr varese
+ Escolha qual pacote deseja contratar:
+ campos(checkbox):
+ - NRF
+ - China
+ - Israel
+** TODO Integrar RD Station ao cadastro de btr
+   DEADLINE: <2021-06-23 Wed 16:00>
+ Adicionar uma tela anterior ao primeiro passo:
+ "Voce ja viajou conosco? informe algum desses dados"
+ - Email
+ - Telefone
+ - CPF
+ Apos isso, procurar o maximo de dados do usuario no RD Station e preencher o formulario e permitir que o usuario siga normalmente
