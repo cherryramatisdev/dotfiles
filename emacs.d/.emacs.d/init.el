@@ -129,6 +129,7 @@
 
 ;; Setup languages
 (require 'setup-typescript)
+(require 'setup-lisp)
 
 ;; Setup workspaces
 (require 'setup-perspective)

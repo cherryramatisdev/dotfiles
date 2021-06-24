@@ -2,53 +2,59 @@
 ;; ----- smex-history -----
 (
  eglot
- company-mode
- eval-buffer
- tide-setup
- prettier-js-mode
- eshell
+ web-mode
  projectile-add-known-project
+ eshell
+ eval-buffer
+ projectile-ripgrep
+ smartparens-mode
 )
 
 ;; ----- smex-data -----
 (
- (eval-buffer . 17)
+ (eval-buffer . 18)
  (shell . 3)
  (persp-switch . 3)
  (persp-kill . 1)
  (find-file-in-project . 1)
- (smartparens-mode . 1)
+ (smartparens-mode . 3)
  (turn-on-smartparens-mode . 1)
  (package-install . 1)
  (iy-go-to-char . 1)
  (sp-change-inner . 3)
  (recentf-open-files . 1)
- (eshell . 3)
+ (eshell . 14)
  (org-capture . 1)
  (org-agenda-file-to-front . 1)
- (projectile-add-known-project . 6)
+ (projectile-add-known-project . 7)
  (projectile-remove-known-project . 1)
- (yas-global-mode . 2)
- (yas-new-snippet . 3)
+ (yas-global-mode . 4)
+ (yas-new-snippet . 5)
  (yas/new-snippet . 1)
  (yas-insert-snippet . 1)
  (paredit-mode . 1)
- (projectile-ripgrep . 3)
+ (projectile-ripgrep . 9)
  (projectile-compile-project . 2)
  (persp-switch-to-buffer* . 1)
  (persp-rename . 2)
  (prettier-js-mode . 4)
  (projectile-grep . 1)
  (prettier-js . 2)
- (nodejs-repl . 3)
+ (nodejs-repl . 5)
  (electric-indent-mode . 2)
  (indented-text-mode . 2)
- (web-mode . 1)
+ (web-mode . 2)
  (tide-setup . 2)
  (persp-mode . 2)
  (company-mode . 1)
  (tide-refactor . 1)
  (tide-organize-imports . 1)
- (eglot . 1)
+ (eglot . 6)
  (eglot-code-actions . 2)
+ (projectile-run-eshell . 1)
+ (flymake-show-diagnostic . 1)
+ (flymake-show-diagnostics-buffer . 5)
+ (restclient-mode . 2)
+ (window-swap-states . 1)
+ (twit . 8)
 )
