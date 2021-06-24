@@ -53,5 +53,7 @@
 (eval-after-load "company" '(diminish 'company-mode))
 (eval-after-load "prettier-js" '(diminish 'prettier-js-mode))
 (eval-after-load "flymake" '(diminish 'flymake-mode))
+(eval-after-load "smartparens" '(diminish 'smartparens-mode))
+(eval-after-load "paredit" '(diminish 'paredit-mode))
 
 (provide 'appearance)

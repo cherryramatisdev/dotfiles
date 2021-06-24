@@ -20,7 +20,6 @@
 ;; Perform general cleanup.
 (global-set-key (kbd "C-c C-<return>") 'delete-blank-lines)
 
-
 ;; Indent
 (global-set-key (kbd "M-i") 'back-to-indentation)
 
@@ -62,7 +61,7 @@
 ;; Expand region
 (global-set-key (kbd "C-=") 'er/expand-region)
 
-;; Expand html as css selector
-(global-set-key (kbd "C-j") 'zencoding-expand-line)
+;; Zoom in and Zoom out
+(global-set-key (kbd "C-+") 'text-scale-adjust)
 
 (provide 'key-bindings)
