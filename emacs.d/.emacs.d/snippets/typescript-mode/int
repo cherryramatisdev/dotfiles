@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: int
+# key: int
+# --
+export interface $1 {
+$0
+}
