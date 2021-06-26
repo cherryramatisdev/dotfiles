@@ -1,3 +1,7 @@
+;; Configure ace jump
+(require 'ace-jump-mode)
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+
 ;; Mnemonic to C-x REALLY QUIT
 (global-set-key (kbd "C-x r q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "C-x C-c") 'delete-frame)
@@ -28,7 +32,7 @@
 (global-set-key (kbd "C-c h") 'help-command)
 
 (global-set-key (kbd "M-h") 'kill-region-or-backward-word)
-(global-set-key (kbd "C-w") 'kill-region-or-backward-word)
+;; (global-set-key (kbd "C-w") 'kill-region-or-backward-word)
 
 ;; iy go-to-char - like f in vim
 (require 'iy-go-to-char)
@@ -51,10 +55,6 @@
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
 (global-set-key (kbd "<M-return>") 'new-line-dwim)
 
-
-;; Duplicate region
-(global-set-key (kbd "C-c d") 'duplicate-current-line-or-region)
-
 ;; Open dired quickly
 (global-set-key (kbd "C-x C-j") 'dired-jump)
 
@@ -63,5 +63,17 @@
 
 ;; Zoom in and Zoom out
 (global-set-key (kbd "C-+") 'text-scale-adjust)
+
+;; Ace window
+(require 'ace-window)
+(global-set-key (kbd "C-x o") 'ace-window)
+(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+
+;; Crux
+(require 'crux)
+(global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
+(global-set-key (kbd "C-k") 'crux-smart-kill-line)
+(global-set-key (kbd "C-c d") 'crux-duplicate-current-line-or-region)
+(global-set-key (kbd "C-c t") 'crux-visit-shell-buffer)
 
 (provide 'key-bindings)

@@ -36,6 +36,8 @@
 (defun init--install-packages ()
   (packages-install
    '(
+     ace-window
+     modus-themes
      css-eldoc
      smex
      elisp-slime-nav
@@ -74,6 +76,8 @@
      company
      eglot
      zencoding-mode
+     npm-mode
+     crux
      )))
 
 (condition-case nil
@@ -88,6 +92,8 @@
 ;; Are we on a mac?
 (setq is-mac (equal system-type 'darwin))
 
+(setq exec-path (append exec-path '("~/.nvm/versions/node/v16.3.0/bin")))
+
 (require-package 'exec-path-from-shell)
 (exec-path-from-shell-initialize)
 
@@ -95,8 +101,9 @@
 (eval-after-load 'ido '(require 'setup-ido))
 (eval-after-load 'dired '(require 'setup-dired))
 (eval-after-load 'magit '(require 'setup-magit))
-(eval-after-load 'yasnippet '(require 'setup-yasnippet))
 (eval-after-load 'perspective '(require 'setup-perspective))
+
+(require 'setup-yasnippet)
 
 (require 'setup-org)
 
@@ -136,3 +143,6 @@
 
 ;; Some general hooks
 (require 'general-hooks)
+
+;; Advices to make emacs my own
+(require 'advices)
