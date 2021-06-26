@@ -7,6 +7,6 @@
 
 ;; Define font
 (add-to-list 'default-frame-alist
-             '(font . "DejaVu Sans Mono-15"))
+             '(font . "DejaVu Sans Mono-17"))
 
 (provide 'general)
