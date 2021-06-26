@@ -1,39 +1,39 @@
 
 ;; ----- smex-history -----
 (
- eglot
- web-mode
- projectile-add-known-project
- eshell
- eval-buffer
+ shell
+ flush-lines
  projectile-ripgrep
- smartparens-mode
+ eval-buffer
+ eshell
+ twit
+ eglot
 )
 
 ;; ----- smex-data -----
 (
- (eval-buffer . 18)
- (shell . 3)
+ (eval-buffer . 19)
+ (shell . 5)
  (persp-switch . 3)
- (persp-kill . 1)
+ (persp-kill . 5)
  (find-file-in-project . 1)
  (smartparens-mode . 3)
  (turn-on-smartparens-mode . 1)
- (package-install . 1)
+ (package-install . 2)
  (iy-go-to-char . 1)
  (sp-change-inner . 3)
  (recentf-open-files . 1)
- (eshell . 14)
+ (eshell . 17)
  (org-capture . 1)
  (org-agenda-file-to-front . 1)
  (projectile-add-known-project . 7)
  (projectile-remove-known-project . 1)
- (yas-global-mode . 4)
- (yas-new-snippet . 5)
+ (yas-global-mode . 6)
+ (yas-new-snippet . 11)
  (yas/new-snippet . 1)
  (yas-insert-snippet . 1)
  (paredit-mode . 1)
- (projectile-ripgrep . 9)
+ (projectile-ripgrep . 13)
  (projectile-compile-project . 2)
  (persp-switch-to-buffer* . 1)
  (persp-rename . 2)
@@ -49,12 +49,24 @@
  (company-mode . 1)
  (tide-refactor . 1)
  (tide-organize-imports . 1)
- (eglot . 6)
+ (eglot . 8)
  (eglot-code-actions . 2)
- (projectile-run-eshell . 1)
+ (projectile-run-eshell . 2)
  (flymake-show-diagnostic . 1)
- (flymake-show-diagnostics-buffer . 5)
+ (flymake-show-diagnostics-buffer . 8)
  (restclient-mode . 2)
  (window-swap-states . 1)
- (twit . 8)
+ (twit . 9)
+ (ace-jump-mode . 1)
+ (enlarge-window . 1)
+ (eww . 1)
+ (nntwitter-api-route-auth . 2)
+ (gnus . 2)
+ (twittering-start . 1)
+ (load-theme . 1)
+ (comment-box . 1)
+ (comment-region . 1)
+ (replace-string . 3)
+ (flush-lines . 3)
+ (yas-visit-snippet-file . 2)
 )
