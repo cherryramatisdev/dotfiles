@@ -13,6 +13,7 @@
 
 (setq org-agenda-files '("~/org"))
 (setq org-directory "~/org")
+(setq org-log-done 'time)
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map (kbd "C-c c") 'org-capture)
 (define-key global-map (kbd "C-c a") 'org-agenda)
