@@ -1,0 +1,9 @@
+* Tasks
+** TODO Implementar refresh de token ao inves de ficar utilizando o codigo
+   DEADLINE: <2021-06-28 seg 09:00>
+   https://developers.rdstation.com/pt-BR/authentication
+   Atualizando um token expirado
+** DONE Implement this package for workflow
+   CLOSED: [2021-06-26 sáb 15:21] DEADLINE: <2021-06-26 sáb 18:00>
+   [[file:~/dotfiles/emacs.d/.emacs.d/init.el::(condition-case nil]]
+   https://github.com/bbatsov/crux
