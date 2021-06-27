@@ -58,7 +58,7 @@ bindsym $alt+Return exec alacritty
 bindsym $mod+q kill
 
 # Open browser
-bindsym $mod+w exec google-chrome-stable
+bindsym $mod+w exec google-chrome-stable --profile-directory="Default" --new-window
 
 # Open emacs
 bindsym $mod+e exec emacsclient -c -a ''
@@ -108,6 +108,8 @@ bindsym $mod+Shift+space floating toggle
 
 # focus the child container
 #bindsym $mod+d focus child
+
+bindsym $mod+p exec "scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Pictures/screenshots'"
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -178,4 +180,6 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        font pango:DejaVu Sans Mono 14
+        separator_symbol ":|:"
 }
