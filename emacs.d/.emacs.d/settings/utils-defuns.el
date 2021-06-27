@@ -61,4 +61,10 @@ If there's no region, the current line will be duplicated."
   (let ((choices '("us" "br")))
     (shell-command (format "/usr/bin/setxkbmap -layout %s" (ido-completing-read "Choose language: " choices)))))
 
+(defun cherry/work-setup ()
+  "Setup work browsers from i3"
+  (interactive)
+  (let ((choices '("personal" "hagens" "lami")))
+    (shell-command (format "work-setup %s" (ido-completing-read "Choose enterprise: " choices)))))
+
 (provide 'utils-defuns)

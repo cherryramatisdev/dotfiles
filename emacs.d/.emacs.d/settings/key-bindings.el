@@ -77,6 +77,7 @@
 (global-set-key (kbd "C-c t") 'crux-visit-shell-buffer)
 
 ;; Utils functions
-(global-set-key (kbd "C-c ul") 'switch-language)
+(global-set-key (kbd "C-c ul") 'cherry/switch-language)
+(global-set-key (kbd "C-c uw") 'cherry/work-setup)
 
 (provide 'key-bindings)
