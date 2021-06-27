@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ load-theme
+ crux-visit-term-buffer
+ crux-kill-whole-line
  shell
  flush-lines
  projectile-ripgrep
  eval-buffer
- eshell
- twit
- eglot
 )
 
 ;; ----- smex-data -----
@@ -63,10 +63,13 @@
  (nntwitter-api-route-auth . 2)
  (gnus . 2)
  (twittering-start . 1)
- (load-theme . 1)
+ (load-theme . 3)
  (comment-box . 1)
  (comment-region . 1)
  (replace-string . 3)
  (flush-lines . 3)
  (yas-visit-snippet-file . 2)
+ (crux-kill-whole-line . 1)
+ (crux-visit-term-buffer . 1)
+ (paredit-raise-sexp . 1)
 )
