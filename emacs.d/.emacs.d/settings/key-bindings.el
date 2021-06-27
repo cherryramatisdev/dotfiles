@@ -28,8 +28,8 @@
 (global-set-key (kbd "M-i") 'back-to-indentation)
 
 ;; Use shell-like backspace C-h, rebind help to C-c h
-(define-key key-translation-map [?\C-h] [?\C-?])
-(global-set-key (kbd "C-c h") 'help-command)
+;; (define-key key-translation-map [?\C-h] [?\C-?])
+;; (global-set-key (kbd "C-c h") 'help-command)
 
 (global-set-key (kbd "M-h") 'kill-region-or-backward-word)
 ;; (global-set-key (kbd "C-w") 'kill-region-or-backward-word)
@@ -75,5 +75,8 @@
 (global-set-key (kbd "C-k") 'crux-smart-kill-line)
 (global-set-key (kbd "C-c d") 'crux-duplicate-current-line-or-region)
 (global-set-key (kbd "C-c t") 'crux-visit-shell-buffer)
+
+;; Utils functions
+(global-set-key (kbd "C-c ul") 'switch-language)
 
 (provide 'key-bindings)

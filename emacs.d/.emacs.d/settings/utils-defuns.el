@@ -55,4 +55,10 @@ If there's no region, the current line will be duplicated."
     (duplicate-current-line arg)
     (one-shot-keybinding "d" 'duplicate-current-line)))
 
+(defun cherry/switch-language ()
+  "Switch language from a list of choices using setxkbmap"
+  (interactive)
+  (let ((choices '("us" "br")))
+    (shell-command (format "/usr/bin/setxkbmap -layout %s" (ido-completing-read "Choose language: " choices)))))
+
 (provide 'utils-defuns)
