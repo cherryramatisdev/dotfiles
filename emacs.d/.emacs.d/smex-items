@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ smex-where-is
  load-theme
  crux-visit-term-buffer
- crux-kill-whole-line
- shell
- flush-lines
- projectile-ripgrep
  eval-buffer
+ eshell
+ projectile-ripgrep
+ twit
 )
 
 ;; ----- smex-data -----
@@ -29,7 +29,7 @@
  (projectile-add-known-project . 7)
  (projectile-remove-known-project . 1)
  (yas-global-mode . 6)
- (yas-new-snippet . 11)
+ (yas-new-snippet . 12)
  (yas/new-snippet . 1)
  (yas-insert-snippet . 1)
  (paredit-mode . 1)
@@ -72,4 +72,8 @@
  (crux-kill-whole-line . 1)
  (crux-visit-term-buffer . 1)
  (paredit-raise-sexp . 1)
+ (open-line-above . 1)
+ (switch-language . 23)
+ (smex-where-is . 1)
+ (cherry/work-setup . 1)
 )

@@ -58,5 +58,6 @@
 (eval-after-load "flymake" '(diminish 'flymake-mode))
 (eval-after-load "smartparens" '(diminish 'smartparens-mode))
 (eval-after-load "paredit" '(diminish 'paredit-mode))
+(eval-after-load "subword" '(diminish 'subword-mode))
 
 (provide 'appearance)
