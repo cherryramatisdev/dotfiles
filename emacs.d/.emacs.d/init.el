@@ -56,12 +56,10 @@
      nodejs-repl
      paredit
      perspective
-     projectile
-     ;; request
+     projectile    
      restclient
      ripgrep
-     smartparens
-     ;; string-edit
+     smartparens     
      visual-regexp
      wgrep
      whitespace-cleanup-mode
