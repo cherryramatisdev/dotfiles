@@ -42,4 +42,9 @@
   (interactive)
   (org-sort-entries nil ?f #'my/org-sort-key))
 
+;; Configure org babel execute
+(custom-set-variables
+ '(org-babel-load-languages (quote ((emacs-lisp . t) (shell . t))))
+ '(org-confirm-babel-evaluate nil))
+
 (provide 'setup-org)
