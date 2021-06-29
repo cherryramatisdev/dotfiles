@@ -67,4 +67,12 @@ If there's no region, the current line will be duplicated."
   (let ((choices '("personal" "hagens" "lami")))
     (shell-command (format "work-setup %s" (ido-completing-read "Choose enterprise: " choices)))))
 
+(defun cherry/load-theme ()
+  "Choose between 'modus-vivendi' and 'modus-operandi' with better names(dark and light)"
+  (interactive)
+  (let ((choice (ido-completing-read "Choose theme: " '("dark" "light"))))
+    (cond
+     ((equal choice "dark") (load-theme 'modus-vivendi t))
+     ((equal choice "light") (load-theme 'modus-operandi t)))))
+
 (provide 'utils-defuns)

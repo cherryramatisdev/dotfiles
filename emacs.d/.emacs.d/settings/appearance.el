@@ -59,5 +59,7 @@
 (eval-after-load "smartparens" '(diminish 'smartparens-mode))
 (eval-after-load "paredit" '(diminish 'paredit-mode))
 (eval-after-load "subword" '(diminish 'subword-mode))
+(eval-after-load "npm-mode" '(diminish 'npm-mode))
+(eval-after-load "tree-sitter" '(diminish 'tree-sitter-mode))
 
 (provide 'appearance)

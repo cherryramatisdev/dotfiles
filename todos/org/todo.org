@@ -8,8 +8,8 @@
  2. Permitir um numero fixo de vezes para o usuario atualizar o status
 ** DONE Terminar layout da tela login                                   :btr:
    CLOSED: [2021-06-24 qui 10:01] DEADLINE: <2021-06-23 Wed 18:00>
-** TODO Perguntar para o guilherme sobre o CRM usado em Gente&Gente para reutilizar em btr varese
-   DEADLINE: <2021-06-28 seg 13:00>
+** DONE Perguntar para o guilherme sobre o CRM usado em Gente&Gente para reutilizar em btr varese
+   CLOSED: [2021-06-28 seg 11:08] DEADLINE: <2021-06-28 seg 13:00>
 ** DONE Adicionar no cadastro de BTR
    CLOSED: [2021-06-25 sex 11:02] DEADLINE: <2021-06-23 Wed 16:00>
  campo cargo - uma lista
@@ -29,3 +29,9 @@
  - Telefone
  - CPF
  Apos isso, procurar o maximo de dados do usuario no RD Station e preencher o formulario e permitir que o usuario siga normalmente
+** TODO Abrir select de cargo com campos gerais(Acima de gerente) com uma opcao de "Outro" que abre uma input normal
+   DEADLINE: <2021-06-29 ter 18:00>
+** TODO Como pegar posts do wordpress pelo nodejs
+   DEADLINE: <2021-06-29 ter 18:00>
+** WAIT Transformar a rota de INSERT de usuario em um UPSERT(se ja existir, fazer o update) :btr:
+   [2021-06-28 seg] 

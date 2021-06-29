@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: rcc
+# key: rcc
+# --
+import React from 'react'
+
+const $1: React.FC = () => {
+$0
+}
+
+export default $1

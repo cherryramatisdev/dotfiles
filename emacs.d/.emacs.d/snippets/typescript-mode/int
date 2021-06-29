@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: int
-# key: int
+# name: it
+# key: it
 # --
-export interface $1 {
+it('$1', () => {
 $0
-}
+})

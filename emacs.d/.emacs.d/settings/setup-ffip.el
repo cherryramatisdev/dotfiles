@@ -65,10 +65,16 @@
                  "/.repl/"
                  "/.tmp/")))
 
-;; Try out projectile
+(defun magit-status-fullscreen ()
+  (interactive)
+  (magit-status)
+  (delete-other-windows))
 
+;; Try out projectile
+(setq projectile-switch-project-action #'magit-status-fullscreen)
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c pa") 'projectile-add-known-project)
 
 (provide 'setup-ffip)

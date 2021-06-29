@@ -76,6 +76,9 @@
      zencoding-mode
      npm-mode
      crux
+     tree-sitter
+     tree-sitter-langs
+     vterm
      )))
 
 (condition-case nil
@@ -138,6 +141,9 @@
 
 ;; Setup workspaces
 (require 'setup-perspective)
+
+;; Setup treesitter
+(require 'setup-treesitter)
 
 ;; Some general hooks
 (require 'general-hooks)

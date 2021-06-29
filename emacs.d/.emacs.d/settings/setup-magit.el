@@ -7,11 +7,10 @@
         (stashes . show)))
 
 ;; full screen magit-status
-(defun magit-status-fullscreen (prefix)
-  (interactive "P")
+(defun magit-status-fullscreen ()
+  (interactive)
   (magit-status)
-  (unless prefix
-    (delete-other-windows)))
+  (delete-other-windows))
 
 (define-key global-map (kbd "C-x g") 'magit-status-fullscreen)
 
