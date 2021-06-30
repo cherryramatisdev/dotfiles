@@ -1,9 +1,28 @@
 * Tasks
 ** TODO Abrir select de cargo com campos gerais(Acima de gerente) com uma opcao de "Outro" que abre uma input normal :btr:
-   DEADLINE: <2021-06-30 qua 18:00>
+   DEADLINE: <2021-07-01 qui 18:00>
 ** TODO Como pegar posts do wordpress pelo nodejs :btr:
-   DEADLINE: <2021-06-30 qua 18:00>
+   DEADLINE: <2021-07-01 qui 18:00>
 ** WAIT Transformar a rota de INSERT de usuario em um UPSERT(se ja existir, fazer o update) :btr:
    [2021-06-28 seg] 
-** TODO Checar com augusto estado dos testes para fazermos o update de prod
-   DEADLINE: <2021-06-30 qua 10:00>
+** DONE Checar com augusto estado dos testes para fazermos o update de prod :cdc:
+   CLOSED: [2021-06-30 qua 11:52] DEADLINE: <2021-06-30 qua 10:00>
+** DONE Terminar pagina home e perfil de btr varese area vip            :btr:
+   CLOSED: [2021-06-30 qua 17:09] DEADLINE: <2021-06-30 qua 18:00>
+** DONE Discutir com mendes sobre block de puxar dados do wordpress em btr varese area vip :btr:
+   CLOSED: [2021-06-30 qua 17:09] DEADLINE: <2021-06-30 qua 15:00>
+** DONE Testar junto com mendes acesso ao conductor pierflex e pierpro :conductor:
+   CLOSED: [2021-06-30 qua 17:09] DEADLINE: <2021-06-30 qua 15:00>
+** DONE Atualizar horario de conductor no card q a nath marcou    :conductor:
+   CLOSED: [2021-06-30 qua 13:21] DEADLINE: <2021-06-30 qua 13:30>
+
+   https://hagens.monday.com/boards/1100382295/pulses/1437879007
+** TODO Discutir com ivan se ele sabe expor wordpress via api rest      :btr:
+   DEADLINE: <2021-07-01 qui 09:00>
+** TODO Terminar funcionalidade de enviar usuario to formularios especificos :btr:
+   DEADLINE: <2021-07-01 qui 11:00>
+
+   Onde parei:
+   1. Criei o formSlice para armazenar todos os dados possiveis do usuario
+   2. Criei os arquivos das paginas com form, e populei o arquivo de rede social(fazer isso com todos)
+   3. terminar de implementar a funcionalidade
