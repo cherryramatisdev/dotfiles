@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ flymake-show-diagnostics-buffer
+ replace-string
+ projectile-grep
  ffip
  magit-status-here
  occur
  projectile-run-vterm
- vterm
- ansi-term
- projectile-add-known-project
 )
 
 ;; ----- smex-data -----
@@ -38,7 +38,7 @@
  (persp-switch-to-buffer* . 1)
  (persp-rename . 2)
  (prettier-js-mode . 4)
- (projectile-grep . 2)
+ (projectile-grep . 4)
  (prettier-js . 2)
  (nodejs-repl . 5)
  (electric-indent-mode . 2)
@@ -53,7 +53,7 @@
  (eglot-code-actions . 2)
  (projectile-run-eshell . 2)
  (flymake-show-diagnostic . 1)
- (flymake-show-diagnostics-buffer . 8)
+ (flymake-show-diagnostics-buffer . 10)
  (restclient-mode . 3)
  (window-swap-states . 1)
  (twit . 9)
@@ -66,9 +66,9 @@
  (load-theme . 4)
  (comment-box . 1)
  (comment-region . 1)
- (replace-string . 8)
+ (replace-string . 10)
  (flush-lines . 3)
- (yas-visit-snippet-file . 2)
+ (yas-visit-snippet-file . 4)
  (crux-kill-whole-line . 1)
  (crux-visit-term-buffer . 1)
  (paredit-raise-sexp . 1)
