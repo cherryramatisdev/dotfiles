@@ -1,37 +1,9 @@
 * Tasks
-** DONE Fluxo para atualizar status da proposta                         :cdc:
-   CLOSED: [2021-06-24 qui 10:01] DEADLINE: <2021-06-23 Wed 12:00>
- :LOGBOOK:
- CLOCK: [2021-06-21 Mon 16:09]--[2021-06-21 Mon 16:19] => 00:10
- :END:
- 1. Permitir que usuario so possa atualizar o status a cada X minutos(prover um auxilio via mensagens)
- 2. Permitir um numero fixo de vezes para o usuario atualizar o status
-** DONE Terminar layout da tela login                                   :btr:
-   CLOSED: [2021-06-24 qui 10:01] DEADLINE: <2021-06-23 Wed 18:00>
-** DONE Perguntar para o guilherme sobre o CRM usado em Gente&Gente para reutilizar em btr varese
-   CLOSED: [2021-06-28 seg 11:08] DEADLINE: <2021-06-28 seg 13:00>
-** DONE Adicionar no cadastro de BTR
-   CLOSED: [2021-06-25 sex 11:02] DEADLINE: <2021-06-23 Wed 16:00>
- campo cargo - uma lista
- com cargos acima de gerente(pesquisar)
- tela entre dados de assistente e passaporte
- title: produto btr varese
- Escolha qual pacote deseja contratar:
- campos(checkbox):
- - NRF
- - China
- - Israel
-** DONE Integrar RD Station ao cadastro de btr
-   CLOSED: [2021-06-24 qui 15:46] DEADLINE: <2021-06-23 Wed 16:00>
- Adicionar uma tela anterior ao primeiro passo:
- "Voce ja viajou conosco? informe algum desses dados"
- - Email
- - Telefone
- - CPF
- Apos isso, procurar o maximo de dados do usuario no RD Station e preencher o formulario e permitir que o usuario siga normalmente
-** TODO Abrir select de cargo com campos gerais(Acima de gerente) com uma opcao de "Outro" que abre uma input normal
-   DEADLINE: <2021-06-29 ter 18:00>
-** TODO Como pegar posts do wordpress pelo nodejs
-   DEADLINE: <2021-06-29 ter 18:00>
+** TODO Abrir select de cargo com campos gerais(Acima de gerente) com uma opcao de "Outro" que abre uma input normal :btr:
+   DEADLINE: <2021-06-30 qua 18:00>
+** TODO Como pegar posts do wordpress pelo nodejs :btr:
+   DEADLINE: <2021-06-30 qua 18:00>
 ** WAIT Transformar a rota de INSERT de usuario em um UPSERT(se ja existir, fazer o update) :btr:
    [2021-06-28 seg] 
+** TODO Checar com augusto estado dos testes para fazermos o update de prod
+   DEADLINE: <2021-06-30 qua 10:00>
