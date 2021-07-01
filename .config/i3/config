@@ -72,16 +72,16 @@ bindsym $mod+space exec --no-startup-id dmenu_run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+a focus left
-bindsym $mod+s focus down
-bindsym $mod+w focus up
-bindsym $mod+d focus right
+bindsym $alt+h focus left
+bindsym $alt+j focus down
+bindsym $alt+k focus up
+bindsym $alt+l focus right
 
 # move focused window
-bindsym $mod+Shift+a move left
-bindsym $mod+Shift+s move down
-bindsym $mod+Shift+w move up
-bindsym $mod+Shift+d move right
+bindsym $alt+Shift+h move left
+bindsym $alt+Shift+j move down
+bindsym $alt+Shift+k move up
+bindsym $alt+Shift+l move right
 
 # split in horizontal orientation
 # bindsym $alt+- split h
@@ -93,8 +93,8 @@ bindsym $mod+Shift+d move right
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+F1 layout toggle split
-bindsym $mod+F2 layout tabbed
+bindsym $mod+s layout toggle split
+bindsym $mod+t layout tabbed
 # bindsym $mod+e layout toggle split
 
 # toggle tiling / floating

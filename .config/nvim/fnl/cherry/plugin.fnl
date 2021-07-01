@@ -26,10 +26,36 @@
      :Olical/AnsiEsc {}
      :Olical/aniseed {:branch :develop}
      :Olical/conjure {:branch :develop :mod :conjure}
+     :neovim/nvim-lspconfig {:mod :lsp}
+     :glepnir/lspsaga.nvim {:mod :lsp}
      :Olical/vim-enmasse {}
      :wbthomason/packer.nvim {}
+     :JoosepAlviste/nvim-ts-context-commentstring {}
+     :windwp/nvim-ts-autotag {}
      :nvim-treesitter/nvim-treesitter {:run ":TSUpdate" :mod :treesitter}
      :srcery-colors/srcery-vim {:mod :colors}
+     :tami5/compe-conjure {}
      :hrsh7th/nvim-compe {:mod :compe}
      :kristijanhusak/orgmode.nvim {:mod :org}
+     :kyazdani42/nvim-web-devicons {}
+     :nvim-lua/popup.nvim {}
+     :nvim-lua/plenary.nvim {}
+     :nvim-telescope/telescope.nvim {:mod :telescope}
+     :tpope/vim-commentary {}
+     :windwp/nvim-autopairs {:mod :autopairs}
+     :tpope/vim-surround {}
+     :tpope/vim-vinegar {}
+     :itchyny/vim-gitbranch {}
+     :TimUntersberger/neogit {:mod :git}
+     :itchyny/lightline.vim {:mod :statusline}
+     :ThePrimeagen/harpoon {:mod :harpoon}
+     :mhartington/formatter.nvim {:mod :format}
+     :tpope/vim-dispatch {}
+     :radenling/vim-dispatch-neovim {}
+     :clojure-vim/vim-jack-in {}
+     :guns/vim-sexp {:mod :sexp}
+     :tpope/vim-sexp-mappings-for-regular-people {}
+     :ggandor/lightspeed.nvim {:mod :easymotion}
+     :SirVer/ultisnips {:mod :snippets}
+     :honza/vim-snippets {}
      )

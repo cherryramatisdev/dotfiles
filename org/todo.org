@@ -1,8 +1,6 @@
 * Tasks
 ** TODO Abrir select de cargo com campos gerais(Acima de gerente) com uma opcao de "Outro" que abre uma input normal :btr:
    DEADLINE: <2021-07-01 qui 18:00>
-** TODO Como pegar posts do wordpress pelo nodejs :btr:
-   DEADLINE: <2021-07-01 qui 18:00>
 ** WAIT Transformar a rota de INSERT de usuario em um UPSERT(se ja existir, fazer o update) :btr:
    [2021-06-28 seg] 
 ** DONE Checar com augusto estado dos testes para fazermos o update de prod :cdc:
@@ -17,12 +15,17 @@
    CLOSED: [2021-06-30 qua 13:21] DEADLINE: <2021-06-30 qua 13:30>
 
    https://hagens.monday.com/boards/1100382295/pulses/1437879007
-** TODO Discutir com ivan se ele sabe expor wordpress via api rest      :btr:
+** DONE Discutir com ivan se ele sabe expor wordpress via api rest      :btr:
    DEADLINE: <2021-07-01 qui 09:00>
-** TODO Terminar funcionalidade de enviar usuario to formularios especificos :btr:
-   DEADLINE: <2021-07-01 qui 11:00>
+** DONE Terminar funcionalidade de enviar usuario to formularios especificos :btr:
+   DEADLINE: <2021-07-01 qui 16:00>
 
    Onde parei:
    1. Criei o formSlice para armazenar todos os dados possiveis do usuario
    2. Criei os arquivos das paginas com form, e populei o arquivo de rede social(fazer isso com todos)
    3. terminar de implementar a funcionalidade
+** TODO Configurar REST Api GET do wordpress :btr:
+  DEADLINE: <2021-07-02 sex 18:00>
+  References:
+  https://developer.wordpress.org/rest-api/
+  Example: http://hagens.com.br/wp-json/wp/v2/posts/

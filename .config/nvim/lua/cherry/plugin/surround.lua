@@ -1,7 +1,7 @@
-local _2afile_2a = "/home/cherry/.config/nvim/fnl/cherry/init.fnl"
+local _2afile_2a = "/home/cherry/.config/nvim/fnl/cherry/plugin/surround.fnl"
 local _0_
 do
-  local name_0_ = "cherry.init"
+  local name_0_ = "cherry.plugin.surround"
   local module_0_
   do
     local x_0_ = package.loaded[name_0_]
@@ -25,20 +25,21 @@ autoload = _1_
 local function _2_(...)
   local ok_3f_0_, val_0_ = nil, nil
   local function _2_()
-    return {}
+    return {autoload("aniseed.nvim"), autoload("surround")}
   end
   ok_3f_0_, val_0_ = pcall(_2_)
   if ok_3f_0_ then
-    _0_["aniseed/local-fns"] = {}
+    _0_["aniseed/local-fns"] = {autoload = {nvim = "aniseed.nvim", surr = "surround"}}
     return val_0_
   else
     return print(val_0_)
   end
 end
 local _local_0_ = _2_(...)
+local nvim = _local_0_[1]
+local surr = _local_0_[2]
 local _2amodule_2a = _0_
-local _2amodule_name_2a = "cherry.init"
+local _2amodule_name_2a = "cherry.plugin.surround"
 do local _ = ({nil, _0_, nil, {{}, nil, nil, nil}})[2] end
-require("cherry.general")
-require("cherry.mapping")
-return require("cherry.plugin")
+nvim.g.mappings_style = "surround"
+return surr.setup({})

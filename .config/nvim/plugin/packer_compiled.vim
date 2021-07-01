@@ -80,17 +80,65 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/aniseed"
   },
+  ["compe-conjure"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/compe-conjure"
+  },
   conjure = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/conjure"
+  },
+  ["formatter.nvim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/formatter.nvim"
+  },
+  harpoon = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/harpoon"
+  },
+  ["lightline.vim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/lightline.vim"
+  },
+  ["lightspeed.nvim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/lightspeed.nvim"
+  },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+  },
+  neogit = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/neogit"
+  },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
   ["nvim-compe"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
+  },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["orgmode.nvim"] = {
     loaded = true,
@@ -100,13 +148,69 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  ["popup.nvim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/popup.nvim"
+  },
   ["srcery-vim"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/srcery-vim"
   },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ultisnips = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/ultisnips"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-commentary"
+  },
+  ["vim-dispatch"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-dispatch"
+  },
+  ["vim-dispatch-neovim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-dispatch-neovim"
+  },
   ["vim-enmasse"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-enmasse"
+  },
+  ["vim-gitbranch"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-gitbranch"
+  },
+  ["vim-jack-in"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-jack-in"
+  },
+  ["vim-sexp"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-sexp"
+  },
+  ["vim-sexp-mappings-for-regular-people"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-sexp-mappings-for-regular-people"
+  },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-snippets"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-surround"
+  },
+  ["vim-vinegar"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-vinegar"
   }
 }
 

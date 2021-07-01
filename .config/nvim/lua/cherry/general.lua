@@ -1,7 +1,7 @@
-local _2afile_2a = "/home/cherry/.config/nvim/fnl/cherry/mapping.fnl"
+local _2afile_2a = "/home/cherry/.config/nvim/fnl/cherry/general.fnl"
 local _0_
 do
-  local name_0_ = "cherry.mapping"
+  local name_0_ = "cherry.general"
   local module_0_
   do
     local x_0_ = package.loaded[name_0_]
@@ -38,33 +38,15 @@ end
 local _local_0_ = _2_(...)
 local nvim = _local_0_[1]
 local _2amodule_2a = _0_
-local _2amodule_name_2a = "cherry.mapping"
+local _2amodule_name_2a = "cherry.general"
 do local _ = ({nil, _0_, nil, {{}, nil, nil, nil}})[2] end
-local noremap
-do
-  local v_0_
-  local function noremap0(mode, from, to)
-    return nvim.set_keymap(mode, from, to, {noremap = true})
-  end
-  v_0_ = noremap0
-  local t_0_ = (_0_)["aniseed/locals"]
-  t_0_["noremap"] = v_0_
-  noremap = v_0_
-end
-nvim.g.mapleader = " "
-nvim.g.maplocalleader = ","
-noremap("n", ";", ":")
-noremap("n", "gl", "$")
-noremap("n", "gh", "^")
-noremap("n", "<leader>fs", ":w<CR>")
-noremap("n", "<leader>bd", ":bd<CR>")
-noremap("n", "<leader>wd", ":q<CR>")
-noremap("n", "<leader>ws", "<C-w>s")
-noremap("n", "<leader>wv", "<C-w>v")
-noremap("n", "<leader>wo", "<C-w>o")
-noremap("n", "<leader>qq", ":wqall<CR>")
-noremap("n", "<leader>h", "<C-w>h")
-noremap("n", "<leader>j", "<C-w>j")
-noremap("n", "<leader>k", "<C-w>k")
-noremap("n", "<leader>l", "<C-w>l")
-return noremap("t", "<C-[>", "<C-\\><C-n>", {noremap = true})
+nvim.o.termguicolors = true
+nvim.o.hidden = true
+nvim.o.updatetime = 500
+nvim.o.timeoutlen = 500
+nvim.o.sessionoptions = "blank,curdir,folds,help,tabpages,winsize"
+nvim.o.inccommand = "split"
+nvim.o.splitright = true
+nvim.o.splitbelow = true
+nvim.o.clipboard = "unnamedplus"
+return nvim.ex.set("list")

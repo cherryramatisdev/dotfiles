@@ -41,4 +41,4 @@ local nvim = _local_0_[2]
 local _2amodule_2a = _0_
 local _2amodule_name_2a = "cherry.plugin.treesitter"
 do local _ = ({nil, _0_, nil, {{}, nil, nil, nil}})[2] end
-return conf.setup({highlight = {enable = true}})
+return conf.setup({autotag = {enable = true}, context_commentstring = {enable = true}, highlight = {enable = true}})

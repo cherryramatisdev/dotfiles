@@ -1,7 +1,7 @@
-local _2afile_2a = "/home/cherry/.config/nvim/fnl/cherry/init.fnl"
+local _2afile_2a = "/home/cherry/.config/nvim/fnl/cherry/plugin/autopairs.fnl"
 local _0_
 do
-  local name_0_ = "cherry.init"
+  local name_0_ = "cherry.plugin.autopairs"
   local module_0_
   do
     local x_0_ = package.loaded[name_0_]
@@ -25,20 +25,22 @@ autoload = _1_
 local function _2_(...)
   local ok_3f_0_, val_0_ = nil, nil
   local function _2_()
-    return {}
+    return {autoload("nvim-autopairs"), autoload("nvim-autopairs.completion.compe"), autoload("aniseed.nvim")}
   end
   ok_3f_0_, val_0_ = pcall(_2_)
   if ok_3f_0_ then
-    _0_["aniseed/local-fns"] = {}
+    _0_["aniseed/local-fns"] = {autoload = {["compe-pairs"] = "nvim-autopairs.completion.compe", autopairs = "nvim-autopairs", nvim = "aniseed.nvim"}}
     return val_0_
   else
     return print(val_0_)
   end
 end
 local _local_0_ = _2_(...)
+local autopairs = _local_0_[1]
+local compe_pairs = _local_0_[2]
+local nvim = _local_0_[3]
 local _2amodule_2a = _0_
-local _2amodule_name_2a = "cherry.init"
+local _2amodule_name_2a = "cherry.plugin.autopairs"
 do local _ = ({nil, _0_, nil, {{}, nil, nil, nil}})[2] end
-require("cherry.general")
-require("cherry.mapping")
-return require("cherry.plugin")
+autopairs.setup({})
+return compe_pairs.setup({map_complete = true, map_cr = true})

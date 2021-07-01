@@ -43,8 +43,9 @@ local _2amodule_name_2a = "cherry.plugin.compe"
 do local _ = ({nil, _0_, nil, {{}, nil, nil, nil}})[2] end
 nvim.o.completeopt = "menuone,noselect"
 compe.setup({autocomplete = true, debug = false, documentation = true, enabled = true, incomplete_delay = 400, max_abbr_width = 100, max_kind_width = 100, max_menu_width = 100, min_length = 1, preselect = "enable", source = {buffer = true, conjure = true, nvim_lsp = true, nvim_lua = true, orgmode = true, path = true, ultisnips = true}, source_timeout = 200, throttle_time = 80})
+nvim.set_keymap("i", "<C-j>", "<C-n>", {noremap = true})
+nvim.set_keymap("i", "<C-k>", "<C-p>", {noremap = true})
 nvim.ex.inoremap("<silent><expr> <C-Space> compe#complete()")
-nvim.ex.inoremap("<silent><expr> <CR> compe#confirm('<CR>')")
 nvim.ex.inoremap("<silent><expr> <C-e> compe#close('<C-e>')")
 nvim.ex.inoremap("<silent><expr> <C-f> compe#scroll({ 'delta': +4 })")
 return nvim.ex.inoremap("<silent><expr> <C-d> compe#scroll({ 'delta': -4 })")
