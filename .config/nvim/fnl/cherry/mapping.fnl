@@ -21,10 +21,9 @@
 (noremap :n :<leader>wv "<C-w>v")
 (noremap :n :<leader>wo "<C-w>o")
 (noremap :n :<leader>qq ":wqall<CR>")
-(noremap :n :<leader>h "<C-w>h")
-(noremap :n :<leader>j "<C-w>j")
-(noremap :n :<leader>k "<C-w>k")
-(noremap :n :<leader>l "<C-w>l")
+(noremap :n :<C-h> "<C-w>h")
+(noremap :n :<C-j> "<C-w>j")
+(noremap :n :<C-k> "<C-w>k")
+(noremap :n :<C-l> "<C-w>l")
 
-(noremap :t "<C-[>" :<C-\><C-n> {:noremap true})
-
+(noremap :t "<Esc>" :<C-\><C-n> {:noremap true})

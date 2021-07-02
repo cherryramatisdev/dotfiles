@@ -46,6 +46,7 @@ compe.setup({autocomplete = true, debug = false, documentation = true, enabled =
 nvim.set_keymap("i", "<C-j>", "<C-n>", {noremap = true})
 nvim.set_keymap("i", "<C-k>", "<C-p>", {noremap = true})
 nvim.ex.inoremap("<silent><expr> <C-Space> compe#complete()")
+nvim.ex.inoremap("<silent><expr> <CR> compe#confirm('<CR>')")
 nvim.ex.inoremap("<silent><expr> <C-e> compe#close('<C-e>')")
 nvim.ex.inoremap("<silent><expr> <C-f> compe#scroll({ 'delta': +4 })")
 return nvim.ex.inoremap("<silent><expr> <C-d> compe#scroll({ 'delta': -4 })")

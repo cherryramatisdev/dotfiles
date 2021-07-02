@@ -6,6 +6,7 @@ alias tmux="tmux -2"
 alias t="tmux new-session -A -s main"
 alias vim="nvim"
 alias e="emacsclient -t"
+alias slack="~/.local/bin/slack -config=/home/cherry/.config/slack-term/slack-config"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"

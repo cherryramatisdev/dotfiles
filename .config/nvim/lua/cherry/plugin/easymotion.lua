@@ -25,20 +25,19 @@ autoload = _1_
 local function _2_(...)
   local ok_3f_0_, val_0_ = nil, nil
   local function _2_()
-    return {autoload("lightspeed"), autoload("aniseed.nvim")}
+    return {autoload("aniseed.nvim")}
   end
   ok_3f_0_, val_0_ = pcall(_2_)
   if ok_3f_0_ then
-    _0_["aniseed/local-fns"] = {autoload = {lightspeed = "lightspeed", nvim = "aniseed.nvim"}}
+    _0_["aniseed/local-fns"] = {autoload = {nvim = "aniseed.nvim"}}
     return val_0_
   else
     return print(val_0_)
   end
 end
 local _local_0_ = _2_(...)
-local lightspeed = _local_0_[1]
-local nvim = _local_0_[2]
+local nvim = _local_0_[1]
 local _2amodule_2a = _0_
 local _2amodule_name_2a = "cherry.plugin.easymotion"
 do local _ = ({nil, _0_, nil, {{}, nil, nil, nil}})[2] end
-return lightspeed.setup({full_inclusive_prefix_key = "<c-x>", grey_out_search_area = true, highlight_unique_chars = false, jump_on_partial_input_safety_timeout = 400, jump_to_first_match = true, limit_ft_matches = 5, match_only_the_start_of_same_char_seqs = true})
+return vim.cmd("map <Leader> <Plug>(easymotion-prefix)")

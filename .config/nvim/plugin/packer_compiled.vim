@@ -80,6 +80,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/aniseed"
   },
+  ["auto-pairs"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/auto-pairs"
+  },
   ["compe-conjure"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/compe-conjure"
@@ -100,10 +104,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/lightline.vim"
   },
-  ["lightspeed.nvim"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/lightspeed.nvim"
-  },
   ["lspsaga.nvim"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
@@ -111,10 +111,6 @@ _G.packer_plugins = {
   neogit = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/neogit"
-  },
-  ["nvim-autopairs"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
   ["nvim-compe"] = {
     loaded = true,
@@ -180,6 +176,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-dispatch-neovim"
   },
+  ["vim-easymotion"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-easymotion"
+  },
   ["vim-enmasse"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-enmasse"
@@ -191,6 +191,10 @@ _G.packer_plugins = {
   ["vim-jack-in"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-jack-in"
+  },
+  ["vim-rsi"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-rsi"
   },
   ["vim-sexp"] = {
     loaded = true,

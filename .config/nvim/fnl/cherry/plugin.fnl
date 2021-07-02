@@ -42,9 +42,10 @@
      :nvim-lua/plenary.nvim {}
      :nvim-telescope/telescope.nvim {:mod :telescope}
      :tpope/vim-commentary {}
-     :windwp/nvim-autopairs {:mod :autopairs}
+     :jiangmiao/auto-pairs {:mod :autopairs}
      :tpope/vim-surround {}
      :tpope/vim-vinegar {}
+     :tpope/vim-rsi {}
      :itchyny/vim-gitbranch {}
      :TimUntersberger/neogit {:mod :git}
      :itchyny/lightline.vim {:mod :statusline}
@@ -55,7 +56,7 @@
      :clojure-vim/vim-jack-in {}
      :guns/vim-sexp {:mod :sexp}
      :tpope/vim-sexp-mappings-for-regular-people {}
-     :ggandor/lightspeed.nvim {:mod :easymotion}
      :SirVer/ultisnips {:mod :snippets}
      :honza/vim-snippets {}
+     :easymotion/vim-easymotion {:mod :easymotion}
      )
