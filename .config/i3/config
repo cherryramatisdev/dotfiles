@@ -34,6 +34,9 @@ exec --no-startup-id nm-applet
 # Run emacs daemon
 exec --no-startup-id emacs --daemon &
 
+# Run dunst for notifications
+exec --no-startup-id dunst &
+
 # Set background
 exec --no-startup-id feh --bg-fill ~/Pictures/background.jpg &
 

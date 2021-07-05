@@ -8,3 +8,5 @@
    SCHEDULED: <2021-07-05 seg 11:05>
 ** TODO Sprint Review CDC Digital(ViaCerta e FFC)
    SCHEDULED: <2021-07-05 seg 16:00>
+** TODO Testando todo notification
+   SCHEDULED: <2021-07-05 seg 10:50>

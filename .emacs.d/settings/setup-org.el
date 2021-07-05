@@ -23,29 +23,33 @@
 (define-key global-map (kbd "C-c c") 'org-capture)
 (define-key global-map (kbd "C-c a") 'org-agenda)
 
-;; Add function to sort org-mode entries by their ** TODO -state
+;; Trying out org agenda notifications! :D
 
-(defun todo-to-int (todo)
-  (first (-non-nil
-          (mapcar (lambda (keywords)
-                    (let ((todo-seq
-                           (-map (lambda (x) (first (split-string  x "(")))
-                                 (rest keywords))))
-                      (cl-position-if (lambda (x) (string= x todo)) todo-seq)))
-                  org-todo-keywords))))
+(require 'appt)
+(require 'notifications)
+(setq appt-time-msg-list nil)    ;; clear existing appt list
+(setq appt-display-interval '10) ;; warn every 10 minutes from t - appt-message-warning-time
+(setq
+  appt-message-warning-time '10  ;; send first warning 10 minutes before appointment
+  appt-display-mode-line nil     ;; don't show in the modeline
+  appt-display-format 'window)   ;; pass warnings to the designated window function
+(appt-activate 1)                ;; activate appointment notification
+(display-time)                   ;; activate time display
 
-(defun my/org-sort-key ()
-  (let* ((todo-max (apply #'max (mapcar #'length org-todo-keywords)))
-         (todo (org-entry-get (point) "TODO"))
-         (todo-int (if todo (todo-to-int todo) todo-max))
-         (priority (org-entry-get (point) "PRIORITY"))
-         (priority-int (if priority (string-to-char priority) org-default-priority)))
-    (format "%03d %03d" todo-int priority-int)
-    ))
+(org-agenda-to-appt)             ;; generate the appt list from org agenda files on emacs launch
+(run-at-time "24:01" 3600 'org-agenda-to-appt)           ;; update appt list hourly
+(add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt) ;; update appt list on agenda view
 
-(defun my/org-sort-entries ()
-  (interactive)
-  (org-sort-entries nil ?f #'my/org-sort-key))
+(defun my-appt-send-notification (title msg)
+  (notifications-notify :title title
+                        :body msg
+                        :app-name "Emacs: Org"))
+
+(defun my-appt-display (min-to-app new-time msg)
+  (my-appt-send-notification 
+    (format "'Appointment in %s minutes'" min-to-app)    ;; passed to -title in terminal-notifier call
+    (format "'%s'" msg)))                                ;; passed to -message in terminal-notifier call
+(setq appt-disp-window-function (function my-appt-display))
 
 ;; Configure org babel execute
 (custom-set-variables
