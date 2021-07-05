@@ -20,6 +20,10 @@
 (evil-define-key 'normal 'global (kbd "gl") 'evil-end-of-line)
 (evil-define-key 'normal 'global (kbd "gh") 'evil-first-non-blank)
 
+(with-eval-after-load 'evil
+  (add-hook 'git-commit-mode-hook 'evil-insert-state)
+  (evil-set-initial-state 'magit-log-edit-mode 'insert))
+
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 (require 'evil-collection)
