@@ -31,7 +31,7 @@
 (package! 'wgrep)
 (package! 'whitespace-cleanup-mode)
 (package! 'yasnippet)
-(package! 'find-file-in-project) ;; Think about that
+;; (package! 'find-file-in-project) ;; Think about that
 (package! 'multiple-cursors)
 (package! 'ace-jump-mode)
 (package! 'expand-region)
@@ -46,6 +46,7 @@
 (package! 'tree-sitter)
 (package! 'tree-sitter-langs)
 (package! 'vterm)
-(package! 'god-mode)
+;; (package! 'god-mode) Thinking about this
+(package! 'which-key)
 
 (provide 'package)

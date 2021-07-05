@@ -61,5 +61,6 @@
 (eval-after-load "subword" '(diminish 'subword-mode))
 (eval-after-load "npm-mode" '(diminish 'npm-mode))
 (eval-after-load "tree-sitter" '(diminish 'tree-sitter-mode))
+(eval-after-load "which-key" '(diminish 'which-key-mode))
 
 (provide 'appearance)

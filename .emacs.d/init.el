@@ -98,5 +98,8 @@
 ;; Some general hooks
 (require 'general-hooks)
 
+;; Configure which key
+(require 'setup-whichkey)
+
 ;; Advices to make emacs my own
 (require 'advices)
