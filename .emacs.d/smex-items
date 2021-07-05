@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ paredit-mode
  replace-string
  projectile-grep
  ffip
  magit-status-here
  occur
  projectile-run-vterm
- eval-buffer
 )
 
 ;; ----- smex-data -----
@@ -32,7 +32,7 @@
  (yas-new-snippet . 16)
  (yas/new-snippet . 1)
  (yas-insert-snippet . 1)
- (paredit-mode . 5)
+ (paredit-mode . 7)
  (projectile-ripgrep . 14)
  (projectile-compile-project . 2)
  (persp-switch-to-buffer* . 1)
