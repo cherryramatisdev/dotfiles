@@ -4,9 +4,7 @@
   References:
   https://developer.wordpress.org/rest-api/
   Example: http://hagens.com.br/wp-json/wp/v2/posts/
-** TODO CDC Sol - Daily Scrum (Mendes)
-   SCHEDULED: <2021-07-05 seg 11:05>
-** TODO Sprint Review CDC Digital(ViaCerta e FFC)
-   SCHEDULED: <2021-07-05 seg 16:00>
-** TODO Testando todo notification
-   SCHEDULED: <2021-07-05 seg 10:50>
+** DONE Aceitar apenas numeros no campo "Numero da Casa" no confirmar-dados :cdc:
+   CLOSED: [2021-07-05 seg 18:05] SCHEDULED: <2021-07-05 seg 18:00>
+** TODO Trabalhar na lami :lami:
+   SCHEDULED: <2021-07-05 seg 18:00-22:00 +1d>

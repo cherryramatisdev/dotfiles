@@ -1,0 +1,44 @@
+* Tasks
+** TODO Sprint Review CDC Digital(ViaCerta e FFC)                       :cdc:
+   SCHEDULED: <2021-07-12 seg 16:00 +1w>
+   :PROPERTIES:
+   :LAST_REPEAT: [2021-07-05 seg 16:25]
+   :END:
+
+   - State "DONE"       from "TODO"       [2021-07-05 seg 16:25]
+   https://teams.microsoft.com/l/meetup-join/19%3ameeting_OGU2ZTYzNWQtNGI4NC00YjQ2LWI4NDgtMzZjNWY2NmNkOTdk%40thread.v2/0?context=%7b%22Tid%22%3a%22be7a06b2-e5d3-49fc-baf8-529604964a43%22%2c%22Oid%22%3a%22bedec6d8-1949-4187-bbf0-42f69c59ef94%22%7d
+** TODO HxLab Daily                                                  :hagens:
+   SCHEDULED: <2021-07-06 ter 09:00 +1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2021-07-05 seg 15:57]
+   :END:
+   - State "DONE"       from "TODO"       [2021-07-05 seg 15:57]
+
+   https://meet.google.com/pub-vrjc-roi
+** TODO 1v1 Daily (Mendes)                                           :hagens:
+   SCHEDULED: <2021-07-06 ter 09:20 +1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2021-07-05 seg 15:59]
+   :END:
+   - State "DONE"       from "TODO"       [2021-07-05 seg 15:59]
+
+   https://meet.google.com/ani-abzx-bwv
+** TODO CDC SOL <> Sprint Review                                        :cdc:
+   SCHEDULED: <2021-07-06 ter 16:00 +1w>
+
+   https://meet.google.com/wpx-tsur-cmg
+** TODO Testes - Hagens / Conductor                               :conductor:
+   SCHEDULED: <2021-07-06 ter 16:45>
+   https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZTJjY2RjZDItNmM1ZC00ODNkLWIyZGYtMTZkZmVmNDI5ZGUz%40thread.v2/0?context=%7b%22Tid%22%3a%2262d496c8-b01f-46bf-9659-e70e545c638d%22%2c%22Oid%22%3a%22b5d3f1ad-9791-4b85-b216-ae04242a1094%22%7d
+** TODO Checar com Leo como vamos fazer o FAQ no app cliente :cdc:
+   SCHEDULED: <2021-07-06 ter 16:00>
+** TODO CDC <> app confirmação vendas :cdc:
+   SCHEDULED: <2021-07-06 ter 11:00>
+   https://meet.google.com/kbo-zvxn-ecs
+** TODO Api Boilerplate :lami:
+   SCHEDULED: <2021-07-06 ter 18:00>
+   https://meet.google.com/jno-nufb-yzw
+** TODO Consumir Wordpress via API Rest :btr:
+   SCHEDULED: <2021-07-07 qua 13:00>
+
+   https://meet.google.com/hoo-zoru-iek

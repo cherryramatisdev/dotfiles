@@ -1,0 +1,35 @@
+#+TITLE: Daily
+#+DESCRIPTION: My Daily routine on org agenda to help me organize
+
+* Tasks
+** TODO Organizar os TODOS                                         :personal:
+   SCHEDULED: <2021-07-06 ter 09:00-10:00 +1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2021-07-05 seg 18:18]
+   :END:
+   - State "DONE"       from "TODO"       [2021-07-05 seg 18:18]
+   Para o dia e talvez para a semana no caso de reunioes
+** TODO Trabalhar periodo da manha                                   :hagens:
+   SCHEDULED: <2021-07-06 ter 10:00-11:00 +1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2021-07-05 seg 18:18]
+   :END:
+   - State "DONE"       from "TODO"       [2021-07-05 seg 18:18]
+** TODO Almoco                                                     :personal:
+   SCHEDULED: <2021-07-06 ter 12:00-13:30 +1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2021-07-05 seg 18:18]
+   :END:
+   - State "DONE"       from "TODO"       [2021-07-05 seg 18:18]
+** TODO Trabalhar periodo da tarde                                   :hagens:
+   SCHEDULED: <2021-07-06 ter 13:30-17:00 +1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2021-07-05 seg 18:18]
+   :END:
+   - State "DONE"       from "TODO"       [2021-07-05 seg 18:18]
+** TODO Trabalhar periodo da noite                                     :lami:
+   SCHEDULED: <2021-07-06 ter 18:00-22:00 +1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2021-07-05 seg 18:18]
+   :END:
+   - State "DONE"       from "TODO"       [2021-07-05 seg 18:18]
