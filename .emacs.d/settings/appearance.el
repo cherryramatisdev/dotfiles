@@ -53,6 +53,8 @@
 (eval-after-load "npm-mode" '(diminish 'npm-mode))
 (eval-after-load "tree-sitter" '(diminish 'tree-sitter-mode))
 (eval-after-load "which-key" '(diminish 'which-key-mode))
+(eval-after-load "evil-collection" '(diminish 'evil-collection-unimpaired-mode))
+(eval-after-load "evil-commentary" '(diminish 'evil-commentary-mode))
 
 
 ;; DEFINE MODELINE -------------------------------

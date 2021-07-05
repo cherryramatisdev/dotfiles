@@ -44,7 +44,16 @@
 (package! 'tree-sitter)
 (package! 'tree-sitter-langs)
 (package! 'vterm)
-;; (package! 'god-mode) Thinking about this
 (package! 'which-key)
+
+;; I will try to implement evil mode, just try
+(package! 'evil)
+(package! 'evil-collection)
+(package! 'evil-surround)
+(package! 'evil-commentary)
+(package! 'evil-org)
+(package! 'undo-fu)
+(package! 'undo-fu-session)
+(package! 'dired-single)
 
 (provide 'package)

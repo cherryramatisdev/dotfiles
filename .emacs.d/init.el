@@ -6,6 +6,9 @@
 (add-to-list 'load-path settings-dir)
 (add-to-list 'load-path defuns-dir)
 
+;; Enable vim emulation within emacs
+(require 'setup-evil)
+
 ;; General settings
 (require 'setup-package)
 (load "~/.emacs.d/package.el")

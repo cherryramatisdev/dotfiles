@@ -16,3 +16,4 @@
 .emacs.d/.mc-lists.el
 .emacs.d/eln-cache/
 /.emacs.d/straight/
+/.emacs.d/undo-fu-session/
