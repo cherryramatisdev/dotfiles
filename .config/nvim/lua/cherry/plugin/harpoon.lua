@@ -1,4 +1,4 @@
-local _2afile_2a = "/home/cherry/.config/nvim/fnl/cherry/plugin/harpoon.fnl"
+local _2afile_2a = ".config/nvim/fnl/cherry/plugin/harpoon.fnl"
 local _0_
 do
   local name_0_ = "cherry.plugin.harpoon"
