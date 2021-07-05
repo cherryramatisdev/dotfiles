@@ -8,6 +8,7 @@
 
 ;; General settings
 (require 'setup-package)
+(load "~/.emacs.d/package.el")
 (require 'general)
 (require 'appearance)
 
@@ -31,62 +32,6 @@
 (require 'saveplace)
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
-
-;; Install extensions if they're missing
-(defun init--install-packages ()
-  (packages-install
-   '(
-     ace-window
-     modus-themes
-     css-eldoc
-     smex
-     elisp-slime-nav
-     f
-     fill-column-indicator
-     flx
-     flx-ido
-     flycheck
-     flycheck-pos-tip
-     highlight-escape-sequences
-     ido-at-point
-     ido-completing-read+
-     ido-vertical-mode 
-     magit
-     markdown-mode
-     nodejs-repl
-     paredit
-     perspective
-     projectile    
-     restclient
-     ripgrep
-     smartparens     
-     visual-regexp
-     wgrep
-     whitespace-cleanup-mode
-     yasnippet
-     find-file-in-project
-     multiple-cursors
-     ace-jump-mode
-     expand-region
-     prettier-js
-     typescript-mode
-     web-mode
-     company
-     eglot
-     zencoding-mode
-     npm-mode
-     crux
-     tree-sitter
-     tree-sitter-langs
-     vterm
-     god-mode
-     )))
-
-(condition-case nil
-    (init--install-packages)
-  (error
-   (package-refresh-contents)
-   (init--install-packages)))
 
 ;; No more RSI(Validate if this is good ????)
 (require 'god-mode)

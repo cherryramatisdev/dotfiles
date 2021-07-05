@@ -15,3 +15,4 @@
 .emacs.d/projects
 .emacs.d/.mc-lists.el
 .emacs.d/eln-cache/
+/.emacs.d/straight/

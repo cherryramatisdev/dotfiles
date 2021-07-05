@@ -1,9 +1,9 @@
 ;; Interactively Do Things
 
 ;; This follows ido for M-x
-(use-package smex
-  :bind (("M-x" . smex))
-  :init (smex-initialize))
+(require 'smex)
+(global-set-key (kbd "M-x") 'smex)
+(smex-initialize)
 
 (require 'ido)
 (ido-mode t)
