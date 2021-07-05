@@ -18,7 +18,7 @@
 
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
-         "* TODO %?\nDEADLINE: %^t")))
+         "* TODO %?\nSCHEDULED: %^t")))
 
 (define-key global-map (kbd "C-c c") 'org-capture)
 (define-key global-map (kbd "C-c a") 'org-agenda)
