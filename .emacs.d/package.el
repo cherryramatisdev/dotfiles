@@ -23,7 +23,6 @@
 (package! 'nodejs-repl)
 (package! 'paredit)
 (package! 'perspective)
-(package! 'projectile)
 (package! 'restclient)
 (package! 'ripgrep)
 (package! 'smartparens)
@@ -31,7 +30,6 @@
 (package! 'wgrep)
 (package! 'whitespace-cleanup-mode)
 (package! 'yasnippet)
-;; (package! 'find-file-in-project) ;; Think about that
 (package! 'multiple-cursors)
 (package! 'ace-jump-mode)
 (package! 'expand-region)

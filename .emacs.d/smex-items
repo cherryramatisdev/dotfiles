@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- paredit-mode
- replace-string
- projectile-grep
- ffip
- magit-status-here
- occur
- projectile-run-vterm
+ project-switch-to-buffer
+ project-find-regexp
+ project-remove-known-project
+ project-switch-project
+ project-eshell
+ project-find-file
+ find-file-in-project
 )
 
 ;; ----- smex-data -----
@@ -16,7 +16,7 @@
  (shell . 6)
  (persp-switch . 3)
  (persp-kill . 6)
- (find-file-in-project . 1)
+ (find-file-in-project . 2)
  (smartparens-mode . 3)
  (turn-on-smartparens-mode . 1)
  (package-install . 2)
@@ -33,12 +33,12 @@
  (yas/new-snippet . 1)
  (yas-insert-snippet . 1)
  (paredit-mode . 7)
- (projectile-ripgrep . 14)
+ (projectile-ripgrep . 17)
  (projectile-compile-project . 2)
  (persp-switch-to-buffer* . 1)
  (persp-rename . 2)
  (prettier-js-mode . 4)
- (projectile-grep . 4)
+ (projectile-grep . 5)
  (prettier-js . 2)
  (nodejs-repl . 5)
  (electric-indent-mode . 2)
@@ -90,4 +90,12 @@
  (occur . 1)
  (magit-status-here . 1)
  (ffip . 1)
+ (markdown-mode . 2)
+ (markdown . 1)
+ (project-switch-project . 4)
+ (project-find-file . 2)
+ (project-eshell . 1)
+ (project-remove-known-project . 1)
+ (project-find-regexp . 1)
+ (project-switch-to-buffer . 1)
 )

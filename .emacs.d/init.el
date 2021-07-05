@@ -58,7 +58,7 @@
 
 (require 'setup-org)
 
-(require 'setup-ffip)
+(require 'setup-projects)
 
 ;; Font lock dash.el
 (eval-after-load "dash" '(dash-enable-font-lock))
