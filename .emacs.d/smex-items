@@ -1,18 +1,18 @@
 
 ;; ----- smex-history -----
 (
+ eval-buffer
  package-autoremove
  project-remove-known-project
  project-switch-to-buffer
- project-find-regexp
- project-switch-project
- project-eshell
- project-find-file
+ eshell
+ replace-string
+ eglot
 )
 
 ;; ----- smex-data -----
 (
- (eval-buffer . 23)
+ (eval-buffer . 24)
  (shell . 6)
  (persp-switch . 3)
  (persp-kill . 6)
@@ -99,4 +99,7 @@
  (project-find-regexp . 1)
  (project-switch-to-buffer . 1)
  (package-autoremove . 1)
+ (lsp-organize-imports . 1)
+ (flycheck-buffer . 1)
+ (flycheck-list-errors . 1)
 )
