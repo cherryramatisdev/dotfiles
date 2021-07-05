@@ -18,7 +18,9 @@
 
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
-         "* TODO %?\nSCHEDULED: %^t")))
+         "* TODO %?\nSCHEDULED: %^t")
+        ("m" "Meetings" entry (file+headline "~/org/meetings.org" "Tasks")
+         "* TODO %?\nSCHEDULED: %^t\nLink To: %^{TEXT}")))
 
 (define-key global-map (kbd "C-c c") 'org-capture)
 (define-key global-map (kbd "C-c a") 'org-agenda)
@@ -34,7 +36,6 @@
   appt-display-mode-line nil     ;; don't show in the modeline
   appt-display-format 'window)   ;; pass warnings to the designated window function
 (appt-activate 1)                ;; activate appointment notification
-(display-time)                   ;; activate time display
 
 (org-agenda-to-appt)             ;; generate the appt list from org agenda files on emacs launch
 (run-at-time "24:01" 3600 'org-agenda-to-appt)           ;; update appt list hourly

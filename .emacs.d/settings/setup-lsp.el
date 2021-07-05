@@ -1,13 +1,11 @@
-(require 'eglot)
+(setq lsp-keymap-prefix "C-c l")
 
-(add-to-list 'eglot-server-programs '(web-mode . ("~/.nvm/versions/node/v16.3.0/bin/typescript-language-server" "--stdio")))
+(require 'lsp)
 
-(add-hook 'web-mode-hook 'eglot-ensure)
-(add-hook 'typescript-mode-hook 'eglot-ensure)
+(add-hook 'web-mode-hook 'lsp)
+(add-hook 'typescript-mode-hook 'lsp)
 
-(global-set-key (kbd "C-c l a") 'eglot-code-actions)
-(global-set-key (kbd "M-RET") 'eglot-code-actions)
-(global-set-key (kbd "C-c l o") 'eglot-code-action-organize-imports)
-(global-set-key (kbd "C-c l r") 'eglot-rename)
+(global-set-key (kbd "M-RET") 'lsp-execute-code-action)
+(global-set-key (kbd "C-c lo") 'lsp-organize-imports)
 
 (provide 'setup-lsp)

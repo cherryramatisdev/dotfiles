@@ -37,7 +37,7 @@
 (package! 'typescript-mode)
 (package! 'web-mode)
 (package! 'company)
-(package! 'eglot)
+(package! 'lsp-mode)
 (package! 'zencoding-mode)
 (package! 'npm-mode)
 (package! 'crux)

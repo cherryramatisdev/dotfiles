@@ -13,16 +13,6 @@
 
 (setq css-fontify-colors nil)
 
-;; Set custom theme path
-;; (setq custom-theme-directory (concat user-emacs-directory "themes"))
-
-;; (dolist
-;;     (path (directory-files custom-theme-directory t "\\w+"))
-;;   (when (file-directory-p path)
-;;     (add-to-list 'custom-theme-load-path path)))
-
-;; (load-theme 'default-black t)
-
 (load-theme 'modus-vivendi t)
 
 ;; Don't defer screen updates when performing operations
@@ -56,11 +46,51 @@
 (eval-after-load "company" '(diminish 'company-mode))
 (eval-after-load "prettier-js" '(diminish 'prettier-js-mode))
 (eval-after-load "flymake" '(diminish 'flymake-mode))
+(eval-after-load "flycheck" '(diminish 'flycheck-mode))
 (eval-after-load "smartparens" '(diminish 'smartparens-mode))
 (eval-after-load "paredit" '(diminish 'paredit-mode))
 (eval-after-load "subword" '(diminish 'subword-mode))
 (eval-after-load "npm-mode" '(diminish 'npm-mode))
 (eval-after-load "tree-sitter" '(diminish 'tree-sitter-mode))
 (eval-after-load "which-key" '(diminish 'which-key-mode))
+
+
+;; DEFINE MODELINE -------------------------------
+(setq mode-line-percent-position '(-3 "%p"))
+(setq mode-line-position-column-line-format '(" %l,%c")) ; Emacs 28
+(setq mode-line-defining-kbd-macro
+      (propertize " Macro" 'face 'mode-line-emphasis))
+
+(display-time-mode 1)                   ;; activate time display
+(setq display-time-day-and-date t) 
+(setq  display-time-24hr-format t)
+(setq display-time-format "%H:%M  %d/%m/%Y")
+
+(setq-default mode-line-modes
+              (seq-filter (lambda (s)
+                            (not (and (stringp s)
+                                      (string-match-p
+                                       "^\\(%\\[\\|%\\]\\)$" s))))
+                          mode-line-modes))
+
+(setq mode-line-compact nil)            ; Emacs 28
+(setq-default mode-line-format
+              '("%e"
+                mode-line-front-space
+                mode-line-mule-info
+                mode-line-client
+                mode-line-modified
+                mode-line-remote
+                mode-line-frame-identification
+                mode-line-buffer-identification
+                "  "
+                ;; mode-line-position
+                mode-line-modes
+                "  "
+                (vc-mode vc-mode)
+                "  "
+                mode-line-misc-info
+                "  "
+                mode-line-end-spaces))
 
 (provide 'appearance)

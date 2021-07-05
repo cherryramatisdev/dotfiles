@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ package-autoremove
+ project-remove-known-project
  project-switch-to-buffer
  project-find-regexp
- project-remove-known-project
  project-switch-project
  project-eshell
  project-find-file
- find-file-in-project
 )
 
 ;; ----- smex-data -----
@@ -95,7 +95,8 @@
  (project-switch-project . 4)
  (project-find-file . 2)
  (project-eshell . 1)
- (project-remove-known-project . 1)
+ (project-remove-known-project . 2)
  (project-find-regexp . 1)
  (project-switch-to-buffer . 1)
+ (package-autoremove . 1)
 )
