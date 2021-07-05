@@ -34,8 +34,8 @@
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
 ;; No more RSI(Validate if this is good ????)
-(require 'god-mode)
-(global-set-key (kbd "<escape>") #'god-local-mode)
+;; (require 'god-mode)
+;; (global-set-key (kbd "<escape>") #'god-local-mode)
  
 ;; Lets start with a smattering of sanity
 (require 'sane-defaults)
