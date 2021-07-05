@@ -14,11 +14,14 @@
   (backward-char (- (current-column) 2)))
 
 (define-key dired-mode-map (kbd "C-a") 'dired-back-to-start-of-files)
-(define-key dired-mode-map (kbd "k") 'dired-do-delete)
 
-(define-key dired-mode-map (kbd "<backspace>") 'dired-up-directory)
-(define-key dired-mode-map (kbd "a") 'dired-create-empty-file)
-(define-key dired-mode-map (kbd "A") 'dired-create-directory)
+(require 'dired-single)
+
+;; Discover how to do this for emacs native
+(define-key dired-mode-map (kbd "<backspace>") 'dired-single-up-directory)
+;; (define-key dired-mode-map (kbd "k") 'dired-do-delete)
+;; (define-key dired-mode-map (kbd "a") 'dired-create-empty-file)
+;; (define-key dired-mode-map (kbd "A") 'dired-create-directory)
 
 ;; Enable 'a'-keybinding in dired - which opens the file and closes dired buffer
 
