@@ -22,6 +22,14 @@
         ("m" "Meetings" entry (file+headline "~/org/meetings.org" "Tasks")
          "* TODO %?\nSCHEDULED: %^t\nLink To: %^{TEXT}")))
 
+(setq org-agenda-custom-commands
+	'(("h" "Hagens Projects"
+	   ((tags-todo "cdc")
+            (tags-todo "conductor")
+            (tags-todo "btr")))
+          ("l" "Lami Projects"
+           ((tags-todo "lami")))))
+
 (define-key global-map (kbd "C-c c") 'org-capture)
 (define-key global-map (kbd "C-c a") 'org-agenda)
 
