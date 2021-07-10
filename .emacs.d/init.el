@@ -6,14 +6,14 @@
 (add-to-list 'load-path settings-dir)
 (add-to-list 'load-path defuns-dir)
 
-;; Enable vim emulation within emacs
-(require 'setup-evil)
-
 ;; General settings
 (require 'setup-package)
 (load "~/.emacs.d/package.el")
 (require 'general)
 (require 'appearance)
+
+;; Enable vim emulation within emacs
+;; (require 'setup-evil)
 
 ;; Write backup files to own directory
 (setq backup-directory-alist
@@ -36,10 +36,6 @@
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
-;; No more RSI(Validate if this is good ????)
-;; (require 'god-mode)
-;; (global-set-key (kbd "<escape>") #'god-local-mode)
- 
 ;; Lets start with a smattering of sanity
 (require 'sane-defaults)
 
@@ -52,7 +48,7 @@
 (exec-path-from-shell-initialize)
 
 ;; Setup extensions
-(eval-after-load 'ido '(require 'setup-ido))
+(require 'setup-vertico)
 (eval-after-load 'dired '(require 'setup-dired))
 (eval-after-load 'magit '(require 'setup-magit))
 (eval-after-load 'perspective '(require 'setup-perspective))
@@ -82,15 +78,16 @@
 ;; Setup keybindingsnx
 (require 'key-bindings)
 
+;; Setup languages
+(require 'setup-rust)
+(require 'setup-typescript)
+(require 'setup-lisp)
+
 ;; Setup lsp
 (require 'setup-lsp)
 
 ;; Setup completion
 (require 'setup-completion)
-
-;; Setup languages
-(require 'setup-typescript)
-(require 'setup-lisp)
 
 ;; Setup workspaces
 (require 'setup-perspective)
@@ -106,3 +103,6 @@
 
 ;; Advices to make emacs my own
 (require 'advices)
+
+;; EXWM
+(require 'setup-exwm)

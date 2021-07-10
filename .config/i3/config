@@ -6,7 +6,7 @@
 #
 
 # i3 config file (v4)
-#
+n#
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
@@ -30,6 +30,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+# Remap caps to ctrl
+exec --no-startup-id setxkbmap us -option 'caps:ctrl_modifier'
 
 # Run emacs daemon
 exec --no-startup-id emacs --daemon &

@@ -1,8 +1,13 @@
 * Tasks
-** TODO Configurar REST Api GET do wordpress :btr:
-  SCHEDULED: <2021-07-07 qua 18:00>
-  References:
-  https://developer.wordpress.org/rest-api/
-  Example: http://hagens.com.br/wp-json/wp/v2/posts/
-** DONE Aceitar apenas numeros no campo "Numero da Casa" no confirmar-dados :cdc:
-   CLOSED: [2021-07-05 seg 18:05] SCHEDULED: <2021-07-05 seg 18:00>
+** TODO Configurar firebase em apps nextjs                              :cdc:
+   SCHEDULED: <2021-07-12 seg 14:00-19:00>
+
+   Configurei o PWA usando um custom server e pelo jeito consegui configurar o firebase
+
+   Falta descobrir como enviar uma notificacao para um device em especifico
+   
+** DONE Listar posts                                                    :btr:
+   CLOSED: [2021-07-08 qui 13:20] SCHEDULED: <2021-07-08 qui 12:00>
+   
+** DONE Finish delete use-case for location module                     :lami:
+   CLOSED: [2021-07-08 qui 20:37] SCHEDULED: <2021-07-08 qui 20:00>

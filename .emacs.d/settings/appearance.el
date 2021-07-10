@@ -55,7 +55,7 @@
 (eval-after-load "which-key" '(diminish 'which-key-mode))
 (eval-after-load "evil-collection" '(diminish 'evil-collection-unimpaired-mode))
 (eval-after-load "evil-commentary" '(diminish 'evil-commentary-mode))
-
+(eval-after-load "evil-collection" '(diminish 'evil-org-mode))
 
 ;; DEFINE MODELINE -------------------------------
 (setq mode-line-percent-position '(-3 "%p"))

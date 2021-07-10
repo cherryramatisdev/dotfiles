@@ -11,7 +11,7 @@
 (defadvice kill-whole-line (after fix-cookies activate)
   (myorg-update-parent-cookie))
 
-(setq org-agenda-files '("~/org"))
+(setq org-agenda-files '("~/org/todo.org" "~/org/daily.org" "~/org/meetings.org"))
 (setq org-directory "~/org")
 (setq org-log-done 'time)
 (setq org-default-notes-file (concat org-directory "/notes.org"))
@@ -28,7 +28,9 @@
             (tags-todo "conductor")
             (tags-todo "btr")))
           ("l" "Lami Projects"
-           ((tags-todo "lami")))))
+           ((tags-todo "lami")))
+          ("d" "Daily"
+           ((todo "TODO" ((org-agenda-files '("~/org/daily.org"))))))))
 
 (define-key global-map (kbd "C-c c") 'org-capture)
 (define-key global-map (kbd "C-c a") 'org-agenda)

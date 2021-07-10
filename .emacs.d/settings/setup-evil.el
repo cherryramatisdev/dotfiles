@@ -4,6 +4,8 @@
 
 (global-undo-fu-session-mode)
 
+(evil-mode 1)
+
 (setq evil-want-Y-yank-to-eol t)
 (setq evil-want-C-d-scroll t)
 (setq evil-want-C-u-scroll t)
@@ -11,8 +13,6 @@
 (setq evil-split-window-below t)
 (setq evil-split-window-right t)
 (setq evil-undo-system 'undo-fu)
-
-(evil-mode 1)
 
 (evil-set-leader 'normal ",")
 (evil-define-key 'normal   'global (kbd "<leader>ee") 'eval-last-sexp)
@@ -50,5 +50,8 @@
   "A" 'dired-create-directory
   "h" 'dired-single-up-directory
   "l" 'dired-single-buffer)
+
+(require 'evil-easymotion)
+(evilem-default-keybindings "SPC")
 
 (provide 'setup-evil)

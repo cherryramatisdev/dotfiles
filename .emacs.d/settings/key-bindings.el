@@ -6,10 +6,11 @@
 (global-set-key (kbd "C-x r q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "C-x C-c") 'delete-frame)
 
-;; Completion that uses many different methods to find options.
-(global-set-key (kbd "C-.") 'hippie-expand-no-case-fold)
-(global-set-key (kbd "C-:") 'hippie-expand-lines)
-(global-set-key (kbd "C-,") 'completion-at-point)
+;; Manipulate windows 
+(require 'edwina)
+(global-set-key (kbd "C-c C-n") 'edwina-select-next-window)
+(global-set-key (kbd "C-c C-p") 'edwina-select-previous-window)
+(global-set-key (kbd "C-c C-v") 'edwina-clone-window)
 
 (global-set-key (kbd "C-x C-m") 'smex)
 
@@ -39,8 +40,6 @@
 (global-set-key (kbd "M-m") 'iy-go-to-char)
 (global-set-key (kbd "s-m") 'iy-go-to-char-backward)
 
-;; File finding
-(global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Indentation help
@@ -68,11 +67,6 @@
 ;; Open vterm
 (require 'vterm)
 (global-set-key (kbd "C-c t") 'vterm)
-
-;; Ace window
-(require 'ace-window)
-(global-set-key (kbd "C-x o") 'ace-window)
-(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 
 ;; Crux
 (require 'crux)

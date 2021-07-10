@@ -31,7 +31,6 @@ CLOSED: [2021-06-15 Tue 11:04]
 CLOCK: [2021-06-14 Mon 19:36]--[2021-06-14 Mon 19:37] => 00:01
 :END:
 ** DONE Incluir mudanças de layout sugeridas pelo leo
-
 Padronizar todas as inputs do app com o mesmo height e com o placeholder dentro da input(ao inves de em cima)
 CLOSED: [2021-06-16 Wed 13:26]
 :LOGBOOK:
@@ -124,3 +123,46 @@ CLOCK: [2021-06-18 Fri 14:55]--[2021-06-18 Fri 14:56] => 00:01
 ** DONE Discutir com ivan se ele sabe expor wordpress via api rest      :btr:
    DEADLINE: <2021-07-01 qui 09:00>
 ** DONE Terminar funcionalidade de enviar usuario to formularios especificos :btr:
+** DONE Aceitar apenas numeros no campo "Numero da Casa" no confirmar-dados :cdc:
+   CLOSED: [2021-07-05 seg 18:05] SCHEDULED: <2021-07-05 seg 18:00>
+** DONE Testes - Hagens / Conductor                               :conductor:
+   CLOSED: [2021-07-06 ter 20:03] SCHEDULED: <2021-07-06 ter 16:45>
+   https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZTJjY2RjZDItNmM1ZC00ODNkLWIyZGYtMTZkZmVmNDI5ZGUz%40thread.v2/0?context=%7b%22Tid%22%3a%2262d496c8-b01f-46bf-9659-e70e545c638d%22%2c%22Oid%22%3a%22b5d3f1ad-9791-4b85-b216-ae04242a1094%22%7d
+** DONE CDC <> app confirmação vendas                                   :cdc:
+   CLOSED: [2021-07-06 ter 11:30] SCHEDULED: <2021-07-06 ter 11:00>
+   https://meet.google.com/kbo-zvxn-ecs
+   - Tela de Login
+     - Login(Acredito que seja um codigo de acesso como no app vendedor)
+     - Senha
+   - Consultar compra do cliente
+     - Possibilidade de listar as compras do dia atual e de pesquisar usando numero do cartao(Demonstrar em tela o numero de autorizacao)
+   - Efetivar compra
+     - Exige a senha do cartao(o resto o sistema busca por tras)
+   - Cancelar compra apos efetivacao(buscamos tudo por tras), definir comercialmente quanto tempo o usuario eh permitido cancelar
+   - Imprimir boleto (???)
+     
+** DONE Api Boilerplate                                                :lami:
+   CLOSED: [2021-07-06 ter 20:03] SCHEDULED: <2021-07-06 ter 18:00>
+   https://meet.google.com/jno-nufb-yzw
+** DONE Configurar REST Api GET do wordpress                            :btr:
+  CLOSED: [2021-07-07 qua 14:13] SCHEDULED: <2021-07-07 qua 13:00>
+  References:
+  https://developer.wordpress.org/rest-api/
+  Example: http://hagens.com.br/wp-json/wp/v2/posts/
+** DONE Ajustes                                                   :conductor:
+   CLOSED: [2021-07-07 qua 14:13] SCHEDULED: <2021-07-07 qua 14:00>
+   https://mail.google.com/mail/u/0/#inbox/FMfcgzGkZGlCmGKPXXNvgRMvnNzqnVjr
+
+   - DONE Melhorar mensagens de erro
+   - DONE Incluir Recaptcha no login
+   - DONE Incluir botao de cancelar que manda para /login em /cadastro
+   - DONE Filtro aparece quando nega ou aprova
+   - No filtro de pierflex ou pierpro
+      - Direcionar para a aba que contem o lead/leads pesquisado
+   - DONE Consertar pierflex para PierFlex em filtro
+   - DONE Ajustar campo de email(borda passou)
+   - DONE Listar logs do ultimo para o primeiro
+** DONE Fazer mais testes no conductor pierflex
+   CLOSED: [2021-07-08 qui 08:56] SCHEDULED: <2021-07-08 qui 12:00>
+
+   Em alguns momentos a listagem de card fica em branco, checar esse caso e resolver
