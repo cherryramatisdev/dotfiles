@@ -1,3 +1,9 @@
+;; Create relative line numbers
+(require 'linum-relative)
+(linum-on)
+(global-linum-mode)
+(linum-relative-mode)
+
 ;; No splash screen please ... jeez
 (setq inhibit-startup-message t)
 

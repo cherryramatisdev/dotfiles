@@ -3,43 +3,60 @@
 
 * Tasks
 ** TODO Organizar os TODOS                                         :personal:
-   SCHEDULED: <2021-07-09 sex 09:00-10:00 +1d>
+   SCHEDULED: <2021-07-13 ter 09:00-10:00 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2021-07-08 qui 08:59]
+   :LAST_REPEAT: [2021-07-12 seg 08:59]
    :END:
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:59]
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
    - State "DONE"       from "TODO"       [2021-07-08 qui 08:59]
    - State "DONE"       from "TODO"       [2021-07-06 ter 08:50]
    - State "DONE"       from "TODO"       [2021-07-05 seg 18:18]
    Para o dia e talvez para a semana no caso de reunioes
 ** TODO Trabalhar periodo da manha                                   :hagens:
-   SCHEDULED: <2021-07-09 sex 10:00-11:00 +1d>
+   SCHEDULED: <2021-07-12 seg 10:00-11:00 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2021-07-08 qui 13:20]
+   :LAST_REPEAT: [2021-07-12 seg 08:58]
    :END:
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
    - State "DONE"       from "TODO"       [2021-07-08 qui 13:20]
    - State "DONE"       from "TODO"       [2021-07-07 qua 12:01]
    - State "DONE"       from "TODO"       [2021-07-06 ter 09:51]
    - State "DONE"       from "TODO"       [2021-07-05 seg 18:18]
 ** TODO Almoco                                                     :personal:
-   SCHEDULED: <2021-07-09 sex 12:00-13:30 +1d>
+   SCHEDULED: <2021-07-12 seg 12:00-13:30 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2021-07-08 qui 13:20]
+   :LAST_REPEAT: [2021-07-12 seg 08:58]
    :END:
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
    - State "DONE"       from "TODO"       [2021-07-08 qui 13:20]
    - State "DONE"       from "TODO"       [2021-07-07 qua 12:01]
    - State "DONE"       from "TODO"       [2021-07-06 ter 13:47]
    - State "DONE"       from "TODO"       [2021-07-05 seg 18:18]
 ** TODO Trabalhar periodo da tarde                                   :hagens:
-   SCHEDULED: <2021-07-09 sex 13:30-17:00 +1d>
+   SCHEDULED: <2021-07-12 seg 13:30-17:00 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2021-07-08 qui 14:16]
+   :LAST_REPEAT: [2021-07-12 seg 08:58]
    :END:
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
    - State "DONE"       from "TODO"       [2021-07-08 qui 14:16]
    - State "DONE"       from "TODO"       [2021-07-07 qua 14:13]
    - State "DONE"       from "TODO"       [2021-07-05 seg 18:18]
 ** TODO Trabalhar periodo da noite                                     :lami:
-   SCHEDULED: <2021-07-08 qui 18:00-22:00 +1d>
+   SCHEDULED: <2021-07-12 seg 18:00-22:00 +1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2021-07-07 qua 22:02]
+   :LAST_REPEAT: [2021-07-12 seg 08:58]
    :END:
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
+   - State "DONE"       from "TODO"       [2021-07-12 seg 08:58]
    - State "DONE"       from "TODO"       [2021-07-05 seg 21:03]

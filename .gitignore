@@ -17,3 +17,4 @@
 .emacs.d/eln-cache/
 /.emacs.d/straight/
 /.emacs.d/undo-fu-session/
+/.emacs.d/.cache/

@@ -1,5 +1,4 @@
 (require 'web-mode)
-(require 'company)
 (require 'prettier-js)
 (require 'zencoding-mode)
 (require 'npm-mode)

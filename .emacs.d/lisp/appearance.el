@@ -1,4 +1,5 @@
 (require 'modus-themes)
+(require 'base16-theme)
 (setq font-lock-maximum-decoration t
       truncate-partial-width-windows nil)
 
@@ -13,17 +14,11 @@
 
 (setq css-fontify-colors nil)
 
-(load-theme 'modus-vivendi t)
+;; (load-theme 'modus-vivendi t)
+(load-theme 'base16-tomorrow-night t)
 
 ;; Don't defer screen updates when performing operations
 (setq redisplay-dont-pause t)
-
-;; Org-mode colors
-(setq org-todo-keyword-faces
-      '(
-        ("DONE" . (:foreground "green" :weight bold))
-        ("CANCELLED" . (:foreground "red" :weight bold))
-        ))
 
 ;; Highlight matching parentheses when the point is on them.
 (show-paren-mode 1)

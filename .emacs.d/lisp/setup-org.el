@@ -11,6 +11,11 @@
 (defadvice kill-whole-line (after fix-cookies activate)
   (myorg-update-parent-cookie))
 
+(setq org-todo-keyword-faces
+      '(
+        ("DONE" . (:foreground "green" :weight bold))
+        ("CANCELLED" . (:foreground "red" :weight bold))
+        ))
 (setq org-agenda-files '("~/org/todo.org" "~/org/daily.org" "~/org/meetings.org"))
 (setq org-directory "~/org")
 (setq org-log-done 'time)
