@@ -86,6 +86,8 @@
             (,(kbd "C-y") . ,(kbd "C-v"))
             ;; search
             (,(kbd "C-s") . ,(kbd "C-f"))
+            ;; search inside slack
+            (,(kbd "C-v") . ,(kbd "C-k"))
             ))
 
 (define-key exwm-mode-map [?\C-q] 'exwm-input-send-next-key)
