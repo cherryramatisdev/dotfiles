@@ -1,6 +1,0 @@
-* Tasks
-** TODO Configurar essa parte no lsp via fennel :: https://github.com/kabouzeid/nvim-lspinstall
-  [2021-07-01 qui]
-** TODO Abrir select de cargo com campos gerais(Acima de gerente) com uma opcao de "Outro" que abre uma input normal :btr:
-(Esperando retorno do mendes sobre isso)
-
