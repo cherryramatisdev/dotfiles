@@ -1,1 +1,0 @@
-* Finish configuring this :: https://github.com/Olical/dotfiles/blob/master/stowed/.config/nvim/fnl/dotfiles/plugin.fnl
