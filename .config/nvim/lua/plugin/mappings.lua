@@ -31,3 +31,11 @@ tnoremap {"<C-]>", "<C-\\><C-n>"}
 
 nnoremap {"<leader>ns", ":lua require('cherry.runner').npm_install()<CR>"}
 nnoremap {"<leader>nd", ":lua require('cherry.runner').npm_install_dev()<CR>"}
+
+-- Harpoon
+-- TODO: discover how to use this for navigating files, I'm just using it for navigating terminals
+nnoremap {"<leader>1", ":lua require('harpoon.term').gotoTerminal(1)<CR>"}
+nnoremap {"<leader>2", ":lua require('harpoon.term').gotoTerminal(2)<CR>"}
+nnoremap {"<leader>3", ":lua require('harpoon.term').gotoTerminal(3)<CR>"}
+nnoremap {"<leader>4", ":lua require('harpoon.term').gotoTerminal(4)<CR>"}
+nnoremap {"<leader>5", ":lua require('harpoon.term').gotoTerminal(5)<CR>"}

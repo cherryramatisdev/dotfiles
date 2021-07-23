@@ -45,6 +45,10 @@ return require("packer").startup(
     use "tpope/vim-repeat"
     use "tpope/vim-rsi"
     use "tpope/vim-commentary"
+    use "tpope/vim-fugitive"
+
+    -- The primeagen plugins
+    use {"ThePrimeagen/harpoon", requires = {{"nvim-lua/plenary.nvim", "nvim-lua/popup.nvim"}}}
 
     -- Formatter
     use "mhartington/formatter.nvim"

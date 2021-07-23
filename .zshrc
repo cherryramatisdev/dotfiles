@@ -4,11 +4,12 @@ alias g="git"
 alias ..="cd .."
 alias tmux="tmux -2"
 alias t="tmux new-session -A -s main"
-alias vim="/Users/fabioramatis/nvim-osx64/bin/nvim"
+alias vim="nvim"
+alias lg="lazygit"
 alias e="emacsclient -t"
 alias slack="~/.local/bin/slack -config=/home/cherry/.config/slack-term/slack-config"
 
-export PATH="/Users/fabioramatis/nvim-osx64/bin:$PATH"
+# export PATH="/Users/fabioramatis/nvim-osx64/bin:$PATH"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
