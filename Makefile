@@ -1,2 +1,2 @@
 install:
-	cd ~/Documents/ && stow --target=$(HOME) dotfiles
+	cd ~/projects/ && stow --target=$(HOME) dotfiles
