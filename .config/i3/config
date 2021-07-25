@@ -35,13 +35,15 @@ exec --no-startup-id nm-applet
 exec --no-startup-id setxkbmap us -option 'caps:ctrl_modifier'
 
 # Run emacs daemon
-exec --no-startup-id emacs --daemon &
+# exec --no-startup-id emacs --daemon &
 
 # Run dunst for notifications
 exec --no-startup-id dunst &
 
+exec --no-startup-id compton -b &
+
 # Set background
-exec --no-startup-id feh --bg-fill ~/Pictures/background.jpg &
+exec --no-startup-id feh --bg-fill ~/Pictures/backgrounds/purple-sky.jpeg &
 
 # Disable window title bar
 default_border pixel 3
@@ -58,7 +60,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $alt+Shift+Return exec kitty
+bindsym $alt+Shift+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+c kill
@@ -159,7 +161,15 @@ bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 # bindsym $mod+Shift+R restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+x exec arcolinux-logout
+set $mode_power [l]ogoff | [s]hutdown | [r]estart
+mode "$mode_power" {
+        bindsym l exec i3-msg exit
+        bindsym s exec systemctl poweroff
+        bindsym r exec shutdown -r 0
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+x mode "$mode_power"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

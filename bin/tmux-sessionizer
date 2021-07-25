@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+items="
+$HOME/projects/work/cdc/cliente
+$HOME/projects/personal/blockchain/eth-todo-list
+$HOME/projects/dotfiles
+$HOME/projects/dotfiles/bin
+$HOME/projects/dotfiles/.config/nvim
+"
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=`echo "$items" | fzf`
+fi
+
+tmux_session_name=`basename $selected | tr . _`
+
+echo "/usr/bin/tmux new-session -A -s $tmux_session_name -c $selected"
+
+/usr/bin/tmux new-session -A -s $tmux_session_name -c $selected

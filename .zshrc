@@ -9,6 +9,8 @@ alias lg="lazygit"
 alias e="emacsclient -t"
 alias slack="~/.local/bin/slack -config=/home/cherry/.config/slack-term/slack-config"
 
+bindkey -s ^f "tmux-sessionizer\n"
+
 # export PATH="/Users/fabioramatis/nvim-osx64/bin:$PATH"
 
 # Base16 Shell

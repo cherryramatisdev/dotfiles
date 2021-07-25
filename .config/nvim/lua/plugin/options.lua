@@ -48,3 +48,6 @@ opt.clipboard = "unnamedplus"
 
 opt.inccommand = "split"
 opt.swapfile = false -- Living on the edge
+
+-- Transparency backgroundo
+vim.cmd [[ hi Normal guibg=NONE ctermbg=NONE ]]

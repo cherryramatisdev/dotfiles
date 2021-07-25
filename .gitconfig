@@ -11,3 +11,6 @@
     s = status
     br = branch
     lg = log
+[user]
+	name = CherryRamatis
+	email = cherry.ramatis@gmail.com

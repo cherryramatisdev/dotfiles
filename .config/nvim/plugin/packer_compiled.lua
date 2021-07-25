@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/fabioramatis/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/fabioramatis/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/fabioramatis/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/fabioramatis/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/fabioramatis/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/cherry/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/cherry/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/cherry/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/cherry/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/cherry/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -71,108 +71,124 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["astronauta.nvim"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/astronauta.nvim"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/astronauta.nvim"
   },
   ["auto-pairs"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/auto-pairs"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
   ["colorbuddy.vim"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/colorbuddy.vim"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/colorbuddy.vim"
   },
   ["feline.nvim"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/feline.nvim"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/feline.nvim"
   },
   ["formatter.nvim"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/formatter.nvim"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/formatter.nvim"
   },
   ["gruvbuddy.nvim"] = {
     config = { "\27LJ\2\nL\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\14gruvbuddy\16colorscheme\15colorbuddy\frequire\0" },
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/gruvbuddy.nvim"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/gruvbuddy.nvim"
+  },
+  harpoon = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/harpoon"
+  },
+  ["hop.nvim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/hop.nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
-  },
-  neogit = {
-    loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/neogit"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
   ["nvim-compe"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-lspinstall"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
   ["nvim-toggleterm.lua"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/nvim-toggleterm.lua"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-toggleterm.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["nvim-treesitter-textobjects"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects"
   },
   ["nvim-ts-context-commentstring"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
   ["popup.nvim"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/popup.nvim"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/popup.nvim"
+  },
+  ["refactoring.nvim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/refactoring.nvim"
   },
   ["snippets.nvim"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/snippets.nvim"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/snippets.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
   ["vim-commentary"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/vim-commentary"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-commentary"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-fugitive"
   },
   ["vim-repeat"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/vim-repeat"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-repeat"
   },
   ["vim-rsi"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/vim-rsi"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-rsi"
+  },
+  ["vim-solidity"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-solidity"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-surround"
   },
   ["vim-test"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/vim-test"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-test"
   },
   ["vim-vinegar"] = {
     loaded = true,
-    path = "/Users/fabioramatis/.local/share/nvim/site/pack/packer/start/vim-vinegar"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-vinegar"
   }
 }
 

@@ -13,6 +13,9 @@ return require("packer").startup(
     use "JoosepAlviste/nvim-ts-context-commentstring"
     use "jiangmiao/auto-pairs"
 
+    -- Solidity syntax highlight
+    use "tomlion/vim-solidity"
+
     -- Intellisense for neovim
     use "glepnir/lspsaga.nvim"
     use {"neovim/nvim-lspconfig", requires = {{"kabouzeid/nvim-lspinstall"}}}
@@ -49,6 +52,7 @@ return require("packer").startup(
 
     -- The primeagen plugins
     use {"ThePrimeagen/harpoon", requires = {{"nvim-lua/plenary.nvim", "nvim-lua/popup.nvim"}}}
+    use "ThePrimeagen/refactoring.nvim"
 
     -- Formatter
     use "mhartington/formatter.nvim"
@@ -58,6 +62,9 @@ return require("packer").startup(
 
     -- Run tests for multiple filetypes
     use "vim-test/vim-test"
+
+    -- Easymotion
+    use "phaazon/hop.nvim"
 
     -- ToggleTerm(Floats)
     use "akinsho/nvim-toggleterm.lua"
