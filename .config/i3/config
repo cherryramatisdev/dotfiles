@@ -92,10 +92,10 @@ bindsym $alt+Shift+k move up
 bindsym $alt+Shift+l move right
 
 # split in horizontal orientation
-# bindsym $alt+- split h
+bindsym $alt+v split h
 
 # split in vertical orientation
-# bindsym $alt+/ split v
+bindsym $alt+s split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -117,7 +117,8 @@ bindsym $mod+Shift+space floating toggle
 # focus the child container
 #bindsym $mod+d focus child
 
-bindsym $mod+p exec "scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Pictures/screenshots'"
+# bindsym $mod+p exec "scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Pictures/screenshots'"
+bindsym $mod+p exec "flameshot gui"
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -169,7 +170,7 @@ mode "$mode_power" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+x mode "$mode_power"
+bindsym $mod+F12 mode "$mode_power"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
