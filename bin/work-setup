@@ -3,7 +3,7 @@
 case $1 in
  personal) i3-msg 'workspace 3; exec google-chrome-stable --profile-directory="Default" --new-window; layout tabbed' ;;
  hagens) i3-msg 'workspace 3; exec google-chrome-stable --profile-directory="Profile 1" --new-window https://web.whatsapp.com; layout tabbed' && i3-msg 'workspace 3; exec google-chrome-stable --profile-directory="Profile 1" --new-window https://houseofhagens.slack.com; layout tabbed' ;;
- lami) i3-msg 'workspace 3; exec google-chrome-stable --profile-directory="Profile 3" --new-window https://web.whatsapp.com; layout tabbed' && i3-msg 'workspace 3; exec google-chrome-stable --profile-directory="Profile 3" --new-window https://lamigrupo.slack.com; layout tabbed' ;;
+ lami) i3-msg 'workspace 3; exec google-chrome-stable --profile-directory="Profile 4" --new-window https://web.whatsapp.com; layout tabbed' && i3-msg 'workspace 3; exec google-chrome-stable --profile-directory="Profile 4" --new-window https://lamigrupo.slack.com; layout tabbed' ;;
  *) echo 'Opcao invalida' ;;
 esac
 

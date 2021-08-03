@@ -22,22 +22,13 @@ return require("packer").startup(
     use "hrsh7th/nvim-compe"
 
     -- My colorscheme
-    use {
-      "tjdevries/gruvbuddy.nvim",
-      requires = {{"tjdevries/colorbuddy.vim"}},
-      config = function()
-        require("colorbuddy").colorscheme("gruvbuddy")
-      end
-    }
+    use "gruvbox-community/gruvbox"
 
     -- Fuzzy finder for all stuff inside neovim
     use {
       "nvim-telescope/telescope.nvim",
       requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
     }
-
-    -- Statusline
-    use "famiu/feline.nvim"
 
     -- Snippets
     use "norcalli/snippets.nvim"
@@ -49,10 +40,20 @@ return require("packer").startup(
     use "tpope/vim-rsi"
     use "tpope/vim-commentary"
     use "tpope/vim-fugitive"
+    use "tpope/vim-dispatch"
 
     -- The primeagen plugins
     use {"ThePrimeagen/harpoon", requires = {{"nvim-lua/plenary.nvim", "nvim-lua/popup.nvim"}}}
-    use "ThePrimeagen/refactoring.nvim"
+    use {
+      "ThePrimeagen/refactoring.nvim",
+      requires = {
+        {"nvim-lua/plenary.nvim"},
+        {"nvim-treesitter/nvim-treesitter"}
+      },
+      config = function()
+        require("cherry.refactoring")
+      end
+    }
 
     -- Formatter
     use "mhartington/formatter.nvim"

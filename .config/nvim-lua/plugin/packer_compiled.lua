@@ -77,22 +77,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
-  ["colorbuddy.vim"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/colorbuddy.vim"
-  },
-  ["feline.nvim"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/feline.nvim"
-  },
   ["formatter.nvim"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/formatter.nvim"
   },
-  ["gruvbuddy.nvim"] = {
-    config = { "\27LJ\2\nL\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\14gruvbuddy\16colorscheme\15colorbuddy\frequire\0" },
+  gruvbox = {
     loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/gruvbuddy.nvim"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/gruvbox"
   },
   harpoon = {
     loaded = true,
@@ -147,6 +138,7 @@ _G.packer_plugins = {
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
   ["refactoring.nvim"] = {
+    config = { "\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23cherry.refactoring\frequire\0" },
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/refactoring.nvim"
   },
@@ -161,6 +153,10 @@ _G.packer_plugins = {
   ["vim-commentary"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-commentary"
+  },
+  ["vim-dispatch"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-dispatch"
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -193,10 +189,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: gruvbuddy.nvim
-time([[Config for gruvbuddy.nvim]], true)
-try_loadstring("\27LJ\2\nL\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\14gruvbuddy\16colorscheme\15colorbuddy\frequire\0", "config", "gruvbuddy.nvim")
-time([[Config for gruvbuddy.nvim]], false)
+-- Config for: refactoring.nvim
+time([[Config for refactoring.nvim]], true)
+try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23cherry.refactoring\frequire\0", "config", "refactoring.nvim")
+time([[Config for refactoring.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
