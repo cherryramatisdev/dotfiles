@@ -10,8 +10,8 @@ map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
 
-" Source current buffer
-nnoremap <leader><CR> <Esc>:so %<CR>
-
 " Open lazygit on terminal
 nnoremap <leader>g <Esc>:term lazygit<CR>
+
+" Open terminal running :term
+nnoremap <leader>t <Esc>:term<CR>

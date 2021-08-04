@@ -25,6 +25,7 @@ PACKAGES=(
     "nvim-lua/plenary.nvim"
     "nvim-telescope/telescope.nvim"
     "mhartington/formatter.nvim"
+    "vim-test/vim-test"
 )
 PACKAGE_PATH="$HOME/.local/share/nvim/site/pack/cherry"
 

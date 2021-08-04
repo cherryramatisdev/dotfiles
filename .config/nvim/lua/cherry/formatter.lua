@@ -1,3 +1,5 @@
+require('formatter.util').print = function() end
+
 require('formatter').setup({
   logging = false,
   filetype = {
@@ -7,7 +9,7 @@ require('formatter').setup({
           return {
             exe = "./node_modules/prettier/bin-prettier.js",
             args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
-            stdin = true
+            stdin = true,
           }
         end
     },

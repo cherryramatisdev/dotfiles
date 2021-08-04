@@ -32,6 +32,9 @@ if s:load_plugins == 1
 
         " Formatter
         packadd! formatter.nvim
+
+        " Run tests
+        packadd! vim-test
 	endif
 endif
 
