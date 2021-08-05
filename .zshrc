@@ -7,11 +7,10 @@ alias t="tmux new-session -A -s main"
 alias vim="nvim"
 alias lg="lazygit"
 alias e="emacsclient -t"
+alias tt="taskwarrior-tui"
 alias slack="~/.local/bin/slack -config=/home/cherry/.config/slack-term/slack-config"
 
 ##bindkey -s ^f "tmux-sessionizer\n"
-
-# export PATH="/Users/fabioramatis/nvim-osx64/bin:$PATH"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
@@ -27,7 +26,7 @@ colors
 
 # http://zsh.sourceforge.net/Doc/Release/User-Contributions.html
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git 
+zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr "%F{green}●%f" # default 'S'
 zstyle ':vcs_info:*' unstagedstr "%F{red}●%f" # default 'U'

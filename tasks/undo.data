@@ -1,0 +1,25 @@
+time 1628124374
+new [description:"teste" entry:"1628124374" modified:"1628124374" status:"pending" uuid:"c8942c00-2a08-4448-91c4-4923aec9e96c"]
+---
+time 1628124388
+old [description:"teste" entry:"1628124374" modified:"1628124374" status:"pending" uuid:"c8942c00-2a08-4448-91c4-4923aec9e96c"]
+new [description:"teste" end:"1628124388" entry:"1628124374" modified:"1628124388" status:"completed" uuid:"c8942c00-2a08-4448-91c4-4923aec9e96c"]
+---
+time 1628125136
+new [description:"Record video on purpose routine(sending documents\/selfie) with ACME project to send to Leo(morning 9am)" entry:"1628125136" modified:"1628125136" status:"pending" uuid:"1d4d8d9a-5ffa-4e8a-9ccd-8ba4cb61277e"]
+---
+time 1628125187
+old [description:"Record video on purpose routine(sending documents\/selfie) with ACME project to send to Leo(morning 9am)" entry:"1628125136" modified:"1628125136" status:"pending" uuid:"1d4d8d9a-5ffa-4e8a-9ccd-8ba4cb61277e"]
+new [description:"Record video on purpose routine(sending documents\/selfie) with ACME project to send to Leo(morning 9am)" entry:"1628125136" modified:"1628125187" project:"Hagens" status:"pending" uuid:"1d4d8d9a-5ffa-4e8a-9ccd-8ba4cb61277e"]
+---
+time 1628125216
+new [description:"Finish ACME project and record 4 videos for Leo(macos notes have description)" entry:"1628125216" modified:"1628125216" status:"pending" uuid:"4c337201-be56-4c53-8a05-944181a94209"]
+---
+time 1628125225
+old [description:"Finish ACME project and record 4 videos for Leo(macos notes have description)" entry:"1628125216" modified:"1628125216" status:"pending" uuid:"4c337201-be56-4c53-8a05-944181a94209"]
+new [description:"Finish ACME project and record 4 videos for Leo(macos notes have description)" entry:"1628125216" modified:"1628125225" project:"Hagens" status:"pending" uuid:"4c337201-be56-4c53-8a05-944181a94209"]
+---
+time 1628179777
+old [description:"Record video on purpose routine(sending documents\/selfie) with ACME project to send to Leo(morning 9am)" entry:"1628125136" modified:"1628125187" project:"Hagens" status:"pending" uuid:"1d4d8d9a-5ffa-4e8a-9ccd-8ba4cb61277e"]
+new [description:"Record video on purpose routine(sending documents\/selfie) with ACME project to send to Leo(morning 9am)" end:"1628179777" entry:"1628125136" modified:"1628179777" project:"Hagens" status:"completed" uuid:"1d4d8d9a-5ffa-4e8a-9ccd-8ba4cb61277e"]
+---
