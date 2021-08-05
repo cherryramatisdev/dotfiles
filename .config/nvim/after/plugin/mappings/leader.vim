@@ -11,7 +11,7 @@ map <leader>ev :vsp %%
 map <leader>et :tabe %%
 
 " Open lazygit on terminal
-nnoremap <leader>g <Esc>:term lazygit<CR>
+nnoremap <leader>g <cmd>LazyGit<CR>
 
 " Open terminal running :term
 nnoremap <leader>t <Esc>:term<CR>

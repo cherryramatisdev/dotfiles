@@ -26,6 +26,8 @@ PACKAGES=(
     "nvim-telescope/telescope.nvim"
     "mhartington/formatter.nvim"
     "vim-test/vim-test"
+    "togglebyte/togglerust"
+    "kdheepak/lazygit.nvim"
 )
 PACKAGE_PATH="$HOME/.local/share/nvim/site/pack/cherry"
 

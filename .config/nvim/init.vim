@@ -35,6 +35,12 @@ if s:load_plugins == 1
 
         " Run tests
         packadd! vim-test
+
+        " Rust stuff
+        packadd! togglerust
+
+        " Git client using lazygit
+        packadd! lazygit.nvim
 	endif
 endif
 
