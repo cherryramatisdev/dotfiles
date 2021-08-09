@@ -1,7 +1,0 @@
-{"description":"teste","entry":"20210805T004614Z","modified":"20210805T004614Z","status":"pending","uuid":"c8942c00-2a08-4448-91c4-4923aec9e96c"}
-{"description":"teste","end":"20210805T004628Z","entry":"20210805T004614Z","modified":"20210805T004628Z","status":"completed","uuid":"c8942c00-2a08-4448-91c4-4923aec9e96c"}
-{"description":"Record video on purpose routine(sending documents\/selfie) with ACME project to send to Leo(morning 9am)","entry":"20210805T005856Z","modified":"20210805T005856Z","status":"pending","uuid":"1d4d8d9a-5ffa-4e8a-9ccd-8ba4cb61277e"}
-{"description":"Record video on purpose routine(sending documents\/selfie) with ACME project to send to Leo(morning 9am)","entry":"20210805T005856Z","modified":"20210805T005947Z","project":"Hagens","status":"pending","uuid":"1d4d8d9a-5ffa-4e8a-9ccd-8ba4cb61277e"}
-{"description":"Finish ACME project and record 4 videos for Leo(macos notes have description)","entry":"20210805T010016Z","modified":"20210805T010016Z","status":"pending","uuid":"4c337201-be56-4c53-8a05-944181a94209"}
-{"description":"Finish ACME project and record 4 videos for Leo(macos notes have description)","entry":"20210805T010016Z","modified":"20210805T010025Z","project":"Hagens","status":"pending","uuid":"4c337201-be56-4c53-8a05-944181a94209"}
-{"description":"Record video on purpose routine(sending documents\/selfie) with ACME project to send to Leo(morning 9am)","end":"20210805T160937Z","entry":"20210805T005856Z","modified":"20210805T160937Z","project":"Hagens","status":"completed","uuid":"1d4d8d9a-5ffa-4e8a-9ccd-8ba4cb61277e"}

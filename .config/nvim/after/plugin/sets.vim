@@ -43,5 +43,5 @@ set noswapfile
 " Disable statusline
 set laststatus=0
 
-" Transparency backgroundo
-" hi Normal guibg=NONE ctermbg=NONE
+" Transparency background
+hi Normal guibg=NONE ctermbg=NONE

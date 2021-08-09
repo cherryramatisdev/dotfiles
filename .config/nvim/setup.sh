@@ -4,7 +4,6 @@
 # Currently this requires that each package
 # lives on github.com
 PACKAGES=(
-    "pbrisbin/vim-colors-off"
     "owickstrom/vim-colors-paramount"
     "tpope/vim-commentary"
     "tpope/vim-surround"
@@ -13,6 +12,8 @@ PACKAGES=(
     "tpope/vim-sensible"
     "tpope/vim-vinegar"
     "tpope/vim-repeat"
+    "tpope/vim-speeddating"
+    "tpope/vim-markdown"
     "neovim/nvim-lspconfig"
     "kabouzeid/nvim-lspinstall"
     "glepnir/lspsaga.nvim"
@@ -28,6 +29,8 @@ PACKAGES=(
     "vim-test/vim-test"
     "togglebyte/togglerust"
     "kdheepak/lazygit.nvim"
+    "vimwiki/vimwiki"
+    "kristijanhusak/orgmode.nvim"
 )
 PACKAGE_PATH="$HOME/.local/share/nvim/site/pack/cherry"
 

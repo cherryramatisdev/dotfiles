@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: usf
-# key: usf
-# --
-useEffect(() => {
-$0
-}, [$1])

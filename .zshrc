@@ -8,7 +8,7 @@ alias vim="nvim"
 alias lg="lazygit"
 alias e="emacsclient -t"
 alias tt="taskwarrior-tui"
-alias slack="~/.local/bin/slack -config=/home/cherry/.config/slack-term/slack-config"
+# alias slack="~/.local/bin/slack -config=/home/cherry/.config/slack-term/slack-config"
 
 ##bindkey -s ^f "tmux-sessionizer\n"
 

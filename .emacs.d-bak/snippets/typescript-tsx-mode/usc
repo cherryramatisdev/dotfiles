@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: usc
-# key: usc
-# --
-const $1 = useCallback(($2) => {
-$0
-}, [$3])

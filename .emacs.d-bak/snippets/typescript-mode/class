@@ -1,6 +1,0 @@
-# key: class
-# name: class
-# --
-export class $1 {
-$0
-}

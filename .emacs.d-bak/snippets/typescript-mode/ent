@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name: ent
-# key: ent
-# --
-${1:@Entity()}
-
-export class $2 {
-$0
-}
