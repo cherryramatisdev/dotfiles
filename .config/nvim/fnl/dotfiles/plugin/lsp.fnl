@@ -24,10 +24,7 @@
   (map :ga "lua require('lspsaga.codeaction').code_action()")
   (map :<space>e "lua require'lspsaga.diagnostic'.show_line_diagnostics()")
   (map :<space>q "lua vim.lsp.diagnostic.set_loclist()")
-  (map :gh "lua require'lspsaga.provider'.lsp_finder()")
-  (map :<c-k> "lua require('lspsaga.signaturehelp').signature_help()")
-  (map :<c-n> "lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()")
-  (map :<c-p> "lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()"))
+  (map :gh "lua require'lspsaga.provider'.lsp_finder()"))
 
 (nvim.ex.augroup :lspconfig-config)
 (nvim.ex.autocmd_)
