@@ -34,6 +34,9 @@ exec --no-startup-id nm-applet
 # Remap caps to ctrl
 exec --no-startup-id setxkbmap us -option 'caps:ctrl_modifier'
 
+# Startup xrandr for two monitors
+exec --no-startup-id xrandr --auto --output DVI-D-1 --mode 2560x1080 --right-of HDMI-1
+
 # Run emacs daemon
 # exec --no-startup-id emacs --daemon &
 
