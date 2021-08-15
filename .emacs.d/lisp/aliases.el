@@ -16,7 +16,7 @@
 (defalias 'ssm 'shell-script-mode)
 (defalias 'om 'org-mode)
 
-(defalias 'ms 'magit-status)
+(defalias 'ms 'cherry:magit-status)
 
 ;; no want tpu-edt
 (defalias 'tpu-edt 'forward-char)

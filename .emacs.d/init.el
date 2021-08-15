@@ -3,10 +3,6 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;; HHH________________________________________________
-(add-to-list 'load-path "~/.emacs.d/manual-packages")
-(require 'xah-elisp-mode)
-
-;; HHH________________________________________________
 (require 'aliases)
 (require 'backup-file)
 (require 'cursor-position)
@@ -16,10 +12,10 @@
 (require 'font-setup)
 (require 'general)
 (require 'indentation)
-(require 'org)
+(require 'org-config)
 (require 'user-interface)
 (require 'whitespaces)
-(require 'ido-config)
+(require 'buffer-management)
 
 (require 'plugins)
 

@@ -11,7 +11,7 @@
   ((string-equal system-type "darwin")
    (if (member "Menlo" (font-family-list)) "Menlo-16" nil))
   ((string-equal system-type "gnu/linux")
-   (if (member "DejaVu Sans Mono" (font-family-list)) "DejaVu Sans Mono-16" nil))
+   (if (member "DejaVu Sans Mono" (font-family-list)) "DejaVu Sans Mono-17" nil))
   (t nil))
  t t)
 
