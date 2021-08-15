@@ -44,4 +44,12 @@
 (package! 'exec-path-from-shell 'fix-path)
 (package! 'format-all 'formatter)
 
+(package! 'tree-sitter-langs nil)
+(package! 'tree-sitter 'treesitter-config)
+
+(package! 'perspective 'workspaces)
+
+(package! 'lsp-ui nil)
+(package! 'lsp-mode 'lsp-config)
+
 (provide 'plugins)

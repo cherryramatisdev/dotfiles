@@ -18,4 +18,7 @@
   (put 'dired-find-alternate-file 'disabled nil)
   )
 
+;; Modus theme
+(load-theme 'modus-operandi t)
+
 (provide 'user-interface)
