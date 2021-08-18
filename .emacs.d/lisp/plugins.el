@@ -41,6 +41,7 @@
 (package! 'buffer-move 'buffer-move-config)
 (package! 'typescript-mode nil)
 (package! 'web-mode 'tsx-config)
+(package! 'yaml-mode nil)
 (package! 'exec-path-from-shell 'fix-path)
 (package! 'format-all 'formatter)
 
@@ -51,5 +52,8 @@
 
 (package! 'lsp-ui nil)
 (package! 'lsp-mode 'lsp-config)
+
+(package! 'yasnippet-snippets nil)
+(package! 'yasnippet 'snippets)
 
 (provide 'plugins)
