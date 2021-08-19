@@ -3,6 +3,8 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;; HHH________________________________________________
+
+(require 'advices)
 (require 'aliases)
 (require 'backup-file)
 (require 'cursor-position)
@@ -16,9 +18,9 @@
 (require 'user-interface)
 (require 'whitespaces)
 (require 'buffer-management)
+(require 'fuzzyfinding)
 
 (require 'plugins)
-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

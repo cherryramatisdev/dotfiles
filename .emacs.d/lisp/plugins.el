@@ -42,6 +42,7 @@
 (package! 'typescript-mode nil)
 (package! 'web-mode 'tsx-config)
 (package! 'yaml-mode nil)
+(package! 'markdown-mode nil)
 (package! 'exec-path-from-shell 'fix-path)
 (package! 'format-all 'formatter)
 
@@ -50,10 +51,17 @@
 
 (package! 'perspective 'workspaces)
 
-(package! 'lsp-ui nil)
-(package! 'lsp-mode 'lsp-config)
+(package! 'flycheck nil)
+(package! 'tide 'typescript-config)
+
+;; (package! 'lsp-ui nil)
+;; (package! 'lsp-mode 'lsp-config)
 
 (package! 'yasnippet-snippets nil)
 (package! 'yasnippet 'snippets)
+
+(package! 'key-chord 'keychord-config)
+(package! 'change-inner 'changeinner-config)
+(package! 'hardcore-mode 'hardcore-config)
 
 (provide 'plugins)

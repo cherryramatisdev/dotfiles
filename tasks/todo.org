@@ -1,1 +1,6 @@
 * Inbox
+
+** TODO Plan this solution more(card TEC-7)
+   SCHEDULED: <2021-08-19 Thu 18:00>
+   [[file:~/projects/work/exams/src/app/modules/category/entities/category.entity.ts::@JoinTable()]]
+

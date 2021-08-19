@@ -1,7 +1,9 @@
 ;; HHH________________________________________________________
 ;; user interface
 (when (version<= "26.0.50" emacs-version)
-  (global-display-line-numbers-mode))
+  (progn
+    (global-display-line-numbers-mode)
+    (setq display-line-numbers 'relative)))
 
 (column-number-mode 1)
 (blink-cursor-mode 0)

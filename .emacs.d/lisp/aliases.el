@@ -18,8 +18,4 @@
 
 (defalias 'ms 'cherry:magit-status)
 
-;; no want tpu-edt
-(defalias 'tpu-edt 'forward-char)
-(defalias 'tpu-edt-on 'forward-char)
-
 (provide 'aliases)
