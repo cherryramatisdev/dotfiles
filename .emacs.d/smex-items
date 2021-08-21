@@ -1,0 +1,28 @@
+
+;; ----- smex-history -----
+(
+ rename-file
+ compile
+ projectile-remove-known-project
+ tide-setup
+ eval-buffer
+ find-file-at-point
+ ido-find-file-in-dir
+)
+
+;; ----- smex-data -----
+(
+ (ido-find-file-in-dir . 2)
+ (ido-dired . 1)
+ (ido-find-file . 1)
+ (find-file-at-point . 1)
+ (eval-buffer . 2)
+ (org-roam-node-find . 1)
+ (org-roam-buffer . 1)
+ (rename-file . 2)
+ (projectile-ripgrep . 1)
+ (projectile-grep . 1)
+ (tide-setup . 1)
+ (projectile-remove-known-project . 1)
+ (compile . 1)
+)

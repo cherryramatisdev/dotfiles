@@ -23,11 +23,13 @@
     (progn
       (straight-use-package pkg))))
 
-(package! 'savehist nil)
-(package! 'marginalia nil)
-(package! 'orderless nil)
-(package! 'consult 'consult-config)
-(package! 'vertico 'vertico-config)
+(package! 'gruber-darker-theme 'theme-color)
+(package! 'flx nil)
+(package! 'flx-ido nil)
+(package! 'smex nil)
+(package! 'ido-vertical-mode 'ido-config)
+
+(package! 'company-flx nil)
 (package! 'company-quickhelp nil)
 (package! 'company 'company-config)
 (package! 'magit 'magit-config)
@@ -52,13 +54,15 @@
 (package! 'perspective 'workspaces)
 
 (package! 'flycheck nil)
-(package! 'tide 'typescript-config)
+(package! 'tide 'tsjs-config)
 
 ;; (package! 'lsp-ui nil)
 ;; (package! 'lsp-mode 'lsp-config)
 
 (package! 'yasnippet-snippets nil)
 (package! 'yasnippet 'snippets)
+
+(package! 'projectile 'projectile-config)
 
 (package! 'key-chord 'keychord-config)
 (package! 'change-inner 'changeinner-config)

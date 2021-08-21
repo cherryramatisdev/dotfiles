@@ -11,6 +11,7 @@
   (tide-hl-identifier-mode +1))
 
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
+
 (add-hook 'web-mode-hook
           (lambda ()
             (when (string-equal "tsx" (file-name-extension buffer-file-name))
@@ -19,3 +20,4 @@
 (global-set-key (kbd "C-c la") 'tide-refactor)
 (global-set-key (kbd "C-c lr") 'tide-rename-symbol)
 (global-set-key (kbd "C-c lk") 'tide-documentation-at-point)
+(global-set-key (kbd "M-RET") 'tide-fix)

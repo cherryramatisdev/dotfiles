@@ -1,4 +1,0 @@
-- Um produto pode pertencer a varias topologias
-- Um produto vai precisar ser cadastrado com a flag online ou offline
-- Um produto vai precisar ser cadastrado com a flag similar_product
-    - Um produto pode ter varios gemeos

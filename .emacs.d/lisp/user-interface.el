@@ -1,9 +1,11 @@
 ;; HHH________________________________________________________
+
 ;; user interface
-(when (version<= "26.0.50" emacs-version)
-  (progn
-    (global-display-line-numbers-mode)
-    (setq display-line-numbers 'relative)))
+;; TODO: the column number is white while theme is black
+;; (when (version<= "26.0.50" emacs-version)
+;;   (progn
+;;     (global-display-line-numbers-mode)
+;;     (setq display-line-numbers 'relative)))
 
 (column-number-mode 1)
 (blink-cursor-mode 0)
@@ -19,8 +21,5 @@
   (put 'scroll-left 'disabled nil)
   (put 'dired-find-alternate-file 'disabled nil)
   )
-
-;; Modus theme
-(load-theme 'modus-operandi t)
 
 (provide 'user-interface)

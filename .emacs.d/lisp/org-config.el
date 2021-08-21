@@ -38,7 +38,23 @@
       `(("t" "Task" entry (file+olp "~/projects/dotfiles/tasks/todo.org" "Inbox")
          "* TODO %?\n  %U\n  %a\n  %i" :empty-lines 1)))
 
+(defvar note-dir "~/projects/dotfiles/wiki")
+(defvar file-prefix (replace-regexp-in-string "\n" "" (shell-command-to-string "uuidgen")))
+
+(defun cherry:create-new-note ()
+  "Create new note."
+  (interactive)
+  (find-file (format "~/projects/dotfiles/wiki/%s-%s.org" file-prefix (read-string "Note name: "))))
+
+(defun cherry:find-notes ()
+    "Find notes."
+  (interactive)
+  (ido-find-file-in-dir "~/projects/dotfiles/wiki"))
+
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-x C-t") nil)
+(global-set-key (kbd "C-x C-t n") 'cherry:create-new-note)
+(global-set-key (kbd "C-x C-t f") 'cherry:find-notes)
 
 (provide 'org-config)

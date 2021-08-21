@@ -17,13 +17,18 @@
 (setq default-frame-alist
       '(
 	(tool-bar-lines . 0)
-	(background-color . "honeydew")
+	;; (background-color . "honeydew")
 	(width . 100)
 	(height . 55)))
+
+(scroll-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; HHH____________________________________________
 ;; UTF-8 as default encoding
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8-unix)
+
+(global-set-key (kbd "C-x C-c") 'delete-frame)
 
 (provide 'general)
