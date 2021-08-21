@@ -56,7 +56,7 @@ http://ergoemacs.org/emacs/emacs_isearch_space.html"
         ;; try-expand-line
         ))
 
-(global-set-key (kbd "M-n") 'scroll-up-command)
-(global-set-key (kbd "M-p") 'scroll-down-command)
+(global-set-key (kbd "M-n") 'forward-paragraph)
+(global-set-key (kbd "M-p") 'backward-paragraph)
 
 (provide 'editing-related)
