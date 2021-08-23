@@ -4,9 +4,10 @@ alias g="git"
 alias ..="cd .."
 alias tmux="tmux -2"
 alias t="tmux new-session -A -s main"
-alias vim="nvim"
+# alias vim="nvim"
 alias lg="lazygit"
-alias e="emacsclient -c -n -a ''"
+alias ee="emacsclient -c -n -a ''"
+alias et="emacsclient -t"
 alias tt="taskwarrior-tui"
 alias dev="yarn start:dev"
 alias y="yarn"
@@ -82,9 +83,9 @@ function () {
     local LVL=$SHLVL
   fi
   if [[ $EUID -eq 0 ]]; then
-    local SUFFIX=$(printf '#%.0s' {1..$LVL})
+    local SUFFIX=$(printf 'λ' {1..$LVL})
   else
-    local SUFFIX=$(printf '\$%.0s' {1..$LVL})
+    local SUFFIX=$(printf 'λ' {1..$LVL})
   fi
   if [[ -n "$TMUX" ]]; then
     # Note use a non-breaking space at the end of the prompt because we can use it as
@@ -95,7 +96,7 @@ function () {
   else
     # Don't bother with ZLE_RPROMPT_INDENT here, because it ends up eating the
     # space after PS1.
-    export PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%1~%F{yellow}%B%(1j.*.)%(?..!)%b%f%F{red}%B${SUFFIX}%b%f "
+    export PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%B%(1j.*.)%(?..!)%b%f%F{red}%B${SUFFIX}%b%f "
   fi
 }
 
