@@ -63,6 +63,7 @@
 (package! 'yasnippet-snippets nil)
 (package! 'yasnippet 'snippets)
 
+(package! 'ag nil)
 (package! 'projectile 'projectile-config)
 
 (package! 'key-chord 'keychord-config)
