@@ -45,6 +45,7 @@
 (package! 'web-mode 'tsx-config)
 (package! 'yaml-mode nil)
 (package! 'markdown-mode nil)
+(package! 'elm-mode 'elm-config)
 (package! 'exec-path-from-shell 'fix-path)
 (package! 'format-all 'formatter)
 
