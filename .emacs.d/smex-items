@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- elm-format
- elm-reactor
- run-elm-reactor
- elm-package-install
- ms
+ ag
+ ag-project-files
+ projectile-ripgrep
  backward-list
  up-list
+ compile
+ eval-buffer
 )
 
 ;; ----- smex-data -----
@@ -20,7 +20,7 @@
  (org-roam-node-find . 1)
  (org-roam-buffer . 1)
  (rename-file . 2)
- (projectile-ripgrep . 1)
+ (projectile-ripgrep . 2)
  (projectile-grep . 1)
  (tide-setup . 1)
  (projectile-remove-known-project . 1)
@@ -33,11 +33,17 @@
  (tree-sitter-langs-install-grammars . 1)
  (ansi-term . 1)
  (tide-restart-server . 1)
- (ms . 11)
+ (ms . 23)
  (up-list . 1)
  (backward-list . 1)
  (elm-format . 5)
  (elm-package-install . 1)
  (elm-reactor . 2)
  (run-elm-reactor . 1)
+ (yas-insert-snippet . 3)
+ (yas-new-snippet . 2)
+ (projectile-run-term . 1)
+ (tide-organize-imports . 1)
+ (ag . 5)
+ (ag-project-files . 1)
 )
