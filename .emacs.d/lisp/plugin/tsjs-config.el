@@ -1,5 +1,6 @@
 (require 'flycheck)
 (require 'tide)
+(require 'npm-mode)
 
 (defun setup-tide-mode ()
   "Setup tide enabling flycheck and tide stuff"
@@ -11,11 +12,9 @@
   (tide-hl-identifier-mode +1))
 
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
-
-(add-hook 'web-mode-hook
-          (lambda ()
-            (when (string-equal "tsx" (file-name-extension buffer-file-name))
-              (setup-tide-mode))))
+(add-hook 'typescript-mode-hook 'npm-mode)
+(add-hook 'web-mode-hook 'npm-mode)
+(add-hook 'web-mode-hook #'setup-tide-mode)
 
 (global-set-key (kbd "C-c la") 'tide-refactor)
 (global-set-key (kbd "C-c lr") 'tide-rename-symbol)
