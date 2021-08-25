@@ -91,7 +91,7 @@ function () {
     # Note use a non-breaking space at the end of the prompt because we can use it as
     # a find pattern to jump back in tmux.
     local NBSP=' '
-    export PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%1~%F{yellow}%B%(1j.*.)%(?..!)%b%f%F{red}%B${SUFFIX}%b%f${NBSP}"
+    export PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%B%(1j.*.)%(?..!)%b%f%F{red}%B${SUFFIX}%b%f${NBSP}"
     export ZLE_RPROMPT_INDENT=0
   else
     # Don't bother with ZLE_RPROMPT_INDENT here, because it ends up eating the
