@@ -1,0 +1,17 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/cherry/projects/dotfiles/tasks/todo.org
+
+
+* DONE Plan this solution more(card TEC-7)
+  CLOSED: [2021-08-23 Mon 23:03] SCHEDULED: <2021-08-19 Thu 18:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-23 Mon 23:08
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [[file:~/projects/work/exams/src/app/modules/category/entities/category.entity.ts::@JoinTable()]]
+

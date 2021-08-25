@@ -1,10 +1,30 @@
 * Inbox
 
-** TODO Plan this solution more(card TEC-7)
-   SCHEDULED: <2021-08-19 Thu 18:00>
-   [[file:~/projects/work/exams/src/app/modules/category/entities/category.entity.ts::@JoinTable()]]
-
 ** TODO finish https://elmprogramming.com/let-expression.html
-   SCHEDULED: <2021-08-22 Sun 17:00>
+   SCHEDULED: <2021-08-28 Sat 17:00>
    [[file:~/projects/personal/elm/beginning-elm/src/Playground.elm::Html.text <| String.fromFloat <| add 5 <| multiply 10 <| divide 30 10]]
+
+** DONE Resolver logo CDC Digital que fica em cima
+   CLOSED: [2021-08-25 Wed 14:46] SCHEDULED: <2021-08-24 Tue 09:00>
+   [[file:~/projects/work/hagens/cdc-sol-web/components/CreditCard.tsx::src="/images/logo_cdc_digital_white.png"]]
+
+   Essa logo do cdc digital precisa virar uma variavel, pode remover o controle de enum do logo em cima e embaixo pois esse cdc digital sempre vai existir
+
+** DONE Remover controle de logo on top do credit card
+   CLOSED: [2021-08-25 Wed 14:46] SCHEDULED: <2021-08-24 Tue 10:00>
+   [[file:~/projects/work/hagens/cdc-sol-web/utils/return-theme.ts::creditCardLayout: CreditCardLayout.secondLogoOnTop,]]
+
+   O logo em cima sempre vai existir
+
+** DONE Pedir logo croppado de parcelize so com P para o well
+   CLOSED: [2021-08-24 Tue 09:25] SCHEDULED: <2021-08-24 Tue 09:00>
+   [[file:~/projects/work/hagens/cdc-sol-web/utils/return-theme.ts::creditCardLayout: CreditCardLayout.secondLogoOnTop,]]
+
+** DONE Fix tests from =y test=
+   CLOSED: [2021-08-25 Wed 14:46] SCHEDULED: <2021-08-24 Tue 18:00>
+   [[file:~/projects/work/exams/src/app/modules/category/use-cases/list-products-by-category/list-products-by-category.service.spec.ts::expect(service).toBeDefined();]]
+
+** TODO Criar uma forma no create-product de referenciar a categoria
+   SCHEDULED: <2021-08-24 Tue 19:00>
+   [[file:~/projects/work/exams/src/app/modules/category/use-cases/list-products-by-category/list-products-by-category.service.spec.ts::});]]
 
