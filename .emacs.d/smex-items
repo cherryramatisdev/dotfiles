@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- ag
- ag-project-files
- projectile-ripgrep
+ ms
  backward-list
  up-list
  compile
  eval-buffer
+ rename-file
+ ido-find-file-in-dir
 )
 
 ;; ----- smex-data -----
@@ -33,7 +33,7 @@
  (tree-sitter-langs-install-grammars . 1)
  (ansi-term . 1)
  (tide-restart-server . 1)
- (ms . 23)
+ (ms . 35)
  (up-list . 1)
  (backward-list . 1)
  (elm-format . 5)
