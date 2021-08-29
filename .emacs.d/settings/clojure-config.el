@@ -1,5 +1,4 @@
 (require 'clojure-mode)
-
 (require 'clj-refactor)
 (require 'paredit)
 
@@ -20,8 +19,10 @@
         ("log"  . "clojure.tools.logging")
         ("json" . "cheshire.core")))
 
-(clj-refactor-mode 1)
-(cljr-add-keybindings-with-prefix "C-c RET")
+(defun my-clojure-mode-hook ()
+    (clj-refactor-mode 1)
+    (cljr-add-keybindings-with-prefix "C-c RET"))
 
+(add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)

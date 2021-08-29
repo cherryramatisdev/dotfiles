@@ -9,6 +9,7 @@
 (straight-use-package 'perspective)
 (straight-use-package 'ag)
 (straight-use-package 'find-file-in-project)
+(straight-use-package 'fzf)
 (straight-use-package 'smart-window)
 
 (straight-use-package 'typescript-mode)

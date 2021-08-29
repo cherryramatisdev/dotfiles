@@ -1,6 +1,3 @@
-(require 'find-file-in-project)
+(require 'fzf)
 
-(setq ffip-use-rust-fd t)
-(setq ffip-prefer-ido-mode t)
-
-(global-set-key (kbd "C-c p") 'ffip)
+(global-set-key (kbd "C-c p") 'fzf-git-files)

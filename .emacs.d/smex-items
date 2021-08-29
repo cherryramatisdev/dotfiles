@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ crux-create-scratch-buffer
+ cljr-add-import-to-ns
+ cljr-add-project-dependency
+ cljr-add-declaration
+ cider-jack-in
+ cider
  ffip
- sw-left
- follow-delete-other-windows-and-split
- rs
- eval-buffer
- webjump
- compile
 )
 
 ;; ----- smex-data -----
@@ -60,4 +60,10 @@
  (ffip . 3)
  (follow-delete-other-windows-and-split . 1)
  (sw-left . 1)
+ (cider . 1)
+ (cider-jack-in . 1)
+ (cljr-add-declaration . 1)
+ (cljr-add-project-dependency . 1)
+ (cljr-add-import-to-ns . 1)
+ (crux-create-scratch-buffer . 1)
 )
