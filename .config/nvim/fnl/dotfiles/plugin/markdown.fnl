@@ -1,2 +1,0 @@
-(module dotfiles.plugin.markdown)
-
