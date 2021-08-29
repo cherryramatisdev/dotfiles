@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- crux-create-scratch-buffer
- cljr-add-import-to-ns
+ cider-restart
+ cljr-add-require-to-ns
  cljr-add-project-dependency
- cljr-add-declaration
- cider-jack-in
- cider
- ffip
+ cider-jack-in-clj
+ fzf-find-file
+ fzf-git-files
+ fzf
 )
 
 ;; ----- smex-data -----
@@ -54,16 +54,23 @@
  (typescript-mode . 1)
  (webjump . 2)
  (paredit-raise-sexp . 1)
- (find-file-in-project . 4)
+ (find-file-in-project . 5)
  (find-file-in-project-by-selected . 1)
  (rs . 1)
- (ffip . 3)
+ (ffip . 5)
  (follow-delete-other-windows-and-split . 1)
  (sw-left . 1)
  (cider . 1)
  (cider-jack-in . 1)
  (cljr-add-declaration . 1)
- (cljr-add-project-dependency . 1)
+ (cljr-add-project-dependency . 2)
  (cljr-add-import-to-ns . 1)
  (crux-create-scratch-buffer . 1)
+ (ffip-lisp-find-file-in-project . 1)
+ (fzf . 1)
+ (fzf-git-files . 2)
+ (fzf-find-file . 1)
+ (cider-jack-in-clj . 1)
+ (cljr-add-require-to-ns . 1)
+ (cider-restart . 1)
 )

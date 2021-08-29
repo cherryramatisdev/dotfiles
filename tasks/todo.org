@@ -1,23 +1,23 @@
 * Inbox
 ** TODO finish https://elmprogramming.com/let-expression.html
-   SCHEDULED: <2021-08-28 Sat 17:00>
+   SCHEDULED: <2021-09-04 Sat 17:00>
    [[file:~/projects/personal/elm/beginning-elm/src/Playground.elm::Html.text <| String.fromFloat <| add 5 <| multiply 10 <| divide 30 10]]
 
 ** TODO Revisar rotas de categoria e criar rota para buscar produto por id
-   SCHEDULED: <2021-08-27 Fri 18:00>
+   SCHEDULED: <2021-08-30 Mon 18:00>
 
 ** TODO Verificar testes e2e, pois sqlite nao possui enum type.
-   SCHEDULED: <2021-08-27 Fri 18:00>
+   SCHEDULED: <2021-08-30 Mon 18:00>
    [[file:~/projects/work/exams/src/app/shared/test/product.e2e-spec.ts::})]]
 
 ** TODO Refactor create-product service using Object.assign
-   SCHEDULED: <2021-08-27 Fri 19:00>
+   SCHEDULED: <2021-08-30 Mon 19:00>
 
 ** TODO Remove PUT routes because its useless
-   SCHEDULED: <2021-08-27 Fri 17:00>
+   SCHEDULED: <2021-08-30 Mon 17:00>
 
 ** TODO Insert filters on /products
-   SCHEDULED: <2021-08-27 Fri 19:00>
+   SCHEDULED: <2021-08-30 Mon 19:00>
 
    1. By categoryId
    2. By LocationId
@@ -30,5 +30,9 @@
    SCHEDULED: <2021-08-30 Mon 15:00>
 
 ** TODO Mergear develop com a master backend-exams-service
-   SCHEDULED: <2021-08-28 Sat 14:00>
+   SCHEDULED: <2021-08-30 Mon 14:00>
+
+** TODO Terminar rest api com clojure
+   SCHEDULED: <2021-09-04 Sat 18:00>
+   [[file:~/projects/personal/clojure/rest-demo/README.md::Now that we have the basics down, we should try and return some JSON. We will use Clojures data.JSON library to easily create JSON from Clojure maps.]]
 
