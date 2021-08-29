@@ -8,5 +8,3 @@
       (require 'saveplace)
       (setq-default save-place t))
   (save-place-mode 1))
-
-(provide 'cursor-position)

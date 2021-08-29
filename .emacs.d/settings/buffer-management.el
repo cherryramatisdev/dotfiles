@@ -9,5 +9,3 @@
     (progn (kill-buffer))))
 
 (global-set-key (kbd "C-x k") 'cherry:kill-buffer)
-
-(provide 'buffer-management)

@@ -1,25 +1,30 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
+;; Configuring straight.el because why not
 
-;; HHH________________________________________________
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
 
-(require 'advices)
-(require 'aliases)
-(require 'backup-file)
-(require 'cursor-position)
-(require 'dired-config)
-(require 'editing-related)
-(require 'eww-config)
-(require 'font-setup)
-(require 'general)
-(require 'indentation)
-(require 'org-config)
-(require 'user-interface)
-(require 'whitespaces)
-(require 'buffer-management)
+(load "~/.emacs.d/package.el")
 
-(require 'plugins)
+;; This function loads all *.el files in a directory.
+(defun load-directory (dir)
+  (let ((load-it (lambda (f)
+		           (load-file (concat (file-name-as-directory dir) f)))
+		         ))
+	(mapc load-it (directory-files dir nil "\\.el$"))))
+
+(load-directory "~/.emacs.d/settings")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

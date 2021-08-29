@@ -1,6 +1,7 @@
 (require 'clojure-mode)
 
 (require 'clj-refactor)
+(require 'paredit)
 
 (defadvice clojure-test-run-tests (before save-first activate)
   (save-buffer))
@@ -21,3 +22,6 @@
 
 (clj-refactor-mode 1)
 (cljr-add-keybindings-with-prefix "C-c RET")
+
+(add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)

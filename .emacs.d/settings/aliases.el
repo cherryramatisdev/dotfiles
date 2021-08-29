@@ -17,5 +17,3 @@
 (defalias 'om 'org-mode)
 
 (defalias 'ms 'cherry:magit-status)
-
-(provide 'aliases)

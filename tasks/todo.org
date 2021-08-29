@@ -1,30 +1,34 @@
 * Inbox
-
 ** TODO finish https://elmprogramming.com/let-expression.html
    SCHEDULED: <2021-08-28 Sat 17:00>
    [[file:~/projects/personal/elm/beginning-elm/src/Playground.elm::Html.text <| String.fromFloat <| add 5 <| multiply 10 <| divide 30 10]]
 
-** DONE Resolver logo CDC Digital que fica em cima
-   CLOSED: [2021-08-25 Wed 14:46] SCHEDULED: <2021-08-24 Tue 09:00>
-   [[file:~/projects/work/hagens/cdc-sol-web/components/CreditCard.tsx::src="/images/logo_cdc_digital_white.png"]]
+** TODO Revisar rotas de categoria e criar rota para buscar produto por id
+   SCHEDULED: <2021-08-27 Fri 18:00>
 
-   Essa logo do cdc digital precisa virar uma variavel, pode remover o controle de enum do logo em cima e embaixo pois esse cdc digital sempre vai existir
+** TODO Verificar testes e2e, pois sqlite nao possui enum type.
+   SCHEDULED: <2021-08-27 Fri 18:00>
+   [[file:~/projects/work/exams/src/app/shared/test/product.e2e-spec.ts::})]]
 
-** DONE Remover controle de logo on top do credit card
-   CLOSED: [2021-08-25 Wed 14:46] SCHEDULED: <2021-08-24 Tue 10:00>
-   [[file:~/projects/work/hagens/cdc-sol-web/utils/return-theme.ts::creditCardLayout: CreditCardLayout.secondLogoOnTop,]]
+** TODO Refactor create-product service using Object.assign
+   SCHEDULED: <2021-08-27 Fri 19:00>
 
-   O logo em cima sempre vai existir
+** TODO Remove PUT routes because its useless
+   SCHEDULED: <2021-08-27 Fri 17:00>
 
-** DONE Pedir logo croppado de parcelize so com P para o well
-   CLOSED: [2021-08-24 Tue 09:25] SCHEDULED: <2021-08-24 Tue 09:00>
-   [[file:~/projects/work/hagens/cdc-sol-web/utils/return-theme.ts::creditCardLayout: CreditCardLayout.secondLogoOnTop,]]
+** TODO Insert filters on /products
+   SCHEDULED: <2021-08-27 Fri 19:00>
 
-** DONE Fix tests from =y test=
-   CLOSED: [2021-08-25 Wed 14:46] SCHEDULED: <2021-08-24 Tue 18:00>
-   [[file:~/projects/work/exams/src/app/modules/category/use-cases/list-products-by-category/list-products-by-category.service.spec.ts::expect(service).toBeDefined();]]
+   1. By categoryId
+   2. By LocationId
+   3. by attendencetype
 
-** TODO Criar uma forma no create-product de referenciar a categoria
-   SCHEDULED: <2021-08-24 Tue 19:00>
-   [[file:~/projects/work/exams/src/app/modules/category/use-cases/list-products-by-category/list-products-by-category.service.spec.ts::});]]
+** TODO Comentar na funcao return theme o que cada propriedade do objeto referencia no app.
+   SCHEDULED: <2021-08-30 Mon 10:00>
+
+** TODO Conversar com GUI e Harri sobre se vamos ter ambiente de homolog em backend
+   SCHEDULED: <2021-08-30 Mon 15:00>
+
+** TODO Mergear develop com a master backend-exams-service
+   SCHEDULED: <2021-08-28 Sat 14:00>
 

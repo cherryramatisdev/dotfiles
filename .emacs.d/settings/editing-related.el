@@ -1,9 +1,5 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-;; HHH_____________________________________________________________
-
-;;; editing related
-
 ;; make typing delete/overwrites selected text
 (delete-selection-mode 1)
 
@@ -55,8 +51,3 @@ http://ergoemacs.org/emacs/emacs_isearch_space.html"
         ;; try-expand-list
         ;; try-expand-line
         ))
-
-(global-set-key (kbd "M-n") 'forward-paragraph)
-(global-set-key (kbd "M-p") 'backward-paragraph)
-
-(provide 'editing-related)

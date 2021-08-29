@@ -8,7 +8,6 @@
     (setq initial-frame-alist
 	  '(
 	    (tool-bar-lines . 0)
-	    (background-color . "honeydew")
 	    (width . 106)
 	    (height . 56)
 	    ))
@@ -17,7 +16,6 @@
 (setq default-frame-alist
       '(
 	(tool-bar-lines . 0)
-	;; (background-color . "honeydew")
 	(width . 100)
 	(height . 55)))
 
@@ -28,7 +26,3 @@
 ;; UTF-8 as default encoding
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8-unix)
-
-(global-set-key (kbd "C-x C-c") 'delete-frame)
-
-(provide 'general)

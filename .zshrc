@@ -12,7 +12,11 @@ alias tt="taskwarrior-tui"
 alias dev="yarn start:dev"
 alias y="yarn"
 alias ya="yarn add"
-# alias slack="~/.local/bin/slack -config=/home/cherry/.config/slack-term/slack-config"
+alias kall="killall"
+alias edaemon="emacs --daemon"
+alias fd="fdfind"
+
+eval "$(lua ~/bin/z.lua --init zsh)"
 
 ##bindkey -s ^f "tmux-sessionizer\n"
 

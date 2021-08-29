@@ -1,9 +1,5 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-
-;; HHH___________________________________________________________________
-;; indentation, end of line
-
 (electric-indent-mode 0)
 
 (set-default 'tab-always-indent 'complete)
@@ -16,5 +12,3 @@
 (setq-default tab-width 4)
 
 (setq sentence-end-double-space nil )
-
-(provide 'indentation)

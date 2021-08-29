@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- ms
- backward-list
- up-list
- compile
+ ffip
+ sw-left
+ follow-delete-other-windows-and-split
+ rs
  eval-buffer
- rename-file
- ido-find-file-in-dir
+ webjump
+ compile
 )
 
 ;; ----- smex-data -----
@@ -16,7 +16,7 @@
  (ido-dired . 1)
  (ido-find-file . 1)
  (find-file-at-point . 1)
- (eval-buffer . 2)
+ (eval-buffer . 5)
  (org-roam-node-find . 1)
  (org-roam-buffer . 1)
  (rename-file . 2)
@@ -24,16 +24,16 @@
  (projectile-grep . 1)
  (tide-setup . 1)
  (projectile-remove-known-project . 1)
- (compile . 4)
+ (compile . 5)
  (compilation-shell-minor-mode . 1)
  (emmet-mode . 7)
- (js2-mode . 3)
+ (js2-mode . 5)
  (handlebars-mode . 2)
  (html-mode . 1)
  (tree-sitter-langs-install-grammars . 1)
  (ansi-term . 1)
  (tide-restart-server . 1)
- (ms . 35)
+ (ms . 55)
  (up-list . 1)
  (backward-list . 1)
  (elm-format . 5)
@@ -46,4 +46,18 @@
  (tide-organize-imports . 1)
  (ag . 5)
  (ag-project-files . 1)
+ (exec-path-from-shell-initialize . 1)
+ (exec-path-from-shell-copy-env . 1)
+ (slack-start . 8)
+ (slack-im-open . 2)
+ (jest-popup . 6)
+ (typescript-mode . 1)
+ (webjump . 2)
+ (paredit-raise-sexp . 1)
+ (find-file-in-project . 4)
+ (find-file-in-project-by-selected . 1)
+ (rs . 1)
+ (ffip . 3)
+ (follow-delete-other-windows-and-split . 1)
+ (sw-left . 1)
 )

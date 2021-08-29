@@ -1,6 +1,5 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-;; HHH____________________________________________
 ;; backup and file related
 
 (defun cherry:save-all-unsaved ()
@@ -20,7 +19,4 @@
 (require 'recentf)
 (recentf-mode 1)
 
-;; (desktop-save-mode 1)
 (global-auto-revert-mode 1)
-
-(provide 'backup-file)
