@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ eshell
+ eval-buffer
+ load-theme
  cider-restart
  cljr-add-require-to-ns
  cljr-add-project-dependency
  cider-jack-in-clj
- fzf-find-file
- fzf-git-files
- fzf
 )
 
 ;; ----- smex-data -----
@@ -16,7 +16,7 @@
  (ido-dired . 1)
  (ido-find-file . 1)
  (find-file-at-point . 1)
- (eval-buffer . 5)
+ (eval-buffer . 6)
  (org-roam-node-find . 1)
  (org-roam-buffer . 1)
  (rename-file . 2)
@@ -33,7 +33,7 @@
  (tree-sitter-langs-install-grammars . 1)
  (ansi-term . 1)
  (tide-restart-server . 1)
- (ms . 55)
+ (ms . 56)
  (up-list . 1)
  (backward-list . 1)
  (elm-format . 5)
@@ -73,4 +73,6 @@
  (cider-jack-in-clj . 1)
  (cljr-add-require-to-ns . 1)
  (cider-restart . 1)
+ (load-theme . 1)
+ (eshell . 1)
 )
