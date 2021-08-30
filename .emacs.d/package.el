@@ -1,7 +1,12 @@
-(straight-use-package 'flx)
-(straight-use-package 'flx-ido)
-(straight-use-package 'smex)
-(straight-use-package 'ido-vertical-mode)
+(straight-use-package 'vertico)
+(straight-use-package 'savehist)
+(straight-use-package 'marginalia)
+
+;; (straight-use-package 'flx)
+;; (straight-use-package 'flx-ido)
+;; (straight-use-package 'smex)
+;; (straight-use-package 'ido-vertical-mode)
+
 (straight-use-package 'company-flx)
 (straight-use-package 'company-quickhelp)
 (straight-use-package 'company)
@@ -30,7 +35,6 @@
 (straight-use-package 'iy-go-to-char)
 (straight-use-package 'expand-region)
 (straight-use-package 'buffer-move)
-
 
 (straight-use-package 'gruber-darker-theme)
 (straight-use-package 'magit)
