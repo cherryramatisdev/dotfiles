@@ -162,3 +162,48 @@ Error: Cannot query across one-to-many for property warningActivities
   :ARCHIVE_TODO: DONE
   :END:
 
+
+* DONE Verificar testes e2e, pois sqlite nao possui enum type.
+  CLOSED: [2021-08-30 Mon 11:04] SCHEDULED: <2021-08-30 Mon 18:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-30 Mon 18:42
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [[file:~/projects/work/exams/src/app/shared/test/product.e2e-spec.ts::})]]
+
+
+* DONE Comentar na funcao return theme o que cada propriedade do objeto referencia no app.
+  CLOSED: [2021-08-30 Mon 15:34] SCHEDULED: <2021-08-30 Mon 10:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-30 Mon 18:42
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+* DONE Conversar com GUI e Harri sobre se vamos ter ambiente de homolog em backend
+  CLOSED: [2021-08-30 Mon 15:34] SCHEDULED: <2021-08-30 Mon 11:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-30 Mon 18:42
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+* DONE Mergear develop com a master backend-exams-service
+  CLOSED: [2021-08-30 Mon 10:56] SCHEDULED: <2021-08-30 Mon 14:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-30 Mon 18:42
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+

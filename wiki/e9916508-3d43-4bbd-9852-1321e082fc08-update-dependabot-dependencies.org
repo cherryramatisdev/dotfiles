@@ -1,0 +1,4 @@
+* To update an dependency indicated by dependabot
+  #+BEGIN_SRC sh
+  yarn upgrade-interactive
+  #+END_SRC

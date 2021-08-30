@@ -6,10 +6,6 @@
 ** TODO Revisar rotas de categoria e criar rota para buscar produto por id
    SCHEDULED: <2021-08-30 Mon 18:00>
 
-** TODO Verificar testes e2e, pois sqlite nao possui enum type.
-   SCHEDULED: <2021-08-30 Mon 18:00>
-   [[file:~/projects/work/exams/src/app/shared/test/product.e2e-spec.ts::})]]
-
 ** TODO Refactor create-product service using Object.assign
    SCHEDULED: <2021-08-30 Mon 19:00>
 
@@ -22,15 +18,6 @@
    1. By categoryId
    2. By LocationId
    3. by attendencetype
-
-** TODO Comentar na funcao return theme o que cada propriedade do objeto referencia no app.
-   SCHEDULED: <2021-08-30 Mon 10:00>
-
-** TODO Conversar com GUI e Harri sobre se vamos ter ambiente de homolog em backend
-   SCHEDULED: <2021-08-30 Mon 15:00>
-
-** TODO Mergear develop com a master backend-exams-service
-   SCHEDULED: <2021-08-30 Mon 14:00>
 
 ** TODO Terminar rest api com clojure
    SCHEDULED: <2021-09-04 Sat 18:00>
