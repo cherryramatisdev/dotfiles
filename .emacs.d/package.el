@@ -38,6 +38,7 @@
 
 (straight-use-package 'gruber-darker-theme)
 (straight-use-package 'magit)
+(straight-use-package 'forge)
 (straight-use-package 'mood-line)
 (straight-use-package 'bufler)
 (straight-use-package 'exec-path-from-shell)

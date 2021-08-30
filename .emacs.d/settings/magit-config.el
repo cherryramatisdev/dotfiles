@@ -1,4 +1,7 @@
 (require 'magit)
+(require 'forge)
+
+(setq auth-sources '("~/.authinfo"))
 
 (defun cherry:magit-status ()
   "Magit status opens fullscreen."

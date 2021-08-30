@@ -11,3 +11,4 @@
 /.emacs.d/straight/
 /.emacs.d/transient/
 /.zsh-exports
+/.emacs.d/forge-database.sqlite
