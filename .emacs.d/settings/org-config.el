@@ -39,17 +39,17 @@
          "* TODO %?\n  %U\n  %a\n  %i" :empty-lines 1)))
 
 (defvar note-dir "~/projects/dotfiles/wiki")
-(defvar file-prefix (replace-regexp-in-string "\n" "" (shell-command-to-string "uuidgen")))
 
 (defun cherry:create-new-note ()
   "Create new note."
   (interactive)
-  (find-file (format "~/projects/dotfiles/wiki/%s-%s.org" file-prefix (read-string "Note name: "))))
+  (let ((file-prefix (replace-regexp-in-string "\n" "" (shell-command-to-string "uuidgen"))))
+    (find-file (format "~/projects/dotfiles/wiki/%s-%s.org" file-prefix (read-string "Note name: ")))))
 
 (defun cherry:find-notes ()
     "Find notes."
   (interactive)
-  (ido-find-file-in-dir "~/projects/dotfiles/wiki"))
+  (fzf-find-file "~/projects/dotfiles/wiki"))
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
