@@ -207,3 +207,14 @@ Error: Cannot query across one-to-many for property warningActivities
   :ARCHIVE_TODO: DONE
   :END:
 
+
+* DONE Remove PUT routes because its useless
+  CLOSED: [2021-08-30 Mon 22:34] SCHEDULED: <2021-08-30 Mon 17:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-30 Mon 22:35
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
