@@ -1,11 +1,7 @@
 (straight-use-package 'vertico)
 (straight-use-package 'savehist)
 (straight-use-package 'marginalia)
-
-;; (straight-use-package 'flx)
-;; (straight-use-package 'flx-ido)
-;; (straight-use-package 'smex)
-;; (straight-use-package 'ido-vertical-mode)
+(straight-use-package 'orderless)
 
 (straight-use-package 'company-flx)
 (straight-use-package 'company-quickhelp)
@@ -13,7 +9,6 @@
 
 (straight-use-package 'perspective)
 (straight-use-package 'ag)
-(straight-use-package 'find-file-in-project)
 (straight-use-package 'fzf)
 (straight-use-package 'smart-window)
 
@@ -28,6 +23,8 @@
 (straight-use-package 'clojure-mode)
 (straight-use-package 'paredit)
 (straight-use-package 'clj-refactor)
+(straight-use-package 'elm-mode)
+(straight-use-package 'eglot)
 
 (straight-use-package 'crux)
 (straight-use-package 'ace-jump-mode)
