@@ -1,7 +1,3 @@
-(global-set-key (kbd "s-o") 'other-window)
-(global-set-key (kbd "s-2") 'split-window-below)
-(global-set-key (kbd "s-3") 'split-window-right)
-
 ;; Move more quickly
 (global-set-key (kbd "C-S-n") (lambda () (interactive) (next-line 5)))
 (global-set-key (kbd "C-S-p") (lambda () (interactive) (previous-line 5)))
@@ -35,6 +31,7 @@
 (global-set-key (kbd "C-c d") 'crux-duplicate-current-line-or-region)
 (global-set-key (kbd "C-c t") 'crux-visit-term-buffer)
 (global-set-key (kbd "M-r") 'crux-top-join-line)
+(global-set-key (kbd "C-c n") 'crux-cleanup-buffer-or-region)
 
 ;; Expand region
 (require 'expand-region)
