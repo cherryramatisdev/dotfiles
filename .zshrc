@@ -18,12 +18,17 @@ alias agU="sudo apt-get upgrade"
 
 eval "$(lua ~/bin/z.lua --init zsh)"
 
-##bindkey -s ^f "tmux-sessionizer\n"
 select_file() {
   given_file="$1"
   nvim `ag -g "" | fzf --preview="cat {}" --preview-window=right:70%:wrap --query="$given_file"`
 }
-bindkey -s ^f "select_file\n"
+bindkey -s ^x^f "select_file\n"
+
+create_or_attach_tmux() {
+  `tmux new-session -A -s main`
+}
+
+bindkey -s ^x^t "create_or_attach_tmux\n"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
@@ -176,3 +181,6 @@ if [[ -f "$FILE" ]]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
