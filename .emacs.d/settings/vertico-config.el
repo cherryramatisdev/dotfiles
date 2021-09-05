@@ -1,6 +1,9 @@
 (require 'vertico)
 (require 'savehist)
 (require 'marginalia)
+(require 'orderless)
+
+(setq completion-styles '(orderless))
 
 (setq vertico-cycle t)
 (vertico-mode)

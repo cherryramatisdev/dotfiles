@@ -16,7 +16,12 @@
 (add-hook 'web-mode-hook 'npm-mode)
 (add-hook 'web-mode-hook #'setup-tide-mode)
 
-(global-set-key (kbd "C-c la") 'tide-refactor)
-(global-set-key (kbd "C-c lr") 'tide-rename-symbol)
-(global-set-key (kbd "C-c lk") 'tide-documentation-at-point)
-(global-set-key (kbd "M-RET") 'tide-fix)
+(define-key typescript-mode-map (kbd "C-c la") 'tide-refactor)
+(define-key typescript-mode-map (kbd "C-c lr") 'tide-rename-symbol)
+(define-key typescript-mode-map (kbd "C-c lk") 'tide-documentation-at-point)
+(define-key typescript-mode-map (kbd "M-RET") 'tide-fix)
+
+(define-key web-mode-map (kbd "C-c la") 'tide-refactor)
+(define-key web-mode-map (kbd "C-c lr") 'tide-rename-symbol)
+(define-key web-mode-map (kbd "C-c lk") 'tide-documentation-at-point)
+(define-key web-mode-map (kbd "M-RET") 'tide-fix)

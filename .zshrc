@@ -6,6 +6,7 @@ alias tmux="tmux -2"
 alias t="tmux new-session -A -s main"
 alias ee="emacsclient -c -n -a ''"
 alias et="emacsclient -t"
+alias v="nvim"
 alias dev="yarn start:dev"
 alias y="yarn"
 alias ya="yarn add"
@@ -18,6 +19,11 @@ alias agU="sudo apt-get upgrade"
 eval "$(lua ~/bin/z.lua --init zsh)"
 
 ##bindkey -s ^f "tmux-sessionizer\n"
+select_file() {
+  given_file="$1"
+  nvim `ag -g "" | fzf --preview="cat {}" --preview-window=right:70%:wrap --query="$given_file"`
+}
+bindkey -s ^f "select_file\n"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
@@ -168,3 +174,5 @@ FILE=~/.zsh-exports
 if [[ -f "$FILE" ]]; then
   source ~/.zsh-exports
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

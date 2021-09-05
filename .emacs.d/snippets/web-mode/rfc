@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: rfc
+# key: rfc
+# --
+import React from 'react'
+
+export const $1: React.FC = () => {
+  return (
+   $0
+  )
+}

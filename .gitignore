@@ -12,3 +12,4 @@
 /.emacs.d/transient/
 /.zsh-exports
 /.emacs.d/forge-database.sqlite
+/.vim/plugged/

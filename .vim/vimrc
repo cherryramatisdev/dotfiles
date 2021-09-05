@@ -1,0 +1,381 @@
+" vim:set ts=2 sts=2 sw=2 expandtab foldenable foldmethod=marker:
+
+set nocompatible
+
+filetype off
+filetype plugin indent on
+set sessionoptions-=options
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+"---------------------------------------------------------------- plugins {{{1
+call plug#begin('~/.vim/plugged')
+
+" color schemes
+Plug 'morhetz/gruvbox'
+
+" tpope fandom
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+
+" misc
+Plug 'wincent/terminus'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'terryma/vim-multiple-cursors'
+
+" coding
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'tommcdo/vim-lion'
+
+" Auto-complete
+Plug 'ervandew/supertab'
+Plug 'liuchengxu/vista.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-lsp-settings'
+
+" FZF
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Beauty
+if has('nvim')
+  Plug 'hoob3rt/lualine.nvim'
+  Plug 'kyazdani42/nvim-web-devicons'
+endif
+
+call plug#end()
+
+" Disable this annoying thing on terminus
+let g:TerminusCursorShape=0
+set guicursor=
+
+"-------------------------------------------------------- CYBERAMA - begin ---
+augroup reload_vimrc " {
+  au!
+  au BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
+
+let g:netrw_altfile = 1 " <C-6> returns to files
+
+"-------------------------------------------------------- global defaults {{{1
+set tabstop=2 softtabstop=2 shiftwidth=2 shiftround expandtab nowrap
+set noswapfile hlsearch cursorline noshowmode
+set ignorecase smartcase
+set textwidth=80 colorcolumn=+1
+set nu rnu
+set hidden
+
+set laststatus=2 " Always display the statusline in all windows
+set showtabline=2
+
+set switchbuf=useopen
+set showfulltag
+set incsearch
+
+set termencoding=utf-8 encoding=utf-8
+set novisualbell noerrorbells
+set splitbelow splitright
+set tags^=./.git/tags;
+
+set clipboard=unnamed
+
+" Autosave on focus lost
+autocmd FocusLost * silent! wa
+set autowriteall
+
+" let terminal resize scale the internal windows
+autocmd VimResized * :wincmd =
+
+" Prevent vim from clobbering the scrollback buffer. See
+" http://www.shallowsky.com/linux/noaltscreen.html
+set t_ti= t_te=
+
+" keep more context when scrolling off the end of a buffer
+set scrolloff=1
+
+" Store temporary files in a central spot
+set noundofile
+set noswapfile
+set nobackup
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" display incomplete commands
+set showcmd
+
+" make tab completion for files/buffers act like bash
+set wildmenu
+set wildmode=full "list:full
+set wildignore=*.swp,*.bak,*.pyc,*.class,*/.git/*,*/tmp/*
+
+" Insert only one space when joining lines that contain sentence-terminating
+" ponctuation like `.`.
+set nojoinspaces
+
+" If a file is changed outside of vim, automatically reload it without asking
+set autoread
+set autoindent copyindent smartindent
+
+" copied from spf13
+set mouse=a mousehide
+scriptencoding utf-8
+set viewoptions=folds,options,cursor,unix,slash
+set history=1000
+set iskeyword-=.                    " '.' is an end of word designator
+set iskeyword-=#                    " '#' is an end of word designator
+set iskeyword-=-                    " '-' is an end of word designator
+
+"---------------------------------------------------------------- helpers {{{1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""" RENAME CURRENT FILE {{{2
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+" map <leader>n :call RenameFile()<cr>
+command! RenameFile :call RenameFile()
+
+""""""""""""""""""""""""""""""""""""""""" create intermediary directories {{{2
+fun! <SID>AutoMakeDirectory()
+  let s:directory = expand("<afile>:p:h")
+  if !isdirectory(s:directory)
+    call mkdir(s:directory, "p")
+  endif
+endfun
+autocmd BufWritePre,FileWritePre * :call <SID>AutoMakeDirectory()
+
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+noremap Q !!sh<CR>
+
+"----------------------------- Use 24-bit (true-color) mode in Vim/Neovim {{{2
+if exists("$TMUX") || exists("$SSH_TTY")
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+else
+  let &t_ZH = "\<Esc>[3m"
+  let &t_ZR = "\<Esc>[23m"
+endif
+
+if exists('+termguicolors')
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+set background=dark " for the dark version
+
+let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
+
+" Mappings to easily toggle fold levels
+nnoremap z0 :setlocal foldlevel=0<cr>
+nnoremap z1 :setlocal foldlevel=1<cr>
+nnoremap z2 :setlocal foldlevel=2<cr>
+nnoremap z3 :setlocal foldlevel=3<cr>
+nnoremap z4 :setlocal foldlevel=4<cr>
+nnoremap z5 :setlocal foldlevel=5<cr>
+
+if 0 " if 0 / endif HACK
+  i
+
+  " Folding rules {{{2
+  set foldenable                  " enable folding
+  set foldcolumn=2                " add a fold column
+  set foldmethod=marker           " detect triple-{ style fold markers
+  set foldlevelstart=99           " start out with everything unfolded
+  set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
+  " which commands trigger auto-unfold
+  function! MyFoldText()
+    let line = getline(v:foldstart)
+
+    let nucolwidth = &fdc + &number * &numberwidth
+    let windowwidth = winwidth(0) - nucolwidth - 3
+    let foldedlinecount = v:foldend - v:foldstart
+
+    " expand tabs into spaces
+    let onetab = strpart('          ', 0, &tabstop)
+    let line = substitute(line, '\t', onetab, 'g')
+
+    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 4
+    return line . ' …' . repeat(" ",fillcharcount) . foldedlinecount . ' '
+  endfunction
+  set foldtext=MyFoldText()
+
+  .
+endif
+
+" Subtle search highlights
+highlight Search ctermbg=black ctermfg=yellow term=underline
+highlight Comment cterm=italic
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
+" Alternate buffer (easier than <C-^>)
+nmap <leader><leader> <c-^>
+
+" Quit vim quickly
+nnoremap <leader>q ZZ
+
+" See http://stevelosh.com/blog/2010/09/coming-home-to-vim
+nnoremap / /\v
+vnoremap / /\v
+
+" Disable highlight when <leader><cr> is pressed
+map <silent> <leader><cr> :noh<cr>
+
+" Move around splits with <c-hjkl>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>l <C-l>
+
+" Open window below instead of above"
+nnoremap <c-w>N :let sb=&sb<BAR>set sb<BAR>new<BAR>let &sb=sb<CR>
+
+" Vertical equivalent of c-w-n and c-w-N"
+nnoremap <c-w>v :vnew<CR>
+nnoremap <c-w>V :let spr=&spr<BAR>set nospr<BAR>vnew<BAR>let &spr=spr<CR>
+
+" Easier split resizing (shift - and shift +)
+nnoremap _ <c-w>-
+nnoremap + <c-w>+
+
+" Dont fold foldable files by default
+if has("autocmd")
+  augroup Unfolding
+    autocmd!
+    autocmd BufRead * normal zR
+  augroup END
+endif
+
+" Spell checking for git commit messages
+if has("autocmd")
+  augroup GitCommitSpellCheck
+    autocmd!
+    autocmd FileType gitcommit set spell
+  augroup END
+endif
+
+if ! has('gui_running')
+  set ttimeoutlen=10 lazyredraw
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
+
+"----------------------------------------------------------- editorconfig {{{1
+" from https://zerokspot.com/weblog/2016/07/10/editorconfig-in-neovim/
+if executable('editorconfig')
+  let g:EditorConfig_exec_path = exepath('editorconfig')
+  let g:EditorConfig_core_mode = 'external_command'
+endif
+
+"-------------------------------------------------------------------- FZF {{{1
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+      \ { 'fg':    ['fg', 'Normal'],
+      \ 'bg':      ['bg', 'Normal'],
+      \ 'hl':      ['fg', 'Comment'],
+      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+      \ 'hl+':     ['fg', 'Statement'],
+      \ 'info':    ['fg', 'PreProc'],
+      \ 'border':  ['fg', 'Ignore'],
+      \ 'prompt':  ['fg', 'Conditional'],
+      \ 'pointer': ['fg', 'Exception'],
+      \ 'marker':  ['fg', 'Keyword'],
+      \ 'spinner': ['fg', 'Label'],
+      \ 'header':  ['fg', 'Comment'] }
+
+let g:fzf_preview_window = []
+
+" Bcommits
+" Blines
+" Btags
+" Files
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+nnoremap <c-p> :Files<CR>
+nnoremap <leader>fc    :<C-u>Colors<cr>
+nnoremap <leader>fcmd  :<C-u>Commands<cr>
+nnoremap <leader>fgc   :<C-u>Commits<cr>
+nnoremap <leader>fft   :<C-u>Filetypes<cr>
+" nnoremap <leader>fgf   :<C-u>Gfiles<cr>
+" nnoremap <leader>fgfd  :<C-u>Gfiles-diff<cr>
+nnoremap <leader>fht   :<C-u>Helptags<cr>
+nnoremap <leader>fh    :<C-u>History-command<cr>
+nnoremap <leader>fhf   :<C-u>History-files<cr>
+nnoremap <leader>fhs   :<C-u>History-search<cr>
+nnoremap <leader>fmap  :<C-u>Maps<cr>
+nnoremap <leader>fmark :<C-u>Marks<cr>
+nnoremap <leader>fw    :<C-u>Windows<cr>
+
+"---------------------------------------------------------------- vim-lsp {{{1
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gf <plug>(lsp-code-action)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <F2> <plug>(lsp-rename)
+    nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    xmap <buffer> f <plug>(lsp-document-range-format)
+    nmap <buffer> <F5> <plug>(lsp-code-lens)
+
+    " buffer format on save
+    autocmd FileType go autocmd BufWritePre <buffer> LspDocumentFormatSync
+endfunction
+
+augroup lsp_install
+    au!
+    let g:lsp_signs_enabled = 1         " enable signs
+    let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
+    let g:lsp_signs_error = {'text': '✗'}
+    " let g:lsp_signs_warning = {'text': '‼', 'icon': '/path/to/some/icon'} " icons require GUI
+    " let g:lsp_signs_hint = {'icon': '/path/to/some/other/icon'} " icons require GUI
+    let g:lsp_signs_warning = {'text': '‼'}
+    let g:lsp_highlight_references_enabled = 1
+    highlight link LspErrorText GruvboxRedSign " requires gruvbox
+    highlight clear LspWarningLine
+    " highlight lspReference ctermfg=red guifg=red ctermbg=green guibg=green
+    highlight lspReference guibg=#505030 ctermbg=black ctermfg=yellow term=underline
+
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+"--------------------------------------------------------------- supertab {{{1
+let g:SuperTabDefaultCompletionType = "context"
+"--------------------------------------------------------------- statusline {{{1
+if has('nvim')
+  lua require('lualine').setup()
+endif

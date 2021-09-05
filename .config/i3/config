@@ -59,7 +59,7 @@ bindsym $mod+t exec kitty
 bindsym $mod+c kill
 
 # Open browser
-bindsym $mod+b exec brave-browser
+bindsym $mod+b exec brave
 
 # Open emacs
 bindsym $mod+e exec emacsclient -c -a ''
