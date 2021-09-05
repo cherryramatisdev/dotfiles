@@ -42,9 +42,7 @@ Plug 'lambdalisue/gina.vim'
 " Lsp on neovim
 if has('nvim')
   Plug 'neovim/nvim-lspconfig'
-  Plug 'hrsh7th/nvim-cmp'
-  Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/nvim-compe'
 end
 
 call plug#end()
