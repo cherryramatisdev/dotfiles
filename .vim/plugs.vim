@@ -29,9 +29,6 @@ Plug 'AndrewRadev/sideways.vim'
 Plug 'AndrewRadev/deleft.vim'
 Plug 'AndrewRadev/ginitpull.vim'
 
-" Snippets
-Plug 'tckmn/vim-minisnip'
-
 " FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
