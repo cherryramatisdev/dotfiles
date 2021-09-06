@@ -35,7 +35,7 @@ exec --no-startup-id dunst &
 exec --no-startup-id compton -b &
 
 # Set background
-exec --no-startup-id feh --bg-fill ~/Pictures/backgrounds/purple-sky.jpeg &
+exec --no-startup-id feh --bg-fill ~/Pictures/backgrounds/transflag.jpg &
 
 # Disable window title bar
 default_border pixel 3
