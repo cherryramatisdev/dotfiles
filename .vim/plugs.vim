@@ -39,10 +39,12 @@ Plug 'junegunn/fzf.vim'
 " Git stuff
 Plug 'lambdalisue/gina.vim'
 
+" file browser
+Plug 'ms-jpq/chadtree'
+
 " Lsp on neovim
 if has('nvim')
   Plug 'neovim/nvim-lspconfig'
-  " Plug 'hrsh7th/nvim-compe'
   Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
   Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 end
