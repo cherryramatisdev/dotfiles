@@ -53,10 +53,5 @@ function! cherry#git#Commit() abort
     let l:runner = l:runner
   endif
 
-  call s:runGitCommand(
-        \ 'Git commit -m "' .
-        \ l:commit_type .
-        \ l:commit_message .
-        \ '"'
-        \)
+  call s:runGitCommand(l:runner)
 endfunction
