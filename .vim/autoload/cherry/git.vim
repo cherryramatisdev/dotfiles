@@ -22,10 +22,37 @@ function! cherry#git#CreateBranch() abort
 endfunction
 
 function! cherry#git#Commit() abort
-  let l:commit_type = input('Commit type: ',
-        \ ['feat', 'fix', 'chore', 'doc', 'refactor'
-        \ ])
+  let l:options = ['Commit type: ', 'feat', 'fix', 'chore', 'doc', 'refactor']
+
+  let l:commit_type = inputlist(l:options)
+  redraw
+
+  if l:commit_type == 0
+    return
+  endif
+
   let l:commit_message = input('Commit message: ')
+  redraw
+
+  if l:commit_message == ''
+    return
+  endif
+
+  let l:should_verify_commit = confirm('Should verify? ', "&Yes\n&No", 1)
+  redraw
+
+  let l:runner = 'Git commit -m "' .
+        \ l:options[l:commit_type] .
+        \ ': ' .
+        \ l:commit_message .
+        \ '"'
+
+  if l:should_verify_commit == 1
+    let l:runner = l:runner . ' --no-verify'
+  else
+    let l:runner = l:runner
+  endif
+
   call s:runGitCommand(
         \ 'Git commit -m "' .
         \ l:commit_type .
