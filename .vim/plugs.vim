@@ -20,6 +20,7 @@ Plug 'tommcdo/vim-lion'
 Plug 'HerringtonDarkholme/yats.vim'
 " or Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'jxnblk/vim-mdx-js'
 
 " Andrew radev fandom
 Plug 'AndrewRadev/splitjoin.vim'
