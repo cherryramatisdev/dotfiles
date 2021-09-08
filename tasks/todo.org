@@ -6,7 +6,7 @@
 SCHEDULED: <2021-09-11 sáb 18:00>
 * TODO write tests for button :pantheon:
 SCHEDULED: <2021-09-08 qua 13:00>
-* TODO Criar funcao para deletar diretorios cheios no netrw
-SCHEDULED: <2021-09-07 ter 22:00>
-* TODO Configurar elm no vim
-SCHEDULED: <2021-09-07 ter 23:00>
+* DONE Criar funcao para deletar diretorios cheios no netrw
+SCHEDULED: <2021-09-07 ter 22:00> CLOSED: [2021-09-07 ter 22:19]
+* DONE Configurar elm no vim
+SCHEDULED: <2021-09-07 ter 23:00> CLOSED: [2021-09-07 ter 22:35]
