@@ -1,14 +1,15 @@
 function s:runGitCommand(command)
   execute a:command
-  call fugitive#ReloadStatus()
 endfunction
 
 function cherry#git#Push()
   call s:runGitCommand('Gina ps')
+  call fugitive#ReloadStatus()
 endfunction
 
 function cherry#git#Pull()
   call s:runGitCommand('Gina pl')
+  call fugitive#ReloadStatus()
 endfunction
 
 function! cherry#git#SwitchBranch() abort
