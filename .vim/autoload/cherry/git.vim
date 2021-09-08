@@ -1,5 +1,6 @@
 function s:runGitCommand(command)
   execute a:command
+  call fugitive#ReloadStatus()
 endfunction
 
 function cherry#git#Push()
