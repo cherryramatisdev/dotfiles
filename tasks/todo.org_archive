@@ -218,3 +218,31 @@ Error: Cannot query across one-to-many for property warningActivities
   :ARCHIVE_TODO: DONE
   :END:
 
+** DONE finish https://elmprogramming.com/let-expression.html
+   SCHEDULED: <2021-09-04 Sat 17:00> CLOSED: [2021-09-07 ter 21:37]
+   [[file:~/projects/personal/elm/beginning-elm/src/Playground.elm::Html.text <| String.fromFloat <| add 5 <| multiply 10 <| divide 30 10]]
+
+** DONE Revisar rotas de categoria e criar rota para buscar produto por id
+   CLOSED: [2021-08-31 Tue 22:19] SCHEDULED: <2021-08-31 Tue 18:00>
+
+** DONE Refactor create-product service using Object.assign
+   CLOSED: [2021-08-31 Tue 22:19] SCHEDULED: <2021-08-31 Tue 19:00>
+
+** DONE Insert filters on /products
+   CLOSED: [2021-09-03 Fri 23:55] SCHEDULED: <2021-09-01 Wed 19:00>
+
+   1. By categoryId
+   2. By LocationId
+   3. by attendencetype
+
+** DONE Commit pantheon shapes feature after someone help with husky error
+   CLOSED: [2021-08-31 Tue 22:18] SCHEDULED: <2021-08-31 Tue 14:00>
+   [[file:~/projects/work/pantheon/src/components/tokens/Shapes/stories.mdx][file:~/projects/work/pantheon/src/components/tokens/Shapes/stories.mdx]]
+
+** DONE Finish https://lamimed.atlassian.net/browse/TEC-35 second shadow shape
+   CLOSED: [2021-09-03 Fri 23:55] SCHEDULED: <2021-09-01 Wed 13:00>
+
+** DONE Testar melhor o filtro de location da rota /category/{categoryId}/products
+   CLOSED: [2021-09-03 Fri 23:55] SCHEDULED: <2021-09-01 Wed>
+
+   Remover o bd, cadastrar alguns produtos com a location correta e testar o filtro
