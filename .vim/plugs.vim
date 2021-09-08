@@ -34,9 +34,6 @@ Plug 'AndrewRadev/ginitpull.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" Git stuff
-Plug 'lambdalisue/gina.vim'
-
 " Org mode support for my agenda
 Plug 'kristijanhusak/orgmode.nvim'
 
