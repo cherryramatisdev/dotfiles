@@ -4,3 +4,7 @@
 
 * TODO Terminar de ler o livo O'Reilly elm in action
 SCHEDULED: <2021-09-11 sáb 18:00>
+* TODO Fix semantic commits vim plugin
+  SCHEDULED: <2021-09-08 qua 20:00>
+  Only enable the prompt for verify or not if find "husky" inside package.json
+  because it's the only usage for this.
