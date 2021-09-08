@@ -1,4 +1,3 @@
-set tabstop=2 softtabstop=2 shiftwidth=2 shiftround expandtab nowrap
 set noswapfile hlsearch cursorline noshowmode
 set ignorecase smartcase
 set textwidth=80 colorcolumn=+1
@@ -65,3 +64,5 @@ set history=1000
 set iskeyword-=.                    " '.' is an end of word designator
 set iskeyword-=#                    " '#' is an end of word designator
 set iskeyword-=-                    " '-' is an end of word designator
+
+let g:netrw_localrmdir='rm -r'
