@@ -28,5 +28,6 @@ ino <silent><expr> <C-l>    pumvisible() ? (complete_info().selected == -1 ? "\<
 ino <silent><expr> <C-j>   pumvisible() ? "\<C-n>" : "\<Tab>"
 ino <silent><expr> <C-k> pumvisible() ? "\<C-p>" : "\<BS>"
 
-" Define leader
+" Define leader and localleader
 let mapleader=' '
+let maplocalleader='\\'
