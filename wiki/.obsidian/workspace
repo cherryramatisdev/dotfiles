@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "update dependabot dependencies.md",
+            "file": "Project Ideas.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "update dependabot dependencies.md",
+                "file": "Project Ideas.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,7 +88,7 @@
   },
   "active": "b1d2a977253152a2",
   "lastOpenFiles": [
-    "update dependabot dependencies.md",
-    "Untitled.md"
+    "Untitled.md",
+    "update dependabot dependencies.md"
   ]
 }
