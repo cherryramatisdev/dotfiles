@@ -1,5 +1,4 @@
 function s:runGitCommand(command)
-  execute 'q'
   execute a:command
 endfunction
 
