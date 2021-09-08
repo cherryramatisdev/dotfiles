@@ -47,4 +47,7 @@ end
 " Elm setup
 Plug 'ElmCast/elm-vim'
 
+" Local plugins
+Plug '~/projects/plugins/semantic_git.vim/'
+
 call plug#end()

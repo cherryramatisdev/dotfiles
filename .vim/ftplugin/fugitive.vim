@@ -1,7 +1,7 @@
 map <buffer> q gq
 nmap <buffer> <Tab> =
-nmap <buffer> cc :call cherry#git#Commit()<cr>
-nmap <buffer> Pp :call cherry#git#Push()<cr>
-nmap <buffer> Fp :call cherry#git#Pull()<cr>
-nmap <buffer> bc :call cherry#git#CreateBranch()<cr>
-nmap <buffer> bb :call cherry#git#SwitchBranch()<cr>
+nmap <buffer> cc :SemanticalCommit<cr>
+nmap <buffer> Pp :PushCurrent<cr>
+nmap <buffer> Fp :PullCurrent<cr>
+nmap <buffer> bc :CreateBranch<cr>
+nmap <buffer> bb :SwitchBranch<cr>
