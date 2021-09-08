@@ -246,3 +246,9 @@ Error: Cannot query across one-to-many for property warningActivities
    CLOSED: [2021-09-03 Fri 23:55] SCHEDULED: <2021-09-01 Wed>
 
    Remover o bd, cadastrar alguns produtos com a location correta e testar o filtro
+* DONE write tests for button :pantheon:
+SCHEDULED: <2021-09-08 qua 13:00> CLOSED: [2021-09-08 qua 13:37]
+* DONE Criar funcao para deletar diretorios cheios no netrw
+SCHEDULED: <2021-09-07 ter 22:00> CLOSED: [2021-09-07 ter 22:19]
+* DONE Configurar elm no vim
+SCHEDULED: <2021-09-07 ter 23:00> CLOSED: [2021-09-07 ter 22:35]
