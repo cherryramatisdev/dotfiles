@@ -3,13 +3,11 @@ function s:runGitCommand(command)
 endfunction
 
 function cherry#git#Push()
-  call s:runGitCommand('Gina ps')
-  call fugitive#ReloadStatus()
+  call s:runGitCommand('G ps')
 endfunction
 
 function cherry#git#Pull()
-  call s:runGitCommand('Gina pl')
-  call fugitive#ReloadStatus()
+  call s:runGitCommand('G pl')
 endfunction
 
 function! cherry#git#SwitchBranch() abort
