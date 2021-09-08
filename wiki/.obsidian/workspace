@@ -1,0 +1,94 @@
+{
+  "main": {
+    "id": "c55dc52e59f6a495",
+    "type": "split",
+    "children": [
+      {
+        "id": "b1d2a977253152a2",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "update dependabot dependencies.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8e5af809de82918a",
+    "type": "split",
+    "children": [
+      {
+        "id": "64d9d8187b33e764",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5e209926b9937d74",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "e5d17ee060d565b9",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3e94a3c7912a2f41",
+    "type": "split",
+    "children": [
+      {
+        "id": "ddb481f049c0037e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b24fff035deea962",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "update dependabot dependencies.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "b1d2a977253152a2",
+  "lastOpenFiles": [
+    "update dependabot dependencies.md",
+    "Untitled.md"
+  ]
+}

@@ -1,4 +1,0 @@
-* A product can be owned by various topologies
-* A product will need to be registered with a online care or home care flag
-* A product will need to be registered with a similar_product index
-** A product can have various "similars"
