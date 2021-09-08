@@ -37,8 +37,6 @@ Plug 'junegunn/fzf.vim'
 " Git stuff
 Plug 'lambdalisue/gina.vim'
 
-" file browser
-Plug 'ms-jpq/chadtree'
 
 " Lsp on neovim
 if has('nvim')
