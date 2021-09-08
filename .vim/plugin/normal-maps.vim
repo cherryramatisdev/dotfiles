@@ -10,6 +10,8 @@ nnoremap / /\v
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
+" Quickly open terminal
+nnoremap <leader>t :term<cr>
 
 " Resize splits
 nnoremap <M-h> :vertical resize -4<cr>
