@@ -1,5 +1,14 @@
 call plug#begin('~/.vim/plugged')
 
+" editing
+Plug 'inkarkat/vim-ReplaceWithRegister'
+
+" Text objects
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-function'
+Plug 'kana/vim-textobj-entire'
+
 " tpope fandom
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-repeat'
