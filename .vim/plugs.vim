@@ -44,4 +44,7 @@ if has('nvim')
   Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 end
 
+" Elm setup
+Plug 'ElmCast/elm-vim'
+
 call plug#end()
