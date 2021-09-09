@@ -13,21 +13,6 @@ endif
 " Load plugins
 source ~/.vim/plugs.vim
 
-" 🐓 Coq completion settings
-" Auto start completion with coq_nvim
-let g:coq_settings = {
-      \ 'auto_start': 'shut-up',
-      \ 'keymap.recommended': v:false,
-      \ 'keymap.jump_to_mark': '<tab>',
-      \ }
-
-ino <silent><expr> <Esc>   pumvisible() ? "\<C-e><Esc>" : "\<Esc>"
-ino <silent><expr> <C-c>   pumvisible() ? "\<C-e><C-c>" : "\<C-c>"
-ino <silent><expr> <BS>    pumvisible() ? "\<C-e><BS>"  : "\<BS>"
-ino <silent><expr> <C-l>    pumvisible() ? (complete_info().selected == -1 ? "\<C-e><CR>" : "\<C-y>") : "\<CR>"
-ino <silent><expr> <C-j>   pumvisible() ? "\<C-n>" : "\<Tab>"
-ino <silent><expr> <C-k> pumvisible() ? "\<C-p>" : "\<BS>"
-
 " Define leader and localleader
 let mapleader=' '
 let maplocalleader='\\'

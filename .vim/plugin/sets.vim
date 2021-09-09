@@ -5,6 +5,8 @@ set nu rnu
 set hidden
 set guicursor=
 
+set completeopt=menu
+
 set laststatus=2 " Always display the statusline in all windows
 set showtabline=2
 

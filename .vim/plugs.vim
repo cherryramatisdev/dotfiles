@@ -49,8 +49,6 @@ Plug 'kristijanhusak/orgmode.nvim'
 " Lsp on neovim
 if has('nvim')
   Plug 'neovim/nvim-lspconfig'
-  Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-  Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 end
 
 " Elm setup
