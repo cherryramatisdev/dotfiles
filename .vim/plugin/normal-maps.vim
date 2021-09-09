@@ -18,3 +18,6 @@ nnoremap <M-h> :vertical resize -4<cr>
 nnoremap <M-l> :vertical resize +4<cr>
 nnoremap <M-k> :resize +4<cr>
 nnoremap <M-j> :resize -4<cr>
+
+" Why this isn't default
+nnoremap Y y$
