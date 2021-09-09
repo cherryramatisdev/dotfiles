@@ -23,6 +23,7 @@ Plug 'tpope/vim-rsi'
 " misc
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'joereynolds/vim-minisnip'
 
 " coding
 Plug 'tommcdo/vim-lion'
