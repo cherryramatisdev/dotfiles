@@ -10,3 +10,15 @@ SCHEDULED: <2021-09-11 sáb 18:00>
   because it's the only usage for this.
 * TODO Escrever pagina no obsidian sobre semantic commits e adicionar no confluence
   SCHEDULED: <2021-09-09 qui 21:00>
+* DONE conversar com will sobre quebra de linha no botao
+  DEADLINE: <2021-09-09 qui 16:00> CLOSED: [2021-09-09 qui 18:59]
+
+  =checar com tela X-ray "Medici"=
+  1. Sem icone = quebra no 330px
+     Com icone = quebra no 320px
+* TODO Adicionar coisas no button pantheon
+  DEADLINE: <2021-09-09 qui 23:00>
+
+  1. DONE Adicionar o medium size
+  2. DONE Corrigir o hover -> no default ele inverte o linear gradient e no outlined
+  troca a cor de fundo para neutral
