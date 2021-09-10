@@ -1,9 +1,10 @@
 function! cherry#colorscheme#Toggle()
-  if g:colors_name == 'cherry'
+  if &background == 'dark'
     set background=light
     colorscheme papercolor
   else
     set background=dark
-    colorscheme cherry
+    colorscheme paramount
+    " colorscheme cherry
   endif
 endfunction

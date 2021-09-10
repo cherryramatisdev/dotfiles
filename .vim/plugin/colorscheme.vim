@@ -1,6 +1,6 @@
 if system('date +%H') > 16
   set background=dark
-  colorscheme cherry
+  colorscheme paramount
 else
   set background=light
   colorscheme papercolor
