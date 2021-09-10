@@ -143,3 +143,9 @@ config.set('content.notifications', True, 'https://calendar.google.com')
 #   - false
 #   - ask
 config.set('content.register_protocol_handler', True, 'https://calendar.google.com?cid=%25s')
+
+# Bindings
+config.bind('J', 'tab-prev', mode='normal')
+config.bind('K', 'tab-next', mode='normal')
+config.bind('gJ', 'tab-move -', mode='normal')
+config.bind('gK', 'tab-move +', mode='normal')

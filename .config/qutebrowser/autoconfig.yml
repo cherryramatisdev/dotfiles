@@ -6,6 +6,7 @@
 
 config_version: 2
 settings:
-  content.headers.user_agent:
-    https://accounts.google.com/*: Mozilla/5.0 ({os_info}; rv:90.0) Gecko/20100101
-      Firefox/90.0
+  content.notifications:
+    https://app.slack.com: true
+  content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: true
