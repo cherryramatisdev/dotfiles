@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
 items="
-$HOME/projects/work/cdc/cliente
-$HOME/projects/personal/blockchain/eth-todo-list
+$HOME/projects/work/exams
+$HOME/projects/work/pantheon
 $HOME/projects/dotfiles
-$HOME/projects/dotfiles/bin
-$HOME/projects/dotfiles/.config/nvim
 "
 
 if [[ $# -eq 1 ]]; then

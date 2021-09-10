@@ -30,6 +30,12 @@ create_or_attach_tmux() {
 
 bindkey -s ^x^t "create_or_attach_tmux\n"
 
+tmux_sessionizer() {
+  `tmux-sessionizer`
+}
+
+bindkey -s ^x^p "tmux_sessionizer\n"
+
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
