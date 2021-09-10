@@ -1,4 +1,4 @@
-tnoremap <C-]> <C-\><C-n>
+tnoremap <C-o> <C-\><C-n>
 
 tnoremap <C-w>h <C-\><C-n><C-w>h
 tnoremap <C-w>j <C-\><C-n><C-w>j
