@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Project Ideas.md",
+            "file": "Semantic commit messages.md",
             "mode": "source"
           }
         }
@@ -48,7 +48,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -68,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Project Ideas.md",
+                "file": "Semantic commit messages.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,8 +89,8 @@
   },
   "active": "b1d2a977253152a2",
   "lastOpenFiles": [
-    "Project Ideas.md",
     "Untitled.md",
+    "Project Ideas.md",
     "update dependabot dependencies.md"
   ]
 }
