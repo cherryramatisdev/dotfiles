@@ -6,7 +6,5 @@
 
 config_version: 2
 settings:
-  content.desktop_capture:
-    https://discord.com: true
-  content.media.audio_capture:
-    https://discord.com: true
+  content.notifications:
+    https://app.slack.com: true
