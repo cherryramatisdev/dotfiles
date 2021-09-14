@@ -1,7 +1,16 @@
-call plug#begin('~/.vim/plugged')
+let g:package_path=''
+
+if has('nvim')
+  let g:package_path = stdpath('data') . '/plugged'
+else
+  let g:package_path = '~/.vim/plugged'
+endif
+
+call plug#begin(g:package_path)
 
 " editing
 Plug 'inkarkat/vim-ReplaceWithRegister'
+Plug 'cohama/lexima.vim'
 
 " Text objects
 Plug 'kana/vim-textobj-user'
@@ -24,11 +33,13 @@ Plug 'tpope/vim-rsi'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'joereynolds/vim-minisnip'
+Plug 'ekickx/clipboard-image.nvim'
+Plug 'twitvim/twitvim'
+Plug 'dhruvasagar/vim-open-url'
 
 " coding
 Plug 'tommcdo/vim-lion'
 Plug 'HerringtonDarkholme/yats.vim'
-" or Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jxnblk/vim-mdx-js'
 Plug 'fatih/vim-go'
@@ -58,5 +69,9 @@ Plug 'ElmCast/elm-vim'
 
 " Local plugins
 Plug '~/projects/plugins/semantic_git.vim/'
+Plug '~/projects/plugins/translator.vim/'
+
+" An http client for vimscript
+Plug 'mattn/webapi-vim'
 
 call plug#end()

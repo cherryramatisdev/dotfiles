@@ -9,8 +9,8 @@ SCHEDULED: <2021-09-18 sáb 18:00>
  need to switch on stroke tag
 * TODO Discover how to mock next/router without using require :pantheon:
   SCHEDULED: <2021-09-14 ter 16:00>
-* TODO Header menuFull is height: 100vh with centralize text, talk with will
-  SCHEDULED: <2021-09-14 ter 16:00>
+* DONE Header menuFull is height: 100vh with centralize text, talk with will
+  SCHEDULED: <2021-09-14 ter 16:00> CLOSED: [2021-09-14 ter 18:20]
 * TODO Do subtitulo para o card, tem um divider
   DEADLINE: <2021-09-14 ter 13:00>
 * TODO Adicionar transition no hover do botao
@@ -20,3 +20,9 @@ SCHEDULED: <2021-09-18 sáb 18:00>
 * TODO Adicionar divider entre Know more e footer
   DEADLINE: <2021-09-14 ter 16:00>
 
+* DONE Diminuir gap dos icones de redes sociais
+  SCHEDULED: <2021-09-14 ter 17:00> CLOSED: [2021-09-14 ter 17:39]
+* TODO Alterar spacing large para 4.5rem pantheon
+  DEADLINE: <2021-09-14 ter 16:00>
+* DONE Adicionar children nos botoes outlineds footer :frontend:
+  DEADLINE: <2021-09-14 ter 17:00> CLOSED: [2021-09-14 ter 18:20]

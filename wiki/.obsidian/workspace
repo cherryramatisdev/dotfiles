@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Credenciais npm.md",
+            "file": "Project Ideas.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Credenciais npm.md",
+                "file": "Project Ideas.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,8 +88,10 @@
   },
   "active": "b1d2a977253152a2",
   "lastOpenFiles": [
-    "Untitled.md",
     "Project Ideas.md",
+    "todos.md",
+    "Credenciais npm.md",
+    "Untitled.md",
     "Semantic commit messages.md",
     "update dependabot dependencies.md"
   ]
