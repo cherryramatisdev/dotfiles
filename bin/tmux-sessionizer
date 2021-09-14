@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-items="
-$HOME/projects/work/exams
-$HOME/projects/work/pantheon
-$HOME/projects/dotfiles
-"
+items=`find ~/projects -maxdepth 2 -mindepth 2 -type d`
 
 if [[ $# -eq 1 ]]; then
     selected=$1
@@ -12,8 +8,12 @@ else
     selected=`echo "$items" | fzf`
 fi
 
-tmux_session_name=`basename $selected | tr . _`
+if [ -z ${selected} ]; then
+    echo "Please select an option"
+else
+    tmux_session_name=`basename $selected | tr . _`
+    echo "/usr/bin/tmux new-session -A -s $tmux_session_name -c $selected"
 
-echo "/usr/bin/tmux new-session -A -s $tmux_session_name -c $selected"
+    /usr/bin/tmux new-session -A -s $tmux_session_name -c $selected
+fi
 
-/usr/bin/tmux new-session -A -s $tmux_session_name -c $selected
