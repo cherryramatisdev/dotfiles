@@ -4,3 +4,4 @@ confluence https://lamimed.atlassian.net/wiki/spaces/TEC/pages/129269761/Problem
 golang rest api with orm https://blog.logrocket.com/how-to-build-a-rest-api-with-golang-using-gin-and-gorm/
 cleanup svg https://jakearchibald.github.io/svgomg/
 translate open source api https://translate.sysctl.io/
+solve merge conflicts with fugitive http://vimcasts.org/episodes/fugitive-vim-resolving-merge-conflicts-with-vimdiff/
