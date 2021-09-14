@@ -1,6 +1,22 @@
 * TODO Terminar rest api com clojure
-   SCHEDULED: <2021-09-11 sáb 18:00>
+   SCHEDULED: <2021-09-18 sáb 18:00>
    [[file:~/projects/personal/clojure/rest-demo/README.md::Now that we have the basics down, we should try and return some JSON. We will use Clojures data.JSON library to easily create JSON from Clojure maps.]]
 
 * TODO Terminar de ler o livo O'Reilly elm in action
-SCHEDULED: <2021-09-11 sáb 18:00>
+SCHEDULED: <2021-09-18 sáb 18:00>
+* TODO IconMail don't get the color property correctly :pantheon:
+ SCHEDULED: <2021-09-14 ter 15:00>
+ need to switch on stroke tag
+* TODO Discover how to mock next/router without using require :pantheon:
+  SCHEDULED: <2021-09-14 ter 16:00>
+* TODO Header menuFull is height: 100vh with centralize text, talk with will
+  SCHEDULED: <2021-09-14 ter 16:00>
+* TODO Do subtitulo para o card, tem um divider
+  DEADLINE: <2021-09-14 ter 13:00>
+* TODO Adicionar transition no hover do botao
+  [2021-09-13 seg]
+* TODO Alterar o plop generator para .mdx no pantheon(@Gui) e no website(@me)
+  [2021-09-13 seg]
+* TODO Adicionar divider entre Know more e footer
+  DEADLINE: <2021-09-14 ter 16:00>
+

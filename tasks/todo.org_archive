@@ -3,7 +3,6 @@
 
 Archived entries from file /home/cherry/projects/dotfiles/tasks/todo.org
 
-
 * DONE Plan this solution more(card TEC-7)
   CLOSED: [2021-08-23 Mon 23:03] SCHEDULED: <2021-08-19 Thu 18:00>
   :PROPERTIES:
@@ -270,3 +269,22 @@ SCHEDULED: <2021-09-07 ter 23:00> CLOSED: [2021-09-07 ter 22:35]
   because it's the only usage for this.
 * DONE Escrever pagina no obsidian sobre semantic commits e adicionar no confluence
   SCHEDULED: <2021-09-09 qui 21:00> CLOSED: [2021-09-10 sex 17:03]
+* DONE Perguntar para o Gui passar as credenciais do npm para podrmos fazer publish
+  SCHEDULED: <2021-09-13 seg 15:00> CLOSED: [2021-09-13 seg 16:00]
+* DONE Do titulo para o subtitulo, tem muito espacamento
+  CLOSED: [2021-09-13 seg 20:07]
+  [2021-09-13 seg]
+* DONE Espacamento entre botoes e links de social
+  DEADLINE: <2021-09-13 seg 18:00> CLOSED: [2021-09-13 seg 22:00]
+* DONE Aplicar display block no span e nao usar <br />
+  CLOSED: [2021-09-13 seg 20:19]
+  [2021-09-13 seg]
+* DONE Mais espacamento entre texto e social
+  DEADLINE: <2021-09-13 seg 19:00> CLOSED: [2021-09-13 seg 22:00]
+* DONE Espacamento entre conteudo e arco footer
+  DEADLINE: <2021-09-13 seg 20:00> CLOSED: [2021-09-13 seg 22:00]
+* DONE Usar image do nextjs
+  CLOSED: [2021-09-13 seg 20:15]
+  [2021-09-13 seg]
+* DONE usar o componente grid wrapper do pantheon
+  DEADLINE: <2021-09-13 seg 21:00> CLOSED: [2021-09-13 seg 22:31]
