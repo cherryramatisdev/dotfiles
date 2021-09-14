@@ -18,23 +18,11 @@ alias agU="sudo apt-get upgrade"
 
 eval "$(lua ~/bin/z.lua --init zsh)"
 
-select_file() {
-  given_file="$1"
-  nvim `ag -g "" | fzf --preview="cat {}" --preview-window=right:70%:wrap --query="$given_file"`
-}
-bindkey -s ^x^f "select_file\n"
+bindkey -s ^x^f "find-files\n"
 
-create_or_attach_tmux() {
-  `tmux new-session -A -s main`
-}
+bindkey -s ^x^t "tmux new-session -A -s main\n"
 
-bindkey -s ^x^t "create_or_attach_tmux\n"
-
-tmux_sessionizer() {
-  `tmux-sessionizer`
-}
-
-bindkey -s ^x^p "tmux_sessionizer\n"
+bindkey -s ^x^p "tmux-sessionizer\n"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
