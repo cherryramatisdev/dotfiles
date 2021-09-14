@@ -4,7 +4,6 @@ function! cherry#colorscheme#Toggle()
     colorscheme papercolor
   else
     set background=dark
-    colorscheme paramount
-    " colorscheme cherry
+    colorscheme codedark
   endif
 endfunction

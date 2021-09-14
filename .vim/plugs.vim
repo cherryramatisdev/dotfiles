@@ -36,6 +36,7 @@ Plug 'joereynolds/vim-minisnip'
 Plug 'ekickx/clipboard-image.nvim'
 Plug 'twitvim/twitvim'
 Plug 'dhruvasagar/vim-open-url'
+Plug 'tomasiser/vim-code-dark'
 
 " coding
 Plug 'tommcdo/vim-lion'
