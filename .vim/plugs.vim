@@ -32,7 +32,7 @@ Plug 'tpope/vim-rsi'
 " misc
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'joereynolds/vim-minisnip'
+Plug 'SirVer/ultisnips'
 Plug 'ekickx/clipboard-image.nvim'
 Plug 'twitvim/twitvim'
 Plug 'dhruvasagar/vim-open-url'
