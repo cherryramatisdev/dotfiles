@@ -4,13 +4,8 @@
 
 * TODO Terminar de ler o livo O'Reilly elm in action
 SCHEDULED: <2021-09-18 sáb 18:00>
-* TODO IconMail don't get the color property correctly :pantheon:
- [2021-09-14 ter]
- need to switch on stroke tag
-* TODO Discover how to mock next/router without using require :pantheon:
+* TODO Discover how to mock next/router without using require
   [2021-09-14 ter]
-* TODO Adicionar transition no hover do botao
-  [2021-09-13 seg]
 * TODO Alterar o plop generator para .mdx no pantheon(@Gui) e no website(@me)
   [2021-09-13 seg]
 * TODO Alterar spacing large para 4.5rem pantheon
