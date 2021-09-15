@@ -12,8 +12,15 @@ if [ -z ${selected} ]; then
     echo "Please select an option"
 else
     tmux_session_name=`basename $selected | tr . _`
-    echo "/usr/bin/tmux new-session -A -s $tmux_session_name -c $selected"
 
-    /usr/bin/tmux new-session -A -s $tmux_session_name -c $selected
+    if ! tmux has-session -t $tmux_session_name; then
+        tmux new-session -ds $tmux_session_name -c $selected
+    fi
+
+    if [[ -z $TMUX ]]; then
+        tmux attach-session -t $tmux_session_name
+    else
+        tmux switch-client -t $tmux_session_name
+    fi
 fi
 
