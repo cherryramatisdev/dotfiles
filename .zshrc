@@ -18,6 +18,8 @@ alias agU="sudo apt-get upgrade"
 
 eval "$(lua ~/bin/z.lua --init zsh)"
 
+bindkey -s ^v "nvim\n"
+
 bindkey -s ^x^f "find-files\n"
 
 bindkey -s ^x^t "tmux new-session -A -s main\n"

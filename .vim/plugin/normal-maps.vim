@@ -21,3 +21,6 @@ nnoremap <M-j> :resize -4<cr>
 
 " Why this isn't default
 nnoremap Y y$
+
+" Open my projectile like script to switch projects with tmux
+nnoremap <silent> <C-x><C-p> :silent !tmux split-window -v tmux-sessionizer<cr>
