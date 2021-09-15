@@ -288,3 +288,14 @@ SCHEDULED: <2021-09-07 ter 23:00> CLOSED: [2021-09-07 ter 22:35]
   [2021-09-13 seg]
 * DONE usar o componente grid wrapper do pantheon
   DEADLINE: <2021-09-13 seg 21:00> CLOSED: [2021-09-13 seg 22:31]
+* DONE Header menuFull is height: 100vh with centralize text, talk with will
+  SCHEDULED: <2021-09-14 ter 16:00> CLOSED: [2021-09-14 ter 18:20]
+* DONE Do subtitulo para o card, tem um divider
+  DEADLINE: <2021-09-14 ter 13:00> CLOSED: [2021-09-14 Tue 20:26]
+* DONE Adicionar divider entre Know more e footer
+  DEADLINE: <2021-09-14 ter 16:00> CLOSED: [2021-09-14 Tue 22:00]
+
+* DONE Diminuir gap dos icones de redes sociais
+  SCHEDULED: <2021-09-14 ter 17:00> CLOSED: [2021-09-14 ter 17:39]
+* DONE Adicionar children nos botoes outlineds footer :frontend:
+  DEADLINE: <2021-09-14 ter 17:00> CLOSED: [2021-09-14 ter 18:20]

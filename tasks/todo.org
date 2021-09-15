@@ -5,24 +5,17 @@
 * TODO Terminar de ler o livo O'Reilly elm in action
 SCHEDULED: <2021-09-18 sáb 18:00>
 * TODO IconMail don't get the color property correctly :pantheon:
- SCHEDULED: <2021-09-14 ter 15:00>
+ [2021-09-14 ter]
  need to switch on stroke tag
 * TODO Discover how to mock next/router without using require :pantheon:
-  SCHEDULED: <2021-09-14 ter 16:00>
-* DONE Header menuFull is height: 100vh with centralize text, talk with will
-  SCHEDULED: <2021-09-14 ter 16:00> CLOSED: [2021-09-14 ter 18:20]
-* TODO Do subtitulo para o card, tem um divider
-  DEADLINE: <2021-09-14 ter 13:00>
+  [2021-09-14 ter]
 * TODO Adicionar transition no hover do botao
   [2021-09-13 seg]
 * TODO Alterar o plop generator para .mdx no pantheon(@Gui) e no website(@me)
   [2021-09-13 seg]
-* TODO Adicionar divider entre Know more e footer
-  DEADLINE: <2021-09-14 ter 16:00>
-
-* DONE Diminuir gap dos icones de redes sociais
-  SCHEDULED: <2021-09-14 ter 17:00> CLOSED: [2021-09-14 ter 17:39]
 * TODO Alterar spacing large para 4.5rem pantheon
-  DEADLINE: <2021-09-14 ter 16:00>
-* DONE Adicionar children nos botoes outlineds footer :frontend:
-  DEADLINE: <2021-09-14 ter 17:00> CLOSED: [2021-09-14 ter 18:20]
+  [2021-09-14 ter]
+* TODO Revisar branch feature/mobile-version com o figma
+  DEADLINE: <2021-09-15 Wed 14:00>
+* TODO Revisar os requests dessa PR
+  DEADLINE: <2021-09-15 Wed 13:00>
