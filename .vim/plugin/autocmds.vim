@@ -3,8 +3,11 @@ augroup highlight_yank
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
 augroup END
 
-" Remove whitespaces on save
 augroup CHERRY
     autocmd!
+    " Remove whitespaces on save
     autocmd BufWritePre * %s/\s\+$//e
+    " Remove whitespace highlight group because it's annoying
+    autocmd BufWinEnter * highlight clear ExtraWhitespace
 augroup END
+

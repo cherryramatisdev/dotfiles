@@ -299,3 +299,7 @@ SCHEDULED: <2021-09-07 ter 23:00> CLOSED: [2021-09-07 ter 22:35]
   SCHEDULED: <2021-09-14 ter 17:00> CLOSED: [2021-09-14 ter 17:39]
 * DONE Adicionar children nos botoes outlineds footer :frontend:
   DEADLINE: <2021-09-14 ter 17:00> CLOSED: [2021-09-14 ter 18:20]
+* DONE Revisar branch feature/mobile-version com o figma
+  DEADLINE: <2021-09-15 Wed 14:00> CLOSED: [2021-09-15 Wed 17:04]
+* DONE Revisar os requests dessa PR
+  DEADLINE: <2021-09-15 Wed 13:00> CLOSED: [2021-09-15 Wed 17:04]

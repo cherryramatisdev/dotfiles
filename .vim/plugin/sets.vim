@@ -25,11 +25,11 @@ set novisualbell noerrorbells
 set splitbelow splitright
 set tags^=./.git/tags;
 
-if has('nvim')
-  set clipboard+=unnamedplus
-else
-  set clipboard=unnamed
-endif
+" if has('nvim')
+"   set clipboard+=unnamedplus
+" else
+"   set clipboard=unnamed
+" endif
 
 " Prevent vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html

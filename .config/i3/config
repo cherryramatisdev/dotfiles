@@ -21,16 +21,18 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Remap caps to ctrl
-exec --no-startup-id setxkbmap us -option 'caps:ctrl_modifier'
+# exec --no-startup-id setxkbmap us -option 'caps:ctrl_modifier'
 
 # Startup xrandr for two monitors
 exec --no-startup-id xrandr --auto --output DVI-D-1 --mode 2560x1080 --left-of HDMI-1
 
 # Run emacs daemon
-exec --no-startup-id emacs --daemon &
+# exec --no-startup-id emacs --daemon &
 
 # Run dunst for notifications
 exec --no-startup-id dunst &
+
+exec --no-startup-id parcellite &
 
 exec --no-startup-id compton -b &
 
@@ -53,7 +55,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $alt+Shift+Return exec i3-sensible-terminal
-bindsym $mod+t exec kitty
+bindsym $mod+t exec alacritty
 
 # kill focused window
 bindsym $mod+c kill

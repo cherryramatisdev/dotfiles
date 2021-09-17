@@ -24,3 +24,4 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips/"
 let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips/"]
 
+highlight ExtraWhitespace guibg=black

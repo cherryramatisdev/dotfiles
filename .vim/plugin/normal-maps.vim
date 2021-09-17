@@ -4,6 +4,8 @@ nmap <leader><leader> <c-^>
 " Quit vim quickly
 nnoremap <leader>q ZZ
 
+nnoremap <leader>w :w<cr>
+
 " See http://stevelosh.com/blog/2010/09/coming-home-to-vim
 nnoremap / /\v
 
