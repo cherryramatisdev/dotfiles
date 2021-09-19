@@ -125,7 +125,7 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 #   - true
 #   - false
 #   - ask
-config.set('content.notifications', True, 'https://www.youtube.com')
+config.set('content.notifications.enabled', True, 'https://www.youtube.com')
 
 # Allow websites to show notifications.
 # Type: BoolAsk
@@ -133,7 +133,7 @@ config.set('content.notifications', True, 'https://www.youtube.com')
 #   - true
 #   - false
 #   - ask
-config.set('content.notifications', True, 'https://calendar.google.com')
+config.set('content.notifications.enabled', True, 'https://calendar.google.com')
 
 # Allow websites to register protocol handlers via
 # `navigator.registerProtocolHandler`.
@@ -149,3 +149,14 @@ config.bind('J', 'tab-prev', mode='normal')
 config.bind('K', 'tab-next', mode='normal')
 config.bind('gJ', 'tab-move -', mode='normal')
 config.bind('gK', 'tab-move +', mode='normal')
+
+# Shell keys on insert mode
+config.bind('<ctrl-f>', 'fake-key <Right>', mode='insert')
+config.bind('<ctrl-b>', 'fake-key <Left>', mode='insert')
+config.bind('<alt-f>', 'fake-key <Ctrl-Right>', mode='insert')
+config.bind('<alt-b>', 'fake-key <Ctrl-Left>', mode='insert')
+config.bind('<ctrl-h>', 'fake-key <Backspace>', mode='insert')
+config.bind('<ctrl-w>', 'fake-key <Ctrl-Backspace>', mode='insert')
+config.bind('<ctrl-e>', 'fake-key <End>', mode='insert')
+config.bind('<ctrl-a>', 'fake-key <Home>', mode='insert')
+config.bind('<ctrl-u>', 'fake-key <Shift-Home><Backspace>', mode='insert')

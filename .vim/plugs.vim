@@ -78,7 +78,7 @@ end
 Plug 'ElmCast/elm-vim'
 
 " Local plugins
-Plug '~/projects/plugins/semantic_git.vim/'
+Plug '~/projects/plugins/semantical-commits.vim/'
 Plug '~/projects/plugins/translator.vim/'
 
 " An http client for vimscript

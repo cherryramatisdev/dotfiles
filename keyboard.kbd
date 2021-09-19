@@ -1,5 +1,4 @@
 (defcfg
-  ;; For Linux
   input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
   output (uinput-sink "My KMonad output"
     ;; To understand the importance of the following line, see the section on
@@ -22,10 +21,11 @@
 )
 
 (defalias
-  capsesc (tap-next esc lctrl)
-  tabalt (tap-next tab lalt)
-  retsuper (tap-hold 200 ret lmet)
-  spc (tap-next-release spc (layer-toggle vi))
+  capsesc (tap-hold 150 esc lctrl)
+  tabalt (tap-hold 150 tab lalt)
+  retsuper (tap-hold 150 ret lmet)
+  altarrows (layer-toggle viarrows)
+  altnumbers (layer-toggle vinumbers)
 )
 
 (deflayer default
@@ -33,13 +33,21 @@
   @tabalt  q    w    e    r    t    y    u    i    o    p    [    ]
   @capsesc a    s    d    f    g    h    j    k    l    ;    '    \ @retsuper
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           @spc            ralt rmet cmp  rctl
+  lctl lmet @altarrows           spc            @altnumbers rmet cmp  rctl
 )
 
-(deflayer vi
+(deflayer viarrows
   grv  _    _    _    _    _    _    _    _    _    _    _    _    bspc
-  tab  7    8    9    _    _    _    _    _    _    _    _    _
-  caps 4    5    6    _    _    lft    down    up    rght    _    _   _ ret
-  lsft 1    2    3    _    _    _    _    _    _    _    rsft
+  @tabalt  _    _    _    _    _    _    _    _    _    _    _    _
+  @capsesc _    _    _    _    _    lft    down    up    rght    _    _   _ @retsuper
+  lsft     _    _    _    _    _    _    _    _    _    _    rsft
+  lctl lmet lalt           spc            ralt rmet cmp  rctl
+)
+
+(deflayer vinumbers
+  grv  _    _    _    _    _    _    _    _    _    _    _    _    bspc
+  @tabalt  7    8    9    +    _    _    _    _    _    _    _    _
+  @capsesc 4    5    6    -    _    _    _    _    _    _    _   _ @retsuper
+  lsft     1    2    3    0    _    _    _    _    _   _    rsft
   lctl lmet lalt           spc            ralt rmet cmp  rctl
 )
