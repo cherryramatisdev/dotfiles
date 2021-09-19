@@ -1,87 +1,41 @@
-let g:package_path=''
-
-if has('nvim')
-  let g:package_path = stdpath('data') . '/plugged'
-else
-  let g:package_path = '~/.vim/plugged'
+if &compatible
+  set nocompatible
 endif
 
-call plug#begin(g:package_path)
+function! PackInit() abort
+  packadd minpac
 
-" editing
-Plug 'inkarkat/vim-ReplaceWithRegister'
-Plug 'cohama/lexima.vim'
-Plug 'christoomey/vim-titlecase'
-Plug 'christoomey/vim-system-copy'
+  call minpac#init()
+  call minpac#add('inkarkat/vim-ReplaceWithRegister')
+  call minpac#add('christoomey/vim-titlecase')
+  call minpac#add('christoomey/vim-system-copy')
+  call minpac#add('christoomey/vim-conflicted')
+  call minpac#add('christoomey/vim-colors-ctoomey')
 
+  " Text objects
+  call minpac#add('kana/vim-textobj-user')
+  call minpac#add('kana/vim-textobj-line')
+  call minpac#add('kana/vim-textobj-function')
+  call minpac#add('kana/vim-textobj-entire')
 
-" Text objects
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-line'
-Plug 'kana/vim-textobj-function'
-Plug 'kana/vim-textobj-entire'
+  " tpope fandom
+  call minpac#add('tpope/vim-sensible')
+  call minpac#add('tpope/vim-sleuth')
+  call minpac#add('tpope/vim-repeat')
+  call minpac#add('tpope/vim-unimpaired')
+  call minpac#add('tpope/vim-surround')
+  call minpac#add('tpope/vim-vinegar')
+  call minpac#add('tpope/vim-obsession')
+  call minpac#add('tpope/vim-fugitive')
+  call minpac#add('tpope/vim-commentary')
+  call minpac#add('tpope/vim-rsi')
 
-" tpope fandom
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-rsi'
+  call minpac#add('AndrewRadev/tagalong.vim')
+  call minpac#add('AndrewRadev/ginitpull.vim')
 
-" misc
-Plug 'terryma/vim-multiple-cursors'
-Plug 'SirVer/ultisnips'
-Plug 'ekickx/clipboard-image.nvim'
-Plug 'twitvim/twitvim'
-Plug 'dhruvasagar/vim-open-url'
-Plug 'tomasiser/vim-code-dark'
-Plug 'itchyny/calendar.vim'
-Plug 'jason0x43/vim-wildgitignore'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+  call minpac#add('dhruvasagar/vim-open-url')
+endfunction
 
-" coding
-Plug 'tommcdo/vim-lion'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'jxnblk/vim-mdx-js'
-Plug 'fatih/vim-go'
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'thosakwe/vim-flutter'
-
-" Andrew radev fandom
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'AndrewRadev/tagalong.vim'
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'AndrewRadev/sideways.vim'
-Plug 'AndrewRadev/deleft.vim'
-Plug 'AndrewRadev/ginitpull.vim'
-
-" FZF
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-
-" Org mode support for my agenda
-Plug 'kristijanhusak/orgmode.nvim'
-
-" Lsp on neovim
-if has('nvim')
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'kabouzeid/nvim-lspinstall'
-  Plug 'glepnir/lspsaga.nvim'
-end
-
-" Elm setup
-Plug 'ElmCast/elm-vim'
-
-" Local plugins
-Plug '~/projects/plugins/semantical-commits.vim/'
-Plug '~/projects/plugins/translator.vim/'
-
-" An http client for vimscript
-Plug 'mattn/webapi-vim'
-
-call plug#end()
+command! PackUpdate call PackInit() | call minpac#update()
+command! PackClean  call PackInit() | call minpac#clean()
+command! PackStatus packadd minpac | call minpac#status()

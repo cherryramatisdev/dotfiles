@@ -9,7 +9,7 @@ Plug 'inkarkat/vim-ReplaceWithRegister'
 Plug 'cohama/lexima.vim'
 Plug 'christoomey/vim-titlecase'
 Plug 'christoomey/vim-system-copy'
-
+Plug 'christoomey/vim-conflicted'
 
 " Text objects
 Plug 'kana/vim-textobj-user'

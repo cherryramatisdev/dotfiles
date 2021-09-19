@@ -1,3 +1,6 @@
+set path+=**
+set wildmenu
+
 set noswapfile hlsearch cursorline noshowmode
 set ignorecase smartcase
 set textwidth=80 colorcolumn=+1
@@ -72,3 +75,5 @@ set iskeyword-=#                    " '#' is an end of word designator
 set iskeyword-=-                    " '-' is an end of word designator
 
 let g:netrw_localrmdir='rm -r'
+
+colorscheme ctwombat

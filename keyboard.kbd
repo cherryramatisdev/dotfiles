@@ -21,9 +21,9 @@
 )
 
 (defalias
-  capsesc (tap-hold 150 esc lctrl)
-  tabalt (tap-hold 150 tab lalt)
-  retsuper (tap-hold 150 ret lmet)
+  capsesc (tap-hold 200 esc lctrl)
+  tabalt (tap-hold 200 tab lalt)
+  retsuper (tap-hold 200 ret lmet)
   altarrows (layer-toggle viarrows)
   altnumbers (layer-toggle vinumbers)
 )
