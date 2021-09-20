@@ -11,10 +11,11 @@ Makefile and stow expect you clone it into `~/projects/dotfiles`.
 
 1. Emacs (@28 with native-comp)
 2. Neovim (0.6 master branch)
-3. i3wm with i3status
-4. kitty
-5. Zsh
-6. tmux
+3. Vim (> 0.8)
+4. i3wm with i3status
+5. alacritty
+6. Zsh
+7. tmux
 
 ## Setup my keyboard
 
