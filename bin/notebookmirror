@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+xrandr --output HDMI-A-0 --mode 2560x1080 --output eDP --scale-from 2560x1080 --same-as HDMI-A-0
