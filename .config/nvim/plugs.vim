@@ -52,7 +52,6 @@ Plug 'thosakwe/vim-flutter'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'AndrewRadev/sideways.vim'
 Plug 'AndrewRadev/deleft.vim'
 Plug 'AndrewRadev/ginitpull.vim'
 

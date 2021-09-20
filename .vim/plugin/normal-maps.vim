@@ -16,10 +16,10 @@ map <silent> <leader><cr> :noh<cr>
 nnoremap <leader>t :term<cr>
 
 " Resize splits
-nnoremap <M-h> :vertical resize -4<cr>
-nnoremap <M-l> :vertical resize +4<cr>
-nnoremap <M-k> :resize +4<cr>
-nnoremap <M-j> :resize -4<cr>
+nnoremap <C-h> :vertical resize -4<cr>
+nnoremap <C-l> :vertical resize +4<cr>
+nnoremap <C-k> :resize +4<cr>
+nnoremap <C-j> :resize -4<cr>
 
 " Why this isn't default
 nnoremap Y y$

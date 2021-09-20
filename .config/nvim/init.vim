@@ -15,7 +15,5 @@ let maplocalleader='\\'
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips/"
-let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips/"]
 
 highlight ExtraWhitespace guibg=black
