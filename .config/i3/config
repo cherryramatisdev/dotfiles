@@ -32,7 +32,7 @@ exec --no-startup-id xrandr --auto --output DVI-D-1 --mode 2560x1080 --left-of H
 # Run dunst for notifications
 exec --no-startup-id dunst &
 
-exec --no-startup-id parcellite &
+exec --no-startup-id clipmenud &
 
 exec --no-startup-id compton -b &
 
@@ -63,8 +63,11 @@ bindsym $mod+c kill
 # Open browser
 bindsym $mod+b exec qutebrowser
 
+# Open clipboard manager
+bindsym $mod+o exec clipmenu
+
 # Open emacs
-bindsym $mod+e exec emacsclient -c -a ''
+# bindsym $mod+e exec emacsclient -c -a ''
 
 # start dmenu (a program launcher)
 bindsym $mod+space exec --no-startup-id dmenu_run
