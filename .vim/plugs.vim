@@ -33,11 +33,18 @@ function! PackInit() abort
   call minpac#add('tpope/vim-fugitive')
   call minpac#add('tpope/vim-commentary')
   call minpac#add('tpope/vim-rsi')
+  call minpac#add('tpope/vim-scriptease')
+  call minpac#add('tpope/vim-eunuch')
+  call minpac#add('tpope/vim-characterize')
 
   call minpac#add('AndrewRadev/tagalong.vim')
   call minpac#add('AndrewRadev/ginitpull.vim')
 
   call minpac#add('dhruvasagar/vim-open-url')
+
+  call minpac#add('yuratomo/w3m.vim')
+  call minpac#add('airblade/vim-rooter')
+  call minpac#add('thinca/vim-fontzoom')
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update()
