@@ -2,19 +2,19 @@ alias ls="exa"
 alias la="exa -lha"
 alias g="git"
 alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 alias tmux="tmux -2"
 alias t="tmux new-session -A -s main"
-alias ee="emacsclient -c -n -a ''"
-alias et="emacsclient -t"
 alias v="nvim"
 alias dev="yarn start:dev"
 alias y="yarn"
 alias ya="yarn add"
 alias kall="killall"
-alias edaemon="emacs --daemon"
-alias agi="sudo apt-get install"
-alias agu="sudo apt-get update"
-alias agU="sudo apt-get upgrade"
+alias padd="sudo pacman -S"
+alias psearch="sudo pacman -Qe | grep"
+alias plist="sudo pacman -Qe"
+alias pupdate="sudo pacman -Syuu"
 
 eval "$(lua ~/bin/z.lua --init zsh)"
 
@@ -25,15 +25,6 @@ bindkey -s ^x^f "find-files\n"
 bindkey -s ^x^t "tmux new-session -A -s main\n"
 
 bindkey -s ^x^p "tmux-sessionizer\n"
-
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
-#
-# Prompt
-#
 
 autoload -U colors
 colors
@@ -178,8 +169,8 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+export GOPATH="$HOME/workspace";
+export GOROOT="$HOME/go";
+export PATH="$GOPATH/bin:$PATH";
 
-export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
-alias gvm="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+export PATH=~/.npm-global/bin:$PATH

@@ -67,7 +67,7 @@ bindsym $mod+b exec qutebrowser
 bindsym $mod+o exec clipmenu
 
 # Open emacs
-# bindsym $mod+e exec emacsclient -c -a ''
+bindsym $mod+e exec emacsclient -c -a ''
 
 # start dmenu (a program launcher)
 bindsym $mod+space exec --no-startup-id dmenu_run

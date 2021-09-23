@@ -3,3 +3,5 @@ function! s:build_typescript() abort
 endfunction
 
 nnoremap <leader>= :call <SID>build_typescript()<cr>
+
+setlocal path=.,,src/**

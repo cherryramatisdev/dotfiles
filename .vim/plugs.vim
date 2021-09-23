@@ -1,55 +1,72 @@
+filetype plugin indent on
+syntax enable
+
 if &compatible
-  set nocompatible
+  set nocompatible               " Be iMproved
 endif
 
-function! PackInit() abort
-  packadd minpac
-
-  call minpac#init()
-
-  call minpac#add('ervandew/supertab')
-
-  call minpac#add('inkarkat/vim-ReplaceWithRegister')
-  call minpac#add('christoomey/vim-titlecase')
-  call minpac#add('christoomey/vim-system-copy')
-  call minpac#add('christoomey/vim-conflicted')
-
-  call minpac#add('tomasiser/vim-code-dark')
-
-  " Text objects
-  call minpac#add('kana/vim-textobj-user')
-  call minpac#add('kana/vim-textobj-line')
-  call minpac#add('kana/vim-textobj-function')
-  call minpac#add('kana/vim-textobj-entire')
-
-  " tpope fandom
-  call minpac#add('tpope/vim-sensible')
-  call minpac#add('tpope/vim-sleuth')
-  call minpac#add('tpope/vim-repeat')
-  call minpac#add('tpope/vim-unimpaired')
-  call minpac#add('tpope/vim-surround')
-  call minpac#add('tpope/vim-vinegar')
-  call minpac#add('tpope/vim-obsession')
-  call minpac#add('tpope/vim-fugitive')
-  call minpac#add('tpope/vim-commentary')
-  call minpac#add('tpope/vim-rsi')
-  call minpac#add('tpope/vim-scriptease')
-  call minpac#add('tpope/vim-eunuch')
-  call minpac#add('tpope/vim-characterize')
-
-  call minpac#add('AndrewRadev/tagalong.vim')
-  call minpac#add('AndrewRadev/ginitpull.vim')
-
-  call minpac#add('dhruvasagar/vim-open-url')
-
-  call minpac#add('yuratomo/w3m.vim')
-  call minpac#add('airblade/vim-rooter')
-  call minpac#add('thinca/vim-fontzoom')
-endfunction
-
-command! PackUpdate call PackInit() | call minpac#update()
-command! PackClean  call PackInit() | call minpac#clean()
-command! PackStatus packadd minpac | call minpac#status()
-
+set runtimepath+=/home/cherry/.vim/bundles/repos/github.com/Shougo/dein.vim
 set runtimepath+=~/projects/plugins/semantical-commits.vim/
 set runtimepath+=~/projects/plugins/translator.vim/
+set runtimepath+=~/projects/plugins/projectile.vim/
+
+call dein#begin('/home/cherry/.vim/bundles')
+
+call dein#add('/home/cherry/.vim/bundles/repos/github.com/Shougo/dein.vim')
+
+call dein#add('ervandew/supertab')
+
+call dein#add('inkarkat/vim-ReplaceWithRegister')
+call dein#add('christoomey/vim-titlecase')
+call dein#add('christoomey/vim-system-copy')
+call dein#add('christoomey/vim-conflicted')
+
+call dein#add('tomasiser/vim-code-dark')
+
+" Text objects
+call dein#add('kana/vim-textobj-user')
+call dein#add('kana/vim-textobj-line')
+call dein#add('kana/vim-textobj-function')
+call dein#add('kana/vim-textobj-entire')
+
+" tpope fandom
+call dein#add('tpope/vim-sensible')
+call dein#add('tpope/vim-sleuth')
+call dein#add('tpope/vim-repeat')
+call dein#add('tpope/vim-unimpaired')
+call dein#add('tpope/vim-surround')
+call dein#add('tpope/vim-vinegar')
+call dein#add('tpope/vim-obsession')
+call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-commentary')
+call dein#add('tpope/vim-rsi')
+call dein#add('tpope/vim-scriptease')
+call dein#add('tpope/vim-eunuch')
+call dein#add('tpope/vim-characterize')
+call dein#add('tpope/vim-markdown')
+
+call dein#add('AndrewRadev/tagalong.vim')
+call dein#add('AndrewRadev/ginitpull.vim')
+
+call dein#add('dhruvasagar/vim-open-url')
+
+call dein#add('yuratomo/w3m.vim')
+call dein#add('airblade/vim-rooter')
+
+call dein#add('Shougo/vimshell.vim')
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+
+call dein#add('fatih/vim-go')
+
+call dein#add('vuciv/vim-bujo')
+
+call dein#add('dense-analysis/ale')
+
+call dein#end()
+
+filetype plugin indent on
+syntax enable
+
+if dein#check_install()
+  call dein#install()
+endif

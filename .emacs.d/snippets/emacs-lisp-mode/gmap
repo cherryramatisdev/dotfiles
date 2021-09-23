@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: gmap
-# key: gmap
-# --
-(global-set-key (kbd "${1:C-}") '$0)

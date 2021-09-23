@@ -303,3 +303,12 @@ SCHEDULED: <2021-09-07 ter 23:00> CLOSED: [2021-09-07 ter 22:35]
   DEADLINE: <2021-09-15 Wed 14:00> CLOSED: [2021-09-15 Wed 17:04]
 * DONE Revisar os requests dessa PR
   DEADLINE: <2021-09-15 Wed 13:00> CLOSED: [2021-09-15 Wed 17:04]
+
+* DONE Comecar o card tec-43
+  CLOSED: [2021-09-22 qua 15:19] DEADLINE: <2021-09-17 Fri 13:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-09-22 qua 15:19
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:

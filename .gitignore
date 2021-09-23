@@ -13,3 +13,4 @@
 /.zsh-exports
 /.emacs.d/forge-database.sqlite
 /.vim/pack/
+/.vim/bundles/

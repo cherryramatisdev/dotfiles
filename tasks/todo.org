@@ -1,77 +1,16 @@
-* TODO Terminar rest api com clojure
-   SCHEDULED: <2021-09-18 sáb 18:00>
-   [[file:~/projects/personal/clojure/rest-demo/README.md::Now that we have the basics down, we should try and return some JSON. We will use Clojures data.JSON library to easily create JSON from Clojure maps.]]
-
-* TODO Terminar de ler o livo O'Reilly elm in action
+* TODO Terminar de ler o livo O'Reilly elm in action :personal:
 SCHEDULED: <2021-09-18 sáb 18:00>
-* TODO Discover how to mock next/router without using require
-  [2021-09-14 ter]
-* TODO Alterar o plop generator para .mdx no pantheon(@Gui) e no website(@me)
-  [2021-09-13 seg]
-* TODO Alterar spacing large para 4.5rem pantheon
-  [2021-09-14 ter]
-* TODO Como setar top sem chumbar o 4rem no header :website:
-  [2021-09-15 Wed]
-  [[~/projects/work/frontend/src/components/Header/styles.ts]]
-* TODO No footer desktop, incluir arcos
-  [2021-09-15 Wed]
- https://www.figma.com/file/053zdF6dz7C9t2I3ac1U4b/Lami-Wire-For-Tech?node-id=1610%3A30528
-* TODO Incluir link no carrossel
-  [2021-09-16 Thu]
-* TODO Revisar icones
-  [2021-09-16 Thu]
-* TODO Checar height do card no Toggle
-  [2021-09-16 Thu]
-* TODO Alterar position do Divider abaixo do LamiTeam
-  [2021-09-16 Thu]
-* TODO Aumentar area do primeiro titulo e description
-  [2021-09-16 Thu]
-* TODO Salute online precisa ser a cor primary(o verdinho)
-  [2021-09-16 Thu]
-* TODO Adicionar cursor pointer nos cards
-  [2021-09-16 Thu]
-* TODO Divider thumbnail precisa ter 100% width
-  [2021-09-16 Thu]
-* TODO Checar divider no pantheon para ter 100% width
-  [2021-09-16 Thu]
-* TODO Padding no lado direito n deveria existir no desktop
-  [2021-09-16 Thu]
-* TODO Checar espacamento entre ultima sessao e footer
-  [2021-09-16 Thu]
-* TODO No desktop, alterar tamanho dos botoes no footer
-  [2021-09-16 Thu]
-* TODO Comecar o card tec-43
-  DEADLINE: <2021-09-17 Fri 13:00>
-* TODO Remover o padding entre os itens e adicionar uma margin de ${spacing.large} no how it works
-  [2021-09-17 Fri]
-* TODO Transformar listagem de <S.Item para <ol> tag src/templates/Category/Index.tsx
-  [2021-09-17 Fri]
-* TODO Criar um componente de grid para o pantheon
-  [2021-09-17 Fri]
-* TODO Separar design_tokens colors para usar objetos com multi niveis para facilitar a tipagem
-  [2021-09-17 Fri]
-  #+BEGIN_SRC typescript
-  export const colors = {
-    basic: {
-    primary: ''
-    },
-    gradient: {
-    gradient__primary: ''
-    },
-    text: {
-    text__primary: ''
-    },
-    state: {
-    state__error: ''
-    }
-  }
-  #+END_SRC
-* TODO Incluir max-width no MainCallToAction
-  [2021-09-17 Fri]
-  Usar 250px(25rem)
-* TODO Criar um hook para formatar moeda usando uma helper function
-  [2021-09-17 Fri]
-* TODO add size propertie for button @Galvao
-  [2021-09-17 Fri]
-* TODO Forcar named export no eslint
-  [2021-09-17 Fri]
+
+* TODO Discutir espacamento usado no Our Services desktop https://github.com/lami-health/website/pull/132 :work:
+* TODO Ajeitar espacamento do whatsapp no header :work:
+* TODO Discutir sobre tamanho da Modal com will https://github.com/lami-health/pantheon/pull/73 :work:
+* DONE ajeitar padding do texto no hero(pagina de produto)             :work:
+  CLOSED: [2021-09-22 qua 18:50]
+* DONE diminuir spacing abaixo do botao schedule no mobile             :work:
+  CLOSED: [2021-09-22 qua 18:56]
+* DONE incluir grid wrapper no botao schdule no mobile                 :work:
+  CLOSED: [2021-09-22 qua 19:04]
+* DONE incluir sombra fixa no botao abaixo e no hero acima mobile      :work:
+  CLOSED: [2021-09-22 qua 19:40]
+* DONE conditions -> titulo em roxo e texto em "preto" desktop/mobile  :work:
+  CLOSED: [2021-09-22 qua 20:22]

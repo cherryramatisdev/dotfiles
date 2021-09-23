@@ -1,5 +1,6 @@
 set path+=**
 set wildmenu
+set wildmode=longest:full,full
 
 set noswapfile hlsearch cursorline noshowmode
 set ignorecase smartcase
@@ -76,4 +77,4 @@ set iskeyword-=-                    " '-' is an end of word designator
 
 let g:netrw_localrmdir='rm -r'
 
-colorscheme codedark
+" colorscheme codedark
