@@ -1,9 +1,9 @@
-
 set noswapfile hlsearch cursorline noshowmode
 set ignorecase smartcase
 set textwidth=80 colorcolumn=+1
 set nu rnu
 set hidden
+set nohlsearch
 set guicursor=
 
 set completeopt=menu
