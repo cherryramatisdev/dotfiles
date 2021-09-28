@@ -5,23 +5,22 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-set runtimepath+=/home/cherry/.vim/bundles/repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/cherry/.cache/dein/repos/github.com/Shougo/dein.vim
+
 set runtimepath+=~/projects/plugins/semantical-commits.vim/
 set runtimepath+=~/projects/plugins/translator.vim/
 set runtimepath+=~/projects/plugins/projectile.vim/
 
-call dein#begin('/home/cherry/.vim/bundles')
+call dein#begin('/home/cherry/.cache/dein')
 
-call dein#add('/home/cherry/.vim/bundles/repos/github.com/Shougo/dein.vim')
-
-call dein#add('ervandew/supertab')
+call dein#add('/home/cherry/.cache/dein/repos/github.com/Shougo/dein.vim')
 
 call dein#add('inkarkat/vim-ReplaceWithRegister')
 call dein#add('christoomey/vim-titlecase')
 call dein#add('christoomey/vim-system-copy')
 call dein#add('christoomey/vim-conflicted')
 
-call dein#add('tomasiser/vim-code-dark')
+call dein#add('srcery-colors/srcery-vim')
 
 " Text objects
 call dein#add('kana/vim-textobj-user')
@@ -49,18 +48,24 @@ call dein#add('AndrewRadev/tagalong.vim')
 call dein#add('AndrewRadev/ginitpull.vim')
 
 call dein#add('dhruvasagar/vim-open-url')
+call dein#add('dhruvasagar/vim-zoom')
 
 call dein#add('yuratomo/w3m.vim')
-call dein#add('airblade/vim-rooter')
 
 call dein#add('Shougo/vimshell.vim')
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 
+call dein#add('airblade/vim-rooter')
+
 call dein#add('fatih/vim-go')
+call dein#add('mattn/emmet-vim')
 
 call dein#add('vuciv/vim-bujo')
 
 call dein#add('dense-analysis/ale')
+
+call dein#add('SirVer/ultisnips')
+call dein#add('honza/vim-snippets')
 
 call dein#end()
 

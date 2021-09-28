@@ -6,7 +6,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias tmux="tmux -2"
 alias t="tmux new-session -A -s main"
-alias v="nvim"
+alias v="vim"
 alias dev="yarn start:dev"
 alias y="yarn"
 alias ya="yarn add"
@@ -18,7 +18,7 @@ alias pupdate="sudo pacman -Syuu"
 
 eval "$(lua ~/bin/z.lua --init zsh)"
 
-bindkey -s ^v "nvim\n"
+bindkey -s ^v "vim\n"
 
 bindkey -s ^x^f "find-files\n"
 

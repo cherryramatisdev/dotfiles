@@ -10,10 +10,10 @@ nnoremap <leader>w :w<cr>
 nnoremap / /\v
 
 " Resize splits
-nnoremap <C-h> :vertical resize -4<cr>
-nnoremap <C-l> :vertical resize +4<cr>
-nnoremap <C-k> :resize +4<cr>
-nnoremap <C-j> :resize -4<cr>
+nnoremap <C-H> :vertical resize -4<cr>
+nnoremap <C-L> :vertical resize +4<cr>
+nnoremap <C-K> :resize +4<cr>
+nnoremap <C-J> :resize -4<cr>
 
 " Why this isn't default
 nnoremap Y y$
@@ -40,3 +40,4 @@ nnoremap <leader>l :tabnext<cr>
 
 " Open general todos
 nnoremap <leader>ot :Todo g<cr>
+

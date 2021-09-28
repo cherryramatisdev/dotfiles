@@ -1,16 +1,8 @@
-* TODO Terminar de ler o livo O'Reilly elm in action :personal:
+* Inbox
+** TODO Terminar de ler o livo O'Reilly elm in action :personal:
 SCHEDULED: <2021-09-18 sáb 18:00>
 
-* TODO Discutir espacamento usado no Our Services desktop https://github.com/lami-health/website/pull/132 :work:
-* TODO Ajeitar espacamento do whatsapp no header :work:
-* TODO Discutir sobre tamanho da Modal com will https://github.com/lami-health/pantheon/pull/73 :work:
-* DONE ajeitar padding do texto no hero(pagina de produto)             :work:
-  CLOSED: [2021-09-22 qua 18:50]
-* DONE diminuir spacing abaixo do botao schedule no mobile             :work:
-  CLOSED: [2021-09-22 qua 18:56]
-* DONE incluir grid wrapper no botao schdule no mobile                 :work:
-  CLOSED: [2021-09-22 qua 19:04]
-* DONE incluir sombra fixa no botao abaixo e no hero acima mobile      :work:
-  CLOSED: [2021-09-22 qua 19:40]
-* DONE conditions -> titulo em roxo e texto em "preto" desktop/mobile  :work:
-  CLOSED: [2021-09-22 qua 20:22]
+** TODO Discutir espacamento usado no Our Services desktop https://github.com/lami-health/website/pull/132 :work:
+** TODO Ajeitar espacamento do whatsapp no header :work:
+** TODO Discutir sobre tamanho da Modal com will https://github.com/lami-health/pantheon/pull/73 :work:
+** TODO Criar uma nova localidade "padrao" e adequar o get de produto e categoria para assumir "padrao" como localidade quando nao recebido nenhum :work:

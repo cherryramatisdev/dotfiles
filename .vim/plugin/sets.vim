@@ -1,6 +1,3 @@
-set path+=**
-set wildmenu
-set wildmode=longest:full,full
 
 set noswapfile hlsearch cursorline noshowmode
 set ignorecase smartcase
@@ -54,9 +51,10 @@ set backspace=indent,eol,start
 set showcmd
 
 " make tab completion for files/buffers act like bash
+set path+=**
 set wildmenu
-set wildmode=full "list:full
-set wildignore=*.swp,*.bak,*.pyc,*.class,*/.git/*,*/tmp/*
+set wildmode=longest:full,full
+set wildignore=*.swp,*.bak,*.pyc,*.class,*/.git/*,*/tmp/*,*/node_modules/*
 
 " Insert only one space when joining lines that contain sentence-terminating
 " ponctuation like `.`.
@@ -77,4 +75,4 @@ set iskeyword-=-                    " '-' is an end of word designator
 
 let g:netrw_localrmdir='rm -r'
 
-" colorscheme codedark
+colorscheme srcery

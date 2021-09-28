@@ -312,3 +312,93 @@ SCHEDULED: <2021-09-07 ter 23:00> CLOSED: [2021-09-07 ter 22:35]
   :ARCHIVE_CATEGORY: todo
   :ARCHIVE_TODO: DONE
   :END:
+
+* DONE ajeitar padding do texto no hero(pagina de produto) :work:
+CLOSED: [2021-09-22 qua 18:50]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE diminuir spacing abaixo do botao schedule no mobile :work:
+CLOSED: [2021-09-22 qua 18:56]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE incluir grid wrapper no botao schdule no mobile :work:
+CLOSED: [2021-09-22 qua 19:04]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE incluir sombra fixa no botao abaixo e no hero acima mobile :work:
+CLOSED: [2021-09-22 qua 19:40]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE conditions -> titulo em roxo e texto em "preto" desktop/mobile :work:
+CLOSED: [2021-09-22 qua 20:22]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE diminuir spacing abaixo do botao schedule no mobile :work:
+CLOSED: [2021-09-22 qua 18:56]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE incluir grid wrapper no botao schdule no mobile :work:
+CLOSED: [2021-09-22 qua 19:04]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE incluir sombra fixa no botao abaixo e no hero acima mobile :work:
+CLOSED: [2021-09-22 qua 19:40]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE conditions -> titulo em roxo e texto em "preto" desktop/mobile :work:
+CLOSED: [2021-09-22 qua 20:22]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:

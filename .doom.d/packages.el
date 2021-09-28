@@ -49,5 +49,10 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-(package! nvm)
-(package! exec-path-from-shell)
+(package! prettier-js)
+
+(package! exwm)
+(package! xelb)
+(package! desktop-environment)
+
+(package! counsel)
