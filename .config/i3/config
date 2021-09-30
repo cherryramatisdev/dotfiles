@@ -24,7 +24,7 @@ exec --no-startup-id nm-applet
 # exec --no-startup-id setxkbmap us -option 'caps:ctrl_modifier'
 
 # Startup xrandr for two monitors
-exec --no-startup-id xrandr --auto --output DVI-D-1 --mode 2560x1080 --left-of HDMI-1
+exec --no-startup-id xrandr --auto --output HDMI-1 --mode 2560x1080 --left-of DVI-D-1
 
 # Run emacs daemon
 # exec --no-startup-id emacs --daemon &
@@ -37,7 +37,7 @@ exec --no-startup-id clipmenud &
 exec --no-startup-id compton -b &
 
 # Set background
-exec --no-startup-id feh --bg-fill ~/Pictures/backgrounds/transflag.jpg &
+exec --no-startup-id feh --bg-fill ~/Pictures/background.jpg &
 
 # Disable window title bar
 default_border pixel 3
@@ -55,13 +55,13 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $alt+Shift+Return exec i3-sensible-terminal
-bindsym $mod+t exec alacritty
+bindsym $mod+t exec kitty
 
 # kill focused window
 bindsym $mod+c kill
 
 # Open browser
-bindsym $mod+b exec qutebrowser
+bindsym $mod+w exec qutebrowser
 
 # Open clipboard manager
 bindsym $mod+o exec clipmenu
@@ -69,24 +69,23 @@ bindsym $mod+o exec clipmenu
 # Open emacs
 bindsym $mod+e exec emacsclient -c -a ''
 
+# open obsidian
+bindsym $alt+t exec obsidian
+
 # start dmenu (a program launcher)
 bindsym $mod+space exec --no-startup-id dmenu_run
 
 # change focus
-# bindsym $alt+h focus left
-# bindsym $alt+j focus down
-# bindsym $alt+k focus up
-# bindsym $alt+l focus right
-bindsym $mod+a focus left
-bindsym $mod+s focus down
-bindsym $mod+w focus up
-bindsym $mod+d focus right
+bindsym $alt+h focus left
+bindsym $alt+j focus down
+bindsym $alt+k focus up
+bindsym $alt+l focus right
 
 # move focused window
-bindsym $mod+Shift+a move left
-bindsym $mod+Shift+s move down
-bindsym $mod+Shift+w move up
-bindsym $mod+Shift+d move right
+bindsym $alt+Shift+h move left
+bindsym $alt+Shift+j move down
+bindsym $alt+Shift+k move up
+bindsym $alt+Shift+l move right
 
 # split in horizontal orientation
 bindsym $mod+$alt+v split h

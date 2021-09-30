@@ -7,13 +7,15 @@ endif
 
 set runtimepath+=/home/cherry/.cache/dein/repos/github.com/Shougo/dein.vim
 
-set runtimepath+=~/projects/plugins/semantical-commits.vim/
-set runtimepath+=~/projects/plugins/translator.vim/
-set runtimepath+=~/projects/plugins/projectile.vim/
+" set runtimepath+=~/projects/plugins/semantical-commits.vim/
+" set runtimepath+=~/projects/plugins/translator.vim/
+" set runtimepath+=~/projects/plugins/projectile.vim/
 
 call dein#begin('/home/cherry/.cache/dein')
 
 call dein#add('/home/cherry/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+call dein#add('cherryramatisdev/semantical-commits.vim')
 
 call dein#add('inkarkat/vim-ReplaceWithRegister')
 call dein#add('christoomey/vim-titlecase')
@@ -43,6 +45,9 @@ call dein#add('tpope/vim-scriptease')
 call dein#add('tpope/vim-eunuch')
 call dein#add('tpope/vim-characterize')
 call dein#add('tpope/vim-markdown')
+call dein#add('tpope/vim-endwise')
+
+call dein#add('reedes/vim-pencil')
 
 call dein#add('AndrewRadev/tagalong.vim')
 call dein#add('AndrewRadev/ginitpull.vim')

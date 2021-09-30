@@ -169,8 +169,6 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export GOPATH="$HOME/workspace";
-export GOROOT="$HOME/go";
-export PATH="$GOPATH/bin:$PATH";
+export EDITOR='vim'
 
 export PATH=~/.npm-global/bin:$PATH

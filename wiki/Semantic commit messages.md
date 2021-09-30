@@ -18,4 +18,3 @@ Format: <type>(<scope>): <subject>
 - `refactor`: refactor em código de produção, ex: renomear uma variável ou classe.
 - `test`: mudanças em arquivo de testes, sejam elas adicionar assertions, refatorar e etc, sem mudança no codigo de produção.
 - `chore`: mudanças em helper functions, configs, scripts de build, etc.
-

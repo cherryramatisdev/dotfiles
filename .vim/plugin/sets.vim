@@ -73,6 +73,4 @@ set iskeyword-=.                    " '.' is an end of word designator
 set iskeyword-=#                    " '#' is an end of word designator
 set iskeyword-=-                    " '-' is an end of word designator
 
-let g:netrw_localrmdir='rm -r'
-
 colorscheme srcery

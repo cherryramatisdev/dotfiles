@@ -1,7 +1,7 @@
 #! /usr/bin/env lua
 --=====================================================================
 --
--- z.lua - a cd command that learns, by skywind 2018, 2019, 2020, 2021
+--find_files z.lua - a cd command that learns, by skywind 2018, 2019, 2020, 2021
 -- Licensed under MIT license.
 --
 -- Version 1.8.12, Last Modified: 2021/02/15 00:05
