@@ -72,6 +72,9 @@ bindsym $mod+e exec emacsclient -c -a ''
 # open obsidian
 bindsym $alt+t exec obsidian
 
+# open ranger
+bindsym $mod+d exec kitty -e ranger
+
 # start dmenu (a program launcher)
 bindsym $mod+space exec --no-startup-id dmenu_run
 

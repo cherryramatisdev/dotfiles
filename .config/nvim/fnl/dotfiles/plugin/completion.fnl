@@ -24,7 +24,7 @@
                 :nvim_lsp true
                 :nvim_lua true
                 :conjure true
-                :luasnip true}})))
+                :ultisnips true}})))
 
 (nvim.set_keymap :i :<C-j> :<C-n> {:noremap false})
 (nvim.set_keymap :i :<C-k> :<C-p> {:noremap false})

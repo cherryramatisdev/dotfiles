@@ -7,6 +7,7 @@ alias ....="cd ../../.."
 alias tmux="tmux -2"
 alias t="tmux new-session -A -s main"
 alias v="vim"
+alias n="nvim"
 alias dev="yarn start:dev"
 alias y="yarn"
 alias ya="yarn add"
@@ -18,13 +19,13 @@ alias pupdate="sudo pacman -Syuu"
 
 eval "$(lua ~/bin/z.lua --init zsh)"
 
-bindkey -s ^v "vim\n"
-
 bindkey -s ^x^f "find-files\n"
 
 bindkey -s ^x^t "tmux new-session -A -s main\n"
 
 bindkey -s ^x^p "tmux-sessionizer\n"
+
+bindkey -s ^x^e "ranger\n"
 
 autoload -U colors
 colors
@@ -169,6 +170,7 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export EDITOR='vim'
+export EDITOR='nvim'
+export PAGER='nvim'
 
 export PATH=~/.npm-global/bin:$PATH
