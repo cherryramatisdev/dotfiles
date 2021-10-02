@@ -14,8 +14,4 @@ local autoload = (require("aniseed.autoload")).autoload
 local nvim, treesitter = autoload("aniseed.nvim"), autoload("nvim-treesitter.configs")
 do end (_2amodule_locals_2a)["nvim"] = nvim
 _2amodule_locals_2a["treesitter"] = treesitter
-treesitter.setup({ensure_installed = "all", highlight = {enable = true, additional_vim_regex_highlighting = false}})
-nvim.set_keymap("n", "<tab>", "za", {noremap = true})
-nvim.o.foldmethod = "expr"
-nvim.o.foldexpr = "nvim_treesitter#foldexpr()"
-return nil
+return treesitter.setup({ensure_installed = "all", highlight = {enable = true, additional_vim_regex_highlighting = false}})

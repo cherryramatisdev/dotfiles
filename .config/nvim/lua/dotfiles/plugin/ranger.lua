@@ -1,5 +1,5 @@
-local _2afile_2a = "/home/cherry/.config/nvim/fnl/dotfiles/plugin/fugitive.fnl"
-local _2amodule_name_2a = "dotfiles.plugin.fugitive"
+local _2afile_2a = "/home/cherry/.config/nvim/fnl/dotfiles/plugin/ranger.fnl"
+local _2amodule_name_2a = "dotfiles.plugin.ranger"
 local _2amodule_2a
 do
   package.loaded[_2amodule_name_2a] = {}
@@ -13,3 +13,4 @@ end
 local autoload = (require("aniseed.autoload")).autoload
 local nvim = autoload("aniseed.nvim")
 do end (_2amodule_locals_2a)["nvim"] = nvim
+return nvim.set_keymap("n", "<leader>e", ":RnvimrToggle<cr>", {noremap = true})

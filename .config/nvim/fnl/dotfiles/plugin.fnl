@@ -23,6 +23,12 @@
 
 ;; Plugins to be managed by packer.
 (use
+  :kabouzeid/nvim-lspinstall {}
+  :neovim/nvim-lspconfig {:mod :lsp}
+  :hrsh7th/nvim-compe {:mod :completion}
+  :SirVer/ultisnips {:mod :snippets}
+  :honza/vim-snippets {}
+  :tami5/compe-conjure {}
   :cherryramatisdev/semantical-commits.vim {}
   :Olical/AnsiEsc {}
   :Olical/aniseed {:branch :develop}
@@ -52,7 +58,6 @@
   :tpope/vim-eunuch {}
   :tpope/vim-characterize {}
   :tpope/vim-markdown {}
-  :tpope/vim-endwise {}
 
   :AndrewRadev/tagalong.vim {}
   :AndrewRadev/ginitpull.vim {}
@@ -63,20 +68,21 @@
   :fatih/vim-go {}
   :mattn/emmet-vim {}
 
-  :SirVer/ultisnips {}
-  :honza/vim-snippets {}
-
   :guns/vim-sexp {:mod :sexp}
   :tpope/vim-sexp-mappings-for-regular-people {}
 
+  :folke/lsp-colors.nvim {}
+  :folke/trouble.nvim {:mod :trouble :requires [[:kyazdani42/nvim-web-devicons ]]}
   :folke/todo-comments.nvim {:mod :todo :requires [[:nvim-lua/plenary.nvim]]}
   :folke/which-key.nvim {:mod :which-key}
 
   :tweekmonster/startuptime.vim {}
-  :dense-analysis/ale {:mod :ale}
   :wbthomason/packer.nvim {}
   :nvim-treesitter/nvim-treesitter {:run ":TSUpdate" :mod :treesitter}
 
   :nvim-telescope/telescope.nvim {:mod :telescope :requires [[:nvim-lua/popup.nvim] [:nvim-lua/plenary.nvim]]}
+  :kdheepak/lazygit.nvim {:mod :lazygit}
+  :kevinhwang91/rnvimr {:mod :ranger}
+  :akinsho/toggleterm.nvim {:mod :terminal}
   :ahmedkhalf/project.nvim {:mod :project}
   )

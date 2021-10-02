@@ -73,13 +73,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/AnsiEsc"
   },
-  ale = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/ale"
-  },
   aniseed = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/aniseed"
+  },
+  ["compe-conjure"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/compe-conjure"
   },
   conjure = {
     loaded = true,
@@ -93,9 +93,29 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/ginitpull.vim"
   },
+  ["lazygit.nvim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/lazygit.nvim"
+  },
+  ["lsp-colors.nvim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim"
+  },
+  ["nvim-compe"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-compe"
+  },
   ["nvim-local-fennel"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-local-fennel"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
+  ["nvim-lspinstall"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -121,6 +141,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/project.nvim"
   },
+  rnvimr = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/rnvimr"
+  },
   ["semantical-commits.vim"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/semantical-commits.vim"
@@ -145,9 +169,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/todo-comments.nvim"
   },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/toggleterm.nvim"
+  },
   ["tokyonight.nvim"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/tokyonight.nvim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/trouble.nvim"
   },
   ultisnips = {
     loaded = true,
@@ -164,10 +196,6 @@ _G.packer_plugins = {
   ["vim-commentary"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-commentary"
-  },
-  ["vim-endwise"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-endwise"
   },
   ["vim-enmasse"] = {
     loaded = true,

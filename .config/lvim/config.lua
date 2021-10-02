@@ -81,6 +81,7 @@ lvim.plugins = {
   {"JoosepAlviste/nvim-ts-context-commentstring"},
   {"AndrewRadev/ginitpull.vim"},
   {'pwntester/octo.nvim'},
+  {'fatih/vim-go'},
 }
 
 -- Loading custom libraries
