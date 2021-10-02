@@ -27,6 +27,11 @@ bindkey -s ^x^p "tmux-sessionizer\n"
 
 bindkey -s ^x^e "ranger\n"
 
+# Enabling autocomplete
+autoload -U compinit; compinit
+
+
+# Colors
 autoload -U colors
 colors
 
