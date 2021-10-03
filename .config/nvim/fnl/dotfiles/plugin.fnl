@@ -28,6 +28,7 @@
   :hrsh7th/nvim-compe {:mod :completion}
   :SirVer/ultisnips {:mod :snippets}
   :honza/vim-snippets {}
+  :prettier/vim-prettier {:mod :prettier}
   :tami5/compe-conjure {}
   :cherryramatisdev/semantical-commits.vim {}
   :Olical/AnsiEsc {}
@@ -44,6 +45,7 @@
   :kana/vim-textobj-line {}
   :kana/vim-textobj-function {}
   :kana/vim-textobj-entire {}
+  :tpope/vim-dispatch {}
   :tpope/vim-fugitive {:mod :fugitive}
   :tpope/vim-sensible {}
   :tpope/vim-sleuth {}
@@ -85,4 +87,5 @@
   :kevinhwang91/rnvimr {:mod :ranger}
   :akinsho/toggleterm.nvim {:mod :terminal}
   :ahmedkhalf/project.nvim {:mod :project}
+  :clojure-vim/vim-jack-in {}
   )

@@ -197,6 +197,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-commentary"
   },
+  ["vim-dispatch"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-dispatch"
+  },
   ["vim-enmasse"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-enmasse"
@@ -213,6 +217,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-go"
   },
+  ["vim-jack-in"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-jack-in"
+  },
   ["vim-markdown"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-markdown"
@@ -224,6 +232,10 @@ _G.packer_plugins = {
   ["vim-open-url"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-open-url"
+  },
+  ["vim-prettier"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-prettier"
   },
   ["vim-repeat"] = {
     loaded = true,
