@@ -18,6 +18,7 @@ alias plist="sudo pacman -Qe"
 alias pupdate="sudo pacman -Syuu"
 
 fish_add_path "$HOME/.npm-global/bin"
+fish_add_path "$HOME/bin"
 
 set -gx EDITOR "nvim"
 set -gx PAGER "nvim"
@@ -29,9 +30,3 @@ set -gx _ZL_CD cd
 
 set -gx fish_greeting ""
 set -gx BROWSER "qutebrowser"
-
-bind -M insert \ce 'accept-autosuggestion'
-bind -M insert \cx\cf 'find-files'
-bind -M insert \cx\ct 'tmux new-session -A -s main'
-bind -M insert \cx\cp 'tmux-sessionizer'
-bind -M insert \cx\ce 'ranger'
