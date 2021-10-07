@@ -69,31 +69,29 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  AnsiEsc = {
+  ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/AnsiEsc"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/cmp-buffer"
   },
-  aniseed = {
+  ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/aniseed"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
   },
-  ["compe-conjure"] = {
+  ["cmp-nvim-lua"] = {
     loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/compe-conjure"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua"
   },
-  conjure = {
+  ["cmp-path"] = {
     loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/conjure"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/cmp-path"
   },
-  ["emmet-vim"] = {
+  ["github-nvim-theme"] = {
+    config = { "\27LJ\1\0022\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\23plugin.colorscheme\frequire\0" },
     loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/emmet-vim"
-  },
-  ["ginitpull.vim"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/ginitpull.vim"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/github-nvim-theme"
   },
   ["lazygit.nvim"] = {
+    config = { "\27LJ\1\2*\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\15plugin.git\frequire\0" },
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/lazygit.nvim"
   },
@@ -101,21 +99,31 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim"
   },
-  ["nvim-compe"] = {
+  ["null-ls.nvim"] = {
     loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/null-ls.nvim"
   },
-  ["nvim-local-fennel"] = {
+  ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-local-fennel"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+  },
+  ["nvim-lsp-ts-utils"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-lsp-ts-utils"
   },
   ["nvim-lspconfig"] = {
+    config = { "\27LJ\1\2*\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\15plugin.lsp\frequire\0" },
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-lspinstall"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+  },
+  ["nvim-treesitter"] = {
+    config = { "\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22plugin.treesitter\frequire\0" },
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -129,55 +137,50 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
-  ["popup.nvim"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/popup.nvim"
-  },
   ["project.nvim"] = {
+    config = { "\27LJ\1\2.\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\19plugin.project\frequire\0" },
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/project.nvim"
-  },
-  ["semantical-commits.vim"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/semantical-commits.vim"
   },
   ["startuptime.vim"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/startuptime.vim"
   },
-  ["statusline.lua"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/statusline.lua"
-  },
   ["tagalong.vim"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/tagalong.vim"
   },
+  ["telescope-fzy-native.nvim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
+  },
   ["telescope.nvim"] = {
+    config = { "\27LJ\1\0020\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\21plugin.telescope\frequire\0" },
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
   ["todo-comments.nvim"] = {
+    config = { "\27LJ\1\2+\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\16plugin.todo\frequire\0" },
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/todo-comments.nvim"
   },
   ["toggleterm.nvim"] = {
+    config = { "\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20plugin.terminal\frequire\0" },
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/toggleterm.nvim"
   },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/tokyonight.nvim"
-  },
   ["trouble.nvim"] = {
+    config = { "\27LJ\1\2.\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\19plugin.trouble\frequire\0" },
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/trouble.nvim"
   },
   ultisnips = {
+    config = { "\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20plugin.snippets\frequire\0" },
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/ultisnips"
   },
   ["vifm.vim"] = {
+    config = { "\27LJ\1\2+\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\16plugin.vifm\frequire\0" },
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vifm.vim"
   },
@@ -197,10 +200,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-dispatch"
   },
-  ["vim-enmasse"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-enmasse"
-  },
   ["vim-eunuch"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-eunuch"
@@ -209,14 +208,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-fugitive"
   },
-  ["vim-go"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-go"
-  },
-  ["vim-jack-in"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-jack-in"
-  },
   ["vim-markdown"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-markdown"
@@ -224,14 +215,6 @@ _G.packer_plugins = {
   ["vim-obsession"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-obsession"
-  },
-  ["vim-open-url"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-open-url"
-  },
-  ["vim-prettier"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-prettier"
   },
   ["vim-repeat"] = {
     loaded = true,
@@ -248,14 +231,6 @@ _G.packer_plugins = {
   ["vim-sensible"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-sensible"
-  },
-  ["vim-sexp"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-sexp"
-  },
-  ["vim-sexp-mappings-for-regular-people"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-sexp-mappings-for-regular-people"
   },
   ["vim-sleuth"] = {
     loaded = true,
@@ -302,12 +277,61 @@ _G.packer_plugins = {
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-zoom"
   },
   ["which-key.nvim"] = {
+    config = { "\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20plugin.whichkey\frequire\0" },
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+try_loadstring("\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22plugin.treesitter\frequire\0", "config", "nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20plugin.whichkey\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
+-- Config for: github-nvim-theme
+time([[Config for github-nvim-theme]], true)
+try_loadstring("\27LJ\1\0022\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\23plugin.colorscheme\frequire\0", "config", "github-nvim-theme")
+time([[Config for github-nvim-theme]], false)
+-- Config for: vifm.vim
+time([[Config for vifm.vim]], true)
+try_loadstring("\27LJ\1\2+\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\16plugin.vifm\frequire\0", "config", "vifm.vim")
+time([[Config for vifm.vim]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20plugin.terminal\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\1\2.\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\19plugin.trouble\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
+-- Config for: project.nvim
+time([[Config for project.nvim]], true)
+try_loadstring("\27LJ\1\2.\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\19plugin.project\frequire\0", "config", "project.nvim")
+time([[Config for project.nvim]], false)
+-- Config for: todo-comments.nvim
+time([[Config for todo-comments.nvim]], true)
+try_loadstring("\27LJ\1\2+\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\16plugin.todo\frequire\0", "config", "todo-comments.nvim")
+time([[Config for todo-comments.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\1\0020\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\21plugin.telescope\frequire\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\1\2*\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\15plugin.lsp\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
+-- Config for: ultisnips
+time([[Config for ultisnips]], true)
+try_loadstring("\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20plugin.snippets\frequire\0", "config", "ultisnips")
+time([[Config for ultisnips]], false)
+-- Config for: lazygit.nvim
+time([[Config for lazygit.nvim]], true)
+try_loadstring("\27LJ\1\2*\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\15plugin.git\frequire\0", "config", "lazygit.nvim")
+time([[Config for lazygit.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

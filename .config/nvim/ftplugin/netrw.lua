@@ -1,0 +1,6 @@
+vim.cmd [[nmap <buffer> l <cr>]]
+vim.cmd [[nmap <buffer> h -]]
+vim.cmd [[nmap <buffer> a %]]
+vim.cmd [[nmap <buffer> d <Nop>]]
+vim.cmd [[nmap <buffer> dc <Plug>NetrwMakeDir("")]]
+vim.cmd [[nmap <buffer> dd :lua require('dotfiles.cherry.file-management').delete_file()<CR>]]
