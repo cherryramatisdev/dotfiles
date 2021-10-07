@@ -24,7 +24,7 @@
 ;; Plugins to be managed by packer.
 (use
   :kabouzeid/nvim-lspinstall {}
-  :neovim/nvim-lspconfig {:mod :lsp}
+  :neovim/nvim-lspconfig {:mod :lspconfig}
   :hrsh7th/nvim-compe {:mod :completion}
   :SirVer/ultisnips {:mod :snippets}
   :honza/vim-snippets {}
@@ -80,11 +80,11 @@
 
   :tweekmonster/startuptime.vim {}
   :wbthomason/packer.nvim {}
-  :nvim-treesitter/nvim-treesitter {:run ":TSUpdate" :mod :treesitter}
+  ; :nvim-treesitter/nvim-treesitter {:run ":TSUpdate" :mod :treesitter}
 
   :nvim-telescope/telescope.nvim {:mod :telescope :requires [[:nvim-lua/popup.nvim] [:nvim-lua/plenary.nvim]]}
   :kdheepak/lazygit.nvim {:mod :lazygit}
-  :kevinhwang91/rnvimr {:mod :ranger}
+  :vifm/vifm.vim {:mod :filebrowser}
   :akinsho/toggleterm.nvim {:mod :terminal}
   :ahmedkhalf/project.nvim {:mod :project}
   :clojure-vim/vim-jack-in {}

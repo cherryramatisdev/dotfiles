@@ -10,9 +10,6 @@ exec --no-startup-id nm-applet
 # Startup xrandr for two monitors
 exec --no-startup-id xrandr --auto --output HDMI-1 --mode 2560x1080 --left-of DVI-D-1
 
-# Run emacs daemon
-# exec --no-startup-id emacs --daemon &
-
 # Run dunst for notifications
 exec --no-startup-id dunst &
 
@@ -33,7 +30,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+floating_modifier $alt
 
 # start a terminal
 bindsym $alt+Shift+Return exec i3-sensible-terminal
@@ -42,23 +39,24 @@ bindsym $mod+t exec kitty
 # kill focused window
 bindsym $mod+c kill
 
+# open slack
+bindsym $mod+s exec slack & disown
+
 # open mixer
 bindsym $mod+v exec kitty -e alsamixer
 
 # Open browser
 bindsym $mod+w exec qutebrowser
-
-# Open clipboard manager
-bindsym $mod+o exec clipmenu
-
-# Open emacs
-bindsym $mod+e exec emacsclient -c -a ''
+bindsym $mod+Shift+w exec brave
 
 # open obsidian
 bindsym $alt+t exec obsidian
 
 # open ranger
 bindsym $mod+d exec kitty -e ranger
+
+# open vim
+bindsym $alt+v exec nvim-qt
 
 # start dmenu (a program launcher)
 bindsym $mod+space exec --no-startup-id dmenu_run
@@ -87,21 +85,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+F1 layout toggle split
 bindsym $mod+F2 layout tabbed
-# bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
-# bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-# bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
-# bindsym $mod+p exec "scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Pictures/screenshots'"
 bindsym $mod+p exec "flameshot gui"
 
 # Define names for default workspaces for which we configure key bindings later on.
@@ -143,36 +127,23 @@ bindsym $alt+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+r reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-# bindsym $mod+Shift+R restart
-# exit i3 (logs you out of your X session)
+
 set $mode_power [l]ogoff | [s]hutdown | [r]estart
 mode "$mode_power" {
         bindsym l exec i3-msg exit
         bindsym s exec systemctl poweroff
         bindsym r exec shutdown -r 0
-        bindsym Return mode "default"
+        bindsym Return mode i3lock
         bindsym Escape mode "default"
 }
 bindsym $mod+F12 mode "$mode_power"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
-
-        bindsym a resize shrink width 10 px or 10 ppt
-        bindsym s resize grow height 10 px or 10 ppt
-        bindsym w resize shrink height 10 px or 10 ppt
-        bindsym d resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"

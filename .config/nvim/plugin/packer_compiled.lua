@@ -117,10 +117,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
-  ["nvim-treesitter"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
-  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
@@ -140,10 +136,6 @@ _G.packer_plugins = {
   ["project.nvim"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/project.nvim"
-  },
-  rnvimr = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/rnvimr"
   },
   ["semantical-commits.vim"] = {
     loaded = true,
@@ -184,6 +176,10 @@ _G.packer_plugins = {
   ultisnips = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/ultisnips"
+  },
+  ["vifm.vim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vifm.vim"
   },
   ["vim-ReplaceWithRegister"] = {
     loaded = true,

@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "994afdeebc24f1fb",
+        "id": "f6b475004590f0b9",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "todos.md",
-            "mode": "source"
+            "file": "best way to get environment variable nextjs.md",
+            "mode": "preview"
           }
         }
       }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "todos.md",
+                "file": "best way to get environment variable nextjs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,17 +95,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "994afdeebc24f1fb",
+  "active": "f6b475004590f0b9",
   "lastOpenFiles": [
+    "best way to get environment variable nextjs.md",
+    "todos-work.md",
+    "done.md",
+    "todos-personal.md",
     "todos.md",
-    "Lami V1 Products.md",
+    "team-action-plans.md",
     "Lami V1 Category.md",
+    "Lami V1 Products.md",
     "Project Ideas.md",
-    "content to register on database lami v1.md",
-    "img/2021-09-14-00-18-55.png",
-    "Credenciais npm.md",
-    "202109291329.md",
-    "update dependabot dependencies.md",
-    "meetings.md"
+    "content to register on database lami v1.md"
   ]
 }
