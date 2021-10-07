@@ -110,6 +110,21 @@ return require("packer").startup(function()
       require "plugin.project"
     end,
   }
+  use {
+    "windwp/nvim-autopairs",
+    config = function()
+      require "plugin.autopairs"
+    end,
+  }
+
+  -- statusline
+  use {
+    "hoob3rt/lualine.nvim",
+    config = function()
+      require "plugin.statusline"
+    end,
+    requires = { "kyazdani42/nvim-web-devicons" },
+  }
 
   -- tpope
   use "tpope/vim-dispatch"
