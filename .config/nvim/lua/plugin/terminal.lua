@@ -12,6 +12,8 @@ t.setup {
   start_in_insert = true,
   insert_mappings = true,
   persist_size = true,
-  direction = "float",
+  direction = "horizontal",
   close_on_exit = true,
 }
+
+vim.api.nvim_set_keymap("t", "<C-n>", [[<C-\><C-n>:2TermExec cmd=ls<cr>]], { noremap = true })
