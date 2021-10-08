@@ -13,6 +13,7 @@ DB_PASS=mypassword
 # 1.
 The basic option here is to use `getStaticProps`  to get environment variable and return as props to the component
 
+- [ ] Criar um hook para retornar esses dados
 > This need to be used on a page inside *pages/index.js*
 ```typescript
 export async function getStaticProps() {

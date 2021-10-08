@@ -52,8 +52,8 @@ bindsym $mod+Shift+w exec brave
 # open obsidian
 bindsym $alt+t exec obsidian
 
-# open ranger
-bindsym $mod+d exec kitty -e ranger
+# open vifm
+bindsym $mod+d exec kitty -e vifm
 
 # open vim
 bindsym $alt+v exec nvim-qt
