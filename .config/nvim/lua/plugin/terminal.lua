@@ -22,4 +22,5 @@ t.setup {
   close_on_exit = true,
 }
 
-vim.api.nvim_set_keymap("t", "<C-n>", [[<C-\><C-n>:2TermExec cmd=ls<cr>]], { noremap = true })
+-- TODO: move this to lua
+vim.cmd [[nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>]]
