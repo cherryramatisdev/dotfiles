@@ -14,9 +14,9 @@ vim.opt.relativenumber = true
 vim.opt.hidden = true
 
 vim.opt.laststatus = 2
-vim.opt.showtabline = 2
+vim.opt.showtabline = 1
 
-vim.opt.switchbuf = 'useopen'
+vim.opt.switchbuf = "useopen"
 vim.opt.showfulltag = true
 vim.opt.incsearch = true
 
@@ -31,5 +31,3 @@ vim.cmd [[ set clipboard+=unnamedplus ]]
 vim.opt.undofile = false
 vim.opt.swapfile = false
 vim.opt.backup = false
-
-
