@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "best way to get environment variable nextjs.md",
-            "mode": "preview"
+            "file": "our way to get environment variables on nextjs projects.md",
+            "mode": "source"
           }
         }
       }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "best way to get environment variable nextjs.md",
+                "file": "our way to get environment variables on nextjs projects.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +97,7 @@
   },
   "active": "f6b475004590f0b9",
   "lastOpenFiles": [
+    "our way to get environment variables on nextjs projects.md",
     "best way to get environment variable nextjs.md",
     "todos-work.md",
     "done.md",
@@ -105,7 +106,6 @@
     "team-action-plans.md",
     "Lami V1 Category.md",
     "Lami V1 Products.md",
-    "Project Ideas.md",
-    "content to register on database lami v1.md"
+    "Project Ideas.md"
   ]
 }

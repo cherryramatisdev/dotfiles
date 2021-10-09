@@ -14,6 +14,9 @@ DB_PASS=mypassword
 The basic option here is to use `getStaticProps`  to get environment variable and return as props to the component
 
 - [ ] Criar um hook para retornar esses dados
+	This is not possible because we can only use getStaticProps on pages
+	![[Pasted image 20211008142929.png]]
+	
 > This need to be used on a page inside *pages/index.js*
 ```typescript
 export async function getStaticProps() {
@@ -28,7 +31,7 @@ export async function getStaticProps() {
 }
 ```
 
-# 2.
+# 2. The winner
 
 This solution is using api feature from next to load stuff on server side, the idea is to create an api route to return those environment variable and get them using *swr*
 
