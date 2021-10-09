@@ -21,6 +21,8 @@ return require("packer").startup(function()
       require "plugin.lsp"
     end,
   }
+
+  use "JoosepAlviste/nvim-ts-context-commentstring"
   use {
     "nvim-treesitter/nvim-treesitter",
     config = function()
