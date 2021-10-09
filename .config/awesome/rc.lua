@@ -1,5 +1,5 @@
-local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
-local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring, tonumber, type
+local awesome, client, screen = awesome, client, screen
+local ipairs, string, os, tostring, type = ipairs, string, os, tostring, type
 
 local gears = require "gears"
 local awful = require "awful"
@@ -69,8 +69,7 @@ local modkey = "Mod4"
 local altkey = "Mod1"
 local modkey1 = "Control"
 
-local browser1 = "qutebrowser"
-local browser2 = "brave"
+local browser = "brave"
 local filemanager = "vifm"
 local terminal = "kitty"
 
@@ -214,9 +213,9 @@ globalkeys = my_table.join(
 
   -- {{{ Personal keybindings
   awful.key({ modkey }, "w", function()
-    awful.util.spawn(browser2)
+    awful.util.spawn(browser)
   end, {
-    description = browser2,
+    description = browser,
     group = "Applications",
   }),
 
@@ -228,7 +227,7 @@ globalkeys = my_table.join(
   }),
 
   awful.key({ modkey }, "d", function()
-    awful.util.spawn(string.format("%s -e vifm", terminal))
+    awful.util.spawn(string.format("%s -e %s", terminal, filemanager))
   end, {
     description = "File browser",
     group = "Applications",
