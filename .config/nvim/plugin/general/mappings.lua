@@ -2,6 +2,11 @@
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>q", "ZZ", { noremap = true })
 
+vim.api.nvim_set_keymap("n", "<leader>ws", "<C-w>s", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>wv", "<C-w>v", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>wo", "<C-w>o", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>ww", ":w<cr>", { noremap = true })
+
 -- Quickly navigate between windows
 vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { noremap = true })
