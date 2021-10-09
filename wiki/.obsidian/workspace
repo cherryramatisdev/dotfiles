@@ -84,6 +84,14 @@
             "id": "42cfc8be5bfa68f0",
             "type": "leaf",
             "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "503837b6d3d4b7f8",
+            "type": "leaf",
+            "state": {
               "type": "reminder-list",
               "state": {}
             }
