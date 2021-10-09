@@ -1,12 +1,15 @@
-local ok, ts = pcall(require, 'nvim-treesitter.configs')
+local ok, ts = pcall(require, "nvim-treesitter.configs")
 
 if not ok then
-	return
+  return
 end
 
-ts.setup({
-	ensure_installed = "maintained",
-	highlight = {
-		enable = true
-	}
-})
+ts.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true,
+  },
+  context_commentstring = {
+    enable = true,
+  },
+}
