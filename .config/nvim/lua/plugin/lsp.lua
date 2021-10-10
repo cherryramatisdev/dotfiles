@@ -9,7 +9,7 @@ end
 cmp.setup {
   snippet = {
     expand = function(args)
-      vim.fn["UltiSnips#Anon"](args.body)
+      require("luasnip").lsp_expand(args.body)
     end,
   },
   mapping = {
@@ -24,7 +24,7 @@ cmp.setup {
   },
   sources = {
     { name = "nvim_lsp" },
-    { name = "ultisnips" },
+    { name = "luasnip" },
     { name = "buffer" },
   },
 }

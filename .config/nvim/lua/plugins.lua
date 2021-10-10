@@ -10,6 +10,7 @@ return require("packer").startup(function()
       { "hrsh7th/cmp-nvim-lsp" },
       { "hrsh7th/cmp-path" },
       { "hrsh7th/cmp-nvim-lua" },
+      { "saadparwaiz1/cmp_luasnip" },
     },
   }
   use { "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" } }
@@ -54,14 +55,30 @@ return require("packer").startup(function()
 
   -- snippets
   use {
-    "SirVer/ultisnips",
+    "L3MON4D3/LuaSnip",
     config = function()
       require "plugin.snippets"
     end,
-    requires = { { "honza/vim-snippets" } },
   }
 
   -- misc
+  use {
+    "max397574/better-escape.nvim",
+    config = function()
+      require("better_escape").setup {
+        mapping = { "jj" },
+        clear_empty_lines = false,
+        keys = "<Esc>",
+      }
+    end,
+  }
+  use "fatih/vim-go"
+  use {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup()
+    end,
+  }
   use {
     "folke/trouble.nvim",
     config = function()
