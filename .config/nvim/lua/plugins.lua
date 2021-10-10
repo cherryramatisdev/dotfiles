@@ -47,7 +47,8 @@ return require("packer").startup(function()
 
   -- colorscheme
   use {
-    "projekt0n/github-nvim-theme",
+    "tjdevries/gruvbuddy.nvim",
+    requires = { { "tjdevries/colorbuddy.nvim" } },
     config = function()
       require "plugin.colorscheme"
     end,
