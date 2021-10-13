@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+target=`ls ~/Music/ | dmenu -i -p "Music Target: "`
+clipboard=`xclip -out -selection primary`
+
+if ls ~/Music/ | grep "$target"; then
+    cd ~/Music/$target && youtube-dl -f 249 $clipboard
+else
+    mkdir ~/Music/$target && cd ~/Music/$target && youtube-dl -f 249 $clipboard
+fi

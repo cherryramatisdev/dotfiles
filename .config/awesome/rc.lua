@@ -233,6 +233,13 @@ globalkeys = my_table.join(
     group = "Applications",
   }),
 
+  awful.key({ altkey }, "y", function()
+   awful.util.spawn(string.format("%s -e /home/cherry/bin/ytdownload", terminal))
+  end, {
+    description = "Download stuff from youtube",
+    group = "Applications",
+  }),
+
   awful.key({ modkey }, "d", function()
     awful.util.spawn(string.format("%s -e %s", terminal, filemanager))
   end, {
