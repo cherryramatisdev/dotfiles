@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "our way to get environment variables on nextjs projects.md",
-            "mode": "source"
+            "file": "todos-work.md",
+            "mode": "preview"
           }
         }
       }
@@ -52,8 +52,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "3e94a3c7912a2f41",
@@ -69,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "our way to get environment variables on nextjs projects.md",
+                "file": "todos-work.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,15 +104,15 @@
   },
   "active": "f6b475004590f0b9",
   "lastOpenFiles": [
-    "our way to get environment variables on nextjs projects.md",
-    "best way to get environment variable nextjs.md",
     "todos-work.md",
-    "done.md",
+    "update dependabot dependencies.md",
     "todos-personal.md",
-    "todos.md",
     "team-action-plans.md",
-    "Lami V1 Category.md",
-    "Lami V1 Products.md",
-    "Project Ideas.md"
+    "solving tec-7.md",
+    "Semantic commit messages.md",
+    "Project Ideas.md",
+    "Pasted image 20211008142929.png",
+    "Pasted image 20211001180544.png",
+    "our way to get environment variables on nextjs projects.md"
   ]
 }

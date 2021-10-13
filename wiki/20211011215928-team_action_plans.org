@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       80ff2795-cf2c-4485-8b17-1e50538f4680
+:END:
+#+title: team action plans
+
+* Action plans
+#+DOWNLOADED: screenshot @ 2021-10-11 21:59:45
+[[file:2021-10-11_21-59-45_screenshot.png]]
+

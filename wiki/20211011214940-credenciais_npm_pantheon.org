@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       9043c2fe-61af-4c15-ac49-2aa7308e4621
+:END:
+#+title: credenciais npm pantheon
+
+* Credenciais NPM
+
+#+BEGIN_SRC
+  USERNAME=lamimed
+  EMAIL=tech@lamimed.it
+  PASSWORD=5GcG75h#Sf
+#+END_SRC
