@@ -1,8 +1,466 @@
-* Inbox
-** TODO Terminar de ler o livo O'Reilly elm in action :personal:
-SCHEDULED: <2021-09-18 sáb 18:00>
+* Inbox - Personal
+** TODO Finish Elm O'Reilly elm in action book
+** TODO Refactor my plugin translator.vim to use this shell version(and not depending on a plugin webapi)
+#+DOWNLOADED: screenshot @ 2021-10-11 22:00:40
+[[file:Inbox/2021-10-11_22-00-40_screenshot.png]]
 
-** TODO Discutir espacamento usado no Our Services desktop https://github.com/lami-health/website/pull/132 :work:
-** TODO Ajeitar espacamento do whatsapp no header :work:
-** TODO Discutir sobre tamanho da Modal com will https://github.com/lami-health/pantheon/pull/73 :work:
-** TODO Criar uma nova localidade "padrao" e adequar o get de produto e categoria para assumir "padrao" como localidade quando nao recebido nenhum :work:
+
+* Inbox - Work
+** TODO [#C] Search how to test an npm package locally
+   SCHEDULED: <2021-10-13 qua 16:00>
+   This is due to testing =Field= component with =react-forms= library inside pantheon.
+** TODO [#A] Verify what's the UI response when "edit location" don't have an selected city
+   SCHEDULED: <2021-10-13 qua 16:00>
+** TODO [#C] Configure husky inside backend-exams-service project.
+   SCHEDULED: <2021-10-13 qua 16:00>
+** TODO [#C] Rename backend-exams-service to bff-exams for consistency
+   SCHEDULED: <2021-10-13 qua 16:00>
+
+** TODO [#B] Discuss the better way to mock repositories on bff-exams
+   SCHEDULED: <2021-10-13 qua 16:00>
+** TODO [#B] Write e2e testing for pantheon components (don't include tokens)
+   SCHEDULED: <2021-10-13 qua 16:00>
+  [[file:~/projects/dotfiles/tasks/todo.org::*Verify what's the UI response when "edit location" don't have an selected city][Verify what's the UI response when "edit location" don't have an selected city]]
+** TODO [#B] Write unit testing for pantheon (maybe include tokens)
+   SCHEDULED: <2021-10-13 qua 16:00>
+  [[file:~/projects/dotfiles/tasks/todo.org::*Write e2e testing for pantheon components (don't include tokens)][Write e2e testing for pantheon components (don't include tokens)]]
+** TODO [#B] Review unit testing for use-cases on backend
+   SCHEDULED: <2021-10-13 qua 16:00>
+** TODO [#B] Write proper e2e testing for backend
+   SCHEDULED: <2021-10-13 qua 16:00>
+** TODO [#A] Test if GTM installation worked properly on prod website
+   SCHEDULED: <2021-10-13 qua 16:00>
+
+* Done Tasks
+** DONE Plan this solution more(card TEC-7)
+  CLOSED: [2021-08-23 Mon 23:03] SCHEDULED: <2021-08-19 Thu 18:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-23 Mon 23:08
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [[file:~/projects/work/exams/src/app/modules/category/entities/category.entity.ts::@JoinTable()]]
+
+** DONE Resolver logo CDC Digital que fica em cima
+  CLOSED: [2021-08-25 Wed 14:46] SCHEDULED: <2021-08-24 Tue 09:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-26 Thu 21:18
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [[file:~/projects/work/hagens/cdc-sol-web/components/CreditCard.tsx::src="/images/logo_cdc_digital_white.png"]]
+
+  Essa logo do cdc digital precisa virar uma variavel, pode remover o controle de enum do logo em cima e embaixo pois esse cdc digital sempre vai existir
+
+** DONE Remover controle de logo on top do credit card
+  CLOSED: [2021-08-25 Wed 14:46] SCHEDULED: <2021-08-24 Tue 10:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-26 Thu 21:19
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [[file:~/projects/work/hagens/cdc-sol-web/utils/return-theme.ts::creditCardLayout: CreditCardLayout.secondLogoOnTop,]]
+
+  O logo em cima sempre vai existir
+
+** DONE Pedir logo croppado de parcelize so com P para o well
+  CLOSED: [2021-08-24 Tue 09:25] SCHEDULED: <2021-08-24 Tue 09:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-26 Thu 21:19
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [[file:~/projects/work/hagens/cdc-sol-web/utils/return-theme.ts::creditCardLayout: CreditCardLayout.secondLogoOnTop,]]
+
+** DONE Fix tests from =y test=
+  CLOSED: [2021-08-25 Wed 14:46] SCHEDULED: <2021-08-24 Tue 18:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-26 Thu 21:19
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [[file:~/projects/work/exams/src/app/modules/category/use-cases/list-products-by-category/list-products-by-category.service.spec.ts::expect(service).toBeDefined();]]
+
+** DONE Criar uma forma no create-product de referenciar a categoria
+  CLOSED: [2021-08-26 Thu 21:18] SCHEDULED: <2021-08-24 Tue 19:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-26 Thu 21:19
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [[file:~/projects/work/exams/src/app/modules/category/use-cases/list-products-by-category/list-products-by-category.service.spec.ts::});]]
+
+** DONE Need to fix this error
+  CLOSED: [2021-08-26 Thu 21:18] DEADLINE: <2021-08-26 Thu 22:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-26 Thu 21:19
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+   [[file:~/projects/work/exams/src/app/modules/product/use-cases/create-product/create-product.service.ts::categories: \[...found.categories, category\],]]
+
+   #+BEGIN_SRC sh
+   [Nest] 5821   - 08/25/2021, 10:16:31 PM   [ExceptionsHandler] Cannot query across one-to-many for property warningActivities +1128ms
+Error: Cannot query across one-to-many for property warningActivities
+    at _loop_4 (/home/cherry/projects/work/exams/node_modules/typeorm/query-builder/QueryBuilder.js:871:27)
+    at UpdateQueryBuilder.QueryBuilder.createPropertyPath (/home/cherry/projects/work/exams/node_modules/typeorm/query-builder/QueryBuilder.js:897:17)
+    at UpdateQueryBuilder.createUpdateExpression (/home/cherry/projects/work/exams/node_modules/typeorm/query-builder/UpdateQueryBuilder.js:330:18)
+    at UpdateQueryBuilder.getQuery (/home/cherry/projects/work/exams/node_modules/typeorm/query-builder/UpdateQueryBuilder.js:42:21)
+    at UpdateQueryBuilder.QueryBuilder.getQueryAndParameters (/home/cherry/projects/work/exams/node_modules/typeorm/query-builder/QueryBuilder.js:274:26)
+    at UpdateQueryBuilder.<anonymous> (/home/cherry/projects/work/exams/node_modules/typeorm/query-builder/UpdateQueryBuilder.js:107:50)
+    at step (/home/cherry/projects/work/exams/node_modules/typeorm/node_modules/tslib/tslib.js:143:27)
+    at Object.next (/home/cherry/projects/work/exams/node_modules/typeorm/node_modules/tslib/tslib.js:124:57)
+    at /home/cherry/projects/work/exams/node_modules/typeorm/node_modules/tslib/tslib.js:117:75
+    at new Promise (<anonymous>)
+   #+END_SRC
+
+** DONE Discuss with harri if we can remove update-product route (create-product already does it's job)
+  CLOSED: [2021-08-27 Fri 18:21] SCHEDULED: <2021-08-27 Fri 19:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-27 Fri 22:11
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+** DONE Design an find by id for category /category/{categoryId}
+  CLOSED: [2021-08-27 Fri 20:22] SCHEDULED: <2021-08-27 Fri 20:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-27 Fri 22:11
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [[file:~/projects/work/exams/src/app/modules/category/use-cases/list-products-by-category/list-products-by-category.controller.ts::@Get('/:categoryId/products')]]
+
+** DONE Add filter query string for location on List all categories
+  CLOSED: [2021-08-27 Fri 19:51] SCHEDULED: <2021-08-27 Fri 21:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-27 Fri 22:11
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+** DONE Insert similarProducts array inside each product that contain it's similars with id and slug
+  CLOSED: [2021-08-27 Fri 21:29] SCHEDULED: <2021-08-27 Fri 20:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-27 Fri 22:11
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+** DONE Open card to transform relation between category/product and location on N:N
+  CLOSED: [2021-08-27 Fri 18:21] SCHEDULED: <2021-08-27 Fri 16:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-27 Fri 22:11
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+** DONE Verificar testes e2e, pois sqlite nao possui enum type.
+  CLOSED: [2021-08-30 Mon 11:04] SCHEDULED: <2021-08-30 Mon 18:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-30 Mon 18:42
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  [[file:~/projects/work/exams/src/app/shared/test/product.e2e-spec.ts::})]]
+
+** DONE Comentar na funcao return theme o que cada propriedade do objeto referencia no app.
+  CLOSED: [2021-08-30 Mon 15:34] SCHEDULED: <2021-08-30 Mon 10:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-30 Mon 18:42
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+** DONE Conversar com GUI e Harri sobre se vamos ter ambiente de homolog em backend
+  CLOSED: [2021-08-30 Mon 15:34] SCHEDULED: <2021-08-30 Mon 11:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-30 Mon 18:42
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+** DONE Mergear develop com a master backend-exams-service
+  CLOSED: [2021-08-30 Mon 10:56] SCHEDULED: <2021-08-30 Mon 14:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-30 Mon 18:42
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+** DONE Remove PUT routes because its useless
+  CLOSED: [2021-08-30 Mon 22:34] SCHEDULED: <2021-08-30 Mon 17:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-08-30 Mon 22:35
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+**** DONE finish https://elmprogramming.com/let-expression.html
+   SCHEDULED: <2021-09-04 Sat 17:00> CLOSED: [2021-09-07 ter 21:37]
+   [[file:~/projects/personal/elm/beginning-elm/src/Playground.elm::Html.text <| String.fromFloat <| add 5 <| multiply 10 <| divide 30 10]]
+
+**** DONE Revisar rotas de categoria e criar rota para buscar produto por id
+   CLOSED: [2021-08-31 Tue 22:19] SCHEDULED: <2021-08-31 Tue 18:00>
+
+**** DONE Refactor create-product service using Object.assign
+   CLOSED: [2021-08-31 Tue 22:19] SCHEDULED: <2021-08-31 Tue 19:00>
+
+**** DONE Insert filters on /products
+   CLOSED: [2021-09-03 Fri 23:55] SCHEDULED: <2021-09-01 Wed 19:00>
+
+   1. By categoryId
+   2. By LocationId
+   3. by attendencetype
+
+**** DONE Commit pantheon shapes feature after someone help with husky error
+   CLOSED: [2021-08-31 Tue 22:18] SCHEDULED: <2021-08-31 Tue 14:00>
+   [[file:~/projects/work/pantheon/src/components/tokens/Shapes/stories.mdx][file:~/projects/work/pantheon/src/components/tokens/Shapes/stories.mdx]]
+
+**** DONE Finish https://lamimed.atlassian.net/browse/TEC-35 second shadow shape
+   CLOSED: [2021-09-03 Fri 23:55] SCHEDULED: <2021-09-01 Wed 13:00>
+
+**** DONE Testar melhor o filtro de location da rota /category/{categoryId}/products
+   CLOSED: [2021-09-03 Fri 23:55] SCHEDULED: <2021-09-01 Wed>
+
+   Remover o bd, cadastrar alguns produtos com a location correta e testar o filtro
+** DONE write tests for button :pantheon:
+SCHEDULED: <2021-09-08 qua 13:00> CLOSED: [2021-09-08 qua 13:37]
+** DONE Criar funcao para deletar diretorios cheios no netrw
+SCHEDULED: <2021-09-07 ter 22:00> CLOSED: [2021-09-07 ter 22:19]
+** DONE Configurar elm no vim
+SCHEDULED: <2021-09-07 ter 23:00> CLOSED: [2021-09-07 ter 22:35]
+** DONE conversar com will sobre quebra de linha no botao
+  DEADLINE: <2021-09-09 qui 16:00> CLOSED: [2021-09-09 qui 18:59]
+
+  =checar com tela X-ray "Medici"=
+  1. Sem icone = quebra no 330px
+     Com icone = quebra no 320px
+** DONE Adicionar coisas no button pantheon
+  DEADLINE: <2021-09-09 qui 23:00> CLOSED: [2021-09-10 sex 16:13]
+
+  1. DONE Adicionar o medium size
+  2. DONE Corrigir o hover -> no default ele inverte o linear gradient e no outlined
+  troca a cor de fundo para neutral
+** DONE Fix semantic commits vim plugin
+  SCHEDULED: <2021-09-09 qui 20:00> CLOSED: [2021-09-10 sex 17:03]
+  Only enable the prompt for verify or not if find "husky" inside package.json
+  because it's the only usage for this.
+** DONE Escrever pagina no obsidian sobre semantic commits e adicionar no confluence
+  SCHEDULED: <2021-09-09 qui 21:00> CLOSED: [2021-09-10 sex 17:03]
+** DONE Perguntar para o Gui passar as credenciais do npm para podrmos fazer publish
+  SCHEDULED: <2021-09-13 seg 15:00> CLOSED: [2021-09-13 seg 16:00]
+** DONE Do titulo para o subtitulo, tem muito espacamento
+  CLOSED: [2021-09-13 seg 20:07]
+  [2021-09-13 seg]
+** DONE Espacamento entre botoes e links de social
+  DEADLINE: <2021-09-13 seg 18:00> CLOSED: [2021-09-13 seg 22:00]
+** DONE Aplicar display block no span e nao usar <br />
+  CLOSED: [2021-09-13 seg 20:19]
+  [2021-09-13 seg]
+** DONE Mais espacamento entre texto e social
+  DEADLINE: <2021-09-13 seg 19:00> CLOSED: [2021-09-13 seg 22:00]
+** DONE Espacamento entre conteudo e arco footer
+  DEADLINE: <2021-09-13 seg 20:00> CLOSED: [2021-09-13 seg 22:00]
+** DONE Usar image do nextjs
+  CLOSED: [2021-09-13 seg 20:15]
+  [2021-09-13 seg]
+** DONE usar o componente grid wrapper do pantheon
+  DEADLINE: <2021-09-13 seg 21:00> CLOSED: [2021-09-13 seg 22:31]
+** DONE Header menuFull is height: 100vh with centralize text, talk with will
+  SCHEDULED: <2021-09-14 ter 16:00> CLOSED: [2021-09-14 ter 18:20]
+** DONE Do subtitulo para o card, tem um divider
+  DEADLINE: <2021-09-14 ter 13:00> CLOSED: [2021-09-14 Tue 20:26]
+** DONE Adicionar divider entre Know more e footer
+  DEADLINE: <2021-09-14 ter 16:00> CLOSED: [2021-09-14 Tue 22:00]
+
+** DONE Diminuir gap dos icones de redes sociais
+  SCHEDULED: <2021-09-14 ter 17:00> CLOSED: [2021-09-14 ter 17:39]
+** DONE Adicionar children nos botoes outlineds footer :frontend:
+  DEADLINE: <2021-09-14 ter 17:00> CLOSED: [2021-09-14 ter 18:20]
+** DONE Revisar branch feature/mobile-version com o figma
+  DEADLINE: <2021-09-15 Wed 14:00> CLOSED: [2021-09-15 Wed 17:04]
+** DONE Revisar os requests dessa PR
+  DEADLINE: <2021-09-15 Wed 13:00> CLOSED: [2021-09-15 Wed 17:04]
+
+** DONE Comecar o card tec-43
+  CLOSED: [2021-09-22 qua 15:19] DEADLINE: <2021-09-17 Fri 13:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-09-22 qua 15:19
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+** DONE ajeitar padding do texto no hero(pagina de produto) :work:
+CLOSED: [2021-09-22 qua 18:50]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+** DONE diminuir spacing abaixo do botao schedule no mobile :work:
+CLOSED: [2021-09-22 qua 18:56]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+** DONE incluir grid wrapper no botao schdule no mobile :work:
+CLOSED: [2021-09-22 qua 19:04]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+** DONE incluir sombra fixa no botao abaixo e no hero acima mobile :work:
+CLOSED: [2021-09-22 qua 19:40]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+** DONE conditions -> titulo em roxo e texto em "preto" desktop/mobile :work:
+CLOSED: [2021-09-22 qua 20:22]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+** DONE diminuir spacing abaixo do botao schedule no mobile :work:
+CLOSED: [2021-09-22 qua 18:56]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+** DONE incluir grid wrapper no botao schdule no mobile :work:
+CLOSED: [2021-09-22 qua 19:04]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+** DONE incluir sombra fixa no botao abaixo e no hero acima mobile :work:
+CLOSED: [2021-09-22 qua 19:40]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+** DONE conditions -> titulo em roxo e texto em "preto" desktop/mobile :work:
+CLOSED: [2021-09-22 qua 20:22]
+:PROPERTIES:
+:ARCHIVE_TIME: 2021-09-23 qui 13:51
+:ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+:ARCHIVE_OLPATH: Inbox
+:ARCHIVE_CATEGORY: todo
+:ARCHIVE_TODO: DONE
+:END:
+
+** DONE Adicionar Next link no CallToAction (templates/product)
+** DONE Adicionar nome da localidade de fallback como um constants exportado
+** DONE Adicionar uma propriedade "icone" para ser retornada como categoria no frontend
+** DONE adicionar fotos definitivas em 3 produtos do test_covid para teste @website
+** DONE consumir meta tag no frontend @website
+** DONE montar a url do tuotempo nos produtos @website
+** DONE adicionar short_descriptions nos cards de categoria @website
+** DONE adicionar price_label nos produtos @website
+** DONE listar localidades em ordem alfabetica @exams
+** DONE Terminar de cadastrar produtos da categoria ****medici****, so consegui cadastrar medico generale
+** DONE Cadastrar produtos da categoria ****Infermieri****
+** DONE Nao consegui cadastrar produto ****Medico Generale**** em telemedicina pois falta slug na tabela de Meta
+** DONE Incluir no BD uma propriedade em produto para indicar se o preco eh fixo ou um range para decidirmos se vamos usar "A partire de" e o preco direto
+  Vamos adicionar no BD um campo price_label nullable que pode ser "A partire de" ou null
+** DONE Cadastrar produto "ecografia" em diagnostica assim que harri ou gui sanar a duvida
+** DONE revisar hook do tuotempo
+**** DONE Adicionar um if especifico para telemedicina removendo areaid **ou usando areaid de telemedicina**
+**** DONE Adicionar mais dois para whitelist (sc1615d807ac386a, sc16149d78b9dd7c)
+	
+** DONE Na pagina de categoria para telemedicina, fazer request com location areaid de telemedicina
+
+**** DONE Criar campo `priority` numerico na tabela de categoria e produto
+****** DONE Fazer order by com esse campo `priority` nas rotas de listagens
+
+** DONE [#B] Check if this alert is in fact serious or not              :work:
+  CLOSED: [2021-10-13 qua 15:03] SCHEDULED: <2021-10-13 qua 11:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-10-13 qua 15:04
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+[[mu4e:msgid:lami-health/security-advisories/20898781@github.com][[lami-health] A security advisory on class-validator affects at least one of your repositories]]
+Maybe it's good to check with Harri as well.
+
+** DONE Criar cards no Jira para anotar os nossos todos de sprint
+  CLOSED: [2021-10-13 qua 14:26] SCHEDULED: <2021-10-13 qua 14:30>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-10-13 qua 15:04
+  :ARCHIVE_FILE: ~/projects/dotfiles/tasks/todo.org
+  :ARCHIVE_OLPATH: Inbox
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+ [[file:~/projects/dotfiles/wiki/20211013133212-reorganizing_jira_board_13_out_2021.org:::PROPERTIES:]]
+
+
