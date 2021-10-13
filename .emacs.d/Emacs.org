@@ -758,6 +758,15 @@
        :config
        (add-to-list 'emmet-jsx-major-modes 'web-tsx-mode))
    #+END_SRC
+** Dired single buffer
+   #+BEGIN_SRC emacs-lisp
+     (use-package dired-single
+       :straight t
+       :bind (("C-x C-j" . dired-jump)
+	      :map dired-mode-map
+	      ("RET" . dired-find-file)
+	      ([backspace] . dired-single-up-directory)))
+   #+END_SRC
 * Built-in packages
 ** Org mode
    A GNU Emacs major mode for keeping notes, authoring documents,
