@@ -1,0 +1,559 @@
+* Setup package straight.el
+  Next-generation, purely functional package manager for the Emacs hacker.
+
+  #+BEGIN_SRC emacs-lisp
+    (defvar bootstrap-version)
+    (let ((bootstrap-file
+	   (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+	  (bootstrap-version 5))
+      (unless (file-exists-p bootstrap-file)
+	(with-current-buffer
+	    (url-retrieve-synchronously
+	     "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+	     'silent 'inhibit-cookies)
+	  (goto-char (point-max))
+	  (eval-print-last-sexp)))
+      (load bootstrap-file nil 'nomessage))
+  #+END_SRC
+  
+** Install use package
+   #+BEGIN_SRC emacs-lisp
+     (straight-use-package 'use-package)
+   #+END_SRC
+
+* General settings
+** No splash screen please ... jeez
+   #+BEGIN_SRC emacs-lisp
+     (setq inhibit-startup-message t)
+   #+END_SRC
+** Disable stuff UI
+   #+BEGIN_SRC emacs-lisp
+     (menu-bar-mode -1)
+     (tool-bar-mode -1)
+     (scroll-bar-mode -1)
+   #+END_SRC
+** Show matching highlight
+   #+BEGIN_SRC emacs-lisp
+     (electric-pair-mode)
+     (show-paren-mode)
+   #+END_SRC
+** Customize custom file
+   #+BEGIN_SRC emacs-lisp
+     (setq custom-file (concat user-emacs-directory "custom.el"))
+     (load custom-file 'noerror)
+   #+END_SRC
+** Disable backup
+   #+BEGIN_SRC emacs-lisp
+     (setq make-backup-file nil)
+     (setq auto-save-default nil)
+     (setq create-lockfiles nil)
+   #+END_SRC
+** Customize modeline
+   #+BEGIN_SRC emacs-lisp
+     (defvar cogent-line-selected-window (frame-selected-window))
+     (defun cogent-line-set-selected-window (&rest _args)
+       (when (not (minibuffer-window-active-p (frame-selected-window)))
+	 (setq cogent-line-selected-window (frame-selected-window))
+	 (force-mode-line-update)))
+     (defun cogent-line-unset-selected-window ()
+       (setq cogent-line-selected-window nil)
+       (force-mode-line-update))
+     (add-hook 'window-configuration-change-hook #'cogent-line-set-selected-window)
+     (add-hook 'focus-in-hook #'cogent-line-set-selected-window)
+     (add-hook 'focus-out-hook #'cogent-line-unset-selected-window)
+     (advice-add 'handle-switch-frame :after #'cogent-line-set-selected-window)
+     (advice-add 'select-window :after #'cogent-line-set-selected-window)
+     (defun cogent-line-selected-window-active-p ()
+       (eq cogent-line-selected-window (selected-window)))
+
+     (setq-default mode-line-format
+		   (list
+		    " "
+		    mode-line-misc-info ; for eyebrowse
+		    '(:eval (list
+			     ;; the buffer name; the file name as a tool tip
+			     (propertize " %b" 'face 'font-lock-type-face
+					 'help-echo (buffer-file-name))
+			     (when (buffer-modified-p)
+			       (propertize
+				" "
+				'face (if (cogent-line-selected-window-active-p)
+					  'cogent-line-modified-face
+					'cogent-line-modified-face-inactive)))
+			     (when buffer-read-only
+			       (propertize
+				""
+				'face (if (cogent-line-selected-window-active-p)
+					  'cogent-line-read-only-face
+					'cogent-line-read-only-face-inactive)))
+			     " "))
+		    '(:eval (when-let (vc vc-mode)
+			      (list " "
+				    (propertize (substring vc 5)
+						'face 'font-lock-comment-face)
+				    " ")))
+
+
+
+		    ;; spaces to align right
+		    '(:eval (propertize
+			     " " 'display
+			     `((space :align-to (- (+ right right-fringe right-margin)
+						   ,(+ 3 (string-width mode-name)))))))
+
+		    ;; the current major mode
+		    (propertize " %m " 'face 'font-lock-string-face)))
+   #+END_SRC
+
+* Third party packages
+** Helm completion
+   Helm is an Emacs framework for incremental completions and narrowing selections.
+   It helps to rapidly complete file names, buffer names, or any other Emacs
+   interactions requiring selecting an item from a list of possible choices.
+   Helm is a fork of anything.el, which was originally written by Tamas Patrovic and
+   can be considered to be its successor. Helm cleans the legacy code that is leaner,
+   modular, and unchained from constraints of backward compatibility.
+   #+BEGIN_SRC emacs-lisp
+     (defun cherry/smart-kill-buffer ()
+       (interactive)
+       (if (one-window-p)
+	   (kill-current-buffer)
+	 (progn
+	   (kill-current-buffer)
+	   (delete-window))))
+
+     (use-package helm
+       :straight t
+       :bind (("C-x C-f" . helm-find-files)
+	      ("M-x" . helm-M-x)
+	      ("C-x k" . cherry/smart-kill-buffer))
+       :init (helm-mode 1))
+   #+END_SRC
+** Typescript/Web mode/tide/eslint/prettier setup
+   This is my whole setup for typescript and *.tsx with tide.
+   #+BEGIN_SRC emacs-lisp
+     (use-package typescript-mode :straight t)
+
+     (use-package web-mode
+       :straight t	  
+       :config
+       (define-derived-mode web-tsx-mode typescript-mode "TSX")
+       (setq typescript-indent-level 2)
+       (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . web-tsx-mode)))
+
+     (use-package prettier-js
+       :after (web-mode typescript-mode)
+       :straight t
+       :hook ((web-tsx-mode . prettier-js-mode)
+	      (typescript-mode . prettier-js-mode)))
+
+     (use-package tide
+       :straight t
+       :config
+       (defun setup-tide-mode ()
+	 (interactive)
+	 (tide-setup)
+	 (eldoc-mode +1)
+	 (tide-hl-identifier-mode +1))
+       (add-hook 'typescript-mode-hook #'setup-tide-mode)
+       (add-hook 'web-tsx-mode #'setup-tide-mode))
+
+     (use-package flymake-eslint
+       :after bind-key
+       :straight t
+       :config
+       (bind-keys
+	("C-c ! l" . flymake-show-diagnostics-buffer)
+	("C-x n" . flymake-goto-next-error)
+	("C-x p" . flymake-goto-prev-error))
+       (add-hook 'web-tsx-mode-hook (lambda () (flymake-eslint-enable)))
+       (add-hook 'typescript-mode-hook (lambda () (flymake-eslint-enable))))
+   #+END_SRC
+** Tree sitter
+   tree-sitter is an Emacs binding for Tree-sitter, an incremental parsing system.
+
+   It aims to be the foundation for a new breed of Emacs packages that understand
+   code structurally. For example:
+
+   - Faster, fine-grained code highlighting.
+   - More flexible code folding.
+   - Structural editing (like Paredit, or even better) for non-Lisp code.
+   - More informative indexing for imenu.
+     
+   #+BEGIN_SRC emacs-lisp
+     (use-package tree-sitter :straight t)
+     (use-package tree-sitter-langs
+       :straight t	     
+       :after tree-sitter
+       :config
+       (tree-sitter-require 'tsx)
+       (add-to-list 'tree-sitter-major-mode-language-alist '(web-tsx-mode . tsx))
+       (add-hook 'web-tsx-mode-hook 'tree-sitter-hl-mode)
+       (add-hook 'typescript-mode 'tree-sitter-hl-mode))
+   #+END_SRC
+** Doom themes
+   A theme megapack for GNU Emacs, inspired by community favorites.
+   Special attention is given for Doom Emacs and solaire-mode support,
+   but will work fine anywhere else.
+   #+BEGIN_SRC emacs-lisp
+     (use-package doom-themes
+       :straight t
+       :config
+       (defun setup-themes (theme)
+	 (set-frame-font "Iosevka 20" nil t)
+	 (setq default-frame-alist '((font . "Iosevka 20")))
+	 (load-theme theme t))
+  
+       (setq doom-themes-enable-bold t
+	     doom-themes-enable-italic t)
+  
+       (setup-themes 'doom-one))
+   #+END_SRC
+** Company inline completion
+   Company is a text completion framework for Emacs. The name stands for
+   "complete anything". It uses pluggable back-ends and front-ends to retrieve and
+   display completion candidates.
+   #+BEGIN_SRC emacs-lisp
+     (use-package company-mode
+       :straight t    
+       :hook (after-init . global-company-mode))
+
+     (use-package company-box
+       :straight t
+       :hook (company-mode . company-box-mode))
+   #+END_SRC
+** Structural editing for lisp
+   ParEdit (paredit.el) is a minor mode for performing structured editing of
+   S-expression data. The typical example of this would be Lisp or Scheme source code.
+
+   ParEdit helps **keep parentheses balanced** and adds many keys for moving
+   S-expressions and moving around in S-expressions. Its behavior can be jarring for
+   those who may want transient periods of unbalanced parentheses, such as when
+   typing parentheses directly or commenting out code line by line.
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package paredit
+       :straight t
+       :config
+       (add-hook 'emacs-lisp-mode-hook 'paredit-mode))
+   #+END_SRC
+** Bind general keys
+   A simple way to manage personal keybindings with =bind-key= and helper
+   functions from =crux=
+
+   #+BEGIN_SRC emacs-lisp
+     (defun cherry/delete-word-or-region ()
+       (interactive)
+       (if (region-active-p)
+	   (call-interactively #'kill-region) ;; then
+	 (backward-kill-word 1)))
+
+     (use-package bind-key
+       :straight t
+       :config
+       (bind-keys
+	("M-SPC" . hippie-expand)
+	("M-n" . forward-paragraph)
+	("M-p" . backward-paragraph)
+	("C-w" . cherry/delete-word-or-region)
+	("s-c" . delete-frame)
+	("C-h" . delete-backward-char)))
+
+     (use-package crux
+       :after bind-key
+       :straight t
+       :config
+       (bind-keys
+	("C-u" . crux-kill-whole-line)
+	("C-c k" . crux-kill-other-buffers)
+	("C-c d" . crux-duplicate-current-line-or-region)
+	("C-c I" . crux-find-user-init-file)
+	("ESC c" . (lambda () (interactive) (find-file "~/.emacs.d/Emacs.org")))
+	("C-o" . crux-smart-open-line)
+	("C-c t" . nil)
+	("C-c tn" . crux-visit-term-buffer)
+	("s-j" . crux-top-join-line)))
+   #+END_SRC
+** Multiple cursors
+   Multiple cursors for Emacs. This is some pretty crazy functionality, so yes,
+   there are kinks. Don't be afraid though, I've been using it since 2011 with
+   great success and much merriment.
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package multiple-cursors
+       :straight t
+       :config
+       (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+       (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+       (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
+   #+END_SRC
+** Expand region
+   Expand region increases the selected region by semantic units. Just keep pressing
+   the key until it selects what you want.
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package expand-region
+       :straight t
+       :config
+       (global-set-key (kbd "C-=") 'er/expand-region))
+   #+END_SRC
+** Projectile
+   Projectile is a project interaction library for Emacs. Its goal is to provide a
+   nice set of features operating on a project level without introducing external
+   dependencies (when feasible). For instance - finding project files has a portable
+   implementation written in pure Emacs Lisp without the use of
+   GNU find (but for performance sake an indexing mechanism backed by external commands
+   exists as well).
+   Projectile tries to be practical - portability is great, but if some external
+   tools could speed up some task substantially and the tools are available, Projectile
+   will leverage them.
+   This library provides easy project management and navigation. The concept of a
+   project is pretty basic - just a folder containing some special
+   file (e.g. a VCS marker or a project descriptor file like pom.xml or Gemfile).
+   Projectile will auto-detect pretty much every popular project type out of the
+   box and you can easily extend it with additional project types.
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package projectile
+       :straight t
+       :config
+       (projectile-mode +1)
+       (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map))
+   #+END_SRC
+** Which key
+   Emacs package that displays available keybindings in popup
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package which-key
+       :straight t
+       :init (which-key-mode))
+   #+END_SRC
+** Magit
+   Magit is a complete text-based user interface to Git. It fills the glaring gap
+   between the Git command-line interface and various GUIs, letting you perform
+   trivial as well as elaborate version control tasks with just a couple of mnemonic
+   key presses. Magit looks like a prettified version of what you get after running a
+   few Git commands but in Magit every bit of visible information is also actionable
+   to an extent that goes far beyond what any Git GUI provides and it takes care
+   of automatically refreshing this output when it becomes outdated. In the
+   background Magit just runs Git commands and if you wish you can see what exactly
+   is being run, making it possible for you to learn the git command-line by using Magit.
+
+   Using Magit for a while will make you a more effective version control user.
+   Magit supports and streamlines the use of Git features that most users and
+   developers of other Git clients apparently thought could not be reasonably
+   mapped to a non-command-line interface. Magit is both faster and more intuitive
+   than either the command line or any GUI and these holds for both
+   Git beginners and experts alike.
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package magit
+       :after bind-key
+       :straight t
+       :config
+       (defun magit-fullscreen ()
+	 (interactive)
+	 (magit-status)
+	 (delete-other-windows))
+       (bind-key "C-x g" 'magit-fullscreen))
+   #+END_SRC
+** Bufler
+   Bufler is like a butler for your buffers, presenting them to you in an
+   organized way based on your instructions. The instructions are written as grouping
+   rules in a simple language, allowing you to customize the way buffers are
+   grouped. The default rules are designed to be generally useful, so you don’t have
+   to write your own.
+
+   It also provides a workspace mode which allows frames to focus on buffers in
+   certain groups. Since the groups are created automatically, the workspaces are
+   created dynamically, rather than requiring you to put buffers in workspaces manually.
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package bufler
+       :after bind-key
+       :straight t
+       :config (bind-key "C-x C-b" 'bufler))
+   #+END_SRC
+** Org roam
+   Org-roam is a plain-text knowledge management system. It brings some of
+   Roam's more powerful features into the Org-mode ecosystem.
+
+   Org-roam borrows principles from the Zettelkasten method, providing a solution for
+   non-hierarchical note-taking. It should also work as a plug-and-play
+   solution for anyone already using Org-mode for their personal wiki.
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package org-roam
+       :straight t
+       :after org
+       :init (setq org-roam-v2-ack t) ;; Acknowledge V2 upgrade
+       :custom
+       (org-roam-directory (file-truename org-directory))
+       :config
+       (org-roam-setup)
+       :bind (("C-c n f" . org-roam-node-find)
+	      ("C-c n g" . org-roam-graph)
+	      ("C-c n r" . org-roam-node-random)    
+	      ("C-c n c" . org-roam-capture)
+	      (:map org-mode-map
+		    (("C-c n i" . org-roam-node-insert)
+		     ("C-c n o" . org-id-get-create)
+		     ("C-c n t" . org-roam-tag-add)
+		     ("C-c n a" . org-roam-alias-add)
+		     ("C-c n l" . org-roam-buffer-toggle)))))
+   #+END_SRC
+** Org download
+   This extension facilitates moving images from point A to point B.
+
+   Point A (the source) can be:
+   
+   An image inside your browser that you can drag to Emacs.
+   An image on your file system that you can drag to Emacs.
+   A local or remote image address in kill-ring. Use the org-download-yank command for
+   this. Remember that you can use "0 w" in dired to get an address.
+   A screenshot taken using gnome-screenshot, scrot, gm, xclip (on Linux),
+   screencapture (on OS X) or , imagemagick/convert (on Windows).
+   Use the org-download-screenshot command for this. Customize the backend with
+   org-download-screenshot-method.
+   
+   Point B (the target) is an Emacs org-mode buffer where the inline link
+   will be inserted. Several customization options will determine where
+   exactly on the file system the file will be stored.
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package org-download :straight t)
+   #+END_SRC
+** Lua mode
+   #+BEGIN_SRC emacs-lisp
+     (use-package lua-mode :straight t)
+   #+END_SRC
+** Mu4e mailing
+   mu4e is an email client for Emacs. It’s based on the mu email indexer/searcher.
+
+   It's not information overload. It's filter failure. mu4e's mission is to
+   be a better filter. --Prof. Shirky
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package mu4e
+       :after bind-key
+       :ensure nil
+       :load-path "/usr/share/emacs/site-lisp/mu4e/"
+       :config
+       ;; this is set to 't' to avoid mail syncing issues when using mbsync
+       (setq mu4e-change-filenames-when-moving t)
+
+       ;; Refresh mail using isync every 10 minutes
+       (setq mu4e-update-interval (* 10 60))
+       (setq mu4e-get-mail-command "mbsync -a")
+       (setq mu4e-maildir "~/Mail")
+
+       (setq mu4e-drafts-folder "/[Gmail].Drafts")
+       (setq mu4e-sent-folder "/[Gmail].Sent Mail")
+       (setq mu4e-refile-folder "/[Gmail].All Mail")
+       (setq mu4e-trash-folder "/[Gmail].Trash")
+
+       (setq mu4e-maildir-shortcuts
+	     '(("/Inbox" . ?i)
+	       ("/[Gmail].Sent Mail" . ?s)
+	       ("/[Gmail].Trash" . ?t)
+	       ("/[Gmail].Drafts" . ?d)
+	       ("/[Gmail] All Mail" . ?a)))
+       (bind-key "C-c m" 'mu4e))
+   #+END_SRC
+** Manage music with bongo
+   #+BEGIN_SRC emacs-lisp
+	(use-package bongo
+	  :after bind-key
+	  :straight t
+	  :config
+	  (setq bongo-default-directory "~/Music")
+	  (setq bongo-prefer-library-buffers nil)
+	  (setq bongo-insert-whole-directory-trees t)
+	  (setq bongo-logo nil)
+	  (setq bongo-display-track-icons nil)
+	  (setq bongo-display-header-icons nil)
+	  (setq bongo-display-playback-mode-indicator t)
+	  (setq bongo-display-join-inserted-tracks nil)
+	  (setq bongo-field-separator (propertize " . " 'face 'shadow))
+	  (setq bongo-mark-played-tracks t)
+	  (setq bongo-header-line-mode nil)
+	  (setq bongo-mode-line-indicator-mode nil)
+	  (setq bongo-enabled-backends '(vlc mpv))
+	  (setq bongo-vlc-program-name "cvlc")
+
+	  (bind-key "C-c p" 'bongo-playlist))
+   #+END_SRC
+** Emmet
+   #+BEGIN_SRC emacs-lisp
+     (use-package emmet-mode
+       :straight t
+       :hook ((web-tsx-mode . emmet-mode))
+       :config
+       (add-to-list 'emmet-jsx-major-modes 'web-tsx-mode))
+   #+END_SRC
+* Built-in packages
+** Org mode
+   A GNU Emacs major mode for keeping notes, authoring documents,
+   computational notebooks, literate programming, maintaining to-do lists,
+   planning projects, and more — in a fast and effective plain text system.
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package org
+       :after bind-key
+       :config
+       (setq org-ellipsis " ▾")
+
+       (setq org-agenda-start-with-log-mode t)
+       (setq org-log-done 'time)
+       (setq org-log-into-drawer t)
+
+       (setq org-directory (concat (getenv "HOME") "/projects/dotfiles/wiki"))
+       (setq org-agenda-files '("~/projects/dotfiles/tasks/todo.org"))
+       (setq org-agenda-skip-function-global '(org-agenda-skip-entry-if 'todo 'done))
+
+	(setq org-capture-templates
+	      `(("t" "Task")
+		("tp" "Task Personal" entry (file+olp "~/projects/dotfiles/tasks/todo.org" "Inbox - Personal")
+		 "* TODO %?\n SCHEDULED: %^t\n %a\n  %i" :empty-lines 0)
+		("tw" "Task Work" entry (file+olp "~/projects/dotfiles/tasks/todo.org" "Inbox - Work")
+		 "* TODO %?\n SCHEDULED: %^t\n %a\n  %i" :empty-lines 0)))
+	(bind-key "C-c c" 'org-capture)
+	(bind-key "C-c a " 'org-agenda))
+   #+END_SRC
+** Ansi terminal
+   This is a terminal emulator written in EmacsLisp. Now you can run vi (or mutt! (see MuttInEmacs) (or Emacs!)) in an Emacs buffer!
+   
+   #+BEGIN_SRC emacs-lisp
+     (setq explicit-shell-file-name "/usr/bin/fish")
+
+     (defun cherry/term-exec-hook ()
+       (let* ((buff (current-buffer))
+	      (proc (get-buffer-process buff)))
+	 (set-process-sentinel
+	  proc
+	  `(lambda (process event)
+	     (if (string= event "finished\n")
+		 (progn
+		   (kill-buffer ,buff)
+		   (delete-window)))))))
+
+     (add-hook 'term-exec-hook 'cherry/term-exec-hook)
+
+     (eval-after-load "term"
+       '(define-key term-raw-map (kbd "C-y") 'term-paste))
+   #+END_SRC
+* Customizing
+** Offer to create parent directories if they do not exist
+   http://iqbalansari.github.io/blog/2014/12/07/automatically-create-parent-directories-on-visiting-a-new-file-in-emacs/
+
+   #+BEGIN_SRC emacs-lisp
+     (defun my-create-non-existent-directory ()
+       (let ((parent-directory (file-name-directory buffer-file-name)))
+	 (when (and (not (file-exists-p parent-directory))
+		    (y-or-n-p (format "Directory `%s' does not exist! Create it?" parent-directory)))
+	   (make-directory parent-directory t))))
+
+     (add-to-list 'find-file-not-found-functions 'my-create-non-existent-directory)
+   #+END_SRC
+
+
