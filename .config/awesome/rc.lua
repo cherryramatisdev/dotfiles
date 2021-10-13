@@ -219,10 +219,17 @@ globalkeys = my_table.join(
     group = "Applications",
   }),
 
-  awful.key({ altkey }, "t", function()
-    awful.util.spawn "obsidian"
+  awful.key({ modkey }, "e", function()
+    awful.util.spawn "emacsclient -c -a ''"
   end, {
-    description = "Obsidian",
+    description = "Emacs",
+    group = "Applications",
+  }),
+
+  awful.key({ altkey }, "t", function()
+    awful.util.spawn "emacsclient -c -a '' -e '(org-roam-node-find)'"
+  end, {
+    description = "My second brain",
     group = "Applications",
   }),
 
@@ -277,27 +284,11 @@ globalkeys = my_table.join(
 
   -- screenshots
   awful.key({}, "Print", function()
-    awful.util.spawn "scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'"
+    awful.util.spawn "flameshot gui"
   end, {
-    description = "Scrot",
+    description = "Flameshot",
     group = "screenshots",
   }),
-  awful.key({ modkey1 }, "Print", function()
-    awful.util.spawn "xfce4-screenshooter"
-  end, {
-    description = "Xfce screenshot",
-    group = "screenshots",
-  }),
-  awful.key({ modkey1, "Shift" }, "Print", function()
-    awful.util.spawn "gnome-screenshot -i"
-  end, {
-    description = "Gnome screenshot",
-    group = "screenshots",
-  }),
-
-  -- Personal keybindings}}}
-
-  -- Hotkeys Awesome
 
   awful.key({ modkey }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
 
@@ -437,24 +428,24 @@ globalkeys = my_table.join(
   -- ALSA volume control
   --awful.key({ modkey1 }, "Up",
   awful.key({}, "XF86AudioRaiseVolume", function()
-    os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
+    os.execute "pactl -- set-sink-volume 0 +10%"
     beautiful.volume.update()
   end),
   --awful.key({ modkey1 }, "Down",
   awful.key({}, "XF86AudioLowerVolume", function()
-    os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
+    os.execute "pactl -- set-sink-volume 0 -10%"
     beautiful.volume.update()
   end),
   awful.key({}, "XF86AudioMute", function()
-    os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
+    os.execute "pactl -- set-sink-volume 0 0%"
     beautiful.volume.update()
   end),
   awful.key({ modkey1, "Shift" }, "m", function()
-    os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
+    os.execute "pactl -- set-sink-volume 0 100%"
     beautiful.volume.update()
   end),
   awful.key({ modkey1, "Shift" }, "0", function()
-    os.execute(string.format("amixer -q set %s 0%%", beautiful.volume.channel))
+    os.execute "pactl -- set-sink-volume 0 0%"
     beautiful.volume.update()
   end),
 
@@ -470,19 +461,7 @@ globalkeys = my_table.join(
   end),
   awful.key({}, "XF86AudioStop", function()
     awful.util.spawn "mpc stop"
-  end),
-
-  awful.key({ altkey }, "x", function()
-    awful.prompt.run {
-      prompt = "Run Lua code: ",
-      textbox = awful.screen.focused().mypromptbox.widget,
-      exe_callback = awful.util.eval,
-      history_path = awful.util.get_cache_dir() .. "/history_eval",
-    }
-  end, {
-    description = "lua execute prompt",
-    group = "awesome",
-  })
+  end)
   --]]
 )
 
