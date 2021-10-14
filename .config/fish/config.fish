@@ -23,10 +23,10 @@ alias pupdate="sudo pacman -Syuu"
 fish_add_path "$HOME/.npm-global/bin"
 fish_add_path "$HOME/bin"
 
-set -gx EDITOR "nvim"
-set -gx PAGER "nvim"
-set -gx VISUAL "nvim"
-set -gx MANPAGER "nvim +Man! -c ':set signcolumn='"
+set -gx EDITOR "emacsclient -t"
+set -gx PAGER "emacsclient -t"
+set -gx VISUAL "emacsclient -t"
+set -gx MANPAGER "emacsclient -t -e '(man \"$1\")'"
 alias vimdiff="nvim -d"
 
 set -gx _ZL_CD cd
