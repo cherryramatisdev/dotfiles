@@ -247,6 +247,13 @@ globalkeys = my_table.join(
     group = "Applications",
   }),
 
+  awful.key({ modkey }, "F1", function()
+    awful.util.spawn("switchkeyboardlanguage")
+  end, {
+    description = "Switch keyboard language",
+    group = "Applications",
+  }),
+
   -- dmenu
   awful.key({ modkey }, "space", function()
     awful.spawn(
