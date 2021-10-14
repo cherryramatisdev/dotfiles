@@ -315,29 +315,6 @@ replicate some of the features of the doom-modeline package.
        :config
        (global-set-key (kbd "C-=") 'er/expand-region))
    #+END_SRC
-** Projectile
-   Projectile is a project interaction library for Emacs. Its goal is to provide a
-   nice set of features operating on a project level without introducing external
-   dependencies (when feasible). For instance - finding project files has a portable
-   implementation written in pure Emacs Lisp without the use of
-   GNU find (but for performance sake an indexing mechanism backed by external commands
-   exists as well).
-   Projectile tries to be practical - portability is great, but if some external
-   tools could speed up some task substantially and the tools are available, Projectile
-   will leverage them.
-   This library provides easy project management and navigation. The concept of a
-   project is pretty basic - just a folder containing some special
-   file (e.g. a VCS marker or a project descriptor file like pom.xml or Gemfile).
-   Projectile will auto-detect pretty much every popular project type out of the
-   box and you can easily extend it with additional project types.
-
-   #+BEGIN_SRC emacs-lisp
-     (use-package projectile
-       :straight t
-       :config
-       (projectile-mode +1)
-       (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map))
-   #+END_SRC
 ** Which key
    Emacs package that displays available keybindings in popup
 
@@ -848,6 +825,23 @@ replicate some of the features of the doom-modeline package.
      (eval-after-load "term"
        '(define-key term-raw-map (kbd "C-y") 'term-paste))
    #+END_SRC
+** Project
+NOTE: The project API is still experimental and can change in major,
+backward-incompatible ways.  Everyone is encouraged to try it, and
+report to us any problems or use cases we hadn't anticipated, by
+sending an email to emacs-devel, or `M-x report-emacs-bug'.
+This file contains generic infrastructure for dealing with
+projects, some utility functions, and commands using that
+infrastructure.
+#+BEGIN_SRC emacs-lisp
+  (use-package project
+    :after consult
+    :bind (("C-x p" . nil)
+	   ("C-x pp" . project-switch-project)
+	   ("C-x pf" . project-find-file)
+	   ("C-x pt" . project-eshell)
+	   ("C-x ps" . consult-ripgrep)))
+#+END_SRC
 * Customizing
 ** Offer to create parent directories if they do not exist
    http://iqbalansari.github.io/blog/2014/12/07/automatically-create-parent-directories-on-visiting-a-new-file-in-emacs/

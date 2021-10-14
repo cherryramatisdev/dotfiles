@@ -161,12 +161,6 @@
   :config
   (global-set-key (kbd "C-=") 'er/expand-region))
 
-(use-package projectile
-  :straight t
-  :config
-  (projectile-mode +1)
-  (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map))
-
 (use-package which-key
   :straight t
   :init (which-key-mode))
