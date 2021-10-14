@@ -30,20 +30,16 @@
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
 
-(defun cherry/smart-kill-buffer ()
-  (interactive)
-  (if (one-window-p)
-      (kill-current-buffer)
-    (progn
-      (kill-current-buffer)
-      (delete-window))))
+(defun setup-themes (theme)
+  (set-frame-font "Iosevka 20" nil t)
+  (setq default-frame-alist '((font . "Iosevka 20")))
+  (load-theme theme t))
 
-(use-package helm
+(setup-themes 'modus-operandi)
+
+(use-package vertico
   :straight t
-  :bind (("C-x C-f" . helm-find-files)
-	 ("M-x" . helm-M-x)
-	 ("C-x k" . cherry/smart-kill-buffer))
-  :init (helm-mode 1))
+  :init (vertico-mode))
 
 (use-package typescript-mode :straight t)
 
@@ -92,18 +88,13 @@
   (add-hook 'web-tsx-mode-hook 'tree-sitter-hl-mode)
   (add-hook 'typescript-mode 'tree-sitter-hl-mode))
 
-(use-package doom-themes
+(use-package minions
   :straight t
-  :config
-  (defun setup-themes (theme)
-    (set-frame-font "Iosevka 20" nil t)
-    (setq default-frame-alist '((font . "Iosevka 20")))
-    (load-theme theme t))
+  :config (minions-mode 1))
 
-  (setq doom-themes-enable-bold t
-	doom-themes-enable-italic t)
-
-  (setup-themes 'doom-one))
+(use-package mood-line
+  :straight t
+  :init (mood-line-mode))
 
 (use-package company-mode
   :straight t    
@@ -124,6 +115,14 @@
       (call-interactively #'kill-region) ;; then
     (backward-kill-word 1)))
 
+(defun cherry/smart-kill-buffer ()
+  (interactive)
+  (if (one-window-p)
+      (kill-current-buffer)
+    (progn
+      (kill-current-buffer)
+      (delete-window))))
+
 (use-package bind-key
   :straight t
   :config
@@ -132,6 +131,7 @@
    ("M-n" . forward-paragraph)
    ("M-p" . backward-paragraph)
    ("C-w" . cherry/delete-word-or-region)
+   ("C-x k" . cherry/smart-kill-buffer)
    ("s-c" . delete-frame)
    ("C-h" . delete-backward-char)))
 
@@ -558,6 +558,10 @@ Also see `prot/bongo-playlist-insert-playlist-file'."
 	    "* TODO %?\n SCHEDULED: %^t\n %a\n  %i" :empty-lines 0)
 	   ("tw" "Task Work" entry (file+olp "~/projects/dotfiles/tasks/todo.org" "Inbox - Work")
 	    "* TODO %?\n SCHEDULED: %^t\n %a\n  %i" :empty-lines 0)))
+
+   ;; Format better paragraphs
+   (add-hook 'org-mode-hook 'turn-on-auto-fill)
+
    (bind-key "C-c c" 'org-capture)
    (bind-key "C-c a " 'org-agenda))
 

@@ -118,28 +118,81 @@ I'll use modus themes because it's builtin to emacs and it's pretty good
 #+END_SRC
 
 * Third party packages
-** Helm completion
-   Helm is an Emacs framework for incremental completions and narrowing selections.
-   It helps to rapidly complete file names, buffer names, or any other Emacs
-   interactions requiring selecting an item from a list of possible choices.
-   Helm is a fork of anything.el, which was originally written by Tamas Patrovic and
-   can be considered to be its successor. Helm cleans the legacy code that is leaner,
-   modular, and unchained from constraints of backward compatibility.
-   #+BEGIN_SRC emacs-lisp
-     (defun cherry/smart-kill-buffer ()
-       (interactive)
-       (if (one-window-p)
-	   (kill-current-buffer)
-	 (progn
-	   (kill-current-buffer)
-	   (delete-window))))
+** Completion with vertico/marginalia/consult/orderless/embark
+   This is a nicer set of packages to provide completion and actions.
 
-     (use-package helm
+   [[https://github.com/minad/vertico][vertico]]
+   [[https://github.com/minad/marginalia][marginalia]]
+   [[https://github.com/minad/consult][consult]]
+   [[https://github.com/oantolin/orderless][orderless]]
+   [[https://github.com/oantolin/embark][embark]]
+   
+   #+BEGIN_SRC emacs-lisp
+     (use-package vertico
        :straight t
-       :bind (("C-x C-f" . helm-find-files)
-	      ("M-x" . helm-M-x)
-	      ("C-x k" . cherry/smart-kill-buffer))
-       :init (helm-mode 1))
+       :custom
+       (vertico-cycle t)
+       :init (vertico-mode))
+
+     (use-package savehist
+       :init
+       (savehist-mode))
+
+     (use-package orderless
+       :straight t
+       :custom (completion-styles '(orderless)))
+
+     (use-package marginalia
+       :after vertico
+       :straight t
+       :custom
+       (marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
+       :init
+       (marginalia-mode))
+
+     (use-package consult
+       :straight t
+       :bind (("C-x b" . consult-buffer)
+	      ("C-s" . consult-line))
+       :hook (completion-list-mode . consult-preview-at-point-mode)
+       :init
+       (setq register-preview-delay 0
+	     register-preview-function #'consult-register-format)
+       (advice-add #'register-preview :override #'consult-register-window)
+       (advice-add #'completing-read-multiple :override #'consult-completing-read-multiple)
+       (setq xref-show-xrefs-function #'consult-xref
+	     xref-show-definitions-function #'consult-xref)
+       :config
+       (consult-customize
+	consult-theme
+	:preview-key '(:debounce 0.2 any)
+	consult-ripgrep consult-git-grep consult-grep
+	consult-bookmark consult-recent-file consult-xref
+	consult--source-file consult--source-project-file consult--source-bookmark
+	:preview-key (kbd "M-."))
+       (setq consult-narrow-key "<") ;; (kbd "C-+")
+       (setq consult-project-root-function
+	     (lambda ()
+	       (when-let (project (project-current))
+		 (car (project-roots project))))))
+
+     (use-package embark
+       :straight t
+       :bind (("C-." . embark-act))
+       :init
+       (setq prefix-help-command #'embark-prefix-help-command)
+       :config
+       (add-to-list 'display-buffer-alist
+		    '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+		      nil
+		      (window-parameters (mode-line-format . none)))))
+
+     (use-package embark-consult
+       :straight t
+       :after (embark consult)
+       :demand t
+       :hook
+       (embark-collect-mode . consult-preview-at-point-mode))
    #+END_SRC
 ** Typescript/Web mode/tide/eslint/prettier setup
    This is my whole setup for typescript and *.tsx with tide.
@@ -267,6 +320,14 @@ replicate some of the features of the doom-modeline package.
 	   (call-interactively #'kill-region) ;; then
 	 (backward-kill-word 1)))
 
+     (defun cherry/smart-kill-buffer ()
+       (interactive)
+       (if (one-window-p)
+	   (kill-current-buffer)
+	 (progn
+	   (kill-current-buffer)
+	   (delete-window))))
+
      (use-package bind-key
        :straight t
        :config
@@ -275,6 +336,7 @@ replicate some of the features of the doom-modeline package.
 	("M-n" . forward-paragraph)
 	("M-p" . backward-paragraph)
 	("C-w" . cherry/delete-word-or-region)
+	("C-x k" . cherry/smart-kill-buffer)
 	("s-c" . delete-frame)
 	("C-h" . delete-backward-char)))
 
@@ -805,7 +867,7 @@ replicate some of the features of the doom-modeline package.
 	(bind-key "C-c a " 'org-agenda))
    #+END_SRC
 ** Ansi terminal
-   This is a terminal emulator written in EmacsLisp. Now you can run vi (or mutt! (see MuttInEmacs) (or Emacs!)) in an Emacs buffer!
+This is a terminal emulator written in EmacsLisp. Now you can run vi (or mutt! (see MuttInEmacs) (or Emacs!)) in an Emacs buffer!
    
    #+BEGIN_SRC emacs-lisp
      (setq explicit-shell-file-name "/usr/bin/fish")
