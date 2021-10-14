@@ -25,63 +25,9 @@
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file 'noerror)
 
-(setq make-backup-file nil)
+(setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
-
-(defvar cogent-line-selected-window (frame-selected-window))
-(defun cogent-line-set-selected-window (&rest _args)
-  (when (not (minibuffer-window-active-p (frame-selected-window)))
-    (setq cogent-line-selected-window (frame-selected-window))
-    (force-mode-line-update)))
-(defun cogent-line-unset-selected-window ()
-  (setq cogent-line-selected-window nil)
-  (force-mode-line-update))
-(add-hook 'window-configuration-change-hook #'cogent-line-set-selected-window)
-(add-hook 'focus-in-hook #'cogent-line-set-selected-window)
-(add-hook 'focus-out-hook #'cogent-line-unset-selected-window)
-(advice-add 'handle-switch-frame :after #'cogent-line-set-selected-window)
-(advice-add 'select-window :after #'cogent-line-set-selected-window)
-(defun cogent-line-selected-window-active-p ()
-  (eq cogent-line-selected-window (selected-window)))
-
-(setq-default mode-line-format
-	      (list
-	       " "
-	       mode-line-misc-info ; for eyebrowse
-	       '(:eval (list
-			;; the buffer name; the file name as a tool tip
-			(propertize " %b" 'face 'font-lock-type-face
-				    'help-echo (buffer-file-name))
-			(when (buffer-modified-p)
-			  (propertize
-			   " "
-			   'face (if (cogent-line-selected-window-active-p)
-				     'cogent-line-modified-face
-				   'cogent-line-modified-face-inactive)))
-			(when buffer-read-only
-			  (propertize
-			   ""
-			   'face (if (cogent-line-selected-window-active-p)
-				     'cogent-line-read-only-face
-				   'cogent-line-read-only-face-inactive)))
-			" "))
-	       '(:eval (when-let (vc vc-mode)
-			 (list " "
-			       (propertize (substring vc 5)
-					   'face 'font-lock-comment-face)
-			       " ")))
-
-
-
-	       ;; spaces to align right
-	       '(:eval (propertize
-			" " 'display
-			`((space :align-to (- (+ right right-fringe right-margin)
-					      ,(+ 3 (string-width mode-name)))))))
-
-	       ;; the current major mode
-	       (propertize " %m " 'face 'font-lock-string-face)))
 
 (defun cherry/smart-kill-buffer ()
   (interactive)
@@ -287,6 +233,13 @@
 	  ("/[Gmail].Trash" . ?t)
 	  ("/[Gmail].Drafts" . ?d)
 	  ("/[Gmail] All Mail" . ?a)))
+
+  (setq smtpmail-smtp-server "smtp.gmail.com"
+	smtpmail-smtp-service 465
+	smtpmail-stream-type 'ssl)
+
+  (setq message-send-mail-function 'smtpmail-send-it)
+
   (bind-key "C-c m" 'mu4e))
 
 (use-package bongo
@@ -550,13 +503,14 @@ Also see `prot/bongo-playlist-insert-playlist-file'."
 
   :hook ((dired-mode-hook . prot/bongo-dired-library-enable)
 	 (wdired-mode-hook . prot/bongo-dired-library-disable))
-  :bind (("<C-XF86AudioPlay>" . bongo-pause/resume)
-	 ("<C-XF86AudioNext>" . bongo-next)
-	 ("<C-XF86AudioPrev>" . bongo-previous)
-	 ("<M-XF86AudioPlay>" . bongo-show)
-	 ("<S-XF86AudioNext>" . bongo-seek-forward-10)
-	 ("<S-XF86AudioPrev>" . bongo-seek-backward-10)
-	 ("C-c p" . bongo)
+  :bind (("C-c p" . nil)
+	 ("C-c M-p" . bongo-pause/resume)
+	 ("C-c pn" . bongo-next)
+	 ("C-c pP" . bongo-previous)
+	 ("C-c ps" . bongo-show)
+	 ("C-c pf" . bongo-seek-forward-10)
+	 ("C-c pb" . bongo-seek-backward-10)
+	 ("C-c pp" . bongo)
 	 :map bongo-playlist-mode-map
 	 ("n" . bongo-next-object)
 	 ("p" . bongo-previous-object)
@@ -582,6 +536,13 @@ Also see `prot/bongo-playlist-insert-playlist-file'."
   :hook ((web-tsx-mode . emmet-mode))
   :config
   (add-to-list 'emmet-jsx-major-modes 'web-tsx-mode))
+
+(use-package dired-single
+  :straight t
+  :bind (("C-x C-j" . dired-jump)
+	 :map dired-mode-map
+	 ("RET" . dired-find-file)
+	 ([backspace] . dired-single-up-directory)))
 
 (use-package org
   :after bind-key
@@ -630,3 +591,18 @@ Also see `prot/bongo-playlist-insert-playlist-file'."
       (make-directory parent-directory t))))
 
 (add-to-list 'find-file-not-found-functions 'my-create-non-existent-directory)
+
+(defun cherry/visit-pull-request-url ()
+  "Visit the current branch's PR on Github."
+  (interactive)
+  (browse-url
+   (format "https://github.com/%s/pull/new/%s"
+	   (replace-regexp-in-string
+	    "\\`.+github\\.com:\\(.+\\)\\.git\\'" "\\1"
+	    (magit-get "remote"
+		       (magit-get-push-remote)
+		       "url"))
+	   (magit-get-current-branch))))
+
+(eval-after-load 'magit
+  '(define-key magit-mode-map "v" #'cherry/visit-pull-request-url))

@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       98df216a-fd0f-4d04-9640-049e7ef1b646
+:END:
+#+title: searching solution for undefined router.query on page load nextjs
+
+* Caveats
+
+#+DOWNLOADED: screenshot @ 2021-10-14 13:30:39
+[[file:2021-10-14_13-30-39_screenshot.png]]
+
+
+* [[https://github.com/vercel/next.js/discussions/11484][Solution]]
+  Apparently we have three ways to deal with this "lazy loading"
+#+DOWNLOADED: screenshot @ 2021-10-14 13:32:01
+
+[[file:\[\[https:/github.com/vercel/next.js/discussions/11484\]\[Solution\]\]/2021-10-14_13-32-01_screenshot.png]]
+
+  
+

@@ -30,6 +30,8 @@
    SCHEDULED: <2021-10-13 qua 16:00>
 ** TODO [#A] Test if GTM installation worked properly on prod website
    SCHEDULED: <2021-10-13 qua 16:00>
+** TODO Criar tratativa no pantheon para quando aceitar type="time" incluir um placeholder default
+** TODO Investigate CORS error in production on internal API calls to website
 
 * Done Tasks
 ** DONE Plan this solution more(card TEC-7)
