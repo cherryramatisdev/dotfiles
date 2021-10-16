@@ -19,8 +19,8 @@
   [[file:~/projects/dotfiles/tasks/todo.org::*Write e2e testing for pantheon components (don't include tokens)][Write e2e testing for pantheon components (don't include tokens)]]
 ** TODO Criar tratativa no pantheon para quando aceitar type="time" incluir um placeholder default
 ** TODO Investigate CORS error in production on internal API calls to website
-** TODO Finish test refactor
- SCHEDULED: <2021-10-15 sex 10:00>
+** DONE Finish test refactor
+ CLOSED: [2021-10-15 sex 21:46] SCHEDULED: <2021-10-15 sex 10:00>
  [[file:~/projects/work/exams/src/app/modules/location/use-cases/create-location/create-location.service.spec.ts::import { Location } from '../../entities/location.entity';]]
 * Done Tasks
 ** DONE Plan this solution more(card TEC-7)
