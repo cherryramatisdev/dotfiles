@@ -11,7 +11,7 @@ function run {
  fi
 }
 
-$HOME/.config/polybar/launch.sh
+$HOME/.config/polybar/launch.sh --material
 
 run emacs --daemon &
 
