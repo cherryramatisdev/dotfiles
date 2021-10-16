@@ -30,6 +30,8 @@
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
 
+(delete-selection-mode 1)
+
 (defun setup-themes (theme)
   (set-frame-font "Iosevka 20" nil t)
   (setq default-frame-alist '((font . "Iosevka 20")))
@@ -39,7 +41,69 @@
 
 (use-package vertico
   :straight t
+  :custom
+  (vertico-cycle t)
   :init (vertico-mode))
+
+(use-package savehist
+  :init
+  (savehist-mode))
+
+(use-package orderless
+  :straight t
+  :custom (completion-styles '(orderless)))
+
+(use-package marginalia
+  :after vertico
+  :straight t
+  :custom
+  (marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
+  :init
+  (marginalia-mode))
+
+(use-package consult
+  :straight t
+  :bind (("C-x b" . consult-buffer)
+	 ("C-s" . consult-line))
+  :hook (completion-list-mode . consult-preview-at-point-mode)
+  :init
+  (setq register-preview-delay 0
+	register-preview-function #'consult-register-format)
+  (advice-add #'register-preview :override #'consult-register-window)
+  (advice-add #'completing-read-multiple :override #'consult-completing-read-multiple)
+  (setq xref-show-xrefs-function #'consult-xref
+	xref-show-definitions-function #'consult-xref)
+  :config
+  (consult-customize
+   consult-theme
+   :preview-key '(:debounce 0.2 any)
+   consult-ripgrep consult-git-grep consult-grep
+   consult-bookmark consult-recent-file consult-xref
+   consult--source-file consult--source-project-file consult--source-bookmark
+   :preview-key (kbd "M-."))
+  (setq consult-narrow-key "<") ;; (kbd "C-+")
+  (setq consult-project-root-function
+	(lambda ()
+	  (when-let (project (project-current))
+	    (car (project-roots project))))))
+
+(use-package embark
+  :straight t
+  :bind (("C-." . embark-act))
+  :init
+  (setq prefix-help-command #'embark-prefix-help-command)
+  :config
+  (add-to-list 'display-buffer-alist
+	       '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+		 nil
+		 (window-parameters (mode-line-format . none)))))
+
+(use-package embark-consult
+  :straight t
+  :after (embark consult)
+  :demand t
+  :hook
+  (embark-collect-mode . consult-preview-at-point-mode))
 
 (use-package typescript-mode :straight t)
 
@@ -72,9 +136,7 @@
   :straight t
   :config
   (bind-keys
-   ("C-c ! l" . flymake-show-diagnostics-buffer)
-   ("C-x n" . flymake-goto-next-error)
-   ("C-x p" . flymake-goto-prev-error))
+   ("C-c ! l" . flymake-show-diagnostics-buffer))
   (add-hook 'web-tsx-mode-hook (lambda () (flymake-eslint-enable)))
   (add-hook 'typescript-mode-hook (lambda () (flymake-eslint-enable))))
 
@@ -143,8 +205,7 @@
    ("C-u" . crux-kill-whole-line)
    ("C-c k" . crux-kill-other-buffers)
    ("C-c d" . crux-duplicate-current-line-or-region)
-   ("C-c I" . crux-find-user-init-file)
-   ("ESC c" . (lambda () (interactive) (find-file "~/.emacs.d/Emacs.org")))
+   ("C-c I" . (lambda () (interactive) (find-file "~/.emacs.d/Emacs.org")))
    ("C-o" . crux-smart-open-line)
    ("C-c t" . nil)
    ("C-c tn" . crux-visit-term-buffer)
@@ -582,6 +643,14 @@ Also see `prot/bongo-playlist-insert-playlist-file'."
 
 (eval-after-load "term"
   '(define-key term-raw-map (kbd "C-y") 'term-paste))
+
+(use-package project
+  :after consult
+  :bind (("C-x p" . nil)
+	 ("C-x pp" . project-switch-project)
+	 ("C-x pf" . project-find-file)
+	 ("C-x pt" . project-eshell)
+	 ("C-x ps" . consult-ripgrep)))
 
 (defun my-create-non-existent-directory ()
   (let ((parent-directory (file-name-directory buffer-file-name)))

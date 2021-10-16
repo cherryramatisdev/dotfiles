@@ -49,6 +49,10 @@
      (setq auto-save-default nil)
      (setq create-lockfiles nil)
    #+END_SRC
+** Delete selected text please, it's basic
+#+BEGIN_SRC emacs-lisp
+  (delete-selection-mode 1)
+#+END_SRC
 ** COMMENT Customize modeline
    #+BEGIN_SRC emacs-lisp
      (defvar cogent-line-selected-window (frame-selected-window))
@@ -228,9 +232,7 @@ I'll use modus themes because it's builtin to emacs and it's pretty good
        :straight t
        :config
        (bind-keys
-	("C-c ! l" . flymake-show-diagnostics-buffer)
-	("C-x n" . flymake-goto-next-error)
-	("C-x p" . flymake-goto-prev-error))
+	("C-c ! l" . flymake-show-diagnostics-buffer))
        (add-hook 'web-tsx-mode-hook (lambda () (flymake-eslint-enable)))
        (add-hook 'typescript-mode-hook (lambda () (flymake-eslint-enable))))
    #+END_SRC
@@ -348,8 +350,7 @@ replicate some of the features of the doom-modeline package.
 	("C-u" . crux-kill-whole-line)
 	("C-c k" . crux-kill-other-buffers)
 	("C-c d" . crux-duplicate-current-line-or-region)
-	("C-c I" . crux-find-user-init-file)
-	("ESC c" . (lambda () (interactive) (find-file "~/.emacs.d/Emacs.org")))
+	("C-c I" . (lambda () (interactive) (find-file "~/.emacs.d/Emacs.org")))
 	("C-o" . crux-smart-open-line)
 	("C-c t" . nil)
 	("C-c tn" . crux-visit-term-buffer)

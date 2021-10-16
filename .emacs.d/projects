@@ -1,2 +1,5 @@
 ;;; -*- lisp-data -*-
-(("~/projects/work/website/"))
+(("~/projects/work/website/")
+ ("~/projects/work/pantheon/")
+ ("~/projects/dotfiles/")
+ ("~/projects/work/exams/"))
