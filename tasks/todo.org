@@ -9,14 +9,7 @@
 ** TODO [#C] Search how to test an npm package locally
    SCHEDULED: <2021-10-13 qua 16:00>
    This is due to testing =Field= component with =react-forms= library inside pantheon.
-** TODO [#A] Verify what's the UI response when "edit location" don't have an selected city
-   SCHEDULED: <2021-10-13 qua 16:00>
-** TODO [#C] Configure husky inside backend-exams-service project.
-   SCHEDULED: <2021-10-13 qua 16:00>
 ** TODO [#C] Rename backend-exams-service to bff-exams for consistency
-   SCHEDULED: <2021-10-13 qua 16:00>
-
-** TODO [#B] Discuss the better way to mock repositories on bff-exams
    SCHEDULED: <2021-10-13 qua 16:00>
 ** TODO [#B] Write e2e testing for pantheon components (don't include tokens)
    SCHEDULED: <2021-10-13 qua 16:00>
@@ -24,15 +17,11 @@
 ** TODO [#B] Write unit testing for pantheon (maybe include tokens)
    SCHEDULED: <2021-10-13 qua 16:00>
   [[file:~/projects/dotfiles/tasks/todo.org::*Write e2e testing for pantheon components (don't include tokens)][Write e2e testing for pantheon components (don't include tokens)]]
-** TODO [#B] Review unit testing for use-cases on backend
-   SCHEDULED: <2021-10-13 qua 16:00>
-** TODO [#B] Write proper e2e testing for backend
-   SCHEDULED: <2021-10-13 qua 16:00>
-** TODO [#A] Test if GTM installation worked properly on prod website
-   SCHEDULED: <2021-10-13 qua 16:00>
 ** TODO Criar tratativa no pantheon para quando aceitar type="time" incluir um placeholder default
 ** TODO Investigate CORS error in production on internal API calls to website
-
+** TODO Finish test refactor
+ SCHEDULED: <2021-10-15 sex 10:00>
+ [[file:~/projects/work/exams/src/app/modules/location/use-cases/create-location/create-location.service.spec.ts::import { Location } from '../../entities/location.entity';]]
 * Done Tasks
 ** DONE Plan this solution more(card TEC-7)
   CLOSED: [2021-08-23 Mon 23:03] SCHEDULED: <2021-08-19 Thu 18:00>
@@ -466,3 +455,15 @@ Maybe it's good to check with Harri as well.
  [[file:~/projects/dotfiles/wiki/20211013133212-reorganizing_jira_board_13_out_2021.org:::PROPERTIES:]]
 
 
+** DONE [#A] Verify what's the UI response when "edit location" don't have an selected city
+   CLOSED: [2021-10-14 qui 22:11] SCHEDULED: <2021-10-13 qua 16:00>
+** DONE [#B] Discuss the better way to mock repositories on bff-exams
+   CLOSED: [2021-10-14 qui 22:12] SCHEDULED: <2021-10-13 qua 16:00>
+** DONE [#B] Review unit testing for use-cases on backend
+   CLOSED: [2021-10-14 qui 22:12] SCHEDULED: <2021-10-13 qua 16:00>
+** DONE [#A] Test if GTM installation worked properly on prod website
+   CLOSED: [2021-10-15 sex 14:11] SCHEDULED: <2021-10-13 qua 16:00>
+** DONE [#B] Write proper e2e testing for backend
+   CLOSED: [2021-10-15 sex 14:12] SCHEDULED: <2021-10-14 qui 16:00>
+** DONE [#C] Configure husky inside backend-exams-service project.
+   CLOSED: [2021-10-15 sex 14:12] SCHEDULED: <2021-10-14 qui 16:00>
