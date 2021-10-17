@@ -10,6 +10,7 @@
 /.emacs.d/request/
 /.emacs.d/straight/
 /.emacs.d/transient/
+/.emacs.d/.cache/
 /.zsh-exports
 /.emacs.d/forge-database.sqlite
 /.vim/pack/

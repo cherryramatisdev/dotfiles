@@ -13,6 +13,8 @@ function run {
 
 $HOME/.config/polybar/launch.sh --material
 
+run dunst &
+run compton &
 run emacs --daemon &
 
 run nm-applet
