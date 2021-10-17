@@ -22,6 +22,7 @@ alias pupdate="sudo pacman -Syuu"
 
 fish_add_path "$HOME/.npm-global/bin"
 fish_add_path "$HOME/bin"
+fish_add_path "$HOME/go/bin"
 
 set -gx EDITOR "emacsclient -t"
 set -gx PAGER "emacsclient -t"
