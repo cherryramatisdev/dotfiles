@@ -32,6 +32,13 @@ require("telescope").setup {
 require("telescope").load_extension "fzy_native"
 require("telescope").load_extension "project"
 
+-- The new world of bindings babe
+vim.api.nvim_set_keymap("n", ";f", ":Telescope find_files hidden=true<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", ";r", ":Telescope live_grep hidden=true<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "\\", ":Telescope buffers hidden=true<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", ";;", ":Telescope commands hidden=true<CR>", { noremap = true })
+
+-- The old world, bleh
 vim.api.nvim_set_keymap("n", "<leader>ff", ":Telescope find_files hidden=true<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>pp", ":Telescope project hidden=true<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>ff", ":Telescope find_files hidden=true<CR>", { noremap = true })

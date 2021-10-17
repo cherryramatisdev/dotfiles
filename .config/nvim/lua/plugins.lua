@@ -45,10 +45,19 @@ return require("packer").startup(function()
     end,
   }
 
+  -- file browser
+  use {
+    "Shougo/defx.nvim",
+    run = ":UpdateRemotePlugins",
+    requires = { { "kristijanhusak/defx-git" }, { "kristijanhusak/defx-icons" } },
+    config = function()
+      require "plugin.defx"
+    end,
+  }
+
   -- colorscheme
   use {
-    "tjdevries/gruvbuddy.nvim",
-    requires = { { "tjdevries/colorbuddy.nvim" } },
+    "ishan9299/nvim-solarized-lua",
     config = function()
       require "plugin.colorscheme"
     end,
@@ -110,8 +119,15 @@ return require("packer").startup(function()
   use "AndrewRadev/tagalong.vim"
   use "dhruvasagar/vim-zoom"
   use "tweekmonster/startuptime.vim"
+  -- use {
+  --   "kdheepak/lazygit.nvim",
+  --   config = function()
+  --     require "plugin.git"
+  --   end,
+  -- }
   use {
-    "kdheepak/lazygit.nvim",
+    "TimUntersberger/neogit",
+    requires = "nvim-lua/plenary.nvim",
     config = function()
       require "plugin.git"
     end,
