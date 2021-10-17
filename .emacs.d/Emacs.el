@@ -115,30 +115,24 @@
   (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . web-tsx-mode)))
 
 (use-package prettier-js
-  :after (web-mode typescript-mode)
   :straight t
+  :after (web-mode typescript-mode)
   :hook ((web-tsx-mode . prettier-js-mode)
 	 (typescript-mode . prettier-js-mode)))
 
-(use-package tide
+(use-package lsp-mode
   :straight t
-  :config
-  (defun setup-tide-mode ()
-    (interactive)
-    (tide-setup)
-    (eldoc-mode +1)
-    (tide-hl-identifier-mode +1))
-  (add-hook 'typescript-mode-hook #'setup-tide-mode)
-  (add-hook 'web-tsx-mode #'setup-tide-mode))
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  :hook (
+	 (web-tsx-mode . lsp)
+	 (typescript-mode . lsp)
+	 (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp)
 
-(use-package flymake-eslint
-  :after bind-key
+(use-package lsp-ui
   :straight t
-  :config
-  (bind-keys
-   ("C-c ! l" . flymake-show-diagnostics-buffer))
-  (add-hook 'web-tsx-mode-hook (lambda () (flymake-eslint-enable)))
-  (add-hook 'typescript-mode-hook (lambda () (flymake-eslint-enable))))
+  :commands lsp-ui-mode)
 
 (use-package tree-sitter :straight t)
 (use-package tree-sitter-langs
