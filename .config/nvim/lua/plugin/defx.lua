@@ -8,7 +8,10 @@ nnoremap <silent>sf :<C-u>Defx -listed -resume -show-ignored-files
 \ -columns=indent:mark:icon:icons:filename:git:size
 \ -buffer-name=tab`tabpagenr()`
 \ `expand('%:p:h')` -search=`expand('%:p')`<CR>
-nnoremap <silent>fi :<C-u>Defx -new `expand('%:p:h')` -search=`expand('%:p')`<CR>
+nnoremap <silent>- :<C-u>Defx -listed -resume -show-ignored-files
+\ -columns=indent:mark:icon:icons:filename:git:size
+\ -buffer-name=tab`tabpagenr()`
+\ `expand('%:p:h')` -search=`expand('%:p')`<CR>
 
 function! s:defx_my_settings() abort
 " Define mappings
