@@ -8,4 +8,5 @@
 ** DONE Vim plugin to quickly translate word into target language via google translate.
 ** DONE Create a CLI for tuotempo
 ** DONE Create a CLI for AWS
+** TODO Make a neovim plugin that manage music locally
 
