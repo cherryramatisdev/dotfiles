@@ -15,3 +15,4 @@
 /.emacs.d/forge-database.sqlite
 /.vim/pack/
 /.vim/bundles/
+/.password-store/.gpg-id

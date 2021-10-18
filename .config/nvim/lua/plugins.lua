@@ -72,16 +72,16 @@ return require("packer").startup(function()
   }
 
   -- misc
-  use {
-    "max397574/better-escape.nvim",
-    config = function()
-      require("better_escape").setup {
-        mapping = { "jj" },
-        clear_empty_lines = false,
-        keys = "<Esc>",
-      }
-    end,
-  }
+  -- use {
+  --   "max397574/better-escape.nvim",
+  --   config = function()
+  --     require("better_escape").setup {
+  --       mapping = { "jj" },
+  --       clear_empty_lines = false,
+  --       keys = "<Esc>",
+  --     }
+  --   end,
+  -- }
   use "fatih/vim-go"
   use {
     "norcalli/nvim-colorizer.lua",
@@ -117,6 +117,7 @@ return require("packer").startup(function()
   use "kana/vim-textobj-entire"
 
   use "AndrewRadev/tagalong.vim"
+  use "AndrewRadev/ginitpull.vim"
   use "dhruvasagar/vim-zoom"
   use "tweekmonster/startuptime.vim"
   -- use {
@@ -166,6 +167,16 @@ return require("packer").startup(function()
     requires = { "kyazdani42/nvim-web-devicons" },
   }
 
+  -- jira
+  use {
+    "n0v1c3/vira",
+    run = "./install.sh",
+    branch = "dev",
+    config = function()
+      require "plugin.jira"
+    end,
+  }
+
   -- tpope
   use "tpope/vim-dispatch"
   use "tpope/vim-fugitive"
@@ -174,7 +185,6 @@ return require("packer").startup(function()
   use "tpope/vim-repeat"
   use "tpope/vim-unimpaired"
   use "tpope/vim-surround"
-  use "tpope/vim-vinegar"
   use "tpope/vim-obsession"
   use "tpope/vim-commentary"
   use "tpope/vim-rsi"
