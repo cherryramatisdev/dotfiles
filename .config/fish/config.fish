@@ -19,18 +19,23 @@ alias premove="sudo pacman -R"
 alias pgrep="sudo pacman -Qe | grep"
 alias plist="sudo pacman -Qe"
 alias pupdate="sudo pacman -Syuu"
+alias anime="ani-cli"
+alias piperun="act -j"
+alias depupdate="yarn upgrade-interactive --latest"
 
 fish_add_path "$HOME/.npm-global/bin"
 fish_add_path "$HOME/bin"
 fish_add_path "$HOME/go/bin"
 
-set -gx EDITOR "emacsclient -t"
-set -gx PAGER "emacsclient -t"
-set -gx VISUAL "emacsclient -t"
-set -gx MANPAGER "emacsclient -t -e '(man \"$1\")'"
+if type -q nvim
+set -gx EDITOR nvim
+set -gx PAGER nvim
+set -gx VISUAL nvim
+set -gx MANPAGER "nvim +Man! -c ':set signcolumn='"
 alias vimdiff="nvim -d"
+end
 
 set -gx _ZL_CD cd
 
 set -gx fish_greeting ""
-set -gx BROWSER "qutebrowser"
+set -gx BROWSER "brave"
