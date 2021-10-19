@@ -1,14 +1,7 @@
 -- Transform this weird thing into lua
 vim.cmd [[
 " Define mappings
-"cnoreabbrev sf Defx -listed -new
-"      \ -columns=indent:mark:icon:icons:filename:git:size
-"      \ -buffer-name=tab`tabpagenr()`<CR>
 nnoremap <silent>sf :<C-u>Defx -listed -resume -show-ignored-files
-\ -columns=indent:mark:icon:icons:filename:git:size
-\ -buffer-name=tab`tabpagenr()`
-\ `expand('%:p:h')` -search=`expand('%:p')`<CR>
-nnoremap <silent>- :<C-u>Defx -listed -resume -show-ignored-files
 \ -columns=indent:mark:icon:icons:filename:git:size
 \ -buffer-name=tab`tabpagenr()`
 \ `expand('%:p:h')` -search=`expand('%:p')`<CR>
@@ -17,34 +10,29 @@ function! s:defx_my_settings() abort
 " Define mappings
 nnoremap <silent><buffer><expr> <CR>
 \ defx#do_action('open')
-nnoremap <silent><buffer><expr> c
+nnoremap <silent><buffer><expr> C
 \ defx#do_action('copy')
-nnoremap <silent><buffer><expr> m
+nnoremap <silent><buffer><expr> M
 \ defx#do_action('move')
-nnoremap <silent><buffer><expr> p
+nnoremap <silent><buffer><expr> P
 \ defx#do_action('paste')
 nnoremap <silent><buffer><expr> l
 \ defx#do_action('open')
 nnoremap <silent><buffer><expr> E
 \ defx#do_action('open', 'vsplit')
-nnoremap <silent><buffer><expr> P
-\ defx#do_action('open', 'pedit')
 nnoremap <silent><buffer><expr> o
 \ defx#do_action('open_or_close_tree')
-nnoremap <silent><buffer><expr> K
+nnoremap <silent><buffer><expr> A
 \ defx#do_action('new_directory')
-nnoremap <silent><buffer><expr> N
+nnoremap <silent><buffer><expr> a
 \ defx#do_action('new_file')
-nnoremap <silent><buffer><expr> M
+nnoremap <silent><buffer><expr> m
 \ defx#do_action('new_multiple_files')
-nnoremap <silent><buffer><expr> C
-\ defx#do_action('toggle_columns',
-\                'mark:indent:icon:filename:type:size:time')
 nnoremap <silent><buffer><expr> S
 \ defx#do_action('toggle_sort', 'time')
-nnoremap <silent><buffer><expr> d
+nnoremap <silent><buffer><expr> dd
 \ defx#do_action('remove')
-nnoremap <silent><buffer><expr> r
+nnoremap <silent><buffer><expr> R
 \ defx#do_action('rename')
 nnoremap <silent><buffer><expr> !
 \ defx#do_action('execute_command')
