@@ -57,7 +57,7 @@ return require("packer").startup(function()
 
   -- colorscheme
   use {
-    "ishan9299/nvim-solarized-lua",
+    "ishan9299/modus-theme-vim",
     config = function()
       require "plugin.colorscheme"
     end,
@@ -158,6 +158,7 @@ return require("packer").startup(function()
       require "plugin.autopairs"
     end,
   }
+  use "stefandtw/quickfix-reflector.vim"
 
   -- statusline
   use {
