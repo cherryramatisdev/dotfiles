@@ -30,6 +30,14 @@ alt + y
 super + d
       emacsclient -c -a '' -e '(dired-jump)'
 
+# open youtube finder on dmenu
+super + y
+    ytfzf -DN
+
+# open youtube finder on terminal
+super + shift + y
+    kitty -e ytfzf -tN
+
 # switch language
 super + F1
       switchkeyboardlanguage
@@ -41,6 +49,10 @@ super + x
 # open password manager
 super + p
     passmenu
+
+# open music player
+super + m
+    kitty -e ncmpcpp
 
 # open pavucontrol
 super + v

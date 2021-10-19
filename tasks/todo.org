@@ -3,8 +3,8 @@
 ** TODO Refactor my plugin translator.vim to use this shell version(and not depending on a plugin webapi)
 #+DOWNLOADED: screenshot @ 2021-10-11 22:00:40
 [[file:Inbox/2021-10-11_22-00-40_screenshot.png]]
-
-
+** TODO Watch episode 2 of kimetsu no yaiba
+ SCHEDULED: <2021-10-19 ter 21:00>
 * Inbox - Work
 ** TODO [#C] Search how to test an npm package locally
    SCHEDULED: <2021-10-13 qua 16:00>

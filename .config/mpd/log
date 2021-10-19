@@ -51,3 +51,150 @@ Oct 18 19:12 : player: played "Lukas Graham/Lukas Graham - 7 years.mp3"
 Oct 18 19:14 : player: played "Lukas Graham/Lukas Graham - 7 years.mp3"
 Oct 18 19:15 : player: played "Avicii/Avicii - The Nights.mp3"
 Oct 18 19:21 : player: played "Avicii/Avicii - The Nights.mp3"
+Oct 18 19:27 : player: played "Lukas Graham/Lukas Graham - 7 years.mp3"
+Oct 18 19:33 : player: played "Lukas Graham/Lukas Graham - 7 years.mp3"
+Oct 18 19:35 : ffmpeg/opus: Could not update timestamps for skipped samples.
+Oct 18 19:39 : ffmpeg/opus: Could not update timestamps for skipped samples.
+Oct 18 19:39 : player: played "DK47/DK47 - Contador de Historias - Sem Memória.webm"
+Oct 18 19:46 : player: played "Inutilismo/Inutilismo - 00 Insane medley ft Giana.mp3"
+Oct 18 19:46 : exception: Failed to decode /home/cherry/Music/Avicii/Avicii - The Nights.mp3; Failed to open '/home/cherry/Music/Avicii/Avicii - The Nights.mp3': No such file or directory
+Oct 18 19:46 : player: played "Avicii/Avicii - The Nights.mp3"
+Oct 18 19:46 : exception: Failed to decode /home/cherry/Music/Avicii/Avicii - The Nights.mp3; Failed to open '/home/cherry/Music/Avicii/Avicii - The Nights.mp3': No such file or directory
+Oct 18 19:46 : player: played "Avicii/Avicii - The Nights.mp3"
+Oct 18 19:46 : exception: Failed to decode /home/cherry/Music/Avicii/Avicii - The Nights.mp3; Failed to open '/home/cherry/Music/Avicii/Avicii - The Nights.mp3': No such file or directory
+Oct 18 19:46 : player: played "Avicii/Avicii - The Nights.mp3"
+Oct 18 19:47 : exception: Failed to decode /home/cherry/Music/Avicii/Avicii - The Nights.mp3; Failed to open '/home/cherry/Music/Avicii/Avicii - The Nights.mp3': No such file or directory
+Oct 18 19:47 : player: played "Avicii/Avicii - The Nights.mp3"
+Oct 18 19:47 : update: updating Lukas Graham/Lukas Graham - Better than yourself.mp3
+Oct 18 19:47 : update: updating Lukas Graham/Lukas Graham - 7 years.mp3
+Oct 18 19:47 : update: removing Avicii/Avicii - The Nights.mp3
+Oct 18 19:47 : update: removing Avicii/Avicii - Waiting for love.mp3
+Oct 18 19:47 : update: added Avicii/The Nights/Avicii - Waiting for love.mp3
+Oct 18 19:47 : update: added Avicii/The Nights/Avicii - The Nights.mp3
+Oct 18 19:51 : player: played "Lukas Graham/Lukas Graham - Mama said.mp3"
+Oct 18 19:51 : player: played "Lukas Graham/Lukas Graham - Mama said.mp3"
+Oct 18 19:51 : update: updating Lukas Graham/Lukas Graham - Mama said.mp3
+Oct 18 19:52 : update: removing Avicii/The Nights/Avicii - Waiting for love.mp3
+Oct 18 19:52 : update: removing Avicii/The Nights/Avicii - The Nights.mp3
+Oct 18 19:52 : update: added Avicii/Avicii - Waiting for love.mp3
+Oct 18 19:52 : update: added Avicii/Avicii - The Nights.mp3
+Oct 18 19:55 : player: played "Lukas Graham/Lukas Graham - Mama said.mp3"
+Oct 18 19:55 : update: updating Fun/Fun. - We Are Young.mp3
+Oct 18 19:55 : ffmpeg/opus: Could not update timestamps for skipped samples.
+Oct 18 19:57 : player: played "DK47/DK47 - Contador de Historias - Sem final Feliz.webm"
+Oct 18 20:02 : player: played "Eminem/Eminem - Cleanin' Out My Closet.mp3"
+Oct 18 20:03 : update: removing DK47/DK47 - Contador de Historias - Sem Memória.webm
+Oct 18 20:03 : update: removing DK47/DK47 - Contador de Historias - Sem final Feliz.webm
+Oct 18 20:03 : update: added DK47/Sem final Feliz.mp3
+Oct 18 20:03 : update: added DK47/Sem Memória.mp3
+Oct 18 20:04 : update: updating DK47/Sem final Feliz.mp3
+Oct 18 20:04 : update: updating DK47/Sem Memória.mp3
+Oct 18 20:04 : update: updating DK47/Sem Memória.mp3
+Oct 18 20:51 : player: played "DK47/Sem final Feliz.mp3"
+Oct 18 20:51 : update: removing Michael Jackson/Michael Jackson - Billie jean.mp3
+Oct 18 20:51 : update: added Michael Jackson/Billie jean.mp3
+Oct 18 20:51 : update: removing Eminem/Eminem - Cleanin' Out My Closet.mp3
+Oct 18 20:51 : update: removing Eminem/Eminem - Lose Yourself.mp3
+Oct 18 20:51 : update: removing Eminem/Eminem - Mockingbird.webm
+Oct 18 20:51 : update: removing Eminem/Eminem - Stan.mp3
+Oct 18 20:51 : update: removing Eminem/Eminem - The Monster.mp3
+Oct 18 20:51 : update: removing Eminem/Eminem - When I'm Gone.mp3
+Oct 18 20:51 : update: added Eminem/Stan.mp3
+Oct 18 20:51 : update: added Eminem/Cleanin' Out My Closet.mp3
+Oct 18 20:51 : update: added Eminem/Mockingbird.mp3
+Oct 18 20:51 : update: added Eminem/The Monster.mp3
+Oct 18 20:51 : update: added Eminem/Lose Yourself.mp3
+Oct 18 20:51 : update: added Eminem/When I'm Gone.mp3
+Oct 18 20:51 : update: removing Lukas Graham/Lukas Graham - 7 years.mp3
+Oct 18 20:51 : update: removing Lukas Graham/Lukas Graham - Better than yourself.mp3
+Oct 18 20:51 : update: removing Lukas Graham/Lukas Graham - Mama said.mp3
+Oct 18 20:51 : update: added Lukas Graham/Better than yourself.mp3
+Oct 18 20:51 : update: added Lukas Graham/7 years.mp3
+Oct 18 20:51 : update: added Lukas Graham/Mama said.mp3
+Oct 18 20:51 : update: removing Racionais/Racionais - Vida Loka, Pt. 1.webm
+Oct 18 20:51 : update: removing Racionais/Racionais - Jesus Chorou.webm
+Oct 18 20:51 : update: removing Racionais/Racionais - Da Ponte pra Cá.webm
+Oct 18 20:51 : update: removing Racionais/Racionais - Vida Loka, Pt. 2.webm
+Oct 18 20:51 : update: added Racionais/Da Ponte Pra Cá.mp3
+Oct 18 20:51 : update: added Racionais/Vida loka pt1.mp3
+Oct 18 20:51 : update: added Racionais/Vida loka pt2.mp3
+Oct 18 20:51 : update: added Racionais/Jesus Chorou.mp3
+Oct 18 20:51 : update: removing Fun/Fun. - We Are Young.mp3
+Oct 18 20:51 : update: added Fun/We Are Young.mp3
+Oct 18 20:51 : update: removing Avicii/Avicii - The Nights.mp3
+Oct 18 20:51 : update: removing Avicii/Avicii - Waiting for love.mp3
+Oct 18 20:51 : update: added Avicii/The Nights.mp3
+Oct 18 20:51 : update: added Avicii/Waiting for love.mp3
+Oct 18 20:51 : update: removing Inutilismo/Inutilismo - 00 Insane medley ft Giana.mp3
+Oct 18 20:51 : update: added Inutilismo/00 Insane medley ft Giana.mp3
+Oct 18 20:51 : update: removing Sant/Sant - Rap dos novos bandidos -  5AM pt. Costa Gold.webm
+Oct 18 20:51 : update: removing Sant/Sant - Rap dos novos bandidos -  ADIDAS & NIKE.webm
+Oct 18 20:51 : update: removing Sant/Sant - Rap dos novos bandidos -  AQL SLV pt. SD9, VND, Tiago Mac.webm
+Oct 18 20:51 : update: removing Sant/Sant - Rap dos novos bandidos -  BÔNUS.webm
+Oct 18 20:51 : update: removing Sant/Sant - Rap dos novos bandidos -  DESCONSTRUÇÃO.webm
+Oct 18 20:51 : update: removing Sant/Sant - Rap dos novos bandidos -  DO FALCÃO.webm
+Oct 18 20:51 : update: removing Sant/Sant - Rap dos novos bandidos -  GESTÃO.webm
+Oct 18 20:51 : update: removing Sant/Sant - Rap dos novos bandidos -  INTRO.webm
+Oct 18 20:51 : update: removing Sant/Sant - Rap dos novos bandidos -  ÍRIS pt. MC Cidinho.webm
+Oct 18 20:51 : update: removing Sant/Sant - Rap dos novos bandidos -  OUTRO.webm
+Oct 18 20:51 : update: removing Sant/Sant - Rap dos novos bandidos -  PERTENCE AO CRIME.webm
+Oct 18 20:51 : update: removing Sant/Sant - Rap dos novos bandidos -  PRANTOS.webm
+Oct 18 20:51 : update: removing Sant/Sant - Rap dos novos bandidos -  PUXA O GATILHO PRIMEIRO.webm
+Oct 18 20:51 : update: removing Sant/Sant - Rap dos novos bandidos -  SKIT I pt. DJ Erik Skratch.webm
+Oct 18 20:51 : update: removing Sant/Sant - Rap dos novos bandidos -  SKIT II.webm
+Oct 18 20:51 : update: added Sant/Bônus.mp3
+Oct 18 20:51 : update: added Sant/5am pt. Costa Gold.mp3
+Oct 18 20:51 : update: added Sant/Íris pt. MC Cidinho.mp3
+Oct 18 20:51 : update: added Sant/Adidas & nike.mp3
+Oct 18 20:51 : update: added Sant/Outro.mp3
+Oct 18 20:51 : update: added Sant/Skit i pt. DJ Erik Skratch.mp3
+Oct 18 20:51 : update: added Sant/Gestão.mp3
+Oct 18 20:51 : update: added Sant/Pertence ao crime.mp3
+Oct 18 20:51 : update: added Sant/Prantos.mp3
+Oct 18 20:51 : update: added Sant/Skit ii.mp3
+Oct 18 20:51 : update: added Sant/Aql slv pt. SD9, VND, Tiago Mac.mp3
+Oct 18 20:51 : update: added Sant/Puxa o gatilho primeiro.mp3
+Oct 18 20:51 : update: added Sant/Intro.mp3
+Oct 18 20:51 : update: added Sant/Desconstrução.mp3
+Oct 18 20:51 : update: added Sant/Do falcão.mp3
+Oct 18 20:51 : update: removing Godfather/Godfather - Brucia La Terra.webm
+Oct 18 20:51 : update: added Godfather/Brucia La Terra.mp3
+Oct 18 20:51 : update: removing Dalsin/Dalsin - Parabellum.webm
+Oct 18 20:51 : update: added Dalsin/Parabellum.mp3
+Oct 18 20:51 : update: removing Justin Timberlake/Justin Timberlake - Mirrors.mp3
+Oct 18 20:51 : update: added Justin Timberlake/Mirrors.mp3
+Oct 18 20:51 : update: removing Mario Lanza/Mario Lanza - Dicitencello vuie.webm
+Oct 18 20:51 : update: added Mario Lanza/Dicitencello vuie.mp3
+Oct 18 20:52 : update: updating Dalsin/Parabellum.mp3
+Oct 18 20:52 : update: updating Eminem/Lose Yourself.mp3
+Oct 18 20:52 : update: updating Eminem/Mockingbird.mp3
+Oct 18 20:53 : update: updating Eminem/Stan.mp3
+Oct 18 20:53 : update: updating Eminem/The Monster.mp3
+Oct 18 20:53 : update: updating Eminem/When I'm Gone.mp3
+Oct 18 20:54 : update: updating Racionais/Da Ponte Pra Cá.mp3
+Oct 18 20:54 : update: updating Racionais/Jesus Chorou.mp3
+Oct 18 20:54 : update: updating Racionais/Vida loka pt1.mp3
+Oct 18 20:54 : update: updating Racionais/Vida loka pt2.mp3
+Oct 18 20:55 : update: updating Sant/5am pt. Costa Gold.mp3
+Oct 18 20:55 : update: updating Sant/Adidas & nike.mp3
+Oct 18 20:55 : update: updating Sant/Aql slv pt. SD9, VND, Tiago Mac.mp3
+Oct 18 20:56 : update: updating Sant/Bônus.mp3
+Oct 18 20:56 : update: updating Sant/Desconstrução.mp3
+Oct 18 20:56 : update: updating Sant/Do falcão.mp3
+Oct 18 20:57 : update: updating Sant/Gestão.mp3
+Oct 18 20:57 : update: updating Sant/Intro.mp3
+Oct 18 20:57 : update: updating Sant/Íris pt. MC Cidinho.mp3
+Oct 18 20:57 : update: updating Sant/Outro.mp3
+Oct 18 20:58 : update: updating Sant/Pertence ao crime.mp3
+Oct 18 20:58 : update: updating Sant/Prantos.mp3
+Oct 18 20:59 : update: updating Sant/Puxa o gatilho primeiro.mp3
+Oct 18 20:59 : update: updating Sant/Skit i pt. DJ Erik Skratch.mp3
+Oct 18 20:59 : update: updating Sant/Skit ii.mp3
+Oct 18 21:00 : player: played "Sant/Puxa o gatilho primeiro.mp3"
+Oct 18 21:00 : update: updating Avicii/The Nights.mp3
+Oct 18 21:00 : update: updating Justin Timberlake/Mirrors.mp3
+Oct 18 21:00 : update: updating Inutilismo/00 Insane medley ft Giana.mp3
+Oct 18 21:01 : update: updating Mario Lanza/Dicitencello vuie.mp3
+Oct 18 21:01 : update: updating Godfather/Brucia La Terra.mp3
+Oct 18 21:01 : player: played "Mario Lanza/Dicitencello vuie.mp3"
+Oct 18 21:01 : player: played "Avicii/The Nights.mp3"

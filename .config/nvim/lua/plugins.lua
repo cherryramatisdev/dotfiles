@@ -82,6 +82,7 @@ return require("packer").startup(function()
   --     }
   --   end,
   -- }
+  use "durgaswaroop/vim-mpc"
   use "fatih/vim-go"
   use {
     "norcalli/nvim-colorizer.lua",

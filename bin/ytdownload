@@ -5,9 +5,9 @@ clipboard=`xclip -out -selection primary`
 
 if ls ~/Music/ | grep "$target"; then
     cd ~/Music/"$target"
-    youtube-dl -f 249 $clipboard
+    youtube-dl --extract-audio --audio-format mp3 $clipboard
 else
     mkdir ~/Music/"$target"
     cd ~/Music/"$target"
-    youtube-dl -f 249 $clipboard
+    youtube-dl --extract-audio --audio-format mp3 $clipboard
 fi
