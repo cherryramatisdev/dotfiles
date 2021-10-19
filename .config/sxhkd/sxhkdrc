@@ -8,7 +8,7 @@ super + t
 
 # program launcher
 super + @space
-	dmenu_run
+	dmenu_run -l 30
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -21,6 +21,10 @@ super + w
 # launch org roam
 alt + t
     emacsclient -c -a '' -e '(org-roam-node-find)'
+
+# open mail
+alt + m
+    emacsclient -c -a '' -e '(mu4e)'
 
 # download music from youtube
 alt + y
