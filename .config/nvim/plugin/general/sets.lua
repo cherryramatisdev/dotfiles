@@ -31,3 +31,5 @@ vim.cmd [[ set clipboard+=unnamedplus ]]
 vim.opt.undofile = false
 vim.opt.swapfile = false
 vim.opt.backup = false
+
+vim.opt.guicursor = ""
