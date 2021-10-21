@@ -5,6 +5,7 @@ yay -S ttf-jetbrains-mono
 
 echo "Installing editors ..."
 yay -S neovim-git
+yay -S elinks # This is needed for telescope arecibo
 yay -S emacs-git
 
 echo "Installing terminal"
