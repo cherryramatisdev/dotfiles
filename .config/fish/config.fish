@@ -7,6 +7,7 @@ alias ....="cd ../../.."
 alias tmux="tmux -2"
 alias t="tmux new-session -A -s main"
 alias e="emacsclient -t"
+alias v="/usr/bin/vim"
 alias vim="nvim"
 alias n="nvim"
 alias dev="yarn start:dev"
@@ -26,6 +27,10 @@ alias depupdate="yarn upgrade-interactive --latest"
 fish_add_path "$HOME/.npm-global/bin"
 fish_add_path "$HOME/bin"
 fish_add_path "$HOME/go/bin"
+fish_add_path "$HOME/.rbenv/bin"
+status --is-interactive; and source (rbenv init -|psub)
+
+fish_add_path "/var/lib/snapd/snap/bin"
 
 if type -q nvim
 set -gx EDITOR nvim
