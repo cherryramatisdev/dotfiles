@@ -248,6 +248,31 @@
 	 ("RET" . dired-find-file)
 	 ([backspace] . dired-single-up-directory)))
 
+(use-package evil
+  :straight t
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
+  (setq evil-want-C-u-scroll t)
+  (setq evil-want-C-i-jump nil)
+  :config
+  (evil-mode 1)
+  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+  (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
+
+  ;; Use visual line motions even outside of visual-line-mode buffers
+  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
+  (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
+
+  (evil-set-initial-state 'messages-buffer-mode 'normal)
+  (evil-set-initial-state 'dashboard-mode 'normal))
+
+(use-package evil-collection
+  :straight t
+  :after evil
+  :config
+  (evil-collection-init))
+
 (use-package org
   :after bind-key
   :config
@@ -273,29 +298,3 @@
 
    (bind-key "C-c c" 'org-capture)
    (bind-key "C-c a " 'org-agenda))
-
-(setq explicit-shell-file-name "/usr/bin/fish")
-
-(defun cherry/term-exec-hook ()
-  (let* ((buff (current-buffer))
-	 (proc (get-buffer-process buff)))
-    (set-process-sentinel
-     proc
-     `(lambda (process event)
-	(if (string= event "finished\n")
-	    (progn
-	      (kill-buffer ,buff)
-	      (delete-window)))))))
-
-(add-hook 'term-exec-hook 'cherry/term-exec-hook)
-
-(eval-after-load "term"
-  '(define-key term-raw-map (kbd "C-y") 'term-paste))
-
-(defun my-create-non-existent-directory ()
-  (let ((parent-directory (file-name-directory buffer-file-name)))
-    (when (and (not (file-exists-p parent-directory))
-	       (y-or-n-p (format "Directory `%s' does not exist! Create it?" parent-directory)))
-      (make-directory parent-directory t))))
-
-(add-to-list 'find-file-not-found-functions 'my-create-non-existent-directory)
