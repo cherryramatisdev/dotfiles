@@ -32,8 +32,9 @@ vim.opt.undofile = false
 vim.opt.swapfile = false
 vim.opt.backup = false
 
-vim.opt.guicursor = ""
+vim.opt.guicursor = "n-v-c:block-Cursor"
+vim.opt.guifont = "Jetbrains Mono:h16"
 
 -- Yea bro I don't like having this too, but sharing screen with vscode users is
 -- painfull
-vim.g.vscode_style = 'dark'
+vim.g.vscode_style = "dark"

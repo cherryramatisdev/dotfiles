@@ -26,6 +26,9 @@ alt + t
 alt + m
     emacsclient -c -a '' -e '(mu4e)'
 
+# open goneovim
+super + n
+    goneovim
 
 # file browser
 super + d
