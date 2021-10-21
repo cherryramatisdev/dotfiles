@@ -161,14 +161,8 @@ return require("packer").startup(function()
   }
   use "stefandtw/quickfix-reflector.vim"
 
-  -- statusline
-  use {
-    "hoob3rt/lualine.nvim",
-    config = function()
-      require "plugin.statusline"
-    end,
-    requires = { "kyazdani42/nvim-web-devicons" },
-  }
+  -- icons
+  use { "kyazdani42/nvim-web-devicons" }
 
   -- jira
   use {
@@ -179,6 +173,11 @@ return require("packer").startup(function()
       require "plugin.jira"
     end,
   }
+
+  --SQL
+  use "tpope/vim-dadbod"
+  use "kristijanhusak/vim-dadbod-completion"
+  use "kristijanhusak/vim-dadbod-ui"
 
   -- tpope
   use "tpope/vim-dispatch"
@@ -195,4 +194,5 @@ return require("packer").startup(function()
   use "tpope/vim-eunuch"
   use "tpope/vim-characterize"
   use "tpope/vim-markdown"
+  use "tpope/vim-dotenv"
 end)
