@@ -26,13 +26,18 @@ alt + t
 alt + m
     emacsclient -c -a '' -e '(mu4e)'
 
-# download music from youtube
-alt + y
-    kitty -e /home/cherry/bin/ytdownload
 
 # file browser
 super + d
       emacsclient -c -a '' -e '(dired-jump)'
+
+# download music from youtube
+alt + y
+    kitty -e /home/cherry/bin/ytdownload
+
+# open video from youtube
+super + alt + y
+    ytopen
 
 # open youtube finder on dmenu
 super + y
@@ -113,6 +118,8 @@ super + f
 # state/flags
 #
 
+super + shift + space
+    bspc node -t floating
 # set the window state
 # super + {t,shift + t,s,f}
 # 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
