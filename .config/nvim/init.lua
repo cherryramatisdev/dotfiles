@@ -21,6 +21,7 @@ end
 Ensure("wbthomason", "packer.nvim")
 
 require "plugins"
+require "cherry.statusline"
 
 vim.cmd [[ let mapleader=';' ]]
 vim.cmd [[ let maplocalleader=',' ]]
