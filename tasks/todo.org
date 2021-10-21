@@ -4,24 +4,17 @@
 #+DOWNLOADED: screenshot @ 2021-10-11 22:00:40
 [[file:Inbox/2021-10-11_22-00-40_screenshot.png]]
 ** TODO Watch episode 2 of kimetsu no yaiba
- SCHEDULED: <2021-10-19 ter 21:00>
+ SCHEDULED: <2021-10-20 qua 21:00>
 * Inbox - Work
-** TODO [#C] Search how to test an npm package locally
-   SCHEDULED: <2021-10-13 qua 16:00>
-   This is due to testing =Field= component with =react-forms= library inside pantheon.
-** TODO [#C] Rename backend-exams-service to bff-exams for consistency
-   SCHEDULED: <2021-10-13 qua 16:00>
-** TODO [#B] Write e2e testing for pantheon components (don't include tokens)
-   SCHEDULED: <2021-10-13 qua 16:00>
-  [[file:~/projects/dotfiles/tasks/todo.org::*Verify what's the UI response when "edit location" don't have an selected city][Verify what's the UI response when "edit location" don't have an selected city]]
-** TODO [#B] Write unit testing for pantheon (maybe include tokens)
-   SCHEDULED: <2021-10-13 qua 16:00>
-  [[file:~/projects/dotfiles/tasks/todo.org::*Write e2e testing for pantheon components (don't include tokens)][Write e2e testing for pantheon components (don't include tokens)]]
 ** TODO Criar tratativa no pantheon para quando aceitar type="time" incluir um placeholder default
 ** TODO Investigate CORS error in production on internal API calls to website
 ** DONE Finish test refactor
  CLOSED: [2021-10-15 sex 21:46] SCHEDULED: <2021-10-15 sex 10:00>
  [[file:~/projects/work/exams/src/app/modules/location/use-cases/create-location/create-location.service.spec.ts::import { Location } from '../../entities/location.entity';]]
+** TODO Remember gui to check card TEC-197
+ SCHEDULED: <2021-10-20 qua 19:00>
+** TODO Close modal when clicking backdrop
+ SCHEDULED: <2021-10-20 qua 12:00>
 * Done Tasks
 ** DONE Plan this solution more(card TEC-7)
   CLOSED: [2021-08-23 Mon 23:03] SCHEDULED: <2021-08-19 Thu 18:00>
