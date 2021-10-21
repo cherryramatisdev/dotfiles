@@ -13,7 +13,7 @@ local function constrain_string(line, max_len, cut_on_end)
 end
 
 local function get_file_name()
-  local name = vim.fn.bufname(0)
+  local name = vim.fn.expand "%:t"
 
   if not name or name == "" then
     return "(no name)"
@@ -39,12 +39,12 @@ local function lsp_info()
   return string.format("LSP: H %d W %d E %d", hints, warnings, errors)
 end
 
-local statusline = "%%-4.4(%s%%)%%-15.23(%s%%)|%%-14.14(%s%%)%%-20.20(%s%%)%%-6.6(%s%%)%%-30.70(%s%%)"
+local statusline = "%%-4.4(%s%%)%%-30.50(%s%%)|%%-14.14(%s%%)%%-20.20(%s%%)%%-6.6(%s%%)%%-30.70(%s%%)"
 function StatusLine()
   return string.format(
     statusline,
     vim.fn.mode(),
-    constrain_string(get_file_name(), 23, false),
+    constrain_string(get_file_name(), 50, false),
     get_git_info(),
     lsp_info(),
     "❤️",
