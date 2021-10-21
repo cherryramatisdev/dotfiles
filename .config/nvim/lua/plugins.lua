@@ -44,6 +44,10 @@ return require("packer").startup(function()
       require "plugin.telescope"
     end,
   }
+  use {
+    "nvim-telescope/telescope-arecibo.nvim",
+    rocks = { "openssl", "lua-http-parser" },
+  }
 
   -- file browser
   use {
@@ -62,6 +66,7 @@ return require("packer").startup(function()
       require "plugin.colorscheme"
     end,
   }
+  use "Mofiqul/vscode.nvim"
 
   -- snippets
   use {
@@ -72,16 +77,12 @@ return require("packer").startup(function()
   }
 
   -- misc
-  -- use {
-  --   "max397574/better-escape.nvim",
-  --   config = function()
-  --     require("better_escape").setup {
-  --       mapping = { "jj" },
-  --       clear_empty_lines = false,
-  --       keys = "<Esc>",
-  --     }
-  --   end,
-  -- }
+  use {
+    "tjdevries/cyclist.vim",
+    config = function()
+      require "plugin.listchars"
+    end,
+  }
   use "durgaswaroop/vim-mpc"
   use "fatih/vim-go"
   use {
