@@ -51,11 +51,10 @@ return require("packer").startup(function()
 
   -- file browser
   use {
-    "Shougo/defx.nvim",
-    run = ":UpdateRemotePlugins",
-    requires = { { "kristijanhusak/defx-git" }, { "kristijanhusak/defx-icons" } },
+    "justinmk/vim-dirvish",
+    requires = { { "roginfarrer/vim-dirvish-dovish" } },
     config = function()
-      require "plugin.defx"
+      require "plugin.file_browser"
     end,
   }
 
