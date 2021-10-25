@@ -39,7 +39,7 @@ local function lsp_info()
   return string.format("LSP: H %d W %d E %d", hints, warnings, errors)
 end
 
-local statusline = "%%-4.4(%s%%)%%-30.50(%s%%)|%%-14.14(%s%%)%%-20.20(%s%%)%%-6.6(%s%%)%%-30.70(%s%%)"
+local statusline = "%%-4.4(%s%%)%%-30.50(%s%%)|%%-20.20(%s%%)%%-20.20(%s%%)%%-6.6(%s%%)%%-30.70(%s%%)"
 function StatusLine()
   return string.format(
     statusline,
