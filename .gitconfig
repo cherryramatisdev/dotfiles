@@ -5,6 +5,7 @@
     d = diff
     co = checkout
     cb = checkout -b
+    c = commit
     ci = commit
     ca = commit -a
     cm = commit -m

@@ -39,6 +39,8 @@
 
 (setup-themes 'modus-vivendi)
 
+(setq user-mail-address "cherry.ramatis@lamimed.it")
+
 (use-package vertico
   :straight t
   :custom

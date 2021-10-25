@@ -64,6 +64,10 @@ I'll use modus themes because it's builtin to emacs and it's pretty good
 
   (setup-themes 'modus-vivendi)
 #+END_SRC
+** Set email
+#+BEGIN_SRC emacs-lisp
+  (setq user-mail-address "cherry.ramatis@lamimed.it")
+#+END_SRC
 
 * Third party packages
 ** Completion with vertico/marginalia/consult/orderless/embark
