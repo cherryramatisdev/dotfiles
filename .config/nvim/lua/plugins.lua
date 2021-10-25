@@ -15,7 +15,7 @@ return require("packer").startup(function()
   }
   use { "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" } }
   use "jose-elias-alvarez/nvim-lsp-ts-utils"
-  use "kabouzeid/nvim-lspinstall"
+  use "williamboman/nvim-lsp-installer"
   use {
     "neovim/nvim-lspconfig",
     config = function()
@@ -76,6 +76,12 @@ return require("packer").startup(function()
   }
 
   -- misc
+  use {
+    "nvim-lualine/lualine.nvim",
+    config = function()
+      require "plugin.statusline"
+    end,
+  }
   use {
     "tjdevries/cyclist.vim",
     config = function()

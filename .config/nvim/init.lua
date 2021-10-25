@@ -8,7 +8,7 @@ local fn = vim.fn
 local pack_path = fn.stdpath "data" .. "/site/pack"
 local fmt = string.format
 
-function Ensure(user, repo)
+local function ensure(user, repo)
   -- Ensures a given github.com/USER/REPO is cloned in the pack/packer/start directory.
   local install_path = fmt("%s/packer/start/%s", pack_path, repo, repo)
   if fn.empty(fn.glob(install_path)) > 0 then
@@ -18,10 +18,12 @@ function Ensure(user, repo)
 end
 
 -- Bootstrap essential plugins required for installing and loading the rest.
-Ensure("wbthomason", "packer.nvim")
+ensure("wbthomason", "packer.nvim")
 
+require "cherry.globals"
 require "plugins"
-require "cherry.statusline"
+-- TODO: If this is useful on the future, enable it
+-- require "cherry.statusline"
 
 vim.cmd [[ let mapleader=';' ]]
 vim.cmd [[ let maplocalleader=',' ]]
