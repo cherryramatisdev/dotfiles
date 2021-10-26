@@ -5,6 +5,8 @@
 [[file:Inbox/2021-10-11_22-00-40_screenshot.png]]
 ** TODO Watch episode 2 of kimetsu no yaiba
  SCHEDULED: <2021-10-20 qua 21:00>
+** TODO Install neovim snippy https://github.com/dcampos/nvim-snippy
+ SCHEDULED: <2021-10-26 ter 10:00>
 * Inbox - Work
 ** TODO Criar tratativa no pantheon para quando aceitar type="time" incluir um placeholder default
 ** TODO Investigate CORS error in production on internal API calls to website
@@ -15,6 +17,8 @@
  SCHEDULED: <2021-10-20 qua 19:00>
 ** TODO Close modal when clicking backdrop
  SCHEDULED: <2021-10-20 qua 12:00>
+** TODO Create static page to keep storybook online
+ SCHEDULED: <2021-10-25 seg 10:00>
 * Done Tasks
 ** DONE Plan this solution more(card TEC-7)
   CLOSED: [2021-08-23 Mon 23:03] SCHEDULED: <2021-08-19 Thu 18:00>
