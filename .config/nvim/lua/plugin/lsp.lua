@@ -31,8 +31,6 @@ cmp.setup {
     { name = "snippy" },
     { name = "buffer" },
     { name = "path" },
-    -- TODO: Enable per buffer
-    -- { name = "spell" },
   },
   experimental = {
     ghost_text = true,
