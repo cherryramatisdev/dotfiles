@@ -1,6 +1,8 @@
 local on_attach = require "cherry.lsp.on_attach"
 vim.opt.completeopt = "menu,menuone,noselect"
 
+local lspkind = require "lspkind"
+
 local ok, cmp = pcall(require, "cmp")
 
 if not ok then
@@ -10,7 +12,7 @@ end
 cmp.setup {
   snippet = {
     expand = function(args)
-      require("luasnip").lsp_expand(args.body)
+      require("snippy").expand_snippet(args.body)
     end,
   },
   mapping = {
@@ -26,9 +28,31 @@ cmp.setup {
   sources = {
     { name = "nvim_lua" },
     { name = "nvim_lsp" },
-    { name = "luasnip" },
+    { name = "snippy" },
     { name = "buffer" },
     { name = "path" },
+    -- TODO: Enable per buffer
+    -- { name = "spell" },
+  },
+  experimental = {
+    ghost_text = true,
+  },
+  formatting = {
+    format = function(entry, vim_item)
+      vim_item.kind = string.format("%s %s", lspkind.presets.default[vim_item.kind], vim_item.kind)
+      vim_item.menu = ({
+        nvim_lsp = "ﲳ",
+        nvim_lua = "",
+        treesitter = "",
+        path = "ﱮ",
+        buffer = "﬘",
+        zsh = "",
+        vsnip = "",
+        spell = "暈",
+      })[entry.source.name]
+
+      return vim_item
+    end,
   },
 }
 
@@ -51,6 +75,8 @@ require("null-ls").config {
 }
 
 require("lspconfig")["null-ls"].setup {}
+
+require("lsp_signature").setup()
 
 require("nvim-lsp-installer").on_server_ready(function(server)
   local opts = {

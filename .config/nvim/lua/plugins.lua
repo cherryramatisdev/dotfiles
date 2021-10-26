@@ -7,10 +7,11 @@ return require("packer").startup(function()
     "hrsh7th/nvim-cmp",
     requires = {
       { "hrsh7th/cmp-buffer" },
+      { "f3fora/cmp-spell" },
       { "hrsh7th/cmp-nvim-lsp" },
       { "hrsh7th/cmp-path" },
       { "hrsh7th/cmp-nvim-lua" },
-      { "saadparwaiz1/cmp_luasnip" },
+      { "dcampos/cmp-snippy" },
     },
   }
   use { "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" } }
@@ -22,6 +23,8 @@ return require("packer").startup(function()
       require "plugin.lsp"
     end,
   }
+  use "ray-x/lsp_signature.nvim"
+  use "onsails/lspkind-nvim"
 
   use "JoosepAlviste/nvim-ts-context-commentstring"
   use {
@@ -69,7 +72,7 @@ return require("packer").startup(function()
 
   -- snippets
   use {
-    "L3MON4D3/LuaSnip",
+    "dcampos/nvim-snippy",
     config = function()
       require "plugin.snippets"
     end,
