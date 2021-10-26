@@ -1,1 +1,1 @@
-vim.cmd [[ nmap <buffer> V :Ginitpull<cr> ]]
+vim.cmd [[ nmap <buffer> <C-v> :Ginitpull<cr> ]]

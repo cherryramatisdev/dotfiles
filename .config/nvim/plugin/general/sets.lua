@@ -35,6 +35,11 @@ vim.opt.backup = false
 vim.opt.guicursor = "n-v-c:block-Cursor"
 vim.opt.guifont = "Jetbrains Mono:h16"
 
+-- Enable spelling
+-- TODO: Enable per buffer
+-- vim.opt.spell = true
+-- vim.opt.spelllang = { "en_us" }
+
 -- Yea bro I don't like having this too, but sharing screen with vscode users is
 -- painfull
 vim.g.vscode_style = "dark"

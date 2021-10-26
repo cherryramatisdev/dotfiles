@@ -24,5 +24,4 @@ vim.api.nvim_set_keymap("i", "<C-o>", "<Esc>`^", { noremap = true })
 vim.api.nvim_set_keymap("t", "<C-o>", [[<C-\><C-n>]], { noremap = true })
 
 -- Switch project
--- TODO: Transform this on lua
-vim.cmd [[ nnoremap <C-x><C-p> :silent !tmux split-window -h tmux-sessionizer<cr>]]
+vim.cmd [[ nnoremap <C-f> :silent !tmux neww tmux-sessionizer<cr>]]
