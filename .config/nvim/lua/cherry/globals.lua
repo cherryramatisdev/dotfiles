@@ -1,16 +1,20 @@
 _G.create_file = function()
   local file_name = vim.fn.input "File name: "
 
+  local file_path = string.format("%s/%s", vim.fn.expand "%", file_name)
+
   if string.len(file_name) > 0 then
-    vim.cmd(string.format("silent !touch %s", file_name))
+    vim.cmd(string.format("silent !touch %s", file_path))
   end
 end
 
 _G.create_directory = function()
-  local file_name = vim.fn.input "Dir name: "
+  local dir_name = vim.fn.input "Dir name: "
 
-  if string.len(file_name) > 0 then
-    vim.cmd(string.format("silent !mkdir %s", file_name))
+  local dir_path = string.format("%s/%s/", vim.fn.expand "%", dir_name)
+
+  if string.len(dir_name) > 0 then
+    vim.cmd(string.format("silent !mkdir %s", dir_path))
   end
 end
 
