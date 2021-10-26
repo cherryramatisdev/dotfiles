@@ -17,4 +17,7 @@ cmp.setup.buffer {
     },
     { name = "path" },
   },
+  experimental = {
+    ghost_text = false,
+  },
 }
