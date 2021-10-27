@@ -23,7 +23,6 @@ return require("packer").startup(function()
       require "plugin.lsp"
     end,
   }
-  use "ray-x/lsp_signature.nvim"
   use "onsails/lspkind-nvim"
 
   use "JoosepAlviste/nvim-ts-context-commentstring"
@@ -55,7 +54,6 @@ return require("packer").startup(function()
   -- file browser
   use {
     "justinmk/vim-dirvish",
-    requires = { { "roginfarrer/vim-dirvish-dovish" } },
     config = function()
       require "plugin.file_browser"
     end,
@@ -63,12 +61,11 @@ return require("packer").startup(function()
 
   -- colorscheme
   use {
-    "ishan9299/modus-theme-vim",
+    "Mofiqul/vscode.nvim",
     config = function()
       require "plugin.colorscheme"
     end,
   }
-  use "Mofiqul/vscode.nvim"
 
   -- snippets
   use {
@@ -83,12 +80,6 @@ return require("packer").startup(function()
     "nvim-lualine/lualine.nvim",
     config = function()
       require "plugin.statusline"
-    end,
-  }
-  use {
-    "tjdevries/cyclist.vim",
-    config = function()
-      require "plugin.listchars"
     end,
   }
   use "durgaswaroop/vim-mpc"
@@ -113,40 +104,19 @@ return require("packer").startup(function()
     end,
     requires = { { "nvim-lua/plenary.nvim" } },
   }
-  use {
-    "folke/which-key.nvim",
-    config = function()
-      require "plugin.whichkey"
-    end,
-  }
   use "inkarkat/vim-ReplaceWithRegister"
-  use "christoomey/vim-titlecase"
   use "kana/vim-textobj-user"
   use "kana/vim-textobj-line"
   use "kana/vim-textobj-function"
   use "kana/vim-textobj-entire"
 
-  use "AndrewRadev/tagalong.vim"
   use "AndrewRadev/ginitpull.vim"
-  use "dhruvasagar/vim-zoom"
   use "tweekmonster/startuptime.vim"
-  -- use {
-  --   "kdheepak/lazygit.nvim",
-  --   config = function()
-  --     require "plugin.git"
-  --   end,
-  -- }
   use {
     "TimUntersberger/neogit",
     requires = "nvim-lua/plenary.nvim",
     config = function()
       require "plugin.git"
-    end,
-  }
-  use {
-    "vifm/vifm.vim",
-    config = function()
-      require "plugin.vifm"
     end,
   }
   use {

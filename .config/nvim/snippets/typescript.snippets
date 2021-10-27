@@ -5,3 +5,15 @@ snippet fun
 	const $2 = ${1:async} ($3) => {
 	  $0
 	}
+
+snippet it
+	it('$1', async () => {
+	  $0
+	})
+
+snippet describe
+	describe('$1', () => {
+	  it('$1', async () => {
+	    $0
+	  })
+	})

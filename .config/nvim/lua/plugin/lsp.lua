@@ -35,6 +35,9 @@ cmp.setup {
   experimental = {
     ghost_text = true,
   },
+  documentation = {
+    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  },
   formatting = {
     format = function(entry, vim_item)
       vim_item.kind = string.format("%s %s", lspkind.presets.default[vim_item.kind], vim_item.kind)
@@ -74,12 +77,26 @@ require("null-ls").config {
 
 require("lspconfig")["null-ls"].setup {}
 
-require("lsp_signature").setup()
+local border = {
+  { "╭", "FloatBorder" },
+  { "─", "FloatBorder" },
+  { "╮", "FloatBorder" },
+  { "│", "FloatBorder" },
+  { "╯", "FloatBorder" },
+  { "─", "FloatBorder" },
+  { "╰", "FloatBorder" },
+  { "│", "FloatBorder" },
+}
 
 require("nvim-lsp-installer").on_server_ready(function(server)
   local opts = {
     on_attach = function(client, bufnr)
       on_attach.general_settings(client, bufnr)
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border })
+      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+        vim.lsp.handlers.signature_help,
+        { border = border }
+      )
     end,
     capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
     settings = {
@@ -93,6 +110,12 @@ require("nvim-lsp-installer").on_server_ready(function(server)
 
   if server.name == "tsserver" then
     opts.on_attach = function(client, bufnr)
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border })
+      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+        vim.lsp.handlers.signature_help,
+        { border = border }
+      )
+
       local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
       end
