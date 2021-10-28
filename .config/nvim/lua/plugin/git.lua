@@ -6,4 +6,4 @@ end
 
 pkg.setup()
 
-vim.api.nvim_set_keymap("n", "<leader>g", ":Neogit<cr>", { noremap = true })
+vim.keymap.nnoremap { "<leader>g", [[:Neogit<cr>]] }

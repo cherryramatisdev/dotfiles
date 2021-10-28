@@ -50,10 +50,10 @@ require("telescope").load_extension "project"
 require("telescope").load_extension "arecibo"
 
 -- The new world of bindings babe
-vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope find_files hidden=true<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>r", ":Telescope live_grep hidden=true<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "\\", ":Telescope buffers hidden=true<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>;", ":Telescope commands hidden=true<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>* ", ":Telescope grep_string hidden=true<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>p", ":Telescope project hidden=true<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "gG", ":lua require'telescope'.extensions.arecibo.websearch()<cr>", { noremap = true })
+vim.keymap.nnoremap { "<leader>f", [[:Telescope find_files hidden=true<cr>]] }
+vim.keymap.nnoremap { "<leader>r", [[:Telescope live_grep hidden=true<CR>]] }
+vim.keymap.nnoremap { "\\", ":Telescope buffers hidden=true<CR>" }
+vim.keymap.nnoremap { "<leader>;", [[:Telescope commands hidden=true<CR>]] }
+vim.keymap.nnoremap { "<leader>* ", [[:Telescope grep_string hidden=true<CR>]] }
+vim.keymap.nnoremap { "<leader>p", [[:Telescope project hidden=true<CR>]] }
+vim.keymap.nnoremap { "gG", [[:lua require'telescope'.extensions.arecibo.websearch()<cr>]] }

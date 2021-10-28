@@ -20,6 +20,9 @@ end
 -- Bootstrap essential plugins required for installing and loading the rest.
 ensure("wbthomason", "packer.nvim")
 
+-- You need to do this if you want to call the code from init.lua
+vim.cmd [[runtime plugin/astronauta.vim]]
+
 require "cherry.globals"
 require "plugins"
 -- TODO: If this is useful on the future, enable it

@@ -1,24 +1,24 @@
 -- Basics
-vim.api.nvim_set_keymap("n", "<leader>vb", ":ViraBrowse<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>vc", ":ViraComment<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>vi", ":ViraIssues<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>vr", ":ViraReport<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>vt", ":ViraTodos<cr>", { noremap = true })
+vim.keymap.nnoremap { "<leader>vb", [[:ViraBrowse<cr>]] }
+vim.keymap.nnoremap { "<leader>vc", [[:ViraComment<cr>]] }
+vim.keymap.nnoremap { "<leader>vi", [[:ViraIssues<cr>]] }
+vim.keymap.nnoremap { "<leader>vr", [[:ViraReport<cr>]] }
+vim.keymap.nnoremap { "<leader>vt", [[:ViraTodos<cr>]] }
 
 -- Sets
-vim.api.nvim_set_keymap("n", "<leader>vsa", ":ViraSetAssignee<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>vsp", ":ViraSetPriority<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>vss", ":ViraSetStatus<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>vse", ":ViraSetEpic<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>vsv", ":ViraSetVersion<cr>", { noremap = true })
+vim.keymap.nnoremap { "<leader>vsa", [[:ViraSetAssignee<cr>]] }
+vim.keymap.nnoremap { "<leader>vsp", [[:ViraSetPriority<cr>]] }
+vim.keymap.nnoremap { "<leader>vss", [[:ViraSetStatus<cr>]] }
+vim.keymap.nnoremap { "<leader>vse", [[:ViraSetEpic<cr>]] }
+vim.keymap.nnoremap { "<leader>vsv", [[:ViraSetVersion<cr>]] }
 
 -- Filter search
-vim.api.nvim_set_keymap("n", "<leader>vfR", ":ViraFilterReset<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>v/ ", ":ViraFilterText<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>vfP", ":ViraFilterPriorities<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>vfa", ":ViraFilterAssignees<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>vfe", ":ViraFilterEpics<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>vfp", ":ViraFilterProjects<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>vfr", ":ViraFilterReporter<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>vfs", ":ViraFilterStatuses<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>vft", ":ViraFilterTypes<cr>", { noremap = true })
+vim.keymap.nnoremap { "<leader>vfR", [[:ViraFilterReset<cr>]] }
+vim.keymap.nnoremap { "<leader>v/ ", [[:ViraFilterText<cr>]] }
+vim.keymap.nnoremap { "<leader>vfP", [[:ViraFilterPriorities<cr>]] }
+vim.keymap.nnoremap { "<leader>vfa", [[:ViraFilterAssignees<cr>]] }
+vim.keymap.nnoremap { "<leader>vfe", [[:ViraFilterEpics<cr>]] }
+vim.keymap.nnoremap { "<leader>vfp", [[:ViraFilterProjects<cr>]] }
+vim.keymap.nnoremap { "<leader>vfr", [[:ViraFilterReporter<cr>]] }
+vim.keymap.nnoremap { "<leader>vfs", [[:ViraFilterStatuses<cr>]] }
+vim.keymap.nnoremap { "<leader>vft", [[:ViraFilterTypes<cr>]] }

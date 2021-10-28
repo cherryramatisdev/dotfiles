@@ -76,6 +76,21 @@ return require("packer").startup(function()
   }
 
   -- misc
+  use "tjdevries/astronauta.nvim"
+  use {
+    "windwp/nvim-spectre",
+    requires = { { "nvim-lua/plenary.nvim" } },
+    config = function()
+      require "plugin.spectre"
+    end,
+  }
+  use {
+    "norcalli/nvim-terminal.lua",
+    ft = "terminal",
+    config = function()
+      require("terminal").setup()
+    end,
+  }
   use {
     "nvim-lualine/lualine.nvim",
     config = function()

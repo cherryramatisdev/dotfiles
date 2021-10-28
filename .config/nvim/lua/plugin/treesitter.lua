@@ -5,7 +5,7 @@ if not ok then
 end
 
 ts.setup {
-  ensure_installed = { "lua", "tsx", "css", "typescript", "javascript", "jsdoc", "ruby", "go" },
+  ensure_installed = { "lua", "tsx", "css", "typescript", "javascript", "jsdoc", "ruby", "go", "html" },
   highlight = {
     enable = true,
   },
