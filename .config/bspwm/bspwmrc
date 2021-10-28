@@ -21,7 +21,7 @@ run emacs --daemon &
 run nm-applet
 run volumeicon
 
-run feh --bg-fill ~/Pictures/background.jpg &
+run feh --bg-fill ~/wallpapers/dusk-in-pixels.jpg &
 
 run xrandr --output HDMI-1 --primary --mode 2560x1080 --left-of DVI-D-1 --mode 2560x1080
 
