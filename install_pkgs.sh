@@ -1,11 +1,16 @@
 #!/bin/sh
 
 echo "Installing setup"
+yay -S polybar
+yay -S xclip
 yay -S brave
 yay -S goneovim
 yay -S arcolinux-logout
 yay -S pavucontrol
 yay -S flameshot
+yay -S tmux
+yay -S fzf
+yay -S lua stylua
 
 echo "Installing font ..."
 yay -S ttf-jetbrains-mono
