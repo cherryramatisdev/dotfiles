@@ -1,5 +1,12 @@
 #!/bin/sh
 
+echo "Installing setup"
+yay -S brave
+yay -S goneovim
+yay -S arcolinux-logout
+yay -S pavucontrol
+yay -S flameshot
+
 echo "Installing font ..."
 yay -S ttf-jetbrains-mono
 
