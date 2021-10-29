@@ -33,9 +33,6 @@ require("telescope").setup {
       override_generic_sorter = false,
       override_file_sorter = true,
     },
-    project = {
-      hidden_files = true,
-    },
     arecibo = {
       ["selected_engine"] = "google",
       ["url_open_command"] = "brave",
@@ -46,14 +43,13 @@ require("telescope").setup {
 }
 
 require("telescope").load_extension "fzy_native"
-require("telescope").load_extension "project"
 require("telescope").load_extension "arecibo"
 
 -- The new world of bindings babe
-vim.keymap.nnoremap { "<leader>f", [[:Telescope find_files hidden=true<cr>]] }
-vim.keymap.nnoremap { "<leader>r", [[:Telescope live_grep hidden=true<CR>]] }
-vim.keymap.nnoremap { "\\", ":Telescope buffers hidden=true<CR>" }
-vim.keymap.nnoremap { "<leader>;", [[:Telescope commands hidden=true<CR>]] }
-vim.keymap.nnoremap { "<leader>* ", [[:Telescope grep_string hidden=true<CR>]] }
-vim.keymap.nnoremap { "<leader>p", [[:Telescope project hidden=true<CR>]] }
-vim.keymap.nnoremap { "gG", [[:lua require'telescope'.extensions.arecibo.websearch()<cr>]] }
+local nnoremap = vim.keymap.nnoremap
+nnoremap { "<leader>f", [[:Telescope find_files hidden=true<cr>]] }
+nnoremap { "<leader>r", [[:Telescope live_grep hidden=true<CR>]] }
+nnoremap { "\\", ":Telescope buffers hidden=true<CR>" }
+nnoremap { "<leader>;", [[:Telescope commands hidden=true<CR>]] }
+nnoremap { "<leader>* ", [[:Telescope grep_string hidden=true<CR>]] }
+nnoremap { "gG", [[:lua require'telescope'.extensions.arecibo.websearch()<cr>]] }

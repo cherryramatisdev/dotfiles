@@ -5,4 +5,4 @@ if not ok then
 end
 
 pkg.setup()
-vim.keymap.nnoremap("<leader>S", [[:lua require("spectre").open()<CR>]])
+vim.cmd [[ nnoremap <leader>S :lua require'spectre'.open()<cr> ]]

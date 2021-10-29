@@ -32,6 +32,8 @@ vim.opt.undofile = false
 vim.opt.swapfile = false
 vim.opt.backup = false
 
+vim.opt.mouse = "a"
+
 vim.opt.guicursor = "n-v-c:block-Cursor"
 vim.opt.guifont = "Jetbrains Mono:h16"
 

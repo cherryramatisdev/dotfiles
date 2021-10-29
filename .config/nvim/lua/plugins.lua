@@ -7,6 +7,7 @@ return require("packer").startup(function()
     "hrsh7th/nvim-cmp",
     requires = {
       { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-cmdline" },
       { "f3fora/cmp-spell" },
       { "hrsh7th/cmp-nvim-lsp" },
       { "hrsh7th/cmp-path" },
@@ -40,7 +41,6 @@ return require("packer").startup(function()
     requires = {
       { "nvim-telescope/telescope-fzy-native.nvim" },
       { "nvim-lua/plenary.nvim" },
-      { "nvim-telescope/telescope-project.nvim" },
     },
     config = function()
       require "plugin.telescope"
@@ -76,6 +76,20 @@ return require("packer").startup(function()
   }
 
   -- misc
+  use {
+    "vuki656/package-info.nvim",
+    requires = "MunifTanjim/nui.nvim",
+    config = function()
+      require "plugin.npm"
+    end,
+  }
+  use "mtth/scratch.vim"
+  use {
+    "mattn/emmet-vim",
+    config = function()
+      vim.g.user_emmet_leader_key = ","
+    end,
+  }
   use "tjdevries/astronauta.nvim"
   use {
     "windwp/nvim-spectre",

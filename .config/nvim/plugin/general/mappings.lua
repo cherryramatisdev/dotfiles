@@ -28,4 +28,4 @@ inoremap { "<C-o>", [[<Esc>`^]] }
 tnoremap { "<C-o>", [[<C-\><C-n>]] }
 
 -- Switch project
-nnoremap { "n", [[ <C-f>", [[:silent !tmux-sessionizer<cr>]] }
+nnoremap { "<C-f>", [[:silent !tmux-sessionizer<cr>]] }
