@@ -1,6 +1,7 @@
 #!/bin/sh
 
 echo "Installing setup"
+yay -S fzf lazygit
 yay -S polybar
 yay -S xclip
 yay -S brave
