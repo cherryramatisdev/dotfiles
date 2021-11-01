@@ -177,7 +177,6 @@ require("feline").setup {
   components = components,
   force_inactive = {
     filetypes = {
-      "NvimTree",
       "packer",
       "alpha",
       "qf",
