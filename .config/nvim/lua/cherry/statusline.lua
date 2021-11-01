@@ -1,63 +1,189 @@
-local git_branch = ""
-local status_line = ""
+local lsp = require "feline.providers.lsp"
+local package = require "package-info"
 
-local function constrain_string(line, max_len, cut_on_end)
-  if #line <= max_len then
-    return line
-  end
+local colors = require "utils.colors"
 
-  if cut_on_end then
-    return line:sub(max_len - 3) .. "..."
-  end
-  return "..." .. line:sub(max_len - 3)
-end
+local components = {
+  active = {},
+  inactive = {},
+}
 
-local function get_file_name()
-  local name = vim.fn.expand "%:t"
+components.active[1] = {
+  {
+    provider = "git_branch",
+    hl = {
+      fg = colors.background,
+      bg = colors.blue,
+      style = "bold",
+    },
+    right_sep = function()
+      local val = {
+        hl = {
+          fg = colors.background,
+          bg = colors.blue,
+        },
+      }
 
-  if not name or name == "" then
-    return "(no name)"
-  end
+      -- Hide if no git status
+      if vim.b.gitsigns_status_dict then
+        val.str = " "
+      else
+        val.str = ""
+      end
 
-  return name
-end
+      return val
+    end,
+    left_sep = function()
+      local val = {
+        hl = {
+          fg = colors.background,
+          bg = colors.blue,
+        },
+      }
 
-local function get_git_info()
-  git_branch = vim.fn["fugitive#head"]()
-  if not git_branch or git_branch == "" then
-    return "(no git)"
-  end
+      -- Hide if no git status
+      if vim.b.gitsigns_status_dict then
+        val.str = " "
+      else
+        val.str = ""
+      end
 
-  return string.format("(%s)", git_branch)
-end
+      return val
+    end,
+  },
+  {
+    provider = "file_info",
+    hl = {
+      fg = colors.white,
+      bg = colors.background,
+    },
+    left_sep = {
+      {
+        str = " ",
+        hl = {
+          bg = colors.background,
+        },
+      },
+    },
+  },
+  {
+    provider = "    ",
+    hl = {
+      fg = colors.white,
+      bg = colors.background,
+    },
+  },
+  {
+    provider = "diagnostic_errors",
+    enabled = function()
+      return lsp.diagnostics_exist "Error"
+    end,
+    hl = {
+      bg = colors.background,
+      fg = colors.red,
+    },
+  },
+  {
+    provider = "diagnostic_warnings",
+    enabled = function()
+      return lsp.diagnostics_exist "Warning"
+    end,
+    hl = {
+      bg = colors.background,
+      fg = colors.yellow,
+    },
+  },
+  {
+    provider = "diagnostic_hints",
+    enabled = function()
+      return lsp.diagnostics_exist "Hint"
+    end,
+    hl = {
+      fg = colors.orange,
+      bg = colors.background,
+    },
+  },
+  {
+    provider = "diagnostic_info",
+    enabled = function()
+      return lsp.diagnostics_exist "Information"
+    end,
+    hl = {
+      bg = colors.background,
+      fg = colors.blue,
+    },
+  },
+  {
+    provider = "    ",
+    hl = {
+      fg = colors.white,
+      bg = colors.background,
+    },
+  },
+  {
+    provider = "git_diff_added",
+    hl = {
+      fg = colors.green,
+      bg = colors.background,
+    },
+  },
+  {
+    provider = "git_diff_changed",
+    hl = {
+      fg = colors.orange,
+      bg = colors.background,
+    },
+  },
+  {
+    provider = "git_diff_removed",
+    hl = {
+      fg = colors.red,
+      bg = colors.background,
+    },
+  },
+  {
+    provider = function()
+      return "   " .. package.get_status()
+    end,
+    hl = {
+      fg = colors.white,
+      bg = colors.background,
+    },
+  },
+}
 
-local function lsp_info()
-  local warnings = vim.lsp.diagnostic.get_count(0, "Warning")
-  local errors = vim.lsp.diagnostic.get_count(0, "Error")
-  local hints = vim.lsp.diagnostic.get_count(0, "Hint")
+components.active[2] = {
+  {
+    provider = function()
+      return "  " .. os.date "%H:%M" .. " "
+    end,
+    hl = {
+      bg = colors.green,
+      fg = colors.background,
+    },
+  },
+}
 
-  return string.format("LSP: H %d W %d E %d", hints, warnings, errors)
-end
+components.inactive[1] = {
+  {
+    provider = "",
+    hl = {
+      bg = colors.background,
+    },
+  },
+}
 
-local statusline = "%%-4.4(%s%%)%%-30.50(%s%%)|%%-20.20(%s%%)%%-20.20(%s%%)%%-6.6(%s%%)%%-30.70(%s%%)"
-function StatusLine()
-  return string.format(
-    statusline,
-    vim.fn.mode(),
-    constrain_string(get_file_name(), 50, false),
-    get_git_info(),
-    lsp_info(),
-    "❤️",
-    status_line
-  )
-end
-
-vim.o.statusline = "%!v:lua.StatusLine()"
-
-local M = {}
-
-M.set_status = function(line)
-  status_line = line
-end
-
-return M
+require("feline").setup {
+  components = components,
+  force_inactive = {
+    filetypes = {
+      "NvimTree",
+      "packer",
+      "alpha",
+      "qf",
+      "help",
+    },
+    buftypes = { "terminal" },
+    bufnames = {},
+  },
+}

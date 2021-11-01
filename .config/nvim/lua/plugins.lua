@@ -77,6 +77,15 @@ return require("packer").startup(function()
 
   -- misc
   use {
+    "lewis6991/gitsigns.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("gitsigns").setup()
+    end,
+  }
+  use {
     "vuki656/package-info.nvim",
     requires = "MunifTanjim/nui.nvim",
     config = function()
@@ -106,7 +115,7 @@ return require("packer").startup(function()
     end,
   }
   use {
-    "nvim-lualine/lualine.nvim",
+    "famiu/feline.nvim",
     config = function()
       require "plugin.statusline"
     end,
