@@ -19,6 +19,7 @@ vim.opt.showtabline = 1
 vim.opt.switchbuf = "useopen"
 vim.opt.showfulltag = true
 vim.opt.incsearch = true
+vim.opt.inccommand = "split"
 
 vim.opt.visualbell = false
 vim.opt.errorbells = false

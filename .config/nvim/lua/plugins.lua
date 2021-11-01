@@ -120,7 +120,6 @@ return require("packer").startup(function()
       require "plugin.statusline"
     end,
   }
-  use "durgaswaroop/vim-mpc"
   use "fatih/vim-go"
   use {
     "norcalli/nvim-colorizer.lua",
@@ -161,12 +160,6 @@ return require("packer").startup(function()
     "akinsho/toggleterm.nvim",
     config = function()
       require "plugin.terminal"
-    end,
-  }
-  use {
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require "plugin.project"
     end,
   }
   use {

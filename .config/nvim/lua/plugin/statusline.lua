@@ -155,7 +155,7 @@ components.active[1] = {
 components.active[2] = {
   {
     provider = function()
-      return "  " .. os.date "%H:%M" .. " "
+      return vim.opt.filetype._value
     end,
     hl = {
       bg = colors.green,

@@ -1,8 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/cherry/projects/dotfiles
-- /home/cherry/projects/work/pantheon
 - /home/cherry/projects/work/website
+- /home/cherry/projects/work/pantheon
 - /home/cherry/projects/personal/workoutapp/backend
 - /home/cherry/projects/personal/workoutapp/back
 - /home/cherry/projects/work/exams
@@ -10,3 +10,7 @@ recentrepos:
 - /home/cherry/projects/work/professionals-admin
 - /home/cherry/lazygit
 startuppopupversion: 5
+customcommandshistory:
+- git commit --no-verify
+- 'git '
+hidecommandlog: false
