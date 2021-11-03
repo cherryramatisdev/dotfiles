@@ -1,5 +1,0 @@
-vim.cmd [[nmap <buffer> l <cr>]]
-vim.cmd [[nmap <buffer> h -]]
-vim.cmd [[nmap <buffer> a :lua create_file()<cr>]]
-vim.cmd [[nmap <buffer> A :lua create_directory()<cr>]]
-vim.cmd [[nmap <buffer> dd :lua remove_target()<cr>]]

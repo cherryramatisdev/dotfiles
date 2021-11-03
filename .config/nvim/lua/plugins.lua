@@ -67,7 +67,8 @@ return require("packer").startup(function()
 
   -- file browser
   use {
-    "justinmk/vim-dirvish",
+    "kyazdani42/nvim-tree.lua",
+    requires = "kyazdani42/nvim-web-devicons",
     config = function()
       require "plugin.file_browser"
     end,
@@ -90,6 +91,13 @@ return require("packer").startup(function()
   }
 
   -- misc
+  use {
+    "jghauser/mkdir.nvim",
+    config = function()
+      require "mkdir"
+    end,
+  }
+  use "nikvdp/neomux"
   use {
     "ThePrimeagen/harpoon",
     requires = { { "nvim-lua/plenary.nvim" }, { "nvim-lua/popup.nvim" } },
@@ -177,12 +185,12 @@ return require("packer").startup(function()
       require "plugin.git"
     end,
   }
-  use {
-    "akinsho/toggleterm.nvim",
-    config = function()
-      require "plugin.terminal"
-    end,
-  }
+  -- use {
+  --   "akinsho/toggleterm.nvim",
+  --   config = function()
+  --     require "plugin.terminal"
+  --   end,
+  -- }
   use {
     "windwp/nvim-autopairs",
     config = function()
