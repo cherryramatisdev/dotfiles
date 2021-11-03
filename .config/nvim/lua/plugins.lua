@@ -15,8 +15,22 @@ return require("packer").startup(function()
       { "dcampos/cmp-snippy" },
     },
   }
-  use { "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" } }
-  use "jose-elias-alvarez/nvim-lsp-ts-utils"
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = { { "nvim-lua/plenary.nvim" } },
+    config = function()
+      require "plugin.lsp.linting"
+    end,
+  }
+  use {
+    "RishabhRD/nvim-lsputils",
+    requires = { {
+      "RishabhRD/popfix",
+    } },
+    config = function()
+      require "plugin.lsp.utils"
+    end,
+  }
   use "williamboman/nvim-lsp-installer"
   use {
     "neovim/nvim-lspconfig",
