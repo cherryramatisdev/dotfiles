@@ -91,6 +91,13 @@ return require("packer").startup(function()
 
   -- misc
   use {
+    "ThePrimeagen/harpoon",
+    requires = { { "nvim-lua/plenary.nvim" }, { "nvim-lua/popup.nvim" } },
+    config = function()
+      require "plugin.harpoon"
+    end,
+  }
+  use {
     "lewis6991/gitsigns.nvim",
     requires = {
       "nvim-lua/plenary.nvim",
