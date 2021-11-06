@@ -50,4 +50,4 @@ require("nvim-tree").setup {
   },
 }
 
-vim.keymap.nnoremap { "sf", ":NvimTreeOpen<cr>" }
+vim.keymap.nnoremap { "sf", ":NvimTreeFindFileToggle<cr>" }

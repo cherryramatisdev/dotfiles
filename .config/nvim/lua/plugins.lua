@@ -122,12 +122,12 @@ return require("packer").startup(function()
     end,
   }
   use "mtth/scratch.vim"
-  use {
-    "mattn/emmet-vim",
-    config = function()
-      vim.g.user_emmet_leader_key = ","
-    end,
-  }
+  -- use {
+  --   "mattn/emmet-vim",
+  --   config = function()
+  --     vim.g.user_emmet_leader_key = ","
+  --   end,
+  -- }
   use "tjdevries/astronauta.nvim"
   use {
     "windwp/nvim-spectre",

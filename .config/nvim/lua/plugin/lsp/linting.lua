@@ -9,6 +9,7 @@ pkg.config {
   debounce = 150,
   sources = {
     b.formatting.stylua,
+    b.formatting.rustfmt,
     b.formatting.prettierd.with {
       filetypes = {
         "typescriptreact",
