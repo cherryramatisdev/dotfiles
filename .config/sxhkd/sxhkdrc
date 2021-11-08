@@ -14,20 +14,12 @@ super + r
 	pkill -USR1 -x sxhkd
 
 # launch browser
-super + w
-      brave
+super + o ; {b, c, q}
+      {brave, google-chrome-stable, qutebrowser}
 
 # launch inkdrop
 super + t
     inkdrop
-
-# open mail
-super + shift + m
-    emacsclient -c -a '' -e '(mu4e)'
-
-# file browser
-super + d
-      emacsclient -c -a '' -e '(dired-jump)'
 
 # download music from youtube
 alt + y
@@ -68,14 +60,6 @@ super + v
 # print
 Print
       flameshot gui
-
-super + a
-    emacsclient -c -a '' -e '(progn (org-agenda nil "a") (delete-other-windows))'
-
-super + shift + c
-    emacsclient -c -a '' -e '(progn (org-capture) (delete-other-windows))'
-
-
 
 # control audio
 
