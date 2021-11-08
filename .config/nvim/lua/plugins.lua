@@ -97,7 +97,7 @@ return require("packer").startup(function()
       require "mkdir"
     end,
   }
-  use "nikvdp/neomux"
+  -- use "nikvdp/neomux"
   use {
     "ThePrimeagen/harpoon",
     requires = { { "nvim-lua/plenary.nvim" }, { "nvim-lua/popup.nvim" } },
