@@ -29,3 +29,18 @@ tnoremap { "<C-o>", [[<C-\><C-n>]] }
 
 -- Switch project
 nnoremap { "<C-f>", [[:silent !ta ~/projects/work/<cr>]] }
+
+-- Create new note
+nnoremap {
+  "<C-n>n",
+  function()
+    require("cherry.notes").create()
+  end,
+}
+
+nnoremap {
+  "<C-n>f",
+  function()
+    require("cherry.notes").find()
+  end,
+}

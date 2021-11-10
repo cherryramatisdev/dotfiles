@@ -23,6 +23,9 @@ ensure("wbthomason", "packer.nvim")
 -- You need to do this if you want to call the code from init.lua
 vim.cmd [[runtime plugin/astronauta.vim]]
 
+-- note taking
+require "cherry.notes"
+
 require "cherry.globals"
 require "plugins"
 -- TODO: If this is useful on the future, enable it

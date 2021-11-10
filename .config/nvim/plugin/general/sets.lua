@@ -39,3 +39,9 @@ vim.opt.guicursor = "n-v-c:block-Cursor"
 vim.opt.guifont = "Jetbrains Mono:h16"
 
 vim.g.vscode_style = "dark"
+
+vim.opt.autowriteall = true
+
+vim.opt.shiftwidth = 2
+vim.opt.autoindent = true
+vim.opt.smartindent = true
