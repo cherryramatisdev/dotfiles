@@ -1,9 +1,10 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/cherry/projects/dotfiles
-- /home/cherry/projects/work/pantheon
-- /home/cherry/projects/work/exams
 - /home/cherry/projects/work/website
+- /home/cherry/projects/work/pantheon
+- /home/cherry/projects/personal/cherrydwm
+- /home/cherry/projects/work/exams
 - /home/cherry/projects/personal/workoutapp/backend
 - /home/cherry/projects/personal/workoutapp/back
 - /home/cherry/Downloads/packages/dmenu
