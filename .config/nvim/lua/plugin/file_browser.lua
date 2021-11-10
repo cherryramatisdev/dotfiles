@@ -43,8 +43,7 @@ require("nvim-tree").setup {
     mappings = {
       custom_only = false,
       list = {
-        { key = { "<CR>", "o", "<2-LeftMouse>", "l" }, cb = tree_cb "edit" },
-        { key = { "-", "h" }, cb = tree_cb "dir_up" },
+        { key = { "<CR>", "o", "<2-LeftMouse>", "l", "h" }, cb = tree_cb "edit" },
       },
     },
   },
