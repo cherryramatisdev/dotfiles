@@ -1,1 +1,0 @@
-("~/projects/dotfiles/" "~/projects/work/website/" "~/" "~/projects/work/exams/" "~/projects/work/professionals-admin/")
