@@ -45,3 +45,4 @@ set -gx _ZL_CD cd
 
 set -gx fish_greeting ""
 set -gx BROWSER "brave"
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/cherry/.ghcup/bin $PATH # ghcup-env
