@@ -91,13 +91,13 @@ return require("packer").startup(function()
   }
 
   -- misc
+  use "jxnblk/vim-mdx-js"
   use {
     "jghauser/mkdir.nvim",
     config = function()
       require "mkdir"
     end,
   }
-  -- use "nikvdp/neomux"
   use {
     "ThePrimeagen/harpoon",
     requires = { { "nvim-lua/plenary.nvim" }, { "nvim-lua/popup.nvim" } },
@@ -122,12 +122,6 @@ return require("packer").startup(function()
     end,
   }
   use "mtth/scratch.vim"
-  -- use {
-  --   "mattn/emmet-vim",
-  --   config = function()
-  --     vim.g.user_emmet_leader_key = ","
-  --   end,
-  -- }
   use "tjdevries/astronauta.nvim"
   use {
     "windwp/nvim-spectre",
@@ -173,24 +167,9 @@ return require("packer").startup(function()
   use "inkarkat/vim-ReplaceWithRegister"
   use "kana/vim-textobj-user"
   use "kana/vim-textobj-line"
-  use "kana/vim-textobj-function"
   use "kana/vim-textobj-entire"
 
-  use "AndrewRadev/ginitpull.vim"
   use "tweekmonster/startuptime.vim"
-  use {
-    "TimUntersberger/neogit",
-    requires = "nvim-lua/plenary.nvim",
-    config = function()
-      require "plugin.git"
-    end,
-  }
-  -- use {
-  --   "akinsho/toggleterm.nvim",
-  --   config = function()
-  --     require "plugin.terminal"
-  --   end,
-  -- }
   use {
     "windwp/nvim-autopairs",
     config = function()
@@ -202,35 +181,28 @@ return require("packer").startup(function()
   -- icons
   use { "kyazdani42/nvim-web-devicons" }
 
-  -- jira
-  use {
-    "n0v1c3/vira",
-    run = "./install.sh",
-    branch = "dev",
-    config = function()
-      require "plugin.jira"
-    end,
-  }
-
   --SQL
   use "tpope/vim-dadbod"
   use "kristijanhusak/vim-dadbod-completion"
   use "kristijanhusak/vim-dadbod-ui"
 
   -- tpope
-  use "tpope/vim-dispatch"
   use "tpope/vim-fugitive"
-  use "tpope/vim-sensible"
-  use "tpope/vim-sleuth"
   use "tpope/vim-repeat"
   use "tpope/vim-unimpaired"
   use "tpope/vim-surround"
-  use "tpope/vim-obsession"
   use "tpope/vim-commentary"
   use "tpope/vim-rsi"
   use "tpope/vim-scriptease"
-  use "tpope/vim-eunuch"
-  use "tpope/vim-characterize"
-  use "tpope/vim-markdown"
   use "tpope/vim-dotenv"
+
+  -- markdown
+  use "ellisonleao/glow.nvim"
+  use "ferrine/md-img-paste.vim"
+  use {
+    "jakewvincent/mkdnflow.nvim",
+    config = function()
+      require("mkdnflow").setup {}
+    end,
+  }
 end)
