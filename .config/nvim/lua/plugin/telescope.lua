@@ -51,5 +51,6 @@ nnoremap { "<leader>f", [[:Telescope find_files hidden=true<cr>]] }
 nnoremap { "<leader>r", [[:Telescope live_grep hidden=true<CR>]] }
 nnoremap { "\\", ":Telescope buffers hidden=true<CR>" }
 nnoremap { "<leader>;", [[:Telescope commands hidden=true<CR>]] }
-nnoremap { "<leader>* ", [[:Telescope grep_string hidden=true<CR>]] }
+nnoremap { "<leader>*", [[:Telescope grep_string hidden=true<CR>]] }
+nnoremap { "<leader>g", [[:Telescope git_status<CR>]] }
 nnoremap { "gG", [[:lua require'telescope'.extensions.arecibo.websearch()<cr>]] }
