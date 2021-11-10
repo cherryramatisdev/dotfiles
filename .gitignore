@@ -5,6 +5,7 @@
 /.emacs.d/eshell/
 /.emacs.d/history
 /.emacs.d/ido.last
+/.emacs.d/elpa/
 /.emacs.d/places
 /.emacs.d/recentf
 /.emacs.d/request/
