@@ -3,7 +3,7 @@
 
 # terminal emulator
 super + Return
-	kitty
+	alacritty
 
 # program launcher
 super + @space
@@ -41,10 +41,6 @@ super + shift + y
 super + F1
       switchkeyboardlanguage
 
-# logout
-super + x
-      arcolinux-logout
-
 # open password manager
 super + p
     passmenu
@@ -71,50 +67,3 @@ XF86AudioLowerVolume
 
 XF86AudioRaiseVolume
 	pactl -- set-sink-volume 0 +10%
-
-#
-# bspwm hotkeys
-#
-
-# restart bspwm
-super + shift + r
-	bspc wm -r
-
-# close and kill
-super + q
-	bspc node -c
-
-# alternate between the tiled and monocle layout
-super + f
-	bspc desktop -l next
-
-#
-# state/flags
-#
-
-super + shift + space
-    bspc node -t floating
-
-#
-# focus/swap
-#
-
-# focus the node in the given direction
-super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
-
-# focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
-
-#
-# move/resize
-#
-
-# expand a window by moving one of its side outward
-super + control + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
-# move a floating window
-super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}

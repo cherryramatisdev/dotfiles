@@ -3,6 +3,8 @@ set $alt Mod1
 
 font pango:DejaVu Sans Mono 8
 
+exec --no-startup-id sxhkd
+
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 exec --no-startup-id nm-applet
@@ -13,65 +15,38 @@ exec --no-startup-id xrandr --auto --output HDMI-1 --mode 2560x1080 --left-of DV
 # Run dunst for notifications
 exec --no-startup-id dunst &
 
-exec --no-startup-id compton -b &
+# exec --no-startup-id compton -b &
 
 # Set background
-exec --no-startup-id feh --bg-fill ~/Pictures/background.jpg &
+exec --no-startup-id feh --bg-fill ~/wallpapers/dusk-in-pixels.jpg &
 
 # Disable window title bar
 default_border pixel 3
 default_floating_border pixel 3
 
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $alt
 
-# start a terminal
-bindsym $alt+Shift+Return exec i3-sensible-terminal
-bindsym $mod+t exec kitty
-
 # kill focused window
-bindsym $mod+c kill
-
-# open slack
-bindsym $mod+s exec slack & disown
-
-# open mixer
-bindsym $mod+v exec kitty -e alsamixer
-
-# Open browser
-bindsym $mod+w exec qutebrowser
-bindsym $mod+Shift+w exec brave
-
-# open obsidian
-bindsym $alt+t exec obsidian
-
-# open vifm
-bindsym $mod+d exec kitty -e vifm
-
-# open vim
-bindsym $alt+v exec nvim-qt
-
-# start dmenu (a program launcher)
-bindsym $mod+space exec --no-startup-id dmenu_run
+bindsym $mod+q kill
 
 # change focus
-bindsym $alt+h focus left
-bindsym $alt+j focus down
-bindsym $alt+k focus up
-bindsym $alt+l focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # move focused window
-bindsym $alt+Shift+h move left
-bindsym $alt+Shift+j move down
-bindsym $alt+Shift+k move up
-bindsym $alt+Shift+l move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# resize focused window
+bindsym $mod+Ctrl+h resize shrink width 1 px or 1 ppt
+bindsym $mod+Ctrl+k resize grow height 1 px or 1 ppt
+bindsym $mod+Ctrl+j resize shrink height 1 px or 1 ppt
+bindsym $mod+Ctrl+l resize grow width 1 px or 1 ppt
 
 # split in horizontal orientation
 bindsym $mod+$alt+v split h
@@ -83,10 +58,8 @@ bindsym $mod+$alt+s split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+F1 layout toggle split
-bindsym $mod+F2 layout tabbed
-
-bindsym $mod+p exec "flameshot gui"
+bindsym $mod+Shift+s layout toggle split
+bindsym $mod+Shift+t layout tabbed
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -102,28 +75,28 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $alt+1 workspace number $ws1
-bindsym $alt+2 workspace number $ws2
-bindsym $alt+3 workspace number $ws3
-bindsym $alt+4 workspace number $ws4
-bindsym $alt+5 workspace number $ws5
-bindsym $alt+6 workspace number $ws6
-bindsym $alt+7 workspace number $ws7
-bindsym $alt+8 workspace number $ws8
-bindsym $alt+9 workspace number $ws9
-bindsym $alt+0 workspace number $ws10
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $alt+Shift+1 move container to workspace number $ws1
-bindsym $alt+Shift+2 move container to workspace number $ws2
-bindsym $alt+Shift+3 move container to workspace number $ws3
-bindsym $alt+Shift+4 move container to workspace number $ws4
-bindsym $alt+Shift+5 move container to workspace number $ws5
-bindsym $alt+Shift+6 move container to workspace number $ws6
-bindsym $alt+Shift+7 move container to workspace number $ws7
-bindsym $alt+Shift+8 move container to workspace number $ws8
-bindsym $alt+Shift+9 move container to workspace number $ws9
-bindsym $alt+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+r reload
@@ -136,22 +109,22 @@ mode "$mode_power" {
         bindsym Return mode i3lock
         bindsym Escape mode "default"
 }
-bindsym $mod+F12 mode "$mode_power"
+bindsym $mod+x mode "$mode_power"
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
+# mode "resize" {
+#         bindsym h resize shrink width 10 px or 10 ppt
+#         bindsym j resize grow height 10 px or 10 ppt
+#         bindsym k resize shrink height 10 px or 10 ppt
+#         bindsym l resize grow width 10 px or 10 ppt
+#
+#         # back to normal: Enter or Escape or $mod+r
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+#         bindsym $mod+r mode "default"
+# }
+#
+# bindsym $mod+r mode "resize"
 
 set $black #1C1B19
 set $bright_black #918175
@@ -199,7 +172,7 @@ client.background       $black
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  status_command i3status
+  status_command LC_ALL=C /home/cherry/.nix-profile/bin/i3status
   position top
   font pango:DejaVu Sans Mono 14
 
