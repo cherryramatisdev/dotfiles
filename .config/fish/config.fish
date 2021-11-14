@@ -29,6 +29,7 @@ fish_add_path "$HOME/bin"
 fish_add_path "$HOME/go/bin"
 fish_add_path "$HOME/.rbenv/bin"
 fish_add_path "$HOME/.cargo/bin"
+fish_add_path "$HOME/.nix-profile/bin"
 status --is-interactive; and source (rbenv init -|psub)
 
 fish_add_path "/var/lib/snapd/snap/bin"
