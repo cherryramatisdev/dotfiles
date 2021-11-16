@@ -4,6 +4,8 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.emacs.enable = true;
+
   home.packages = [
    pkgs.libstdcxx5
    pkgs.bat
@@ -33,9 +35,14 @@
    pkgs.i3status
    pkgs.i3lock
    pkgs.sxhkd
+   pkgs.nodejs
+   pkgs.heroku
+   pkgs.vscode
+   pkgs.google-chrome
   ];
 
   nixpkgs.config.allowBroken = true;
+  nixpkgs.config.allowUnfree = true;
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
