@@ -17,6 +17,9 @@ exec --no-startup-id dunst &
 
 # exec --no-startup-id compton -b &
 
+# start flameshot
+exec --no-startup-id flameshot &
+
 # Set background
 exec --no-startup-id feh --bg-fill ~/wallpapers/dusk-in-pixels.jpg &
 
