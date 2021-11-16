@@ -93,6 +93,11 @@
   :init
   (load-theme 'gruber-darker t))
 
+;; modeline
+(use-package doom-modeline
+  :straight t
+  :init (doom-modeline-mode 1))
+
 ;; Show paren mode.
 (show-paren-mode t)
 (setq-default show-paren-style 'expression)
@@ -186,8 +191,9 @@
 (use-package prettier-js
   :after (web-mode typescript-mode)
   :straight t
-  :hook ((typescript-mode . prettier-js-mode)
-         (web-mode . prettier-js-mode)))
+  :config
+  (add-hook 'typescript-mode-hook 'prettier-js-mode)
+  (add-hook 'web-mode-hook 'prettier-js-mode))
 
 ;; eslint
 ;; disable jshint since we prefer eslint checking
@@ -403,7 +409,6 @@
   (setq web-mode-enable-auto-pairing t)
   (setq web-mode-enable-css-colorization t))
 
-
 (use-package typescript-mode
   :straight t)
 
@@ -430,18 +435,20 @@
                 projectile-globally-ignored-directories)))
 
 ;; perspectives
-(use-package persp-mode
+(use-package perspective
   :straight t
   :init
-  (setq persp-keymap-prefix (kbd "C-x p"))
+  (setq persp-mode-prefix-key (kbd "C-x p"))
   (persp-mode 1))
+
+(use-package persp-projectile
+  :straight t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(global-whitespace-mode t)
  '(package-selected-packages
    '(persp-mode exec-path-from-shell prettier-js markdown-mode counsel-projectile doom-modeline typescript-mode web-mode xclip treemacs yasnippet emojify company-emoji company expand-region multiple-cursors beacon flycheck ws-butler gruber-darker-theme gruber-darker counsel use-package)))
 (custom-set-faces
@@ -454,3 +461,4 @@
 (provide 'init)
 
 ;;; init.el ends here
+(put 'narrow-to-region 'disabled nil)
