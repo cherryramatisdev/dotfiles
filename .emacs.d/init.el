@@ -126,7 +126,7 @@
   "Delete previous word if not selected, and delete selection if selected using START and END."
   (interactive "r")
   (if mark-active
-      (delete-region start end)
+      (kill-region start end)
     (backward-kill-word 1)))
 
 (global-set-key (kbd "C-w") 'cherry/delete-word-or-selection)
@@ -207,6 +207,7 @@
 ;; Use this binding for something useful because we can quit with wm binding.
 (global-unset-key (kbd "C-x C-c"))
 (global-set-key (kbd "C-x C-c") 'compile)
+(global-set-key (kbd "C-x C-r") 'recompile)
 
 ;; Use another bind to kill inside terminal `emacsclient -t`
 (global-set-key (kbd "C-x rq") 'save-buffers-kill-terminal)
@@ -349,6 +350,18 @@
 (use-package typescript-mode
   :straight t)
 
+;; styled-components
+(use-package ov
+  :straight t)
+
+(use-package fence-edit
+  :straight (fence-edit :type git :host github :repo "aaronbieber/fence-edit.el"))
+
+(use-package styled
+  :straight (styled :type git :host github :repo "LaloHao/emacs-styled-components")
+  :config
+  (define-key typescript-mode-map (kbd "C-c '") 'fence-edit-code-at-point))
+
 ;; projectile
 (use-package projectile
   :straight t
@@ -380,6 +393,33 @@
 
 (use-package persp-projectile
   :straight t)
+
+;; org roam
+(use-package gkroam
+  :straight t
+  :hook (after-init . gkroam-mode)
+  :init
+  (setq gkroam-root-dir "~/projects/dotfiles/wiki")
+  (setq gkroam-prettify-page-p t
+        gkroam-show-brackets-p nil
+        gkroam-use-default-filename t
+        gkroam-window-margin 4)
+  :bind ((("C-c r I" . gkroam-index)
+         ("C-c r d" . gkroam-daily)
+         ("C-c r D" . gkroam-delete)
+         ("C-c r f" . gkroam-find)
+         ("C-c r i" . gkroam-insert)
+         ("C-c r n" . gkroam-dwim)
+         ("C-c r e" . gkroam-link-edit)
+         ("C-c r u" . gkroam-show-unlinked)
+         ("C-c r p" . gkroam-toggle-prettify)
+         ("C-c r t" . gkroam-toggle-brackets)
+         ("C-c r R" . gkroam-rebuild-caches)
+         ("C-c r g" . gkroam-update))))
+
+(use-package org-download
+  :straight t
+  :hook ((dired-mode . org-download-enable)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
