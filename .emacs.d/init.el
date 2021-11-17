@@ -352,6 +352,11 @@
 (use-package typescript-mode
   :straight t)
 
+(use-package tide
+  :straight t
+  :hook ((web-mode . tide-setup)
+         (typescript-mode . tide-setup)))
+
 ;; styled-components
 (use-package ov
   :straight t)
