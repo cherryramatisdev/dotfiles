@@ -21,6 +21,7 @@
 (straight-use-package 'use-package)
 
 (delete-selection-mode 1)
+(eldoc-mode +1)
 
 ;; Path
 (use-package exec-path-from-shell
@@ -316,6 +317,7 @@
   (yas-global-mode 1))
 
 ;; file browser
+(require 'dired-x)
 (global-set-key (kbd "C-x C-j") 'dired-jump)
 
 ;; Clipboard. Copy from terminal emacs to the X clipboard.

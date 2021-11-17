@@ -1,1 +1,1 @@
-("~/projects/dotfiles/" "~/projects/work/website/" "~/projects/work/exams/" "~/projects/personal/morganakeller/")
+("~/projects/work/website/" "~/projects/dotfiles/" "~/projects/work/exams/" "~/projects/personal/morganakeller/")
