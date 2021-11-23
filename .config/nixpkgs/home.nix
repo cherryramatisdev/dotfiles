@@ -31,7 +31,7 @@
    pkgs.rbenv
    pkgs.fish
    pkgs.gitAndTools.gh
-   pkgs.i3
+   pkgs.i3-gaps
    pkgs.i3status
    pkgs.i3lock
    pkgs.sxhkd
@@ -39,6 +39,8 @@
    pkgs.heroku
    pkgs.vscode
    pkgs.google-chrome
+   pkgs.dbeaver
+   pkgs.go
   ];
 
   nixpkgs.config.allowBroken = true;

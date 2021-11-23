@@ -1,0 +1,37 @@
+#+TITLE: filter-register-by-key-value-pattern
+
+* The code
+  #+BEGIN_SRC typescript
+    class CategoryService {
+        private filterCategories(categories: Category[], excludes: string[][]) {
+            let filteredResult: Category[][] = [];
+
+            for (const exclude of excludes) {
+                if (filteredResult.length <= 0) {
+                    filteredResult.push(
+                        categories.filter((category) => category[exclude[0]] !== exclude[1]),
+                    );
+                }
+
+                const newFilteredResult = filteredResult
+                    .flat()
+                    .filter((c) => c[exclude[0]] !== exclude[1]);
+
+                filteredResult = [];
+
+                filteredResult.push(newFilteredResult);
+            }
+
+            return filteredResult.flat();
+        }
+    }
+  #+END_SRC
+
+* What is doing
+  the excludes follow this format: =[['slug,chat'], ['attendenceType,home_care']]=
+  Where each string =key.value= is an item from the entity and the value.
+  This pattern is going to pattern match with all categories registered and exclude if the match got correct.
+
+  Basically on the first interation we use the categories list with all items, and from the 2nd we'll narrow even more depending on how many excludes you define.
+
+  It's fuking **awesome**

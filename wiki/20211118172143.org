@@ -1,0 +1,9 @@
+#+TITLE: Nov 18, 2021
+
+* Work tasks
+
+** DONE [[https://lamimed.atlassian.net/browse/TEC-283][TEC-283]] - Add exclude query param
+
+** DONE [[https://lamimed.atlassian.net/browse/TEC-295][TEC-295]] - Solve Joi incompatibily on latest version(api-prescription, bff-professionals) ---> Waiting marcio merge
+
+** DONE [[https://lamimed.atlassian.net/browse/TEC-300][TEC-300]] - Rollback sequelize and create card to bugfix on a future moment(api-prescription, bff-professionals)

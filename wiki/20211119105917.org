@@ -1,0 +1,5 @@
+#+TITLE: Nov 19, 2021
+
+* Work tasks
+
+** TODO [[https://lamimed.atlassian.net/browse/TEC-257][TEC-257]] - Check dependencies on package(dev/prod)

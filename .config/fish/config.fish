@@ -1,6 +1,7 @@
 alias ls="exa"
 alias la="exa -lha"
 alias g="git"
+alias gs="git s"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."

@@ -1,6 +1,11 @@
 set $mod Mod4
 set $alt Mod1
 
+for_window [class=".*"] border pixel 3
+gaps inner 10
+gaps outer 1
+smart_gaps on
+
 font pango:DejaVu Sans Mono 8
 
 exec --no-startup-id sxhkd
@@ -14,6 +19,9 @@ exec --no-startup-id xrandr --auto --output HDMI-1 --mode 2560x1080 --left-of DV
 
 # Run dunst for notifications
 exec --no-startup-id dunst &
+
+# music
+exec --no-startup-id mpd &
 
 # exec --no-startup-id compton -b &
 
@@ -51,18 +59,14 @@ bindsym $mod+Ctrl+k resize grow height 1 px or 1 ppt
 bindsym $mod+Ctrl+j resize shrink height 1 px or 1 ppt
 bindsym $mod+Ctrl+l resize grow width 1 px or 1 ppt
 
-# split in horizontal orientation
-bindsym $mod+$alt+v split h
-
-# split in vertical orientation
-bindsym $mod+$alt+s split v
+bindsym $mod+e layout toggle split
+bindsym $mod+t layout tabbed
+bindsym $mod+s layout stacking
+bindsym $mod+Shift+s split v
+bindsym $mod+Shift+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Shift+s layout toggle split
-bindsym $mod+Shift+t layout tabbed
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -177,6 +181,7 @@ client.background       $black
 bar {
   status_command LC_ALL=C /home/cherry/.nix-profile/bin/i3status
   position top
+  height 25
   font pango:DejaVu Sans Mono 14
 
   colors {

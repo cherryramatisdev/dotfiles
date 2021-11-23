@@ -1,0 +1,6 @@
+#+TITLE: Nov 22, 2021
+
+* Documentation tasks
+** TODO Transform our documentations to english. @cherry
+** TODO READMEs include links to each readme. @joao
+** TODO Maintain storybook online. @gui
