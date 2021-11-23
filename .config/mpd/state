@@ -1,9 +1,7 @@
-sw_volume: 28
+sw_volume: 80
 audio_device_state:1:My PULSE Device
 audio_device_state:1:toggle_visualizer
-state: play
-current: 10
-time: 39.082000
+state: stop
 random: 0
 repeat: 1
 single: 0
@@ -12,19 +10,4 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Sant/5am pt. Costa Gold.mp3
-1:Sant/Adidas & nike.mp3
-2:Sant/Aql slv pt. SD9, VND, Tiago Mac.mp3
-3:Sant/Bônus.mp3
-4:Sant/Desconstrução.mp3
-5:Sant/Do falcão.mp3
-6:Sant/Gestão.mp3
-7:Sant/Intro.mp3
-8:Sant/Íris pt. MC Cidinho.mp3
-9:Sant/Outro.mp3
-10:Sant/Pertence ao crime.mp3
-11:Sant/Prantos.mp3
-12:Sant/Puxa o gatilho primeiro.mp3
-13:Sant/Skit i pt. DJ Erik Skratch.mp3
-14:Sant/Skit ii.mp3
 playlist_end

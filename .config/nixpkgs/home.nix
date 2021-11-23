@@ -24,6 +24,7 @@
    pkgs.jetbrains-mono
    pkgs.elinks
    pkgs.kitty
+   pkgs.dunst
    pkgs.mpd
    pkgs.mpv
    pkgs.mpc_cli

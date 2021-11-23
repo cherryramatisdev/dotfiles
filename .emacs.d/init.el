@@ -20,8 +20,11 @@
 
 (straight-use-package 'use-package)
 
+(electric-pair-mode 1)
 (delete-selection-mode 1)
 (eldoc-mode +1)
+
+;; (load "~/.emacs.d/exwm.el")
 
 ;; Path
 (use-package exec-path-from-shell
@@ -62,6 +65,11 @@
 ;; markdown
 (use-package markdown-mode
   :straight t)
+
+;; paredit
+(use-package paredit
+  :straight t
+  :hook ((emacs-lisp . paredit-mode)))
 
 ;; Enhanced M-x
 (use-package vertico
@@ -122,15 +130,44 @@
 (global-set-key (kbd "C-x C-n") 'other-window)
 (global-set-key (kbd "C-x C-p") 'other-window-backward)
 
-;; If selected delete selection, if not delete previous word like <C-backspace>
-(defun cherry/delete-word-or-selection (start end)
-  "Delete previous word if not selected, and delete selection if selected using START and END."
-  (interactive "r")
-  (if mark-active
-      (kill-region start end)
-    (backward-kill-word 1)))
+(defadvice kill-region (before slick-cut-line first activate compile)
+  "When called interactively kill the current word or line.
 
-(global-set-key (kbd "C-w") 'cherry/delete-word-or-selection)
+Calling it once without a region will kill the current word.
+Calling it a second time will kill the current line."
+  (interactive
+   (if mark-active (list (region-beginning) (region-end))
+     (backward-kill-word 1))))
+
+(defadvice kill-ring-save (before slick-copy-line activate compile)
+  "When called interactively with no region, copy the word or line
+Calling it once without a region will copy the current word.
+Calling it a second time will copy the current line."
+    (interactive
+     (if mark-active (list (region-beginning) (region-end))
+       (if (eq last-command 'kill-ring-save)
+           (progn
+             ;; Uncomment to only keep the line in the kill ring
+             ;; (kill-new "" t)
+             (message "Copied line")
+             (list (line-beginning-position)
+                   (line-beginning-position 2)))
+         (save-excursion
+           (forward-char)
+           (backward-word)
+           (mark-word)
+           (message "Copied word")
+           (list (mark) (point)))))))
+
+;; ;; If selected delete selection, if not delete previous word like <C-backspace>
+;; (defun cherry/delete-word-or-selection (start end)
+;;   "Delete previous word if not selected, and delete selection if selected using START and END."
+;;   (interactive "r")
+;;   (if mark-active
+;;       (kill-region start end)
+;;     (backward-kill-word 1)))
+
+;; (global-set-key (kbd "C-w") 'cherry/delete-word-or-selection)
 
 ;; edit this file init.el
 (defun cherry/edit-dotfile ()
@@ -138,7 +175,7 @@
   (interactive)
   (find-file-other-window "~/.emacs.d/init.el"))
 
-(global-set-key (kbd "C-c /") 'cherry/edit-dotfile)
+(global-set-key (kbd "C-x /") 'cherry/edit-dotfile)
 
 ;; shortcuts in all mode
 (global-set-key (kbd "M-SPC") 'hippie-expand)
@@ -194,7 +231,22 @@
   :straight t
   :config
   (add-hook 'typescript-mode-hook 'prettier-js-mode)
-  (add-hook 'web-mode-hook 'prettier-js-mode))
+  (add-hook 'web-mode-hook 'prettier-js-mode)
+  (define-key typescript-mode-map (kbd "C-c RET") 'prettier-js)
+  (define-key web-mode-map (kbd "C-c RET") 'prettier-js))
+
+(defun setup-jest-mode ()
+  "Setup jest mode."
+  (interactive)
+  (typescript-mode)
+  (jest-minor-mode))
+
+;; jest
+(use-package jest
+  :straight t
+  :after (typescript-mode)
+  :config
+  (add-to-list 'auto-mode-alist '("\\.spec.ts\\'" . setup-jest-mode)))
 
 ;; eslint
 ;; disable jshint since we prefer eslint checking
@@ -220,7 +272,7 @@
   (end-of-line)
   (newline-and-indent))
 
-(global-set-key (kbd "C-m") 'rc/newline-and-indent)
+(global-set-key (kbd "C-o") 'rc/newline-and-indent)
 
 (define-key query-replace-map [return] 'act)
 (define-key query-replace-map [?\C-m] 'act)
@@ -281,29 +333,18 @@
 ;; auto scroll the compilation window
 (setq compilation-scroll-output t)
 
-;; Scroll up and down while keeping the cursors where it is.
-(defun help/scroll-up-one-line ()
-  "Scroll up."
-  (interactive)
-  (scroll-down 1))
-
-(defun help/scroll-down-one-line ()
-  "Scroll down."
-  (interactive)
-  (scroll-up 1))
-
-(global-set-key (kbd "M-p") 'help/scroll-down-one-line)
-(global-set-key (kbd "M-n") 'help/scroll-up-one-line)
+(global-set-key (kbd "M-p") 'backward-paragraph)
+(global-set-key (kbd "M-n") 'forward-paragraph)
 
 ;; Auto complete
-(use-package company
-  :straight t
-  :bind (("<C-return>" . company-complete))
-  :init
-  (setq company-idle-display 0.0
-        company-global-modes '(not org-mode)
-        company-minimum-prefix-length 1)
-  (global-company-mode 1))
+;; (use-package company
+;;   :straight t
+;;   :bind (("<C-return>" . company-complete))
+;;   :init
+;;   (setq company-idle-display 0.0
+;;         company-global-modes '(not org-mode)
+;;         company-minimum-prefix-length 1)
+;;   (global-company-mode 1))
 
 ;; snippets
 (use-package yasnippet
@@ -352,10 +393,21 @@
 (use-package typescript-mode
   :straight t)
 
+(defun setup-tide-mode ()
+  "Setup tide mode."
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  (prettier-js-mode))
+
 (use-package tide
   :straight t
-  :hook ((web-mode . tide-setup)
-         (typescript-mode . tide-setup)))
+  :hook ((web-mode . setup-tide-mode)
+         (typescript-mode . setup-tide-mode))
+  :config
+  (define-key typescript-mode-map (kbd "M-RET") 'tide-fix))
 
 ;; styled-components
 (use-package ov
@@ -428,11 +480,51 @@
   :straight t
   :hook ((dired-mode . org-download-enable)))
 
+(use-package org-superstar
+  :straight t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
+
+(use-package org-present
+  :straight t
+  :config
+  (eval-after-load "org-present"
+  '(progn
+     (add-hook 'org-present-mode-hook
+               (lambda ()
+                 (org-present-big)
+                 (org-display-inline-images)
+                 (org-present-hide-cursor)
+                 (org-present-read-only)))
+     (add-hook 'org-present-mode-quit-hook
+               (lambda ()
+                 (org-present-small)
+                 (org-remove-inline-images)
+                 (org-present-show-cursor)
+                 (org-present-read-write))))))
+
+(use-package org-beautify-theme
+  :straight t
+  :config
+  (add-hook 'org-mode-hook (lambda () (load-theme 'org-beautify t))))
+
+(defun cherry/insert-jira-link ()
+  "Insert jira link based on current code."
+  (interactive)
+  (let ((@jira-code (read-string "Insert Jira Code: ")))
+    (insert (format "[[https://lamimed.atlassian.net/browse/TEC-%s][TEC-%s]]" @jira-code @jira-code))))
+
+(define-key org-mode-map (kbd "C-c M-l") 'cherry/insert-jira-link)
+
+(put 'narrow-to-region 'disabled nil)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("31deed4ac5d0b65dc051a1da3611ef52411490b2b6e7c2058c13c7190f7e199b" default))
  '(package-selected-packages
    '(persp-mode exec-path-from-shell prettier-js markdown-mode counsel-projectile doom-modeline typescript-mode web-mode xclip treemacs yasnippet emojify company-emoji company expand-region multiple-cursors beacon flycheck ws-butler gruber-darker-theme gruber-darker counsel use-package)))
 (custom-set-faces
@@ -445,4 +537,3 @@
 (provide 'init)
 
 ;;; init.el ends here
-(put 'narrow-to-region 'disabled nil)

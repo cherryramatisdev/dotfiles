@@ -2,9 +2,18 @@
 
 * History
    The Pair Programming origin is uncertain. According to the [[https://www.agilealliance.org/glossary/pairing/][Agile Alliance]], it dates back to the "Dynamic Duo" concept observed by Larry Constantine in 1992 and is a term highly defended and shared by agile developers over the years.
-* Ways to do it
+* How to do wrong
+  Pair programming it’s a wonderful tool to produce code with quality and deliver fast, but it’s easy to mess things up
+
+  1. Force pair programming on every task and for every co-worker
+  2. When turning on a pair programming session, provide the solution without asking or encouraging a discussion
+  3. Try to be better than your partner
+* How to do right
 * Jedi and Padawan
   Jedi and padawan mean a turn-based pair programming routine, it’s usually marked by a Pomodoro clock to rotate the turns, one developer is the Jedi that must watch padawan write code and stimulate questions, never pass a solution straight away because it might create a relation of dependence, when the clock ticks, both programmers switch roles and continue the development until the feature is finished.
+#+DOWNLOADED: screenshot @ 2021-11-23 12:18:41
+[[file:Jedi_and_Padawan/2021-11-23_12-18-41_screenshot.png]]
+
 * Ping Pong
   This routine is backed up by TDD(Test Driven Development) and it’s another kind of turn-based programming but this one won't have a watcher/coder relation, these steps are simple:
 
@@ -15,11 +24,11 @@
   - Developer B writes the next failing test and the circle repeats
 
   This routine is always backed by refactoring the code together and constantly “pinging” the other developer to write better code.
+#+DOWNLOADED: screenshot @ 2021-11-23 12:21:35
+[[file:Ping_Pong/2021-11-23_12-21-35_screenshot.png]]
+
 * Jedi and Jedi
   This routine is something new Microsoft gave us, it’s not explicitly written on any book but it’s also pretty simple, consisting of both developers with a shared session on VSCode Live Share writing the same code with real-time interaction, it’s important to keep the focus while doing this routine
-* How to do wrong
-  Pair programming it’s a wonderful tool to produce code with quality and deliver fast, but it’s easy to mess things up
+#+DOWNLOADED: screenshot @ 2021-11-23 12:21:02
+[[file:Jedi_and_Jedi/2021-11-23_12-21-02_screenshot.png]]
 
-  1. Force pair programming on every task and for every co-worker
-  2. When turning on a pair programming session, provide the solution without asking or encouraging a discussion
-  3. Try to be better than your partner

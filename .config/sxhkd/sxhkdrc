@@ -14,8 +14,8 @@ super + r
 	pkill -USR1 -x sxhkd
 
 # launch stuff
-super + o ; {b, c, q, t}
-      {brave, google-chrome-stable, qutebrowser, inkdrop}
+super + o ; {b, c, q, t, e}
+      {brave, google-chrome-stable, qutebrowser, inkdrop, emacs}
 
 # download music from youtube
 alt + y

@@ -24,6 +24,7 @@ alias pupdate="sudo pacman -Syuu"
 alias anime="ani-cli"
 alias piperun="act -j"
 alias depupdate="yarn upgrade-interactive --latest"
+alias postgresup="docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres"
 
 fish_add_path "$HOME/.npm-global/bin"
 fish_add_path "$HOME/bin"
