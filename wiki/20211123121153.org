@@ -5,3 +5,5 @@
 ** DONE Write documentation about tech coffee
 ** DONE [[https://lamimed.atlassian.net/browse/TEC-303][TEC-303]] Finish delete routes for location, category and product
 ** TODO [[https://lamimed.atlassian.net/browse/TEC-201][TEC-201]] Finish CORS error in production for internal API calls.
+    - [X] It's only needed to test the upload localhost now, ask Gui or Harri how to make this upload test.
+    - [ ] Test on development.

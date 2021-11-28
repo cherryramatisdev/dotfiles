@@ -1,5 +1,0 @@
-vim.cmd [[ map <buffer> l <cr>]]
-vim.cmd [[ map <buffer> h <Plug>(dirvish_up)]]
-vim.cmd [[ map <buffer> a :lua create_file()<cr>]]
-vim.cmd [[ map <buffer> A :lua create_directory()<cr>]]
-vim.cmd [[ map <buffer> dd :lua remove_target()<CR>]]

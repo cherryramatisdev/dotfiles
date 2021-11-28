@@ -8,8 +8,7 @@ alias ....="cd ../../.."
 alias tmux="tmux -2"
 alias t="tmux new-session -A -s main"
 alias e="emacsclient -t"
-alias v="/usr/bin/vim"
-alias vim="nvim"
+alias v="vim"
 alias n="nvim"
 alias dev="yarn start:dev"
 alias ytdownload="youtube-dl -f 249"
@@ -22,7 +21,6 @@ alias pgrep="sudo pacman -Qe | grep"
 alias plist="sudo pacman -Qe"
 alias pupdate="sudo pacman -Syuu"
 alias anime="ani-cli"
-alias piperun="act -j"
 alias depupdate="yarn upgrade-interactive --latest"
 alias postgresup="docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres"
 
@@ -36,13 +34,8 @@ status --is-interactive; and source (rbenv init -|psub)
 
 fish_add_path "/var/lib/snapd/snap/bin"
 
-if type -q nvim
-set -gx EDITOR nvim
-set -gx PAGER nvim
-set -gx VISUAL nvim
-set -gx MANPAGER "nvim +Man! -c ':set signcolumn='"
-alias vimdiff="nvim -d"
-end
+set -gx BROWSER brave
+set -gx EDITOR vim
 
 set -gx _ZL_CD cd
 

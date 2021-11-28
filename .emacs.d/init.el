@@ -37,7 +37,7 @@
 (setq auto-save-default nil)
 
 ;; Setup font
-(add-to-list 'default-frame-alist '(font . "JetBrainsMono-14"))
+(add-to-list 'default-frame-alist '(font . "JetBrainsMono-17"))
 
 ;; Appearance
 (menu-bar-mode 0)
@@ -97,22 +97,25 @@
   (marginalia-mode))
 
 ;; Theme
-(use-package gruber-darker-theme
+(use-package color-theme-sanityinc-tomorrow
   :straight t
   :init
-  (load-theme 'gruber-darker t))
+  (load-theme 'sanityinc-tomorrow-night t))
 
 ;; modeline
 (use-package doom-modeline
   :straight t
   :init (doom-modeline-mode 1))
 
+;; display current time on modeline
+(display-time-mode 1)
+
 ;; Show paren mode.
 (show-paren-mode t)
-(setq-default show-paren-style 'expression)
+;; (setq-default show-paren-style 'expression)
 (use-package paren :straight t)
-(set-face-background 'show-paren-match (face-background 'default))
-(set-face-attribute 'show-paren-match nil :weight 'extra-bold)
+;; (set-face-background 'show-paren-match (face-background 'default))
+;; (set-face-attribute 'show-paren-match nil :weight 'extra-bold)
 
 ;; saves the buffer/split configuration, makes it un/re-doable.
 (winner-mode 1)
@@ -390,24 +393,39 @@ Calling it a second time will copy the current line."
   (setq web-mode-enable-auto-pairing t)
   (setq web-mode-enable-css-colorization t))
 
+(use-package emmet-mode
+  :straight t
+  :hook ((web-mode . emmet-mode)))
+
 (use-package typescript-mode
   :straight t)
+
+;; LSP
+(use-package lsp-mode
+  :straight t
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  :bind (:map lsp-mode-map
+              ("M-RET" . lsp-code-actions))
+  :hook ((rust-mode . lsp)))
 
 (defun setup-tide-mode ()
   "Setup tide mode."
   (interactive)
   (tide-setup)
   (flycheck-mode +1)
+  (emmet-mode)
   (eldoc-mode +1)
   (tide-hl-identifier-mode +1)
-  (prettier-js-mode))
+  (prettier-js-mode)
+  (define-key tide-mode-map (kbd "M-RET") 'tide-fix))
 
 (use-package tide
   :straight t
   :hook ((web-mode . setup-tide-mode)
          (typescript-mode . setup-tide-mode))
   :config
-  (define-key typescript-mode-map (kbd "M-RET") 'tide-fix))
+  (add-to-list 'emmet-jsx-major-modes 'web-mode))
 
 ;; styled-components
 (use-package ov
@@ -420,6 +438,14 @@ Calling it a second time will copy the current line."
   :straight (styled :type git :host github :repo "LaloHao/emacs-styled-components")
   :config
   (define-key typescript-mode-map (kbd "C-c '") 'fence-edit-code-at-point))
+
+;; rust
+(use-package rustic
+  :straight t)
+
+(use-package rust-mode
+  :after (rustic)
+  :straight t)
 
 ;; projectile
 (use-package projectile
@@ -502,6 +528,16 @@ Calling it a second time will copy the current line."
                  (org-remove-inline-images)
                  (org-present-show-cursor)
                  (org-present-read-write))))))
+
+(defun cherry/open-agenda-todos ()
+  "Open agenda todos."
+  (interactive)
+  (org-agenda nil "t"))
+
+(setq org-agenda-files '("~/projects/dotfiles/wiki/"))
+
+(global-set-key (kbd "C-c a") 'cherry/open-agenda-todos)
+(global-set-key (kbd "C-c A") 'org-agenda)
 
 (use-package org-beautify-theme
   :straight t

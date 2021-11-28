@@ -1,1 +1,1 @@
-("~/projects/dotfiles/" "~/projects/work/exams/" "~/projects/work/website/" "~/projects/personal/morganakeller/")
+("~/projects/work/website/" "~/projects/work/pantheon/" "~/projects/dotfiles/" "~/projects/work/exams/" "~/projects/work/my-app/" "~/projects/personal/secondbrain-backend/" "~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/" "~/projects/personal/morganakeller/")

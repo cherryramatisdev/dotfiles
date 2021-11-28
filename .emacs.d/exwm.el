@@ -1,3 +1,6 @@
+(defun cherry/exwm-update-class ()
+  (exwm-workspace-rename-buffer exwm-class-name))
+
 (use-package exwm
   :straight t
   :config
@@ -18,8 +21,17 @@
   (setq mouse-autoselect-window t
         focus-follows-mouse t)
 
+  ;; Display all EXWM buffers from every workspace
+  (setq exwm-workspace-show-all-buffers t)
+
   ;; Set the default number of workspaces
   (setq exwm-workspace-number 9)
+
+  (setq display-time-day-and-date t)
+  (display-time-mode 1)
+
+  ;; When window "class" updates, use it to set the buffer name
+  (add-hook 'exwm-update-class-hook #'cherry/exwm-update-class)
 
   ;; These keys should always pass through to Emacs
   (setq exwm-input-prefix-keys
@@ -48,10 +60,18 @@
           ([?\s-k] . windmove-up)
           ([?\s-j] . windmove-down)
 
+          ([?\s-H] . windmove-swap-states-left)
+          ([?\s-L] . windmove-swap-states-right)
+          ([?\s-K] . windmove-swap-states-up)
+          ([?\s-J] . windmove-swap-states-down)
+
+          ([?\C-\s-h] . enlarge-window-horizontally)
+          ([?\C-\s-l] . shrink-window-horizontally)
+
           ;; Launch applications via shell command
-          ([?\s- ] . (lambda (command)
-                       (interactive (list (read-shell-command "$ ")))
-                       (start-process-shell-command command nil command)))
+          ;; ([?\s- ] . (lambda (command)
+          ;;              (interactive (list (read-shell-command "$ ")))
+          ;;              (start-process-shell-command command nil command)))
 
           ;; Switch workspace
           ([?\s-w] . exwm-workspace-switch)
