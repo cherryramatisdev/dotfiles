@@ -44,6 +44,8 @@ Plug 'mattn/emmet-vim'
 
 Plug 'xiyaowong/nvim-transparent'
 
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
 call plug#end()
 
 set background=dark

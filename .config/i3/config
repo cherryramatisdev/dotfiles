@@ -31,7 +31,7 @@ exec --no-startup-id mpd &
 exec --no-startup-id flameshot &
 
 # Set background
-exec --no-startup-id feh --bg-fill ~/wallpapers/dusk-in-pixels.jpg &
+exec --no-startup-id feh --randomize --bg-fill ~/wallpapers/
 
 # Disable window title bar
 default_border pixel 3
@@ -69,6 +69,9 @@ bindsym $mod+Shift+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+
+# turn into floating
+bindsym $mod+Shift+Space floating toggle
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.

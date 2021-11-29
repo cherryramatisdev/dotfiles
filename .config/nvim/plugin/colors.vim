@@ -28,3 +28,5 @@ fun! ColorMyPencils()
 endfun
 
 call ColorMyPencils()
+
+nnoremap <leader>cmp :call ColorMyPencils()<CR>
