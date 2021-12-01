@@ -17,6 +17,7 @@ set showfulltag
 set incsearch
 set novisualbell
 set noerrorbells
+" set shortmess=at
 
 " tab width
 set tabstop=2

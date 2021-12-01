@@ -6,5 +6,3 @@ vnoremap < <gv
 
 nnoremap <Down> :cnext<cr>
 nnoremap <Up> :cprev<cr>
-
-nnoremap <leader>e :Ex<cr>

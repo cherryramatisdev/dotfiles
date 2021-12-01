@@ -36,6 +36,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
@@ -46,10 +47,17 @@ Plug 'xiyaowong/nvim-transparent'
 
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+
+Plug 'lewis6991/impatient.nvim'
+
 call plug#end()
 
 set background=dark
 colorscheme gruvbox
+
+lua require('impatient')
 
 " Lua stuff
 lua require('lsp')
@@ -59,3 +67,12 @@ augroup formatters
     autocmd BufWritePre * Neoformat
     autocmd BufWritePre * %s/\s\+$//e
 augroup END
+
+let g:coq_settings = {
+      \ 'clients': {
+        \ 'lsp': {'enabled': v:true},
+        \ 'tree_sitter': {'enabled': v:false},
+        \ }
+      \ }
+
+" execute "COQnow"

@@ -27,12 +27,15 @@ alias postgresup="docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=p
 fish_add_path "$HOME/.npm-global/bin"
 fish_add_path "$HOME/bin"
 fish_add_path "$HOME/go/bin"
-fish_add_path "$HOME/.rbenv/bin"
 fish_add_path "$HOME/.cargo/bin"
-fish_add_path "$HOME/.nix-profile/bin"
-status --is-interactive; and source (rbenv init -|psub)
+fish_add_path "$HOME/.local/bin"
 
-fish_add_path "/var/lib/snapd/snap/bin"
+fish_add_path /var/lib/snapd/snap/bin
+
+set gem_home (ruby -e 'puts Gem.user_dir')
+
+set -gx GEM_HOME $gem_home
+fish_add_path "$GEM_HOME/bin"
 
 set -gx BROWSER brave
 set -gx EDITOR vim
@@ -40,5 +43,6 @@ set -gx EDITOR vim
 set -gx _ZL_CD cd
 
 set -gx fish_greeting ""
-set -gx BROWSER "brave"
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/cherry/.ghcup/bin $PATH # ghcup-env
+set -gx BROWSER brave
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
+set -gx PATH $HOME/.cabal/bin /home/cherry/.ghcup/bin $PATH # ghcup-env

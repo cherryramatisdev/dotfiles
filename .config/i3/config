@@ -2,15 +2,16 @@ set $mod Mod4
 set $alt Mod1
 
 for_window [class=".*"] border pixel 3
-gaps inner 10
-gaps outer 1
-smart_gaps on
+# gaps inner 10
+# gaps outer 1
+# smart_gaps on
 
 font pango:DejaVu Sans Mono 10
 
 exec --no-startup-id sxhkd
 
-exec --no-startup-id picom
+# exec --no-startup-id picom
+exec --no-startup-id compton
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
@@ -184,21 +185,7 @@ client.background       $black
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  status_command LC_ALL=C /home/cherry/.nix-profile/bin/i3status
+  status_command i3status
   position top
-  height 25
-  font pango:DejaVu Sans Mono 14
-
-  colors {
-    background $black
-    statusline $hard_black
-    separator  $black
-
-    # Colors           border        background   text
-    focused_workspace  $bright_black $xgray3      $yellow
-    active_workspace   $xgray3       $xgray3      $bright_black
-    inactive_workspace $xgray3       $xgray1      $bright_black
-    urgent_workspace   $red          $red         $black
-    binding_mode       $magenta      $magenta     $bright_white
-  }
+  font pango:JetBrains Mono 14
 }

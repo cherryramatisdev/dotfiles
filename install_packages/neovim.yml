@@ -1,0 +1,13 @@
+- name: removeneovim
+  shell: rm -rf /home/cherry/package/neovim/
+- name: cloneneovim
+  ansible.builtin.git:
+    repo: "https://github.com/neovim/neovim.git"
+    dest: "/home/cherry/package/neovim"
+- name: buildneovim
+  shell: "cd /home/cherry/package/neovim && make -j 20"
+- name: installneovim
+  become: true
+  shell: "cd /home/cherry/package/neovim && make install"
+- name: vimplug
+  shell: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

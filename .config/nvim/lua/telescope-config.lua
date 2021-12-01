@@ -4,6 +4,19 @@ local actions = require("telescope.actions")
 
 require("telescope").setup({
 	defaults = {
+		vimgrep_arguments = {
+			"rg",
+			"--color=never",
+			"--no-heading",
+			"--with-filename",
+			"--line-number",
+			"--column",
+			"--smart-case",
+			"--hidden",
+			"--follow",
+			"-g",
+			"!.git/",
+		},
 		prompt_prefix = " >",
 		color_devicons = true,
 		mappings = {
@@ -19,6 +32,9 @@ require("telescope").setup({
 		fzy_native = {
 			override_generic_sorter = false,
 			override_file_sorter = true,
+		},
+		file_browser = {
+			theme = "ivy",
 		},
 	},
 })
@@ -81,6 +97,14 @@ function M:anime_selector()
 
 			return true
 		end,
+	})
+end
+
+function M:find_dotfiles()
+	require("telescope.builtin").find_files({
+		prompt_title = "< Dotfiles >",
+		cwd = "~/projects/dotfiles",
+		hidden = true,
 	})
 end
 
