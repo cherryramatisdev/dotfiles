@@ -30,8 +30,6 @@
       - i3status
       - i3lock-color
       - sxhkd
-      - nodejs
-      - npm
       - visual-studio-code-bin
       - google-chrome
       - dbeaver
@@ -40,3 +38,4 @@
       - ttf-jetbrains-mono
       - ruby
       - picom
+      - emacs

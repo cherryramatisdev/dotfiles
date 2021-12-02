@@ -1,13 +1,13 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/cherry/projects/dotfiles
+- /home/cherry/projects/work/exams
+- /home/cherry/projects/work/bff-professionals
+- /home/cherry/projects/work/api-prescriptions
 - /home/cherry/projects/work/website
 - /home/cherry/projects/personal/secondbrain-backend
 - /home/cherry/projects/work/pantheon
-- /home/cherry/projects/work/exams
-- /home/cherry/projects/work/bff-professionals
 - /home/cherry/projects/work/amazon-ecs-create-custom-service
-- /home/cherry/projects/work/api-prescriptions
 - /home/cherry/projects/personal/morganakeller
 - /home/cherry/projects/personal/cherrydwm
 - /home/cherry/projects/personal/workoutapp/backend
@@ -18,4 +18,5 @@ recentrepos:
 startuppopupversion: 5
 customcommandshistory:
 - git rebase master
+- git ps --no-verify
 hidecommandlog: false
