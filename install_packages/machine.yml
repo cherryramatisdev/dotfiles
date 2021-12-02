@@ -1,4 +1,4 @@
 - hosts: localhost
   tasks:
-    - include: package.yml
+    - include: debian.yml
     - include: neovim.yml
