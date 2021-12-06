@@ -108,4 +108,11 @@ function M:find_dotfiles()
 	})
 end
 
+function M:find_notes()
+  require('telescope.builtin').find_files({
+    prompt_title = "< Notes >",
+    cwd = "~/vimwiki/"
+  })
+end
+
 return M

@@ -4,28 +4,26 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
+Plug 'tami5/lspsaga.nvim'
 
-Plug 'junegunn/vim-easy-align'
-
-Plug 'gruvbox-community/gruvbox'
+Plug 'folke/lsp-colors.nvim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 Plug 'vim-scripts/ReplaceWithRegister'
 
-Plug 'tpope/vim-commentary'
+Plug 'numToStr/Comment.nvim'
+
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-rsi'
 
-Plug 'jiangmiao/auto-pairs'
-Plug 'vimwiki/vimwiki'
+Plug 'windwp/nvim-autopairs'
 
-Plug 'cespare/vim-toml'
-Plug 'rust-lang/rust.vim'
+Plug 'vimwiki/vimwiki'
 
 Plug 'sbdchd/neoformat'
 
@@ -43,23 +41,36 @@ Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 Plug 'mattn/emmet-vim'
 
-Plug 'xiyaowong/nvim-transparent'
-
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-
 Plug 'lewis6991/impatient.nvim'
+
+Plug 'ggandor/lightspeed.nvim'
 
 call plug#end()
 
-set background=dark
-colorscheme gruvbox
+let g:tokyonight_style = "night"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_sidebars = ["qf", "terminal"]
 
+" Change the "hint" color to the "orange" color, and make the "error" color bright red
+let g:tokyonight_colors = {
+  \ 'hint': 'orange',
+  \ 'error': '#ff0000'
+\ }
+
+" Load the colorscheme
+colorscheme tokyonight
+
+" Lua deps
 lua require('impatient')
+lua << EOF
+require('nvim-autopairs').setup({
+  disable_filetype = { "TelescopePrompt" },
+  map_cr = true
+})
+EOF
+lua require('Comment').setup()
 
-" Lua stuff
+" My lua stuff
 lua require('lsp')
 
 augroup formatters
@@ -67,12 +78,3 @@ augroup formatters
     autocmd BufWritePre * Neoformat
     autocmd BufWritePre * %s/\s\+$//e
 augroup END
-
-let g:coq_settings = {
-      \ 'clients': {
-        \ 'lsp': {'enabled': v:true},
-        \ 'tree_sitter': {'enabled': v:false},
-        \ }
-      \ }
-
-" execute "COQnow"

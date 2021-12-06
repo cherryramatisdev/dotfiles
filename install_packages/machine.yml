@@ -1,4 +1,6 @@
 - hosts: localhost
   tasks:
-    - include: debian.yml
+    - include: arch.yml
     - include: neovim.yml
+    # - include: keyboard.yml
+    - include: dmenu.yml

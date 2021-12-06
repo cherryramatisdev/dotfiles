@@ -1,41 +1,42 @@
 - name: arch
   become: true
   become_user: root
-  pacman:
-    state: present
-    name:
-      - jre-openjdk
-      - fzf
-      - bat
-      - exa
-      - stow
-      - lazygit
-      - polybar
-      - xclip
-      - brave-bin
-      - pavucontrol
-      - flameshot
-      - tmux
-      - lua
-      - elinks
-      - kitty
-      - dunst
-      - mpd
-      - mpv
-      - mpc
-      - ncmpcpp
-      - fish
-      - github-cli
-      - i3-gaps
-      - i3status
-      - i3lock-color
-      - sxhkd
-      - visual-studio-code-bin
-      - google-chrome
-      - dbeaver
-      - go
-      - python
-      - ttf-jetbrains-mono
-      - ruby
-      - picom
-      - emacs
+  shell: |
+    yay -S --noconfirm jre-openjdk
+    pacman -S --noconfirm base-devel cmake unzip ninja tree-sitter curl
+    yay -S --noconfirm jre-openjdk
+    yay -S --noconfirm feh
+    yay -S --noconfirm fzf
+    yay -S --noconfirm bat
+    yay -S --noconfirm exa
+    yay -S --noconfirm stow
+    yay -S --noconfirm lazygit
+    yay -S --noconfirm polybar
+    yay -S --noconfirm xclip
+    yay -S --noconfirm brave-bin
+    yay -S --noconfirm pavucontrol
+    yay -S --noconfirm flameshot
+    yay -S --noconfirm tmux
+    yay -S --noconfirm lua
+    yay -S --noconfirm elinks
+    yay -S --noconfirm kitty
+    yay -S --noconfirm dunst
+    yay -S --noconfirm mpd
+    yay -S --noconfirm mpv
+    yay -S --noconfirm mpc
+    yay -S --noconfirm ncmpcpp
+    yay -S --noconfirm fish
+    yay -S --noconfirm github-cli
+    yay -S --noconfirm i3-gaps
+    yay -S --noconfirm i3status
+    yay -S --noconfirm i3lock-color
+    yay -S --noconfirm sxhkd
+    yay -S --noconfirm visual-studio-code-bin
+    yay -S --noconfirm google-chrome
+    yay -S --noconfirm dbeaver
+    yay -S --noconfirm go
+    yay -S --noconfirm python
+    yay -S --noconfirm ttf-jetbrains-mono
+    yay -S --noconfirm ruby
+    yay -S --noconfirm picom
+    yay -S --noconfirm emacs

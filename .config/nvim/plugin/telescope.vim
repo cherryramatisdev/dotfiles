@@ -9,4 +9,5 @@ nnoremap <leader>pb :Telescope buffers theme=ivy<cr>
 nnoremap <leader>gc :Telescope git_branches theme=ivy<cr>
 nnoremap <leader>va :lua require('telescope-config').anime_selector()<CR>
 nnoremap <leader>vrc :lua require('telescope-config').find_dotfiles()<CR>
+nnoremap <leader>pt :lua require('telescope-config').find_notes()<CR>
 nnoremap <leader>e :lua require'telescope'.extensions.file_browser.file_browser()<CR>

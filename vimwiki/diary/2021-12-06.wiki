@@ -1,0 +1,12 @@
+= Work tasks =
+
+== In review ==
+
+* [X] [[https://lamimed.atlassian.net/browse/TEC-344]] Contracts and mocks for
+      signin/signup
+* [X] [[https://lamimed.atlassian.net/browse/TEC-345]] Contracts and mocks for
+      search
+* [X] [[https://lamimed.atlassian.net/browse/TEC-346]] Contracts and mocks for
+      schedulling
+* [X] [[https://lamimed.atlassian.net/browse/TEC-321]] Create user module with
+      simple crud
