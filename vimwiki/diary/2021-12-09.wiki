@@ -1,0 +1,8 @@
+= Work tasks =
+
+* [X] Finish data contracts for new schedule feature ([[https://lamimed.atlassian.net/browse/TEC-344|344]], [[https://lamimed.atlassian.net/browse/TEC-345|345]], [[https://lamimed.atlassian.net/browse/TEC-346|346]])
+* [X] Setup new repository to deal with our new attendance service([[https://lamimed.atlassian.net/browse/TEC-348|348]], [[https://lamimed.atlassian.net/browse/TEC-349|349]])
+* [X] Create user module that handles creating and getting user by id([[https://lamimed.atlassian.net/browse/TEC-321|321]])
+* [o] [[https://lamimed.atlassian.net/wiki/spaces/TEC/pages/158662657/Tech+Documentation|Create]] documentation about git workflow(branch naming pattern and commit messages pattern)
+    * [X] Create first header about branch naming pattern
+    * [ ] Create second header defining git commit pattern

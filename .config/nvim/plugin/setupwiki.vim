@@ -11,7 +11,7 @@ function! InsertJiraLink()
   let s:code = input('Jira Code: ')
 
   if s:code != ''
-    let s:jira_link = '[[https://lamimed.atlassian.net/browse/TEC-' . s:code . ']]'
+    let s:jira_link = '[[https://lamimed.atlassian.net/browse/TEC-' . s:code . '|' . s:code . ']]'
     let line = getline('.')
     let pos = col('.')-1 " IIRC
     let line = line[:pos-1] . s:jira_link . line[pos:]
@@ -21,6 +21,7 @@ endfunction
 
 augroup vimwiki_config
   autocmd!
+  autocmd FileType vimwiki set nowrap
   autocmd FileType vimwiki nmap <buffer> <leader>wx :VimwikiToggleListItem<CR>
   autocmd FileType vimwiki nmap <buffer> gx :call HandleURL()<cr>
   autocmd FileType vimwiki nmap <buffer> gi :call InsertJiraLink()<cr>

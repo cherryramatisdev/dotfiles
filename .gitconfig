@@ -22,3 +22,5 @@
 	email = cherry.ramatis@lamimed.it
 [github]
 	user = cherryramatisdev
+[init]
+	defaultBranch = main

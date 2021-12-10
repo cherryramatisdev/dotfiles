@@ -21,7 +21,6 @@ require("telescope").setup({
 		color_devicons = true,
 		mappings = {
 			i = {
-				["<Esc>"] = actions.close,
 				["<C-s>"] = actions.select_horizontal,
 				["<C-v>"] = actions.select_vertical,
 				["<C-q>"] = actions.send_to_qflist,
@@ -29,17 +28,19 @@ require("telescope").setup({
 		},
 	},
 	extensions = {
-		fzy_native = {
-			override_generic_sorter = false,
-			override_file_sorter = true,
-		},
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case"
+    },
 		file_browser = {
 			theme = "ivy",
 		},
 	},
 })
 
-require("telescope").load_extension("fzy_native")
+require("telescope").load_extension("fzf")
 
 function M:anime_selector()
 	require("telescope.builtin").find_files({

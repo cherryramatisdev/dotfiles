@@ -7,9 +7,6 @@ nnoremap Y y$
 vnoremap > >gv
 vnoremap < <gv
 
-nnoremap <Down> :cnext<cr>
-nnoremap <Up> :cprev<cr>
-
 nnoremap <leader>tr :Dispatch y test %<cr>
 nnoremap <leader>ta :Dispatch y test<cr>
 nnoremap <leader>te :Dispatch y test:e2e<cr>
@@ -19,3 +16,8 @@ inoremap <C-k> <C-p>
 
 nnoremap <C-j> :cnext<cr>
 nnoremap <C-k> :cprev<cr>
+
+nnoremap <Up> <C-w>+
+nnoremap <Down> <C-w>-
+nnoremap <Right> <C-w>>
+nnoremap <Left> <C-w><

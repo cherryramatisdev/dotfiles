@@ -46,8 +46,8 @@ super + m
     kitty -e ncmpcpp
 
 # open pavucontrol
-super + v
-    pavucontrol
+# super + v
+#     pavucontrol
 
 # print
 Print
