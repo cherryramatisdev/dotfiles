@@ -1,0 +1,12 @@
+= Work tasks =
+
+* [X] [[https://lamimed.atlassian.net/browse/TEC-361|361]] Finish list appointments route
+  * [X] Finish pagination
+* [ ] [[https://lamimed.atlassian.net/browse/TEC-318|318]] Finish this text toggler component
+* [.] [[https://lamimed.atlassian.net/browse/TEC-354|354]] Create list professional service
+  * [X] Define an professionals module with list-professionals use-case
+  * [ ] Create an interface that receives the filters and return the
+        professionals with availabilities(check on data contract)
+  * [ ] Create private method that just return the observables from tuotempo
+  * [ ] On the execute public method, manipulate the tuotempo return and return
+        an proper object following our data contract.

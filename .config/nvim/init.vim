@@ -6,8 +6,10 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'tami5/lspsaga.nvim'
 
+Plug 'elixir-editors/vim-elixir'
+
 Plug 'folke/lsp-colors.nvim'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'gruvbox-community/gruvbox'
 
 Plug 'vim-scripts/ReplaceWithRegister'
 
@@ -20,6 +22,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-endwise'
 
 Plug 'windwp/nvim-autopairs'
 
@@ -36,29 +39,16 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'JoosepAlviste/nvim-ts-context-commentstring'
-
 Plug 'mattn/emmet-vim'
-
 Plug 'lewis6991/impatient.nvim'
 
-Plug 'ggandor/lightspeed.nvim'
+Plug 'joukevandermaas/vim-ember-hbs'
 
 call plug#end()
 
-let g:tokyonight_style = "night"
-let g:tokyonight_italic_functions = 1
-let g:tokyonight_sidebars = ["qf", "terminal"]
-
-" Change the "hint" color to the "orange" color, and make the "error" color bright red
-let g:tokyonight_colors = {
-  \ 'hint': 'orange',
-  \ 'error': '#ff0000'
-\ }
-
 " Load the colorscheme
-colorscheme tokyonight
+set background=dark
+colorscheme gruvbox
 
 " Lua deps
 lua require('impatient')
@@ -69,9 +59,6 @@ require('nvim-autopairs').setup({
 })
 EOF
 lua require('Comment').setup()
-
-" My lua stuff
-lua require('lsp')
 
 augroup formatters
     autocmd!

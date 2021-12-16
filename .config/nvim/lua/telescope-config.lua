@@ -42,6 +42,16 @@ require("telescope").setup({
 
 require("telescope").load_extension("fzf")
 
+function M.project_search()
+  require('telescope.builtin').git_files {
+    previewer = false,
+    shorten_path = true,
+    hidden = true,
+    layout_strategy = "horizontal",
+    cwd = require('lspconfig.util').root_pattern(".git")(vim.fn.expand("%:p")),
+  }
+end
+
 function M:anime_selector()
 	require("telescope.builtin").find_files({
 		prompt_title = "< Anime wallpapers >",

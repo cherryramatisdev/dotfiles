@@ -1,0 +1,8 @@
+= Work Tasks =
+
+* [X] [[https://lamimed.atlassian.net/browse/TEC-357|357]] Create an card that blocks sign in and sign up tasks
+      This card basically describe we need to create an shared service that
+      authenticate on tuotempo with our instance credentials. (I finished)
+* [X] [[https://lamimed.atlassian.net/browse/TEC-361|361]] Help victor to detail backend card
+* [X] [[https://lamimed.atlassian.net/browse/TEC-319|319]] Finish sign in route
+* [X] Update dependencies

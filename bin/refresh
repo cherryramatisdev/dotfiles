@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+
+ln -sf ~/projects/work/* ~/git
+ln -sf ~/projects/personal/* ~/git

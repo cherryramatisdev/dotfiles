@@ -22,9 +22,4 @@ endfunction
 augroup vimwiki_config
   autocmd!
   autocmd FileType vimwiki set nowrap
-  autocmd FileType vimwiki nmap <buffer> <leader>wx :VimwikiToggleListItem<CR>
-  autocmd FileType vimwiki nmap <buffer> gx :call HandleURL()<cr>
-  autocmd FileType vimwiki nmap <buffer> gi :call InsertJiraLink()<cr>
-  autocmd FileType vimwiki nmap <buffer> <C-j> ddp
-  autocmd FileType vimwiki nmap <buffer> <C-k> ddP
 augroup END

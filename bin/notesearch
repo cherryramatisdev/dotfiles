@@ -1,0 +1,3 @@
+#!/usr/bin/sh
+
+nvim "+lua require('telescope-config').find_notes()"

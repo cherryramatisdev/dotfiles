@@ -1,2 +1,4 @@
 * [[Personal_Knowledge]]
 * [[(Neo)Vim stuff]]
+* [[Project Ideas]]
+* [[UseCases]]

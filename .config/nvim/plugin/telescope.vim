@@ -1,7 +1,7 @@
 lua require('telescope-config')
 
 nnoremap <leader>ps :lua require('telescope.builtin').grep_string(require('telescope.themes').get_ivy({ search = vim.fn.input("Grep For > ") }))<CR>
-nnoremap <C-p> :Telescope git_files theme=ivy<cr>
+nnoremap <C-p> :lua require('telescope-config').project_search()<CR>
 nnoremap <leader>pf :Telescope find_files theme=ivy<cr>
 
 nnoremap <leader>pw :lua require('telescope.builtin').grep_string(require('telescope.themes').get_ivy({ search = vim.fn.expand("<cword>") }))<CR>

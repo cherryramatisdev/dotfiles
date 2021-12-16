@@ -1,8 +1,5 @@
 nnoremap <C-w>Q :wqall<cr>
 
-" Why this is not default ?
-nnoremap Y y$
-
 " Indent easily
 vnoremap > >gv
 vnoremap < <gv

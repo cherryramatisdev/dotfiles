@@ -1,0 +1,14 @@
+= Work tasks =
+
+* [X] Finish documentation about git workflow [[https://lamimed.atlassian.net/wiki/spaces/TEC/pages/183140353/Git+workflow|Git Workflow]]
+* [X] [[https://lamimed.atlassian.net/browse/TEC-361|361]] Get availabilities to use on our calendar
+  * [X] Define interface with type returning an observable containing an array
+        of availability
+  * [X] Create an private method that do the tuotempo request and return, just
+        that
+  * [X] Loop through array of tuotempo and create "formatted" fields with date
+        formatted, and return this array as an observable.
+  * [X] Make service unit test to this
+* [X] Finish github tech documentation: [[https://lamimed.atlassian.net/wiki/spaces/TEC/pages/183140353/Git+workflow|Git workflow]]
+    Reference: https://cbea.ms/git-commit/
+* [X] [[https://lamimed.atlassian.net/browse/TEC-363|363]] Add OPS email to Email Helper on bff professionals

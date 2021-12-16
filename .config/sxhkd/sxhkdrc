@@ -42,8 +42,8 @@ super + p
     passmenu
 
 # open music player
-super + m
-    kitty -e ncmpcpp
+# super + m
+#     kitty -e ncmpcpp
 
 # open pavucontrol
 # super + v
