@@ -1,6 +1,0 @@
-{
-  "https://lamimed.atlassian.net": {
-    "username": "cherry.ramatis@lamimed.it",
-    "password_cmd": "pass show jira"
-  }
-}

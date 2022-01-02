@@ -1,9 +1,7 @@
-sw_volume: 70
+sw_volume: 100
 audio_device_state:1:My PULSE Device
 audio_device_state:1:toggle_visualizer
-state: play
-current: 33
-time: 5.999000
+state: stop
 random: 0
 repeat: 1
 single: 0
@@ -12,38 +10,4 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Marilia Mendonca/melhor sozinha.mp3
-1:Bin/Marilia-Mendonca.mp3
-2:Dalsin/Parabellum.mp3
-3:DK47/Sem final Feliz.mp3
-4:DK47/Sem Memória.mp3
-5:Eminem/Cleanin' Out My Closet.mp3
-6:Eminem/Lose Yourself.mp3
-7:Eminem/Mockingbird.mp3
-8:Eminem/Stan.mp3
-9:Eminem/The Monster.mp3
-10:Eminem/When I'm Gone.mp3
-11:Lukas Graham/7 years.mp3
-12:Lukas Graham/Better than yourself.mp3
-13:Lukas Graham/Mama said.mp3
-14:Racionais/Da Ponte Pra Cá.mp3
-15:Racionais/Jesus Chorou.mp3
-16:Racionais/Vida loka pt1.mp3
-17:Racionais/Vida loka pt2.mp3
-18:Sant/5am pt. Costa Gold.mp3
-19:Sant/Adidas & nike.mp3
-20:Sant/Aql slv pt. SD9, VND, Tiago Mac.mp3
-21:Sant/Bônus.mp3
-22:Sant/Desconstrução.mp3
-23:Sant/Do falcão.mp3
-24:Sant/Gestão.mp3
-25:Sant/Intro.mp3
-26:Sant/Íris pt. MC Cidinho.mp3
-27:Sant/Outro.mp3
-28:Sant/Pertence ao crime.mp3
-29:Sant/Prantos.mp3
-30:Sant/Puxa o gatilho primeiro.mp3
-31:Sant/Skit i pt. DJ Erik Skratch.mp3
-32:Sant/Skit ii.mp3
-33:MajorRD/60K.mp3
 playlist_end

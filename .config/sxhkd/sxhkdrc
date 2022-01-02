@@ -3,7 +3,7 @@
 
 # terminal emulator
 super + Return
-	kitty
+	alacritty
 
 # program launcher
 super + @space
@@ -19,7 +19,7 @@ super + o ; {b, c, q, t, e}
 
 # download music from youtube
 alt + y
-    kitty -e /home/cherry/bin/ytdownload
+    alacritty -e /home/cherry/bin/ytdownload
 
 # open video from youtube
 super + alt + y
@@ -31,7 +31,7 @@ super + y
 
 # open youtube finder on terminal
 super + shift + y
-    kitty -e ytfzf -tN
+    alacritty -e ytfzf -tN
 
 # switch language
 super + F1
@@ -43,7 +43,7 @@ super + p
 
 # open music player
 # super + m
-#     kitty -e ncmpcpp
+#     alacritty -e ncmpcpp
 
 # open pavucontrol
 # super + v

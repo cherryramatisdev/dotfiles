@@ -23,6 +23,8 @@ alias pupdate="sudo pacman -Syuu"
 alias anime="ani-cli"
 alias depupdate="yarn upgrade-interactive --latest"
 alias postgresup="docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e TZ=America/Sao_Paulo -d postgres"
+alias asdf="setxkbmap -layout us -variant dvorak"
+alias aoeu="setxkbmap -layout us"
 
 fish_add_path "$HOME/.npm-global/bin"
 fish_add_path "$HOME/bin"
@@ -34,11 +36,6 @@ set --universal nvm_default_version lts
 
 fish_add_path /var/lib/snapd/snap/bin
 
-set gem_home (ruby -e 'puts Gem.user_dir')
-
-set -gx GEM_HOME $gem_home
-fish_add_path "$GEM_HOME/bin"
-
 set -gx BROWSER brave
 set -gx EDITOR nvim
 
@@ -46,10 +43,3 @@ set -gx _ZL_CD cd
 
 set -gx fish_greeting ""
 set -gx BROWSER brave
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
-#set -gx PATH $HOME/.cabal/bin /home/cherry/.ghcup/bin $PATH # ghcup-env
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
-set -gx PATH $HOME/.cabal/bin $PATH /home/cherry/.ghcup/bin # ghcup-env
-
-# opam configuration
-source /home/cherry/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
