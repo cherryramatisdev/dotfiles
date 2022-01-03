@@ -12,6 +12,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # ------------------------------ aliases -----------------------------
 
+alias '?'=duck
+alias '??'=github
+alias '???'=wiki
 alias ls="exa"
 alias la="exa -lha"
 alias dot="cd ~/projects/dotfiles"

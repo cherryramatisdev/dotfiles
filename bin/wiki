@@ -1,0 +1,6 @@
+ #!/bin/sh
+ wiki () {
+ url=$(urlencode "$*")
+ w3m "https://en.wikipedia.org/wiki/Special:Search/$url"
+ }
+ wiki $*

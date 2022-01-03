@@ -1,0 +1,6 @@
+ #!/bin/sh
+ github () {
+ w3m "https://github.com/$*"
+ echo "https://github.com/$*"
+ }
+ github $*
