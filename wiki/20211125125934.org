@@ -1,4 +1,0 @@
-#+TITLE: Nov 25, 2021
-
-* Work tasks
-** TODO [[https://lamimed.atlassian.net/browse/TEC-110][TEC-110]] Configure lint staged on bff-exams

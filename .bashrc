@@ -6,6 +6,10 @@ export PATH=$HOME/.local/bin:$PATH
 export BROWSER=brave
 export EDITOR=vim
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # ------------------------------ aliases -----------------------------
 
 alias ls="exa"
@@ -14,6 +18,9 @@ alias g="git"
 alias status="git s"
 alias add="git add"
 alias commit="git commit"
+alias log="git lg"
+alias push="git ps"
+alias pull="git pl"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -98,3 +105,5 @@ bind -m vi-insert "\C-f":forward-char
 bind -m vi-insert "\C-d":delete-char
 bind -m vi-insert "\C-w":backward-kill-word
 bind -m vi-insert "\C-l":clear-display
+bind -m vi-insert "\C-p":previous-history
+bind -m vi-insert "\C-n":next-history
