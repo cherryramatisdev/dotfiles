@@ -51,7 +51,7 @@ super + p
 
 # print
 Print
-      flameshot gui
+    /usr/bin/scrot -s ~/Pictures/%Y-%m-%d-%s.png
 
 # control audio
 

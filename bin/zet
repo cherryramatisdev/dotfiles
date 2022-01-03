@@ -110,6 +110,7 @@ _add_figure() {
   mkdir "/tmp/$id"
   mv "$figure" "/tmp/$id/$name"
   echo -e "# ${CONF[category.figure]}  $name\n\n![]($name)\n" > "/tmp/$id/README.md"
+
   x.import "/tmp/$id" >/dev/null
   x.edit "$id"
 }
@@ -218,8 +219,8 @@ x.use() {
 x.current() { echo "${CONF[current]}"; }
 
 x.open() { 
-  ! _have xdg-open && echo '<open not found>' && return 1
-  xdg-open "$(x.url "$@")"
+  ! _have open && echo '<open not found>' && return 1
+  open "$(x.url "$@")"
 }
 
 x.commit() {

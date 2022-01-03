@@ -18,6 +18,7 @@ alias '???'=wiki
 alias ls="exa"
 alias la="exa -lha"
 alias dot="cd ~/projects/dotfiles"
+alias script="cd ~/bin"
 alias g="git"
 alias ..="cd .."
 alias ...="cd ../.."
@@ -83,7 +84,7 @@ __ps1() {
   [[ $B = master || $B = main ]] && b="$r"
   [[ -n "$B" ]] && B="$g($b$B$g)"
 
-  short="$u\u$g$PROMPT_AT$h\h$g:$w$dir$B$p$P$x "
+	short="$u\u$g$PROMPT_AT$h\h$g:$w$dir$B$p$P$x "
 
 	PS1="$short"
 }

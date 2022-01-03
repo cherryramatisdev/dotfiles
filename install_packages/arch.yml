@@ -16,6 +16,7 @@
     yay -S --noconfirm brave-bin
     yay -S --noconfirm pavucontrol
     yay -S --noconfirm flameshot
+    yay -S --noconfirm scrot
     yay -S --noconfirm tmux
     yay -S --noconfirm lua
     yay -S --noconfirm elinks

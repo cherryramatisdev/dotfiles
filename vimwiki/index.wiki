@@ -10,3 +10,6 @@
 - [ ] Design an diagram to architect omnichannel cherrywiki project.
 	- [ ] Create trello board for it 
 - [ ] Discover how to use bakeware to build elixir binaries
+- [ ] Fix *bin/zet* screenshot command script
+- [ ] Get range between two segments to delimit "snippet x" and "endsnippet"
+- [X] Check with harri how we'll get the availabilities if there is no activity id at all
