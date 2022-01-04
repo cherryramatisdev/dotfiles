@@ -3,7 +3,7 @@ export PATH=$HOME/.npm-global/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
-export BROWSER=brave
+export BROWSER=firefox
 export EDITOR=vim
 
 export NVM_DIR="$HOME/.nvm"
@@ -84,7 +84,13 @@ __ps1() {
   [[ $B = master || $B = main ]] && b="$r"
   [[ -n "$B" ]] && B="$g($b$B$g)"
 
-	short="$u\u$g$PROMPT_AT$h\h$g:$w$dir$B$p$P$x "
+	vim_prefix="VIM "
+
+	if [[ ! $VIM ]]; then
+		vim_prefix=""
+	fi
+
+	short="$r$vim_prefix$u\h$g:$w$dir$B$p$P$x "
 
 	PS1="$short"
 }

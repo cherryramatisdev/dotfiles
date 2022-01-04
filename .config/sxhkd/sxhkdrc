@@ -14,8 +14,8 @@ super + r
 	pkill -USR1 -x sxhkd
 
 # launch stuff
-super + o ; {b, c, q, t, e}
-      {brave, google-chrome-stable, qutebrowser, inkdrop, emacs}
+super + o ; {b, f, c, q, t, e}
+      {brave, firefox, google-chrome-stable, qutebrowser, inkdrop, emacs}
 
 # download music from youtube
 alt + y
@@ -52,6 +52,9 @@ super + p
 # print
 Print
     /usr/bin/scrot -s ~/Pictures/%Y-%m-%d-%s.png
+
+alt + Print
+	/home/cherry/bin/clipscreenshot 
 
 # control audio
 

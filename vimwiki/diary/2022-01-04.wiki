@@ -1,0 +1,4 @@
+- [X] Checar espacamento entre um professional card e outro
+- [X] Adicionar hover aumentando stroke no botao(confirmar com will)
+- [X] Stretch display grid
+- [X] Criar um context para selecionar botao entre profissional e availability
