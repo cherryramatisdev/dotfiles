@@ -1,0 +1,150 @@
+#!/bin/bash
+
+LOGFILE="$HOME/projects/dotfiles/work_track_time"
+#disables the error if the directory exists, creates parent directories if needed
+mkdir -p $(dirname $LOGFILE)
+
+_format_task () {
+	# The assignment asks us to convert the time to HH:MM:SS, but also to make sure it runs correctly if the task exeeceds 24H.
+	# I choose to optionally render the time as D:HH:MM:SS if the time exceedes 24H.
+	local T=$1
+	local label=$2
+	local D=$((T/60/60/24))
+	local H=$((T/60/60%24))
+	local M=$((T/60%60))
+	local S=$((T%60))
+	printf "Task \"$label\": "
+	(( $D > 0 )) && printf '%d:' $D
+	# In the example output the time always had a leading 0, this is added with the following line
+	(( $H < 10 )) && printf "0"
+	printf '%d:' $H
+	(( $M < 10 )) && printf "0"
+	printf '%d:' $M
+	(( $S < 10 )) && printf "0"
+	printf '%d\n' $S
+}
+
+_get_seconds () {
+	date +%s
+}
+
+_get_difference () {
+	local begin=$1
+	local end=$2
+	local delta=$(($end - $begin))
+	echo $delta
+}
+
+_get_time () {
+	# formats the string to (D)ays (H)ours (M)inutes and (S)econds
+	local T=$1
+	local D=$((T/60/60/24))
+	local H=$((T/60/60%24))
+	local M=$((T/60%60))
+	local S=$((T%60))
+	(( $D > 0 )) && printf '%d days ' $D
+	(( $H > 0 )) && printf '%d hours ' $H
+	(( $M > 0 )) && printf '%d minutes ' $M
+	(( $D > 0 || $H > 0 || $M > 0 )) && printf 'and '
+	printf '%d seconds\n' $S
+}
+
+_get_label () {
+	# old stuff
+	# label=`tail -1 "$LOGFILE" | cut -d " " -f3`
+	local label_arr=(`tail -1 "$LOGFILE"`)
+
+	echo "${label_arr[@]:2}"
+}
+
+erase () {
+	truncate -s 0 $LOGFILE
+}
+
+log_raw () {
+	# logs the raw output of the logfile
+	while read p; do
+		echo "$p"
+	done <$LOGFILE
+}
+
+log () {
+	# logs the formatted output of the log file
+	while read line; do
+		command=`echo "$line" | cut -d " " -f1`
+		if [[ "$command" = "STOP" ]]; then
+		end=`echo "$line" | cut -d " " -f2`
+		local label_arr=(`echo "$line"`)
+		local label="${label_arr[@]:2}"
+
+		echo `_format_task $(_get_difference $begin $end) "$label"`
+	else
+		begin=`echo "$line" | cut -d " " -f2`
+		label=$(_get_label)
+		fi
+	done <$LOGFILE
+}
+
+start () {
+	last_command=`tail -1 "$LOGFILE" | cut -d " " -f1`
+	if [[ "$last_command" = "START" ]]; then
+		label=`tail -1 "$LOGFILE" | cut -d " " -f3`
+		echo "You can not start the task $1 because there is already a task $label running."
+	elif [[ "$#" -lt 1 ]]; then
+		echo "You need to provide a name for the task as an additional argument, start \"name\""
+	elif [[ "$#" -gt 1 ]]; then
+		echo "Too many arguments, please only provide one argument, which is the name of the task you want to track."
+	else 
+		LABEL=$1
+		START=$(_get_seconds)
+		echo "START $START $LABEL" >> "$LOGFILE"
+
+		echo "starting the new task $LABEL"
+	fi
+}
+
+stop () {
+	last_command=`tail -1 "$LOGFILE" | cut -d " " -f1`
+	if [[ "$last_command" = "START" ]]; then
+		label=$(_get_label)
+
+		STOP=$(_get_seconds)
+		echo "STOP $STOP $label" >> "$LOGFILE"
+		echo "What did I do: " >> "$LOGFILE"
+		echo "-------------------" >> "$LOGFILE"
+		vim $LOGFILE
+	else
+		echo "You can't stop because there is no task running, start a task with ./track start \"task_name\""
+	fi
+	if [[ "$#" -gt 0 ]]; then
+		echo "You wrote $1 as an additional argument, but there is no need to provide more arguments for the stop method. stop will stop the current task if there is one."
+	fi
+}
+
+status () {
+	last_command=`tail -1 "$LOGFILE" | cut -d " " -f1`
+	if [[ "$last_command" = "START" ]]; then
+		label=$(_get_label)
+		begin=`tail -1 "$LOGFILE" | cut -d " " -f2`
+		echo "You are currently tracking the task \"$label\", it has been going on for $(_get_difference $begin $(_get_seconds)) seconds"
+	else
+	end=`tail -1 "$LOGFILE" | cut -d " " -f2`
+	begin=`tail -2 "$LOGFILE" | head -1 | cut -d " " -f2`
+
+	# TODO: I'm not using _get_label here because the case is different
+	label_full=`tail -3 "$LOGFILE" | head -1`
+
+	if [[ -n "$label_full" ]]; then
+		label_arr=($label_full)
+		label="${label_arr[@]:2}"
+
+	# delta=`$(get_difference $begin $end)`
+	# echo $end - $begin = $(get_difference $begin $end) $label
+	echo "the task called \"$label\" took $(_get_time $(_get_difference $begin $end)), there is no task currently running"
+else
+	echo "Cant find any label, probably your timer history is empty"
+	fi
+	fi
+}
+
+"$@" #this lets you call the functions from the terminal

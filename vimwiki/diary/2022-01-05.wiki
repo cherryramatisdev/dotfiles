@@ -1,0 +1,2 @@
+- [X] Investigate the solution for returning description and activity related stuff on /availability per professional route
+- [X] Check nuka carousel documentation to make slidesToShow dynamic

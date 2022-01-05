@@ -1,0 +1,12 @@
+START 1641402120 daily meeting
+STOP 1641406696 daily meeting
+What did I do: We discuss the overwall feeling for finishing this schedule routine until the middle of jan and on the review I receive some feedbacks about bugs on my professional blog code that I'll start working today
+-------------------
+START 1641410567 fix the points on pair review 360
+STOP 1641411578 fix the points on pair review 360
+What did I do: I increase the limit from TextToggle to match layout on figma, fix the carousel to match iphone 5 layouts, basically I use `slidesToShow={3}` instead of `slidesToShow={3.5}` and add size props to spinner so we can control a little more.
+-------------------
+START 1641415183 solving review from 360
+STOP 1641416701 solving review from 360
+What did I do: I added some todo comments for maintancy, remove some unused ternary if statements and make carousel always use 10px of padding on all screen resolutions.
+-------------------

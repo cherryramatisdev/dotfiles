@@ -35,7 +35,7 @@ super + shift + y
 
 # switch language
 super + F1
-      switchkeyboardlanguage
+      /home/cherry/bin/switchkeyboardlanguage
 
 # open password manager
 super + p
