@@ -1,0 +1,6 @@
+#!/bin/sh
+
+url=$LYNX_PRINT_URL
+title=$LYNX_PRINT_TITLE
+
+/home/cherry/bin/open $url

@@ -15,6 +15,7 @@ if (not $_) {
          #    $gh and exec 'firefox', '-new-window', "https://$gh";
          $gh and exec 'firefox', '-new-window', "https://$gh";
 }
+print("TESTE", $_);
 -r $_ && exec 'xdg-open', $_;
 m,^http, or  s,^,https://,;
 exec 'firefox', '-new-window', $_;

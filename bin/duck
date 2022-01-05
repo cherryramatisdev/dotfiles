@@ -1,5 +1,5 @@
 #!/bin/sh
 url="https://lite.duckduckgo.com/lite?kd=-1&kp=-1&q=$(urlencode "$*")" # 🦆
 
-# exec lynx "$url"
-exec w3m "$url"
+exec /home/cherry/bin/lynx "$url"
+# exec w3m "$url"

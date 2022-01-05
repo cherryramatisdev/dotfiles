@@ -1,6 +1,7 @@
- #!/bin/sh
- wiki () {
- url=$(urlencode "$*")
- w3m "https://en.wikipedia.org/wiki/Special:Search/$url"
- }
- wiki $*
+#!/bin/sh
+
+wiki () {
+	url=$(urlencode "$*")
+		/home/cherry/bin/lynx "https://en.wikipedia.org/wiki/Special:Search/$url"
+}
+wiki $*
