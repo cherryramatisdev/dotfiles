@@ -124,26 +124,10 @@ stop () {
 status () {
 	last_command=`tail -1 "$LOGFILE" | cut -d " " -f1`
 	if [[ "$last_command" = "START" ]]; then
-		label=$(_get_label)
 		begin=`tail -1 "$LOGFILE" | cut -d " " -f2`
-		echo "You are currently tracking the task \"$label\", it has been going on for $(_get_difference $begin $(_get_seconds)) seconds"
+		echo "You are currently tracking a task, it has been going on for $(_get_difference $begin $(_get_seconds)) seconds"
 	else
-	end=`tail -1 "$LOGFILE" | cut -d " " -f2`
-	begin=`tail -2 "$LOGFILE" | head -1 | cut -d " " -f2`
-
-	# TODO: I'm not using _get_label here because the case is different
-	label_full=`tail -3 "$LOGFILE" | head -1`
-
-	if [[ -n "$label_full" ]]; then
-		label_arr=($label_full)
-		label="${label_arr[@]:2}"
-
-	# delta=`$(get_difference $begin $end)`
-	# echo $end - $begin = $(get_difference $begin $end) $label
-	echo "the task called \"$label\" took $(_get_time $(_get_difference $begin $end)), there is no task currently running"
-else
-	echo "Cant find any label, probably your timer history is empty"
-	fi
+		echo "There is no task currently running"
 	fi
 }
 
