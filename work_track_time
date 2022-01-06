@@ -23,3 +23,12 @@ START 1641465571 fix review comments for no doctors cta 362
 STOP 1641466207 fix review comments for no doctors cta 362
 What did I do: I basically changed the component name to be more generic(but in the middle of it, my pc shut down for no reason)
 -------------------
+START 1641467638 desktop layout for task 372
+STOP 1641469755 desktop layout for task 372
+What did I do: I extracted the form to a different component and start to design desktop layout with our media match tag
+-------------------
+START 1641472071 finishing desktop layout
+STOP 1641473434 finishing desktop layout
+What did I do: I finished the form card on desktop and begin to design the header, will finish after reboot computer.
+-------------------
+START 1641497889 fixing pantheon error message and adding icon option
