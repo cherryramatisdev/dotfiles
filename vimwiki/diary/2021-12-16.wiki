@@ -1,5 +1,0 @@
-= Work tasks =
-
-* [X] [[https://lamimed.atlassian.net/browse/TEC-361|361]] Finish list appointments route
-  * [X] Finish pagination
-* [X] [[https://lamimed.atlassian.net/browse/TEC-318|318]] Finish this text toggler component

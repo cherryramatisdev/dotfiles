@@ -1,9 +1,0 @@
-= Work tasks =
-
-* [X] Refine an card "Pick slot" [[https://lamimed.atlassian.net/browse/TEC-352|352]]
-      * [X] Create a new card to renew the product route to return an property
-        that will be responsible to check if this product have schedule or
-        not.
-      * [X] Renew the title of 356 card to "Create choose professionals and time
-        page on website".
-      * [X] Pair with victor to break up more the frontend tasks.

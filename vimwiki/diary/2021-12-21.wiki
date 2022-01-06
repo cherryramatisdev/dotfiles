@@ -1,5 +1,0 @@
-= Work tasks =
-
-* [X] [[https://lamimed.atlassian.net/browse/TEC-354|354]] Finish route
-* [X] [[https://lamimed.atlassian.net/wiki/spaces/TEC/pages/186777601/Define+deployment+routine+for+backend|Purpose for backend deployment]] Finish purpose for backend deployment routine
-* [X] [[https://lamimed.atlassian.net/browse/TEC-359|359]] Finish purpose to insert new field on exams product table

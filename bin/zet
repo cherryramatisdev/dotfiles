@@ -43,6 +43,7 @@ _alternatives() {
   fi
   case $CMD in
     titles) x.dex.titles "$@";;
+    list) x.dex.titles "$@";;
   esac
 }
 
@@ -161,6 +162,11 @@ x.import() {
     mv "$1" "$dir"
     x.commit "${1##*/}" &>/dev/null
     echo "${1##*/}"
+}
+
+x.today () {
+	today=`date -u +%d/%m/%Y`
+	zet create $today @todos
 }
 
 x.delete() {

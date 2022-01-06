@@ -1,6 +1,0 @@
-= Work Tasks =
-
-* [X] Pair programming with victor for task 311 - Prod bug
-* [X] Upload things to prod for exams(this need to be checked with @harri)
-* [X] Help Marcio with card 304
-* [X] Configure lint-staged on backend-exams

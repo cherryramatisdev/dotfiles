@@ -1,6 +1,0 @@
-= Work tasks =
-
-* [X] Return searchid from:
-  * [X] List availabilities
-  * [X] List availabilities per professional
-* [ ] [[https://lamimed.atlassian.net/browse/TEC-360|360]] Create template that represents professional block

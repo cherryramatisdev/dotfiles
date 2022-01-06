@@ -1,5 +1,0 @@
-= Work tasks =
-
-* [X] Solve backend exams prod errors. https://github.com/lami-health/backend-exam-service/pull/242
-* [X] Test new `/top-categories` route on frontend : https://github.com/lami-health/website/pull/427
-* [X] Send what we did on develop to prod: https://github.com/lami-health/backend-exam-service/pull/244
