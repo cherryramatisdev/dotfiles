@@ -166,7 +166,23 @@ x.import() {
 
 x.today () {
 	today=`date -u +%d/%m/%Y`
-	zet create $today @todos
+
+	file="/home/cherry/git/zet/$today/README.md"
+
+	if [[ -n $file ]]; then
+		zet edit $today
+	else
+		zet create $today @todos
+	fi
+}
+
+x.view () {
+	note="/home/cherry/git/zet/$1/README.md"
+
+	for groupline in "$(cat $note)"
+	do
+		echo "$groupline";
+	done
 }
 
 x.delete() {
