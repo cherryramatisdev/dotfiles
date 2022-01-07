@@ -61,6 +61,10 @@ erase () {
 	truncate -s 0 $LOGFILE
 }
 
+edit () {
+	vim $HOME/projects/dotfiles/work_track_time
+}
+
 log_raw () {
 	# logs the raw output of the logfile
 	while read p; do

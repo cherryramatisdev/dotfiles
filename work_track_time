@@ -35,3 +35,19 @@ START 1641497889 fixing pantheon error message and adding icon option
 STOP 1641504127 fixing pantheon error message and adding icon option
 What did I do: Add an icon option and increase the pantheon error message to 1rem
 -------------------
+START 1641561438 begin to work on sign up validations 371
+STOP 1641563008 begin to work on sign up validations 371
+What did I do: I could finish the yup declaration and forms from react hook form, now it's all going to be styling whatsoever.
+-------------------
+START 1641574515 layouting sign up page
+STOP 1641576359 layouting sign up page
+What did I do: finish mobile layout styling
+-------------------
+START 1641576758 split form into two parts to reuse on desktop
+STOP 1641577912 split form into two parts to reuse on desktop
+What did I do: split form into various parts to be used indepently, mobile design is fine with this change, now I'm gonna use it to construct desktop
+-------------------
+START 1641579952 finishing the desktop form cards
+STOP 1641581816 finishing the desktop form cards
+What did I do: i pretty much finished the desktop layout, but I'm in doubt on how to switch between first and second form
+-------------------

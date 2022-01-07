@@ -1,5 +1,6 @@
 # ------------------------------ export env variables -----------------------------
 export PATH=$HOME/.npm-global/bin:$PATH
+export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
@@ -90,10 +91,10 @@ __ps1() {
   [[ $B = master || $B = main ]] && b="$r"
   [[ -n "$B" ]] && B="$g($b$B$g)"
 
-	vim_prefix="VIM "
+	vim_prefix=""
 
-	if [[ ! $VIM ]]; then
-		vim_prefix=""
+	if [[ $VIM ]]; then
+		vim_prefix="VIM "
 	fi
 
 	short="$r$vim_prefix$u\h$g:$w$dir$B$p$P$x "

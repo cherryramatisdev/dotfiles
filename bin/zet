@@ -167,13 +167,16 @@ x.import() {
 x.today () {
 	today=`date -u +%d/%m/%Y`
 
-	file="/home/cherry/git/zet/$today/README.md"
+	# TODO: write this function properly
+	# file="/home/cherry/git/zet/$today/README.md"
 
-	if [[ -n $file ]]; then
-		zet edit $today
-	else
-		zet create $today @todos
-	fi
+	# echo $file
+
+	# if [[ -n $file ]]; then
+	# 	echo "existe"
+	# 	zet edit $today
+	# else
+	zet create $today @todos
 }
 
 x.view () {
