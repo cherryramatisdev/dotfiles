@@ -15,8 +15,14 @@ export NVM_DIR="$HOME/.nvm"
 alias '?'=duck
 alias '??'=github
 alias '???'=wiki
-alias ls="exa"
-alias la="exa -lha"
+## Colorize the ls output ##
+alias ls='ls --color=auto'
+## Use a long listing format ##
+alias ll='ls -la'
+alias la='ls -la'
+## Show hidden files ##
+alias l.='ls -d .* --color=auto'
+
 alias dot="cd ~/projects/dotfiles"
 alias script="cd ~/bin"
 alias g="git"
