@@ -60,6 +60,12 @@ x.todos() {
 	popd > /dev/null
 }
 
+x.dones() { 
+	pushd ${CONF[zet.public]} > /dev/null
+	git grep DONE
+	popd > /dev/null
+}
+
 # ------------------------- utility functions ------------------------
 
 _newest() {
@@ -349,6 +355,11 @@ x.isonan() { date -u +%Y%m%d%H%M%S%N "$@"; }
 x.dir() {
   local dir="${CONF[zet."${CONF[current]}"]}"
   [[ -d "$dir" ]] && echo "$dir"
+}
+
+x.cd () {
+  local dir="${CONF[zet."${CONF[current]}"]}"
+  [[ -d "$dir" ]] && vim "$dir"
 }
 
 x.create() {
