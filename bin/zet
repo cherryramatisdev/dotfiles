@@ -173,16 +173,17 @@ x.import() {
 x.today () {
 	today=`date -u +%d/%m/%Y`
 
-	# TODO: write this function properly
-	# file="/home/cherry/git/zet/$today/README.md"
+	pushd ${CONF[zet.public]} > /dev/null
 
-	# echo $file
+	entry=`echo $(git grep $today)`
 
-	# if [[ -n $file ]]; then
-	# 	echo "existe"
-	# 	zet edit $today
-	# else
-	zet create $today @todos
+	if [[ -n $entry ]]; then
+		zet edit "${entry%%\/*}"
+	else
+		zet create $today @todos
+	fi
+
+	popd > /dev/null
 }
 
 x.view () {
@@ -554,6 +555,14 @@ x.body() {
 }
 
 x.query() {
+  _filter "$@" && return $?
+  [[ -z "$1" ]] && echo "Missing search query." && return 1
+  term="$*"
+  it="https://github.com/$GITUSER/$EXE/search?q=$(x.urlencode "$term")"
+  echo "[$term]: <$it>"
+}
+
+x.queryopen() {
   _filter "$@" && return $?
   [[ -z "$1" ]] && echo "Missing search query." && return 1
   term="$*"

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+debian () {
+	docker run --name debian -p 3000:3000 -h 10-slim -v /home/cherry/git/:/home/lami/git -it cherryramatis/debian:0.0.1 /bin/bash -c "su - lami"
+}
+
+arch () {
+}
+
+case "$@" in
+	debian) debian ;;
+	arch) arch ;;
+esac
