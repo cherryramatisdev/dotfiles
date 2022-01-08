@@ -97,7 +97,9 @@ __ps1() {
 		vim_prefix="VIM "
 	fi
 
-	short="$r$vim_prefix$u\h$g:$w$dir$B$p$P$x "
+	user=`whoami`
+
+	short="$r$vim_prefix$u$user$g:$w$dir$B$p$P$x "
 
 	PS1="$short"
 }
