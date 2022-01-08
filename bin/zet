@@ -559,7 +559,7 @@ x.query() {
   term="$*"
   it="https://github.com/$GITUSER/$EXE/search?q=$(x.urlencode "$term")"
   echo "[$term]: <$it>"
-  command -v chat &>/dev/null && chat "$it"
+  command -v open &>/dev/null && open "$it"
 }
 
 x.ids() {
