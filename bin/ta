@@ -19,7 +19,8 @@ fi
 # If --start was passed in immediately start a new session based on the current directory
 if [ "$DIR" == "--start" ]; then
     echo "starting"
-    path_name="$(basename "$PWD" | tr . -)"
+    # path_name="$(basename "$PWD" | tr . -)"
+		path_name=$PWD
     session_name=${path_name//./_}
 else
     # ask the user which directory to start in

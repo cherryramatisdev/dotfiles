@@ -1,0 +1,10 @@
+#!/bin/bash
+
+path="/tmp/scratch.$1"
+
+if [ -z $path ]; then
+        touch $path
+        echo $path
+else
+        echo $path
+fi
