@@ -1,0 +1,35 @@
+#!/bin/bash
+
+run () {
+	if [ -f "nest-cli.json" ]; then
+		yarn start:dev
+	fi
+
+	if [ -f "next.config.js" ]; then
+		yarn dev
+	fi
+
+	if grep -q -wi "storybook" "package.json"; then
+		yarn storybook
+	fi
+
+	if grep -q -wi "phoenix" "mix.exs"; then
+		iex -S mix phx.server
+	fi
+
+	if [ -f "mix.exs" ]; then
+		iex -S mix
+	fi
+}
+
+db () {
+	read -p "Database name: " dbname
+
+	docker exec -it postgres psql -U postgres -d $dbname
+}
+
+switch () {
+	/home/cherry/bin/ta ~/git/
+}
+
+"$@" #this lets you call the functions from the terminal

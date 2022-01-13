@@ -1,8 +1,14 @@
+set -o vi
+
 # ------------------------------ export env variables -----------------------------
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin/
+
 export PATH=$HOME/.npm-global/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$GOBIN:$PATH
 
 export SNIPPETS=$HOME/projects/dotfiles/snippets
 export BROWSER=firefox
@@ -17,17 +23,11 @@ export NVM_DIR="$HOME/.nvm"
 alias '?'=duck
 alias '??'=github
 alias '???'=wiki
-## Colorize the ls output ##
 alias ls='ls --color=auto'
-## Use a long listing format ##
-alias ll='ls -la'
-alias la='ls -la'
-## Show hidden files ##
-alias l.='ls -d .* --color=auto'
-
 alias dot="cd ~/projects/dotfiles"
 alias script="cd ~/bin"
 alias g="git"
+alias c="clear"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -39,11 +39,6 @@ alias dev="yarn start:dev"
 alias y="yarn"
 alias ya="yarn add"
 alias kall="killall"
-alias padd="sudo pacman -S"
-alias premove="sudo pacman -R"
-alias pgrep="sudo pacman -Qe | grep"
-alias plist="sudo pacman -Qe"
-alias pupdate="sudo pacman -Syuu"
 alias depupdate="yarn upgrade-interactive --latest"
 alias postgresup="docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e TZ=America/Sao_Paulo -d postgres"
 alias asdf="setxkbmap -layout us -variant dvorak"
@@ -65,7 +60,6 @@ export HISTCONTROL=ignoreboth
 export HISTSIZE=5000
 export HISTFILESIZE=10000
 
-set -o vi
 shopt -s histappend
 
 # --------------------------- smart prompt ---------------------------
@@ -107,18 +101,5 @@ __ps1() {
 
 PROMPT_COMMAND="__ps1"
 
-# --------------------------- keybinding ---------------------------
-
-set -o vi
-bind -m vi-insert "\C-j":accept-line
-bind -m vi-insert "\C-h":backward-delete-char
-bind -m vi-insert "\C-a":beginning-of-line
-bind -m vi-insert "\C-e":end-of-line
-bind -m vi-insert "\C-k":kill-line
-bind -m vi-insert "\C-b":backward-char
-bind -m vi-insert "\C-f":forward-char
-bind -m vi-insert "\C-d":delete-char
-bind -m vi-insert "\C-w":backward-kill-word
-bind -m vi-insert "\C-l":clear-display
-bind -m vi-insert "\C-p":previous-history
-bind -m vi-insert "\C-n":next-history
+# --------------------------- private config ---------------------------
+[[ -f "$HOME/.private-bash" ]]; . $HOME/.private-bash

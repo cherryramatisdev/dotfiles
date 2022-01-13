@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while IFS= read -r line; do
+  if echo $line | grep "//"
+  then
+    line=`echo $line | tr -d '//'`
+  else
+    echo "${1:-//} $line"
+  fi
+done

@@ -51,3 +51,7 @@ START 1641579952 finishing the desktop form cards
 STOP 1641581816 finishing the desktop form cards
 What did I do: i pretty much finished the desktop layout, but I'm in doubt on how to switch between first and second form
 -------------------
+START 1641812301 finishing the visual part of sign up page and cleaning up the code
+STOP 1641819316 finishing the visual part of sign up page and cleaning up the code
+What did I do: finish and clean up the code, but since we'll use step based layout on mobile too, this task will repeat
+-------------------

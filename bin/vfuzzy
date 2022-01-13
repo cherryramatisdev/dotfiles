@@ -1,0 +1,9 @@
+#!/bin/bash
+
+choice=`git ls-files | fzf`
+
+if [[ -n "$choice" ]]; then
+	vim $choice
+else
+	exit
+fi
