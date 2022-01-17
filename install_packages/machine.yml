@@ -1,6 +1,0 @@
-- hosts: localhost
-  tasks:
-    - include: arch.yml
-    - include: neovim.yml
-    # - include: keyboard.yml
-    - include: dmenu.yml

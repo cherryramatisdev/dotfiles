@@ -1,9 +1,0 @@
-- name: installkmonad
-  become: true
-  shell: "yay -S --noconfirm kmonad-bin"
-- name: setupkeyboard
-  become: true
-  shell: |
-    chown -R $USER:$USER /dev/uinput
-    cp /home/cherry/projects/dotfiles/install_packages/kmonad.service /etc/systemd/system/kmonad.service
-    systemctl enable --now kmonad

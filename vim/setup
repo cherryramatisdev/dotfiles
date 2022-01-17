@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo "installing dependencies.."
+apt install git make clang libtool-bin libxt-dev
+
+echo "cloning"
+git clone https://github.com/vim/vim /home/cherry/Downloads/packages/vim
+
+echo "building all..."
+make
+make install
+
+echo "linking"
+
+ln -sf "$PWD/.vimrc" "/home/cherry/.vimrc"

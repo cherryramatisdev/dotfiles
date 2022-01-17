@@ -1,7 +1,0 @@
-
-xmonad.hs:208:45: warning: [-Wdeprecations]
-    In the use of ‘smartSpacing’ (imported from XMonad.Layout.Spacing):
-    Deprecated: "Use spacingRaw instead."
-    |
-208 | myLayout = windowNavigation $ avoidStruts $ smartSpacing 10 $ mkToggle (FULL ?? NOBORDERS ?? EOT) $ smartBorders (Tall 1 (3/100) (1/2) ||| Full)
-    |                                             ^^^^^^^^^^^^

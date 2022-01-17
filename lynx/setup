@@ -1,0 +1,12 @@
+#!/bin/sh
+
+apt install lynx
+
+# WARNING: This setup requires a custom form of lynx (a shell script in
+# scripts) be installed as well as lynx. [For an easier text browsing
+# experience that works out of the box use w3m instead.]
+
+mkdir /home/cherry/.config/ 2>/dev/null
+rm -rf /home/cherry/.config/lynx 2>/dev/null
+ln -s "$PWD" "/home/cherry/.config/lynx"
+ls -l /home/cherry/.config/lynx

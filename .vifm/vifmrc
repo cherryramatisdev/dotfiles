@@ -1,6 +1,0 @@
-map q :q<cr>
-
-map a :touch<space>
-map A :mkdir<space>
-
-map r :rename<cr>

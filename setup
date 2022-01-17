@@ -1,0 +1,27 @@
+#!/bin/sh
+set -e
+
+echo "Installing packages..."
+
+apt install fzf xclip 
+
+clear
+
+echo "Linking stuff..."
+
+ln -sf "$PWD/.bashrc" "/home/cherry/.bashrc"
+ln -sf "$PWD/scripts" "/home/cherry/bin"
+ln -sf "$PWD/Music" "/home/cherry/Music"
+ln -sf "$PWD/wallpapers" "/home/cherry/wallpapers"
+ln -sf "$PWD/.gitconfig" "/home/cherry/.gitconfig"
+ln -sf "$PWD/.git-coauthors" "/home/cherry/.git-coauthors"
+
+mkdir -p "/home/cherry/.local/bin" || true
+
+for i in vim lynx tmux; do
+	echo $i
+  cd $i && sudo sh ./setup
+  cd -
+done
+
+echo "Finished ! :D"
