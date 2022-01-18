@@ -148,7 +148,7 @@ hi LineNr ctermfg=darkgray ctermbg=NONE
 hi SpecialKey ctermfg=black ctermbg=NONE
 hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE
 hi MoreMsg ctermfg=black ctermbg=NONE
-hi NonText ctermfg=black ctermbg=NONE
+hi NonText ctermfg=darkgray ctermbg=NONE
 hi vimGlobal ctermfg=black ctermbg=NONE
 hi ErrorMsg ctermbg=234 ctermfg=darkred cterm=NONE
 hi Error ctermbg=234 ctermfg=darkred cterm=NONE
@@ -159,8 +159,10 @@ hi vimTodo ctermbg=236 ctermfg=darkred
 hi Todo ctermbg=236 ctermfg=darkred
 hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
 hi MatchParen ctermbg=236 ctermfg=darkred
+hi Cursor ctermfg=darkgray ctermbg=darkgray
 
 " color overrides
+au FileType * hi Cursor ctermfg=darkgray ctermbg=darkgray
 au FileType * hi StatusLine ctermfg=black ctermbg=NONE
 au FileType * hi StatusLineNC ctermfg=black ctermbg=NONE
 au FileType * hi Normal ctermbg=NONE
@@ -169,7 +171,7 @@ au FileType * hi LineNr ctermfg=darkgray ctermbg=NONE
 au FileType * hi SpecialKey ctermfg=black ctermbg=NONE
 au FileType * hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE
 au FileType * hi MoreMsg ctermfg=black ctermbg=NONE
-au FileType * hi NonText ctermfg=black ctermbg=NONE
+au FileType * hi NonText ctermfg=darkgray ctermbg=NONE
 au FileType * hi vimGlobal ctermfg=black ctermbg=NONE
 au FileType * hi ErrorMsg ctermbg=234 ctermfg=darkred cterm=NONE
 au FileType * hi Error ctermbg=234 ctermfg=darkred cterm=NONE
@@ -225,6 +227,20 @@ highlight MyDone ctermbg=236 ctermfg=darkgreen
 call matchadd("MyTodo", "TODO")
 call matchadd("MyDone", "DONE")
 
+function s:ToggleTodo() abort
+  normal mm
+  let findedTodo = search('TODO')
+
+  if findedTodo == 1
+    :s/TODO/DONE
+  else
+    :s/DONE/TODO
+  endif
+  normal `m
+endfunction
+
+au FileType pandoc,markdown nmap <buffer> <C-t> <cmd>call <SID>ToggleTodo()<cr>
+
 " golang
 let g:go_fmt_fail_silently = 0
 let g:go_fmt_command = 'goimports'
@@ -264,9 +280,6 @@ if has("eval") " vim-tiny detection
   endfun
   "autocmd FileType perl autocmd BufWritePre <buffer> call s:Perltidy()
 endif
-
-autocmd BufWritePost *.md silent !toemoji %
-autocmd BufWritePost *.md silent !toduck %
 
 " make Y consistent with D and C (yank til end)
 map Y y$
