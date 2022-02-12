@@ -1,0 +1,11 @@
+[Unit]
+Description=kmonad keyboard config
+
+[Service]
+Restart=always
+RestartSec=3
+ExecStart=/home/cherry/.local/share/bin/kmonad /home/cherry/git/dotfiles/kmonad/keyboard.kbd
+Nice=-20
+
+[Install]
+WantedBy=default.target

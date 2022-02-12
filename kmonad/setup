@@ -1,0 +1,5 @@
+#!/bin/sh
+
+chown -R $USER:$USER /dev/uinput
+cp $PWD/kmonad.service /etc/systemd/system/kmonad.service
+systemctl enable --now kmonad

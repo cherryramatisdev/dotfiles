@@ -1,4 +1,4 @@
-set -o vi
+# set -o vi
 
 # ------------------------------ export env variables -----------------------------
 export GOPATH=$HOME/go

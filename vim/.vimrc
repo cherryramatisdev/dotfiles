@@ -211,7 +211,7 @@ Plug 'prettier/vim-prettier', {
       \ 'do': 'yarn install --frozen-lockfile --production',
       \ 'for': ['javascript', 'typescript', 'typescriptreact', 'javascriptreact'] }
 Plug 'tpope/vim-fugitive'
-Plug 'justinmk/vim-dirvish'
+Plug 'tpope/vim-vinegar'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'tjdevries/cyclist.vim'
 call plug#end()
@@ -315,7 +315,7 @@ au bufnewfile,bufRead *ssh/config set filetype=sshconfig
 au bufnewfile,bufRead .dockerignore set filetype=gitignore
 au bufnewfile,bufRead *gitconfig set filetype=gitconfig
 au bufnewfile,bufRead /tmp/psql.edit.* set syntax=sql
-au bufnewfile,bufRead *.go set spell
+au bufnewfile,bufRead *.md set spell
 
 "fix bork bash detection
 if has("eval")  " vim-tiny detection

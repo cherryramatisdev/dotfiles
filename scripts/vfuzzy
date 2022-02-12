@@ -1,9 +1,9 @@
 #!/bin/bash
 
-choice=`git ls-files | fzf`
+choice=`git ls-files | fzy`
 
 if [[ -n "$choice" ]]; then
-	vim $choice
+	$EDITOR $choice
 else
 	exit
 fi

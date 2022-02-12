@@ -187,7 +187,11 @@ x.today () {
 }
 
 x.view () {
-	note="/home/cherry/git/zet/$1/README.md"
+  zet_title=`x.dex.titles | grep -iP "$*";`
+  zet_id=`echo $zet_title | cut -f 1 -d " "`
+  note="/home/cherry/git/zet/$zet_id/README.md"
+
+  echo $note
 
 	for groupline in "$(cat $note)"
 	do

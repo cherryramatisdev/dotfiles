@@ -25,7 +25,11 @@ run () {
 db () {
 	read -p "Database name: " dbname
 
-	docker exec -it postgres psql -U postgres -d $dbname
+  if [[ -n $dbname ]]; then
+    docker exec -it postgres psql -U postgres -d $dbname
+  else
+    docker exec -it postgres psql -U postgres
+  fi
 }
 
 switch () {
