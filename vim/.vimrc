@@ -31,6 +31,9 @@ set smartindent
 
 set smarttab
 
+" Fuzzy search
+set path+=**
+
 if v:version >= 800
   " stop vim from silently messing with files that it shouldn't
   set nofixendofline
@@ -167,7 +170,7 @@ au FileType * hi StatusLine ctermfg=black ctermbg=NONE
 au FileType * hi StatusLineNC ctermfg=black ctermbg=NONE
 au FileType * hi Normal ctermbg=NONE
 au FileType * hi Special ctermfg=cyan
-au FileType * hi LineNr ctermfg=darkgray ctermbg=NONE
+" au FileType * hi LineNr ctermfg=darkgray ctermbg=NONE
 au FileType * hi SpecialKey ctermfg=black ctermbg=NONE
 au FileType * hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE
 au FileType * hi MoreMsg ctermfg=black ctermbg=NONE
@@ -216,8 +219,9 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'tjdevries/cyclist.vim'
 call plug#end()
 
-" terraform
-let g:terraform_fmt_on_save = 1
+" prettier
+" let g:prettier#autoformat = 1
+" let g:prettier#autoformat_require_pragma = 0
 
 " pandoc
 let g:pandoc#formatting#mode = 'h' " A'
@@ -375,3 +379,10 @@ call cyclist#add_listchar_option_set('default', {
       \ 'conceal': '┊',
       \ 'nbsp': '␣',
       \ })
+
+" Section: configure wildignore
+set wildignore+=**/node_modules/**
+set wildignore+=**/dist/**
+set wildignore+=**/.git/**
+set wildignore+=**/cypress/**
+set wildignore+=**/coverage/**

@@ -3,10 +3,10 @@
 file="$HOME/bin/$1"
 
 if [ -f $file ]; then
-	vim $HOME/bin/$1
+	$EDITOR $HOME/bin/$1
 else
 	touch $HOME/bin/$1
 	chmod +x $HOME/bin/$1
 
-	vim $HOME/bin/$1
+	$EDITOR $HOME/bin/$1
 fi

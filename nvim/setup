@@ -1,0 +1,29 @@
+#!/bin/sh
+
+echo "Installing deps for neovim ...."
+apt-get install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen
+
+clear
+
+echo "Cloning it ...."
+
+git clone https://github.com/neovim/neovim /home/cherry/Downloads/packages/neovim
+cd /home/cherry/Downloads/packages/neovim
+
+clear
+
+echo "Making..."
+
+make
+
+clear
+
+echo "Installing..."
+
+make install
+
+clear
+
+echo "Linking stuff..."
+
+ln -sf "$PWD/config" "/home/cherry/.config/nvim"

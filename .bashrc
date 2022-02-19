@@ -1,4 +1,7 @@
-# set -o vi
+set -o vi
+
+# ------------------------------ local utility functions -----------------------------
+_have() { type "$1" &>/dev/null; }
 
 # ------------------------------ export env variables -----------------------------
 export GOPATH=$HOME/go
@@ -10,9 +13,12 @@ export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$GOBIN:$PATH
 
-export SNIPPETS=$HOME/projects/dotfiles/snippets
+export JAVA_HOME="/home/linuxbrew/.linuxbrew/bin/java"
+export JAVA_CMD="/home/linuxbrew/.linuxbrew/bin/java"
+
+export SNIPPETS=$HOME/git/dotfiles/snippets
 export BROWSER=firefox
-export EDITOR=vim
+export EDITOR=nvim
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -33,7 +39,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias tmux="tmux -2"
 alias t="ta"
-alias v="vim"
+alias n="nvim"
 alias vi="vim"
 alias dev="yarn start:dev"
 alias y="yarn"
@@ -103,3 +109,12 @@ PROMPT_COMMAND="__ps1"
 
 # --------------------------- private config ---------------------------
 [[ -f "$HOME/.private-bash" ]]; . $HOME/.private-bash
+
+# --------------------------- completion ---------------------------
+_have gh && . <(gh completion -s bash)
+_have git && . ~/git/dotfiles/.git-completion.bash
+source /etc/bash_completion
+
+# --------------------------- cdpath ---------------------------
+export GHREPOS="/home/cherry/git"
+export CDPATH=".:$GHREPOS"

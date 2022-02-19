@@ -3,12 +3,7 @@ set -e
 
 echo "Installing packages..."
 
-apt install fzy fd-find xclip software-properties-common
-add-apt-repository ppa:neovim-ppa/stable
-apt update
-apt install neovim
-
-ln -sf /usr/bin/fd-find /usr/bin/fd
+apt install xclip software-properties-common
 
 clear
 
@@ -23,10 +18,10 @@ ln -sf "$PWD/.git-coauthors" "/home/cherry/.git-coauthors"
 
 mkdir -p "/home/cherry/.local/bin" || true
 
-for i in vim lynx tmux kmonad; do
+for i in nvim lynx tmux kmonad awesome; do
 	echo $i
-  cd $i && sudo sh ./setup
-  cd -
+	cd $i && sudo sh ./setup
+	cd -
 done
 
 echo "Finished ! :D"
