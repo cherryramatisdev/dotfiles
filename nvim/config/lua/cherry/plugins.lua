@@ -1,33 +1,14 @@
-local vim = vim
-local execute = vim.api.nvim_command
-local fn = vim.fn
-
-local install_path = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
-
-if fn.empty(fn.glob(install_path)) > 0 then
-  execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
-  execute "packadd packer.nvim"
-end
-
-vim.cmd("packadd packer.nvim")
-
-local packer = require "packer"
-local util = require "packer.util"
-
-packer.init(
-  {
-    package_root = util.join_paths(vim.fn.stdpath("data"), "site", "pack")
-  }
-)
-
-packer.startup(
+return require "packer".startup(
   function()
-    local use = use
-
     use "wbthomason/packer.nvim"
 
     use "tjdevries/colorbuddy.vim"
-    use {"tjdevries/gruvbuddy.nvim", config = require("colorbuddy").colorscheme("gruvbuddy")}
+    use {
+      "tjdevries/gruvbuddy.nvim",
+      config = function()
+        require("colorbuddy").colorscheme("gruvbuddy")
+      end
+    }
 
     use "nvim-lua/plenary.nvim"
     use "tjdevries/express_line.nvim"
@@ -80,6 +61,14 @@ packer.startup(
       config = function()
         require "octo".setup()
       end
+    }
+
+    use {
+      "ThePrimeagen/refactoring.nvim",
+      requires = {
+        {"nvim-lua/plenary.nvim"},
+        {"nvim-treesitter/nvim-treesitter"}
+      }
     }
   end
 )
