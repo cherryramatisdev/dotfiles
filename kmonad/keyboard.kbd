@@ -1,6 +1,10 @@
+;; Notebook:
+;; /dev/input/by-path/platform-i8042-serio-0-event-kbd
+;; Sculpt:
+;; /dev/input/by-id/usb-Microsoft_Microsoft®_Nano_Transceiver_v2.1-event-kbd
 (defcfg
   input  (device-file
-  "/dev/input/by-id/usb-Microsoft_Microsoft®_Nano_Transceiver_v2.1-event-kbd")
+  "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
   output (uinput-sink "My KMonad output"
     ;; To understand the importance of the following line, see the section on
     ;; Compose-key sequences at the near-bottom of this file.
