@@ -26,6 +26,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # ------------------------------ aliases -----------------------------
 
+alias f=floaterm
 alias '?'=duck
 alias '??'=github
 alias '???'=wiki
