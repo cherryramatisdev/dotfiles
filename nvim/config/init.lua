@@ -14,5 +14,3 @@ require "cherry.telescope.mappings"
 require "cherry.treesitter"
 
 require "cherry.formatter"
-
-require "cherry.test-runner"

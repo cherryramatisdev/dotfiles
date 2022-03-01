@@ -2,11 +2,13 @@ return require "packer".startup(
   function()
     use "wbthomason/packer.nvim"
 
-    use "tjdevries/colorbuddy.vim"
     use {
-      "tjdevries/gruvbuddy.nvim",
+      "navarasu/onedark.nvim",
       config = function()
-        require("colorbuddy").colorscheme("gruvbuddy")
+        require("onedark").setup {
+          style = "darker"
+        }
+        require("onedark").load()
       end
     }
 
@@ -45,8 +47,6 @@ return require "packer".startup(
 
     use "windwp/nvim-autopairs"
 
-    use "TimUntersberger/neogit"
-
     use "voldikss/vim-floaterm"
 
     use "nvim-orgmode/orgmode"
@@ -70,5 +70,45 @@ return require "packer".startup(
         {"nvim-treesitter/nvim-treesitter"}
       }
     }
+    use "janko-m/vim-test"
+    use "pbrisbin/vim-mkdir"
+    use "tpope/vim-endwise"
+    use "tpope/vim-eunuch"
+    use "tpope/vim-fugitive"
+    use "tpope/vim-repeat"
+    use "tpope/vim-rhubarb"
+    use "tpope/vim-surround"
+
+    -- text stuff
+    use "kana/vim-textobj-user"
+    use "nelstrom/vim-textobj-rubyblock"
+    use "bkad/CamelCaseMotion"
+    -- Adds 'il' and 'al'
+    use "kana/vim-textobj-line"
+
+    -- find, replace with odd plurals and caps, eg ":%S/dog{,s}/child{,ren}/g"
+    use "tpope/vim-abolish"
+
+    -- auto-apply editorconfig settings on save
+    use "editorconfig/editorconfig-vim"
+
+    -- code expansion via shortcuts
+    use "mattn/emmet-vim"
+
+    -- nerdtree file tree
+    use "scrooloose/nerdtree"
+    use "Xuyuanp/nerdtree-git-plugin"
+
+    -- markdown/zen writing
+    use "reedes/vim-pencil"
+    use "junegunn/goyo.vim"
+    use "M4R7iNP/vim-inky"
+
+    -- gS and gJ to switch between single and multi-line
+    use "AndrewRadev/splitjoin.vim"
+
+    -- tmux integration
+    use "benmills/vimux"
+    use "christoomey/vim-tmux-navigator"
   end
 )

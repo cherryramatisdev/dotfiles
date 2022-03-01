@@ -49,14 +49,14 @@ vim.keymap.set(
     buffers()
   end
 )
-
-vim.keymap.set(
-  "n",
-  "<leader>e",
-  function()
-    require("telescope").extensions.file_browser.file_browser()
-  end
-)
+--
+-- vim.keymap.set(
+--   "n",
+--   "<leader>e",
+--   function()
+--     require("telescope").extensions.file_browser.file_browser()
+--   end
+-- )
 
 local function switchProjects()
   local opts_with_preview

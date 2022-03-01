@@ -20,3 +20,8 @@ require "nvim-treesitter.configs".setup {
     additional_vim_regex_highlighting = {"org"}
   }
 }
+
+vim.cmd [[
+highlight TSComment cterm=italic
+highlight TSFunction cterm=bold
+]]
