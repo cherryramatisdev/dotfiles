@@ -18,7 +18,7 @@ export JAVA_CMD="/home/linuxbrew/.linuxbrew/bin/java"
 
 export SNIPPETS=$HOME/git/dotfiles/snippets
 export BROWSER=firefox
-export EDITOR=nvim
+export EDITOR=kak
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -40,7 +40,6 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias tmux="tmux -2"
 alias t="ta"
-alias n="nvim"
 alias vi="vim"
 alias dev="yarn start:dev"
 alias y="yarn"
@@ -119,3 +118,6 @@ source /etc/bash_completion
 # --------------------------- cdpath ---------------------------
 export GHREPOS="/home/cherry/git"
 export CDPATH=".:$GHREPOS"
+
+source /home/cherry/.config/broot/launcher/bash/br
+. "$HOME/.cargo/env"

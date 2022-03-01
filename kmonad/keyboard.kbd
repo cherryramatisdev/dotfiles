@@ -27,6 +27,8 @@
 
 (defalias
   deleteWord C-Backspace
+  endLine End
+  startLine Home
   capsesc (tap-hold 100 esc lctrl)
   tabalt (tap-hold 150 tab lalt)
   zsuper (tap-hold 150 z lmet)
@@ -45,8 +47,8 @@
 
 (deflayer vi
   grv  _    _    _    _    _    _    _    _    _    _    _    _    bspc
-  @tabalt  _    @deleteWord    _    _    _    _    _    _    _    _    _  _ _
-  @capsesc _    _    _    _    _    lft    down    up    rght    _    _ ret
+  @tabalt  _    @deleteWord    @endLine    _    _    _    _    _    _    _    _  _ _
+  @capsesc @startLine    _    _    _    _    lft    down    up    rght    _    _ ret
   lsft     _    _    _    _    _    _    _    _    _    _    rsft
   lctl lmet lalt           spc            ralt rmet cmp  rctl
 )

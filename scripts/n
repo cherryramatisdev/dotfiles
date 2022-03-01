@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ $VIM ]; then
+	floaterm "$@"
+else
+	nvim "$@"
+fi
+
+

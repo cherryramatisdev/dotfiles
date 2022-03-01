@@ -11,6 +11,8 @@ vim.keymap.set(
 vim.keymap.set("n", "<Tab>", "gt")
 vim.keymap.set("n", "<S-Tab>", "gT")
 vim.keymap.set("n", "te", ":tabnew<cr>")
+vim.g.floaterm_width = 0.9
+vim.g.floaterm_height = 0.9
 vim.keymap.set("n", "gt", ":FloatermToggle<cr>")
 
 vim.keymap.set("t", "<C-[>", [[<C-\><C-n>]])
@@ -37,3 +39,8 @@ vim.keymap.set(
     vim.cmd("sp | terminal " .. cmd)
   end
 )
+
+vim.keymap.set("n", "<A-h>", ":vertical resize -5<cr>")
+vim.keymap.set("n", "<A-l>", ":vertical resize +5<cr>")
+vim.keymap.set("n", "<A-j>", ":resize -5<cr>")
+vim.keymap.set("n", "<A-k>", ":resize +5<cr>")

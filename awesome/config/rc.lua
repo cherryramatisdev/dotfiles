@@ -345,6 +345,14 @@ local globalkeys =
     end,
     {description = "open a terminal", group = "launcher"}
   ),
+  awful.key(
+    {modkey},
+    "t",
+    function()
+      awful.spawn("/home/cherry/Downloads/Goneovim/goneovim")
+    end,
+    {description = "open neovim GUI", group = "launcher"}
+  ),
   awful.key({modkey, "Control"}, "r", awesome.restart, {description = "reload awesome", group = "awesome"}),
   awful.key({modkey, "Shift"}, "q", awesome.quit, {description = "quit awesome", group = "awesome"}),
   awful.key(
@@ -465,6 +473,14 @@ local clientkeys =
       c:raise()
     end,
     {description = "(un)maximize", group = "client"}
+  ),
+  awful.key(
+    {modkey},
+    "e",
+    function()
+      awful.spawn([[ emacsclient -c -a '' ]])
+    end,
+    {description = "launch emacs", group = "launcher"}
   )
 )
 
@@ -640,3 +656,7 @@ client.connect_signal(
     c.border_color = beautiful.border_normal
   end
 )
+
+-- awful.util.spawn("/home/cherry/bin/agendanotify 5 &")
+awful.util.spawn([[emacs --daemon &]])
+awful.util.spawn([[xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1]])

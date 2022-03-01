@@ -1,5 +1,0 @@
-#!/bin/sh
-
-pushd ~/projects/dotfiles > /dev/null
-make install
-popd > /dev/null

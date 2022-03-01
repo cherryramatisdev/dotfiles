@@ -71,7 +71,12 @@ local tssnips = {
 	    )
 	  }
     ]]
-  )
+  ),
+  ls.parser.parse_snippet("it", [[
+    it('$1', ($2) => {
+	    $0
+    })
+    ]])
 }
 
 ls.snippets = {
