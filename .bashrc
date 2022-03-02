@@ -18,7 +18,8 @@ export JAVA_CMD="/home/linuxbrew/.linuxbrew/bin/java"
 
 export SNIPPETS=$HOME/git/dotfiles/snippets
 export BROWSER=firefox
-export EDITOR=kak
+export EDITOR=vim
+export FZF_DEFAULT_COMMAND='rg --files'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -26,7 +27,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # ------------------------------ aliases -----------------------------
 
-alias f=floaterm
 alias '?'=duck
 alias '??'=github
 alias '???'=wiki
