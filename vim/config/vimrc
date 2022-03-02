@@ -1,0 +1,57 @@
+let mapleader = " "
+
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin('~/.cache/dein/')
+
+" Let dein manage dein
+" Required:
+call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+call dein#add('tomasr/molokai')
+
+call dein#add('vim-denops/denops.vim')
+call dein#add('Shougo/ddc.vim')
+call dein#add('Shougo/ddc-around')
+call dein#add('Shougo/ddc-matcher_head')
+call dein#add('Shougo/ddc-sorter_rank')
+
+call dein#add('Shougo/unite.vim')
+
+call dein#add('Shougo/vimshell.vim')
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+
+call dein#add('drmikehenry/vim-fontsize')
+
+call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
+call dein#add('junegunn/fzf.vim')
+
+call dein#add('thinca/vim-quickrun')
+
+call dein#add('scrooloose/nerdtree')
+call dein#add('AndrewRadev/andrews_nerdtree.vim')
+
+call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-commentary')
+call dein#add('tpope/vim-surround')
+call dein#add('tpope/vim-rsi')
+call dein#add('tpope/vim-scriptease')
+call dein#add('tpope/vim-sensible')
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+if dein#check_install()
+  call dein#install()
+endif
+
