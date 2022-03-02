@@ -7,14 +7,5 @@ if has('gui')
 	set guioptions-=l
 	set guioptions-=b
 
-	nnoremap <C-Up> :silent! let &guifont = substitute(
-				\ &guifont,
-				\ ':h\zs\d\+',
-				\ '\=eval(submatch(0)+1)',
-				\ '')<CR>
-	nnoremap <C-Down> :silent! let &guifont = substitute(
-				\ &guifont,
-				\ ':h\zs\d\+',
-				\ '\=eval(submatch(0)-1)',
-				\ '')<CR>
+  set guitablabel=%{getcwd()}
 endif

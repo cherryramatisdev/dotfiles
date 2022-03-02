@@ -1,4 +1,4 @@
-nnoremap <leader>nt :<C-u>tabnew<cr>:pwd<cr>:VimShell<cr>
+nnoremap <leader>nt :<C-u>tabnew<cr>:pwd<cr>:VimShellCreate<cr>
 nnoremap <leader>t :<C-u>:pwd<cr>:VimShell<cr>
 
 function s:QuitWindow() abort
@@ -11,3 +11,6 @@ endfunction
 
 nnoremap <leader>q <cmd>call <SID>QuitWindow()<cr>
 nnoremap <leader>w <cmd>w<cr>
+
+nnoremap L gt
+nnoremap H gT
