@@ -50,18 +50,18 @@ return require "packer".startup(
     use "voldikss/vim-floaterm"
 
     use "nvim-orgmode/orgmode"
-
-    use {
-      "pwntester/octo.nvim",
-      requires = {
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim",
-        "kyazdani42/nvim-web-devicons"
-      },
-      config = function()
-        require "octo".setup()
-      end
-    }
+    --
+    -- use {
+    --   "pwnkeymapr/octo.nvim",
+    --   requires = {
+    --     "nvim-lua/plenary.nvim",
+    --     "nvim-telescope/telescope.nvim",
+    --     "kyazdani42/nvim-web-devicons"
+    --   },
+    --   config = function()
+    --     require "octo".setup()
+    --   end
+    -- }
 
     use {
       "ThePrimeagen/refactoring.nvim",
@@ -106,6 +106,8 @@ return require "packer".startup(
 
     -- gS and gJ to switch between single and multi-line
     use "AndrewRadev/splitjoin.vim"
+    use "AndrewRadev/andrews_nerdtree.vim"
+    use "AndrewRadev/writable_search.vim"
 
     -- tmux integration
     use "benmills/vimux"

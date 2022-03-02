@@ -84,15 +84,10 @@ _G.packer_plugins = {
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["ack.vim"] = {
+  ["andrews_nerdtree.vim"] = {
     loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/ack.vim",
-    url = "https://github.com/mileszs/ack.vim"
-  },
-  ["auto-pairs"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/auto-pairs",
-    url = "https://github.com/jiangmiao/auto-pairs"
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/andrews_nerdtree.vim",
+    url = "https://github.com/AndrewRadev/andrews_nerdtree.vim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -149,11 +144,6 @@ _G.packer_plugins = {
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/goyo.vim",
     url = "https://github.com/junegunn/goyo.vim"
   },
-  ["incsearch.vim"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/incsearch.vim",
-    url = "https://github.com/haya14busa/incsearch.vim"
-  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
@@ -193,12 +183,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
-  },
-  ["octo.nvim"] = {
-    config = { "\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tocto\frequire\0" },
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/octo.nvim",
-    url = "https://github.com/pwntester/octo.nvim"
   },
   ["onedark.nvim"] = {
     config = { "\27LJ\2\nb\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0B\0\1\1K\0\1\0\tload\1\0\1\nstyle\vdarker\nsetup\fonedark\frequire\0" },
@@ -241,11 +225,6 @@ _G.packer_plugins = {
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tmuxline.vim"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/tmuxline.vim",
-    url = "https://github.com/edkolev/tmuxline.vim"
-  },
   ["vim-abolish"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-abolish",
@@ -286,11 +265,6 @@ _G.packer_plugins = {
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-mkdir",
     url = "https://github.com/pbrisbin/vim-mkdir"
   },
-  ["vim-multiple-cursors"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-multiple-cursors",
-    url = "https://github.com/terryma/vim-multiple-cursors"
-  },
   ["vim-pencil"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-pencil",
@@ -305,11 +279,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
     url = "https://github.com/tpope/vim-rhubarb"
-  },
-  ["vim-run-interactive"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-run-interactive",
-    url = "https://github.com/christoomey/vim-run-interactive"
   },
   ["vim-surround"] = {
     loaded = true,
@@ -350,6 +319,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vimux",
     url = "https://github.com/benmills/vimux"
+  },
+  ["writable_search.vim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/writable_search.vim",
+    url = "https://github.com/AndrewRadev/writable_search.vim"
   }
 }
 
@@ -358,10 +332,6 @@ time([[Defining packer_plugins]], false)
 time([[Config for onedark.nvim]], true)
 try_loadstring("\27LJ\2\nb\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0B\0\1\1K\0\1\0\tload\1\0\1\nstyle\vdarker\nsetup\fonedark\frequire\0", "config", "onedark.nvim")
 time([[Config for onedark.nvim]], false)
--- Config for: octo.nvim
-time([[Config for octo.nvim]], true)
-try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tocto\frequire\0", "config", "octo.nvim")
-time([[Config for octo.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
