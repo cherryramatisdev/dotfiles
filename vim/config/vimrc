@@ -17,13 +17,15 @@ call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 call dein#add('tomasr/molokai')
 
 " Yes, Shougo has a special place on my config, deal with this.
-call dein#add('vim-denops/denops.vim')
-call dein#add('Shougo/ddc.vim')
-call dein#add('Shougo/ddc-around')
-call dein#add('Shougo/ddc-matcher_head')
-call dein#add('Shougo/ddc-sorter_rank')
-call dein#add('LumaKernel/ddc-file')
-call dein#add('matsui54/ddc-buffer')
+" call dein#add('vim-denops/denops.vim')
+" call dein#add('Shougo/ddc.vim')
+" call dein#add('Shougo/ddc-around')
+" call dein#add('Shougo/ddc-matcher_head')
+" call dein#add('Shougo/ddc-sorter_rank')
+" call dein#add('LumaKernel/ddc-file')
+" call dein#add('matsui54/ddc-buffer')
+
+call dein#add('jayli/vim-easycomplete')
 
 call dein#add('Shougo/unite.vim')
 
@@ -48,6 +50,15 @@ call dein#add('tpope/vim-scriptease')
 call dein#add('tpope/vim-sensible')
 
 call dein#add('tyru/open-browser.vim')
+
+call dein#add('ludovicchabant/vim-gutentags')
+
+call dein#add('prettier/vim-prettier', {'build': 'npm install'})
+
+call dein#add('dhruvasagar/vim-dotoo')
+
+call dein#add('sirver/UltiSnips')
+call dein#add('honza/vim-snippets')
 
 " Required:
 call dein#end()

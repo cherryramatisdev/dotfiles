@@ -3,9 +3,9 @@ nnoremap <leader>t :<C-u>:pwd<cr>:VimShell<cr>
 
 function s:QuitWindow() abort
   if len(expand('%')) <= 0
-    execute 'q!'
+    execute 'bd!'
   else
-    execute 'q'
+    execute 'bd'
   endif
 endfunction
 
