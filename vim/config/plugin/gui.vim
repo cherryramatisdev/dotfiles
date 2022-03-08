@@ -6,6 +6,7 @@ if has('gui')
 	set guioptions-=r
 	set guioptions-=l
 	set guioptions-=b
+  set guifont=Ubuntu\ Mono\ 14
 
   set guitablabel=%{getcwd()}
 endif

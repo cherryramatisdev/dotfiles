@@ -1,6 +1,6 @@
 #!/bin/bash
 
-choice=`git ls-files | fzy`
+choice=`git ls-files | fzf`
 
 if [[ -n "$choice" ]]; then
 	$EDITOR $choice
