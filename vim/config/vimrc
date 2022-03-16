@@ -50,6 +50,7 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['typescript', 'typescriptreact', 'css', 'json', 'markdown', 'html'] }
 
 Plug 'dhruvasagar/vim-dotoo'
+Plug 'dhruvasagar/vim-zoom'
 
 Plug 'sirver/UltiSnips'
 Plug 'honza/vim-snippets'
@@ -57,5 +58,7 @@ Plug 'honza/vim-snippets'
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+Plug 'rhysd/committia.vim'
 
 call plug#end()
