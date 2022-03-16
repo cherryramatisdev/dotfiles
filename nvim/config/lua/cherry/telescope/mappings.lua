@@ -9,11 +9,27 @@ vim.keymap.set(
 )
 
 vim.keymap.set(
+"n",
+"<C-p>",
+function()
+require("telescope.builtin").find_files()
+end
+)
+
+vim.keymap.set(
   "n",
   "<leader>l",
   function()
     require("telescope.builtin").live_grep()
   end
+)
+
+vim.keymap.set(
+"n",
+"<C-g>",
+function()
+	require("telescope.builtin").live_grep()
+end
 )
 
 local function buffers()

@@ -25,8 +25,6 @@ return require "packer".startup(
 
     use "mhartington/formatter.nvim"
 
-    use "tpope/vim-vinegar"
-
     use "neovim/nvim-lspconfig"
     use "kyazdani42/nvim-web-devicons"
     use "onsails/lspkind-nvim"
@@ -72,22 +70,26 @@ return require "packer".startup(
     }
     use "janko-m/vim-test"
     use "pbrisbin/vim-mkdir"
+
     use "tpope/vim-endwise"
     use "tpope/vim-eunuch"
     use "tpope/vim-fugitive"
     use "tpope/vim-repeat"
     use "tpope/vim-rhubarb"
+
+    use "tpope/vim-vinegar"
+    use "tpope/vim-rsi"
+    use "tpope/vim-projectionist"
+    use "tpope/vim-haystack"
     use "tpope/vim-surround"
+    -- find, replace with odd plurals and caps, eg ":%S/dog{,s}/child{,ren}/g"
+    use "tpope/vim-abolish"
 
     -- text stuff
     use "kana/vim-textobj-user"
-    use "nelstrom/vim-textobj-rubyblock"
     use "bkad/CamelCaseMotion"
     -- Adds 'il' and 'al'
     use "kana/vim-textobj-line"
-
-    -- find, replace with odd plurals and caps, eg ":%S/dog{,s}/child{,ren}/g"
-    use "tpope/vim-abolish"
 
     -- auto-apply editorconfig settings on save
     use "editorconfig/editorconfig-vim"
@@ -112,5 +114,8 @@ return require "packer".startup(
     -- tmux integration
     use "benmills/vimux"
     use "christoomey/vim-tmux-navigator"
+
+    -- markdown
+    use {"ellisonleao/glow.nvim"}
   end
 )

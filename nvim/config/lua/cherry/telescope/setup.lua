@@ -50,14 +50,15 @@ require("telescope").setup {
       i = {
         ["<C-x>"] = false,
         ["<C-s>"] = actions.select_horizontal,
-        ["<C-n>"] = "move_selection_next",
         ["<C-y>"] = set_prompt_to_entry_value,
         -- These are new :)
         ["<M-p>"] = action_layout.toggle_preview,
         ["<M-m>"] = action_layout.toggle_mirror,
-        -- This is nicer when used with smart-history plugin.
-        ["<C-k>"] = actions.cycle_history_next,
-        ["<C-j>"] = actions.cycle_history_prev,
+	["<C-j>"] = "move_selection_next",
+	["<C-k>"] = "move_selection_previous",
+	-- This is nicer when used with smart-history plugin.
+        ["<C-p>"] = actions.cycle_history_next,
+        ["<C-n>"] = actions.cycle_history_prev,
         ["<C-w>"] = function()
           vim.api.nvim_input "<c-s-w>"
         end

@@ -3,8 +3,8 @@ vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
 
 vim.keymap.set("n", "p", "p=`]")
-vim.keymap.set("n", "<leader>P", "p")
-vim.keymap.set("n", "<leader>p", [["0p]])
+-- vim.keymap.set("n", "<leader>P", "p")
+-- vim.keymap.set("n", "<leader>p", [["0p]])
 vim.keymap.set("n", "<leader><leader>", [[<C-^>]])
 
 vim.keymap.set(

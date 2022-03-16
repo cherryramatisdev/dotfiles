@@ -139,6 +139,11 @@ _G.packer_plugins = {
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/formatter.nvim",
     url = "https://github.com/mhartington/formatter.nvim"
   },
+  ["glow.nvim"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/glow.nvim",
+    url = "https://github.com/ellisonleao/glow.nvim"
+  },
   ["goyo.vim"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/goyo.vim",
@@ -255,6 +260,11 @@ _G.packer_plugins = {
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-go",
     url = "https://github.com/fatih/vim-go"
   },
+  ["vim-haystack"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-haystack",
+    url = "https://github.com/tpope/vim-haystack"
+  },
   ["vim-inky"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-inky",
@@ -270,6 +280,11 @@ _G.packer_plugins = {
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-pencil",
     url = "https://github.com/reedes/vim-pencil"
   },
+  ["vim-projectionist"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-projectionist",
+    url = "https://github.com/tpope/vim-projectionist"
+  },
   ["vim-repeat"] = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-repeat",
@@ -279,6 +294,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
     url = "https://github.com/tpope/vim-rhubarb"
+  },
+  ["vim-rsi"] = {
+    loaded = true,
+    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-rsi",
+    url = "https://github.com/tpope/vim-rsi"
   },
   ["vim-surround"] = {
     loaded = true,
@@ -294,11 +314,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-textobj-line",
     url = "https://github.com/kana/vim-textobj-line"
-  },
-  ["vim-textobj-rubyblock"] = {
-    loaded = true,
-    path = "/home/cherry/.local/share/nvim/site/pack/packer/start/vim-textobj-rubyblock",
-    url = "https://github.com/nelstrom/vim-textobj-rubyblock"
   },
   ["vim-textobj-user"] = {
     loaded = true,
