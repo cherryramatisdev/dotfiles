@@ -1,76 +1,64 @@
 let mapleader = " "
 
+filetype plugin indent on
+syntax enable
 if &compatible
   set nocompatible               " Be iMproved
 endif
 
-" Required:
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+call plug#begin()
 
-" Required:
-call dein#begin('~/.cache/dein/')
+Plug 'tomasr/molokai'
 
-" Let dein manage dein
-" Required:
-call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+Plug 'jayli/vim-easycomplete'
 
-call dein#add('tomasr/molokai')
+Plug 'drmikehenry/vim-fontsize'
 
-" Yes, Shougo has a special place on my config, deal with this.
-" call dein#add('vim-denops/denops.vim')
-" call dein#add('Shougo/ddc.vim')
-" call dein#add('Shougo/ddc-around')
-" call dein#add('Shougo/ddc-matcher_head')
-" call dein#add('Shougo/ddc-sorter_rank')
-" call dein#add('LumaKernel/ddc-file')
-" call dein#add('matsui54/ddc-buffer')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
-call dein#add('jayli/vim-easycomplete')
+Plug 'thinca/vim-quickrun'
 
-" call dein#add('Shougo/unite.vim')
+Plug 'scrooloose/nerdtree'
+Plug 'AndrewRadev/andrews_nerdtree.vim'
 
-" call dein#add('Shougo/vimshell.vim')
-" call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+" section for andrew
+Plug 'AndrewRadev/sideways.vim'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/inline_edit.vim'
+Plug 'AndrewRadev/switch.vim'
+Plug 'AndrewRadev/tagalong.vim', { 'for': ['eruby'] }
 
-call dein#add('drmikehenry/vim-fontsize')
+" section for tpope
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-scriptease'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-haystack'
 
-call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
-call dein#add('junegunn/fzf.vim')
+Plug 'tyru/open-browser.vim'
 
-call dein#add('thinca/vim-quickrun')
+" Plug 'ludovicchabant/vim-gutentags'
 
-call dein#add('scrooloose/nerdtree')
-call dein#add('AndrewRadev/andrews_nerdtree.vim')
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'for': ['typescript', 'typescriptreact', 'css', 'json', 'markdown', 'html'] }
 
-call dein#add('tpope/vim-fugitive')
-call dein#add('tpope/vim-commentary')
-call dein#add('tpope/vim-surround')
-call dein#add('tpope/vim-rsi')
-call dein#add('tpope/vim-scriptease')
-call dein#add('tpope/vim-sensible')
+Plug 'dhruvasagar/vim-dotoo'
+Plug 'dhruvasagar/vim-zoom'
 
-call dein#add('tyru/open-browser.vim')
+Plug 'sirver/UltiSnips'
+Plug 'honza/vim-snippets'
 
-call dein#add('ludovicchabant/vim-gutentags')
+Plug 'christoomey/vim-tmux-navigator'
 
-call dein#add('prettier/vim-prettier', {'build': 'npm install'})
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-call dein#add('dhruvasagar/vim-dotoo')
+Plug 'rhysd/committia.vim'
 
-call dein#add('sirver/UltiSnips')
-call dein#add('honza/vim-snippets')
-
-call dein#add('christoomey/vim-tmux-navigator')
-
-call dein#add('fatih/vim-go', {'build': ':GoInstallBinaries'})
-
-" Required:
-call dein#end()
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-if dein#check_install()
-  call dein#install()
-endif
+call plug#end()

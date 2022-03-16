@@ -1,2 +1,3 @@
 let g:rehash256 = 1
-colorscheme molokai
+set background=light
+colorscheme cherry
