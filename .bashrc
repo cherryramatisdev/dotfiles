@@ -12,13 +12,14 @@ export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$GOBIN:$PATH
+export PATH=/home/linuxbrew/.linuxbrew/lib/ruby/gems/3.1.0/bin:$PATH
 
 export JAVA_HOME="/home/linuxbrew/.linuxbrew/bin/java"
 export JAVA_CMD="/home/linuxbrew/.linuxbrew/bin/java"
 
 export SNIPPETS=$HOME/git/dotfiles/snippets
-export BROWSER=firefox
-export EDITOR=vim
+# export BROWSER=firefox
+export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files'
 
 export NVM_DIR="$HOME/.nvm"
@@ -31,7 +32,7 @@ alias '?'=duck
 alias '??'=github
 alias '???'=wiki
 alias ls='ls --color=auto'
-alias dot="cd ~/projects/dotfiles"
+alias dot="cd ~/git/dotfiles"
 alias script="cd ~/bin"
 alias g="git"
 alias c="clear"
@@ -40,7 +41,8 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias tmux="tmux -2"
 alias t="ta"
-alias vi="vim"
+alias vi="nvim"
+alias vim="nvim"
 alias dev="yarn start:dev"
 alias y="yarn"
 alias ya="yarn add"
@@ -108,7 +110,7 @@ __ps1() {
 PROMPT_COMMAND="__ps1"
 
 # --------------------------- private config ---------------------------
-[[ -f "$HOME/.private-bash" ]]; . $HOME/.private-bash
+# [[ -f "$HOME/.private-bash" ]]; . $HOME/.private-bash
 
 # --------------------------- completion ---------------------------
 _have gh && . <(gh completion -s bash)
@@ -118,6 +120,3 @@ source /etc/bash_completion
 # --------------------------- cdpath ---------------------------
 export GHREPOS="/home/cherry/git"
 export CDPATH=".:$GHREPOS"
-
-source /home/cherry/.config/broot/launcher/bash/br
-. "$HOME/.cargo/env"
