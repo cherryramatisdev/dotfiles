@@ -12,9 +12,8 @@ echo "Linking stuff..."
 ln -sf "$PWD/.bashrc" "/home/cherry/.bashrc"
 ln -sf "$PWD/scripts" "/home/cherry/bin"
 ln -sf "$PWD/Music" "/home/cherry/Music"
-ln -sf "$PWD/wallpapers" "/home/cherry/wallpapers"
 ln -sf "$PWD/.gitconfig" "/home/cherry/.gitconfig"
-ln -sf "$PWD/.git-coauthors" "/home/cherry/.git-coauthors"
+# ln -sf "$PWD/.git-coauthors" "/home/cherry/.git-coauthors"
 
 mkdir -p "/home/cherry/.local/bin" || true
 

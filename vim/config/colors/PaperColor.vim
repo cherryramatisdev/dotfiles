@@ -5,6 +5,8 @@
 
 let s:version = '0.9.x'
 
+set background=light
+
 " Note on navigating this source code:
 " - Use folding feature to collapse/uncollapse blocks of marked code
 "     zM to fold all markers in this file to see the structure of the source code

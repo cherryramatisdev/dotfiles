@@ -8,8 +8,6 @@ endif
 
 call plug#begin()
 
-Plug 'tomasr/molokai'
-
 Plug 'jayli/vim-easycomplete'
 
 Plug 'drmikehenry/vim-fontsize'
@@ -47,18 +45,25 @@ Plug 'tyru/open-browser.vim'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install --frozen-lockfile --production',
-  \ 'for': ['typescript', 'typescriptreact', 'css', 'json', 'markdown', 'html'] }
+  \ 'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'json', 'markdown', 'html'] }
 
 Plug 'dhruvasagar/vim-dotoo'
 Plug 'dhruvasagar/vim-zoom'
 
 Plug 'sirver/UltiSnips'
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'rhysd/committia.vim'
+
+" This is the IDE part for javascript
+Plug 'artemave/vjs', { 'do': 'npm install' }
+
+Plug 'jiangmiao/auto-pairs'
+
+Plug 'vim-test/vim-test'
 
 call plug#end()
