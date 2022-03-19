@@ -5,10 +5,11 @@ noremap gr :EasyCompleteReference<CR>
 noremap gd :EasyCompleteGotoDefinition<CR>
 noremap rn :EasyCompleteRename<CR>
 
+let g:easycomplete_tab_trigger="<c-space>"
+
 let g:easycomplete_diagnostics_enable = 1
 let g:easycomplete_signature_enable = 1
-" let g:easycomplete_tabnine_enable = 1
-" please install nerdfont
+
 let g:easycomplete_menuflag_buf = ""
 let g:easycomplete_kindflag_buf = "[buf]"
 let g:easycomplete_menuflag_snip = ""
