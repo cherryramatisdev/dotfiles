@@ -14,7 +14,12 @@ endif
 
 call plug#begin()
 
-Plug 'drmikehenry/vim-fontsize'
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -23,6 +28,8 @@ Plug 'thinca/vim-quickrun'
 
 Plug 'scrooloose/nerdtree'
 Plug 'AndrewRadev/andrews_nerdtree.vim'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " section for andrew
 Plug 'AndrewRadev/sideways.vim'
@@ -45,8 +52,6 @@ Plug 'tpope/vim-haystack'
 
 Plug 'tyru/open-browser.vim'
 
-" Plug 'ludovicchabant/vim-gutentags'
-
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install --frozen-lockfile --production',
   \ 'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'json', 'markdown', 'html'] }
@@ -58,8 +63,6 @@ Plug 'sirver/UltiSnips'
 " Plug 'honza/vim-snippets'
 
 Plug 'christoomey/vim-tmux-navigator'
-
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'rhysd/committia.vim'
 

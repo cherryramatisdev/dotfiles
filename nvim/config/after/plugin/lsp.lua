@@ -2,7 +2,7 @@ local opts = {noremap = true, silent = true}
 vim.keymap.set("n", "<space>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-vim.keymap.set("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+vim.keymap.set("n", "<space>Q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 ---@diagnostic disable-next-line: unused-local
 local on_attach = function(client, bufnr)
@@ -21,7 +21,7 @@ end
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local servers = {"tsserver", "sumneko_lua", "gopls"}
+local servers = {"tsserver"}
 for _, lsp in pairs(servers) do
   require("lspconfig")[lsp].setup {
     on_attach = on_attach,
