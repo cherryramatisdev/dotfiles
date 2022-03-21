@@ -1,5 +1,5 @@
 " Fix clipboard to always use the primary
-set clipboard^=unnamed
+set clipboard=unnamedplus
 
 " Use two spaces for tab because i like it small
 set expandtab

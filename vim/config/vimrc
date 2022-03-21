@@ -17,8 +17,8 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'thinca/vim-quickrun'
 
-Plug 'scrooloose/nerdtree'
 Plug 'AndrewRadev/andrews_nerdtree.vim'
+Plug 'scrooloose/nerdtree'
 
 " section for andrew
 Plug 'AndrewRadev/sideways.vim'
@@ -61,9 +61,15 @@ Plug 'rhysd/committia.vim'
 
 " This is the IDE part for javascript
 Plug 'artemave/vjs', { 'do': 'npm install' }
+Plug 'Galooshi/vim-import-js'
 
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'vim-test/vim-test'
+
+Plug 'jiangmiao/auto-pairs'
+
+" TODO: need to configure this
+" https://github.com/puremourning/vimspector
 
 call plug#end()
