@@ -1,18 +1,18 @@
 #!/bin/sh
 
+echo "linking"
+
+ln -sf "$PWD/vimrc" "/home/cherry/.vimrc"
+
 echo "installing dependencies.."
 apt install git make clang libtool-bin libxt-dev
 
 echo "cloning"
 git clone https://github.com/vim/vim /home/cherry/Downloads/packages/vim
 
-# TODO: check how to enable language interp
+# TO DO: check how to enable language interp
 sh ./configure --with-features=huge --enable-python3interp=yes --enable-gui=auto
 
 echo "building all..."
 make
 make install
-
-echo "linking"
-
-ln -sf "$PWD/config" "/home/cherry/.vim"

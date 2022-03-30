@@ -1,5 +1,9 @@
 #!/bin/bash
 
 while IFS= read -r line; do
-	echo "${1:-//} $line"
+  if [[ $line == *"//"* ]]; then
+    echo "$line" | sed 's/\/\/ //'
+  else
+    echo "${1:-//} $line"
+  fi
 done

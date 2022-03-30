@@ -20,9 +20,5 @@ endfunction
 augroup lsp_install
     au!
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-    autocmd User lsp_buffer_enabled set foldmethod=expr
-          \ foldexpr=lsp#ui#vim#folding#foldexpr()
-          \ foldtext=lsp#ui#vim#folding#foldtext()
-    autocmd User lsp_buffer_enabled set nofoldenable
 augroup END
 

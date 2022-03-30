@@ -17,7 +17,7 @@ ln -sf "$PWD/.gitconfig" "/home/cherry/.gitconfig"
 
 mkdir -p "/home/cherry/.local/bin" || true
 
-for i in vim nvim lynx tmux; do
+for i in vim lynx tmux; do
 	echo $i
 	cd $i && sudo sh ./setup
 	cd -

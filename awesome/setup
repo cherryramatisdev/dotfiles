@@ -1,5 +1,0 @@
-#!/bin/sh
-
-apt install awesome
-
-ln -sf "$PWD/config" "/home/cherry/.config/awesome"

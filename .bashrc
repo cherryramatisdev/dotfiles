@@ -1,4 +1,5 @@
 set -o vi
+# set -o emacs
 
 # ------------------------------ local utility functions -----------------------------
 _have() { type "$1" &>/dev/null; }
@@ -32,6 +33,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # ------------------------------ aliases -----------------------------
 
+alias :wq=exit
+alias :q=exit
 alias '?'=duck
 alias '??'=github
 alias '???'=wiki

@@ -20,8 +20,6 @@ $SIG{"INT"} = \&handle;
 # Special thanks to @UndeadLeech for adding the transparency. This is
 # the *only* fish/asciiquarium without the default black background.
 #
-# Thanks to @qmacro for putting rwx into a special fishy.
-#
 #############################################################################
 # Asciiquarium - An aquarium animation in ASCII art
 #
@@ -313,7 +311,7 @@ q{
        \
      ...\..,
 \  /'       \
- >=  rwx(  ' >
+ >=  cherry(  ' >
 /  \      / /
     `"'"'/''
 },
@@ -329,7 +327,7 @@ q{
       /
   ,../...
  /       '\  /
-< '  )rwx  =<
+< '  )cherry  =<
  \ \      /  \
   `'\'"'"'
 },
