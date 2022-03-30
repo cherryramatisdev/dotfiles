@@ -8,14 +8,11 @@ endif
 
 call plug#begin()
 
-Plug 'jayli/vim-easycomplete'
-
-Plug 'drmikehenry/vim-fontsize'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
-Plug 'thinca/vim-quickrun'
 
 Plug 'AndrewRadev/andrews_nerdtree.vim'
 Plug 'scrooloose/nerdtree'
@@ -23,9 +20,6 @@ Plug 'scrooloose/nerdtree'
 " section for andrew
 Plug 'AndrewRadev/sideways.vim'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'AndrewRadev/inline_edit.vim'
-Plug 'AndrewRadev/switch.vim'
-Plug 'AndrewRadev/tagalong.vim', { 'for': ['eruby'] }
 
 " section for tpope
 Plug 'tpope/vim-fugitive'
@@ -35,13 +29,8 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-rails'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-haystack'
-
-Plug 'tyru/open-browser.vim'
-
-" Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install --frozen-lockfile --production',
@@ -51,7 +40,7 @@ Plug 'dhruvasagar/vim-dotoo'
 Plug 'dhruvasagar/vim-zoom'
 
 Plug 'sirver/UltiSnips'
-" Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -61,13 +50,10 @@ Plug 'rhysd/committia.vim'
 
 " This is the IDE part for javascript
 Plug 'artemave/vjs', { 'do': 'npm install' }
-Plug 'Galooshi/vim-import-js'
 
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'vim-test/vim-test'
-
-Plug 'jiangmiao/auto-pairs'
 
 " TODO: need to configure this
 " https://github.com/puremourning/vimspector

@@ -24,6 +24,9 @@ set noswapfile
 " Enable line number and relative line number
 set nu rnu
 
+" avoid most of the 'Hit Enter ...' messages
+set shortmess=aoOtTI
+
 " This fix the file path completion to use the current buffer file as
 " reference, but don't mass up with other plugins
 autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
