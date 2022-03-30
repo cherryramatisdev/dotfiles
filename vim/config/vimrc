@@ -6,56 +6,55 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-call plug#begin()
+if filereadable(expand('~/.vim/autoload/plug.vim'))
+  call plug#begin()
 
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'mattn/vim-lsp-settings'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
 
-Plug 'AndrewRadev/andrews_nerdtree.vim'
-Plug 'scrooloose/nerdtree'
+  Plug 'AndrewRadev/andrews_nerdtree.vim'
+  Plug 'scrooloose/nerdtree'
 
-" section for andrew
-Plug 'AndrewRadev/sideways.vim'
-Plug 'AndrewRadev/splitjoin.vim'
+  " section for andrew
+  Plug 'AndrewRadev/sideways.vim'
+  Plug 'AndrewRadev/splitjoin.vim'
 
-" section for tpope
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-scriptease'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-haystack'
+  " section for tpope
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-rsi'
+  Plug 'tpope/vim-scriptease'
+  Plug 'tpope/vim-sensible'
+  Plug 'tpope/vim-dispatch'
+  Plug 'tpope/vim-projectionist'
+  Plug 'tpope/vim-haystack'
 
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install --frozen-lockfile --production',
-  \ 'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'json', 'markdown', 'html'] }
+  Plug 'prettier/vim-prettier', {
+        \ 'do': 'yarn install --frozen-lockfile --production',
+        \ 'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'json', 'markdown', 'html'] }
 
-Plug 'dhruvasagar/vim-dotoo'
-Plug 'dhruvasagar/vim-zoom'
+  Plug 'dhruvasagar/vim-dotoo'
+  Plug 'dhruvasagar/vim-zoom'
 
-Plug 'sirver/UltiSnips'
-Plug 'honza/vim-snippets'
+  Plug 'sirver/UltiSnips'
+  Plug 'honza/vim-snippets'
 
-Plug 'christoomey/vim-tmux-navigator'
+  Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-Plug 'rhysd/committia.vim'
+  Plug 'rhysd/committia.vim'
 
-" This is the IDE part for javascript
-Plug 'artemave/vjs', { 'do': 'npm install' }
+  Plug 'jiangmiao/auto-pairs'
 
-Plug 'jiangmiao/auto-pairs'
+  Plug 'vim-test/vim-test'
 
-Plug 'vim-test/vim-test'
+  " TODO: need to configure this
+  " https://github.com/puremourning/vimspector
 
-" TODO: need to configure this
-" https://github.com/puremourning/vimspector
-
-call plug#end()
+  call plug#end()
+endif
