@@ -8,24 +8,20 @@ _have() { type "$1" &>/dev/null; }
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin/
 
+export PATH=$PATH:/usr/local/go/bin
 export PATH=$HOME/.npm-global/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$GOBIN:$PATH
-export PATH=/home/linuxbrew/.linuxbrew/lib/ruby/gems/3.1.0/bin:$PATH
 
 # Needed to make wsl work
 LOCAL_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
 export DISPLAY=$LOCAL_IP:0
 
-export JAVA_HOME="/home/linuxbrew/.linuxbrew/bin/java"
-export JAVA_CMD="/home/linuxbrew/.linuxbrew/bin/java"
-
 export SNIPPETS=$HOME/git/dotfiles/snippets
 # export BROWSER=firefox
 export EDITOR=vim
-export FZF_DEFAULT_COMMAND='rg --files'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
