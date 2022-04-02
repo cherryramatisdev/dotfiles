@@ -3,6 +3,8 @@
 use strict;
 use warnings;
 
+use v5.14;
+
 my $target = $ARGV[0];
 # TODO - change this to use proper perl grep.
 my $result = `git ls-files | grep -i $target`;
@@ -22,7 +24,7 @@ if ($count > 1) {
 		 push @newarr, "$i: $arr[$i]\n";
 	 }
 
-	 print(@newarr);
+	 say @newarr;
 
 	 print "Select an item: ";
 	 my $item = <STDIN>;
