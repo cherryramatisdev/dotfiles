@@ -11,8 +11,14 @@ set nocompatible
 " automatically indent new lines
 set autoindent
 
+" lsp use this column to display diagnostics, so never show it
+set signcolumn=no
+
+" stop asking me to load file with W11, just load it
+set autoread
+
 " setup clipboard to use system primary
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 " automatically write files when changing when multiple files open
 set autowrite
@@ -189,7 +195,7 @@ au FileType * hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE
 au FileType * hi MoreMsg ctermfg=black ctermbg=NONE
 au FileType * hi NonText ctermfg=black ctermbg=NONE
 au FileType * hi vimGlobal ctermfg=black ctermbg=NONE
-au FileType * hi goComment ctermfg=black ctermbg=NONE
+au FileType * hi goComment ctermfg=gray ctermbg=NONE
 au FileType * hi ErrorMsg ctermbg=234 ctermfg=darkred cterm=NONE
 au FileType * hi Error ctermbg=234 ctermfg=darkred cterm=NONE
 au FileType * hi SpellBad ctermbg=234 ctermfg=darkred cterm=NONE
@@ -199,6 +205,7 @@ au FileType * hi vimTodo ctermbg=236 ctermfg=darkred
 au FileType * hi Todo ctermbg=236 ctermfg=darkred
 au FileType * hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
 au FileType * hi MatchParen ctermbg=236 ctermfg=darkred
+au FileType * hi SignColumn ctermbg=NONE ctermfg=darkred
 au FileType markdown,pandoc hi Title ctermfg=yellow ctermbg=NONE
 au FileType markdown,pandoc hi Operator ctermfg=yellow ctermbg=NONE
 au FileType yaml hi yamlBlockMappingKey ctermfg=NONE
@@ -220,8 +227,6 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
   call plug#begin('~/.local/share/vim/plugins')
   Plug 'prabirshrestha/vim-lsp'
-  " Plug 'mattn/vim-lsp-settings'
-  Plug 'frazrepo/vim-rainbow'
   Plug 'vim-pandoc/vim-pandoc'
   Plug 'rwxrob/vim-pandoc-syntax-simple'
   Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
@@ -231,13 +236,9 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'prettier/vim-prettier', {
         \ 'do': 'yarn install --frozen-lockfile --production',
         \ 'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'json', 'markdown', 'html'] }
-  Plug 'christoomey/vim-tmux-navigator'
   Plug 'vim-test/vim-test'
 
   call plug#end()
-
-  " rainbow
-  autocmd FileType *.ts,*.tsx,*.go let g:rainbow_active=1
 
   " pandoc
   let g:pandoc#formatting#mode = 'h' " A'
@@ -283,9 +284,12 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
           \ 'allowlist': ['typescript', 'typescriptreact', 'javascript', 'javascriptreact'],
           \ })
   endif
+	let g:lsp_completion_documentation_enabled = 0
+	let g:lsp_diagnostics_signs_insert_mode_enabled = 0
+	let g:lsp_document_code_action_signs_enabled = 0
+  let g:lsp_document_highlight_enabled = 0
   function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
     imap <buffer> <Tab> <C-x><C-o><C-n>
     nmap <buffer> gd <plug>(lsp-definition)
@@ -305,11 +309,8 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   augroup lsp_install
     au!
     " autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-    autocmd User *.ts,*.tsx,*.js,*.jsx call s:on_lsp_buffer_enabled()
+    autocmd FileType *.ts,*.tsx,*.js,*.jsx call s:on_lsp_buffer_enabled()
   augroup END
-
-  let g:prettier#autoformat = 1
-  let g:prettier#autoformat_require_pragma = 0
 
   " let test#strategy = "dispatch"
   let test#javascript#jest#executable = 'yarn test'
@@ -321,11 +322,13 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   autocmd FileType *.ts,*.tsx,*.js,*.jsx nmap <buffer> <silent> <leader>tv :TestVisit<CR>
 else
   autocmd vimleavepre *.go !gofmt -w % " backup if fatih fails
-  autocmd vimleavepre *.ts,*.tsx,*.js,*.jsx !prettier -w % " backup if prettier fails
 endif
 
 " fill in anything beginning with @ with a link to twitch to it
 " autocmd vimleavepre *.md !perl -p -i -e 's, @(\w+), [\\@\1](https://twitch.tv/\1),g' %
+
+" this helps on wrapping the line at 80 characters
+autocmd BufNewFile,BufRead *.md setlocal tw=80
 
 " make Y consitent with D and C (yank til end)
 map Y y$
@@ -334,34 +337,46 @@ map Y y$
 set wildmenu
 
 " disable search highlighting with <C-L> when refreshing screen
-nnoremap <C-r> :nohl<CR><C-L><C-r>
+nnoremap <C-l> :nohl<CR><C-L>
 
 " enable omni-completion
 set omnifunc=syntaxcomplete#Complete
 
 " force some files to be specific file type
-au bufnewfile,bufRead $SNIPPETS/md/* set ft=pandoc
-au bufnewfile,bufRead $SNIPPETS/sh/* set ft=sh
-au bufnewfile,bufRead $SNIPPETS/bash/* set ft=bash
-au bufnewfile,bufRead $SNIPPETS/go/* set ft=go
-au bufnewfile,bufRead $SNIPPETS/c/* set ft=c
-au bufnewfile,bufRead $SNIPPETS/html/* set ft=html
-au bufnewfile,bufRead $SNIPPETS/css/* set ft=css
-au bufnewfile,bufRead $SNIPPETS/js/* set ft=javascript
-au bufnewfile,bufRead $SNIPPETS/python/* set ft=python
-au bufnewfile,bufRead $SNIPPETS/perl/* set ft=perl
-au bufnewfile,bufRead user-data set ft=yaml
-au bufnewfile,bufRead meta-data set ft=yaml
-au bufnewfile,bufRead *.bash* set ft=bash
-au bufnewfile,bufRead *.{peg,pegn} set ft=config
-au bufnewfile,bufRead *.profile set filetype=sh
-au bufnewfile,bufRead *.crontab set filetype=crontab
-au bufnewfile,bufRead *ssh/config set filetype=sshconfig
-au bufnewfile,bufRead .dockerignore set filetype=gitignore
-au bufnewfile,bufRead *gitconfig set filetype=gitconfig
-au bufnewfile,bufRead /tmp/psql.edit.* set syntax=sql
-au bufnewfile,bufRead *.go set spell spellcapcheck=0
-au bufnewfile,bufRead commands.yaml set spell
+au bufnewfile,bufRead $SNIPPETS/md/* setlocallocal ft=pandoc
+au bufnewfile,bufRead $SNIPPETS/sh/* setlocal ft=sh
+au bufnewfile,bufRead $SNIPPETS/bash/* setlocal ft=bash
+au bufnewfile,bufRead $SNIPPETS/go/* setlocal ft=go
+au bufnewfile,bufRead $SNIPPETS/c/* setlocal ft=c
+au bufnewfile,bufRead $SNIPPETS/html/* setlocal ft=html
+au bufnewfile,bufRead $SNIPPETS/css/* setlocal ft=css
+au bufnewfile,bufRead $SNIPPETS/js/* setlocal ft=javascript
+au bufnewfile,bufRead $SNIPPETS/python/* setlocal ft=python
+au bufnewfile,bufRead $SNIPPETS/perl/* setlocal ft=perl
+au bufnewfile,bufRead user-data setlocal ft=yaml
+au bufnewfile,bufRead meta-data setlocal ft=yaml
+au bufnewfile,bufRead *.bash* setlocal ft=bash
+au bufnewfile,bufRead *.{peg,pegn} setlocal ft=config
+au bufnewfile,bufRead *.profile setlocal filetype=sh
+au bufnewfile,bufRead *.crontab setlocal filetype=crontab
+au bufnewfile,bufRead *ssh/config setlocal filetype=sshconfig
+au bufnewfile,bufRead .dockerignore setlocal filetype=gitignore
+au bufnewfile,bufRead *gitconfig setlocal filetype=gitconfig
+au bufnewfile,bufRead /tmp/psql.edit.* setlocal syntax=sql
+au bufnewfile,bufRead *.go setlocal spell spellcapcheck=0
+au bufnewfile,bufRead commands.yaml setlocal spell
+
+" format with prettier
+" if has("eval")
+"   fun! s:Prettier() abort
+"     let l:pos = getcurpos()
+"     silent execute "!yarn prettier -w %"
+"     call setpos('.', l:pos)
+"     redraw
+"   endfun
+" 
+"   au BufWritePre *.ts,*.tsx,*.js,*.jsx,*.json call s:Prettier()
+" endif
 
 "fix bork bash detection
 if has("eval")  " vim-tiny detection

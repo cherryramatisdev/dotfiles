@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const $1: React.FC = () => {
+export const {1}: React.FC = () => {
 	return (
 		<div></div>
 	)
