@@ -1,0 +1,40 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+my $target = $ARGV[0];
+# TODO - change this to use proper perl grep.
+my $result = `git ls-files | grep -i $target`;
+
+my $count = () = $result =~ /src/g;
+
+if (length($result) == 0) {
+  exit 1;
+}
+
+if ($count > 1) {
+   my @arr = split(' ', $result);
+
+	 my @newarr;
+
+	 for my $i (0 .. $#arr) {
+		 push @newarr, "$i: $arr[$i]\n";
+	 }
+
+	 print(@newarr);
+
+	 print "Select an item: ";
+	 my $item = <STDIN>;
+
+	 chomp $item;
+
+	 my $filepath = $newarr[$item];
+	 $filepath =~ tr/[0-9]: //d;
+
+	 exec "vim $filepath";
+
+   exit 1;
+}
+
+exec "vim $result";
