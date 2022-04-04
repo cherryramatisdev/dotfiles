@@ -1,0 +1,7 @@
+const {1}: React.FC = () => {
+  return (
+    <div>{1}
+  )
+}
+
+export default {1}

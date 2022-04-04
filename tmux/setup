@@ -1,8 +1,5 @@
 #!/bin/sh
 
-echo "installing tmux..."
-apt install tmux
-
 clear
 echo "linking stuff..."
 ln -sf "$PWD/.tmux.conf" "/home/cherry/.tmux.conf"

@@ -15,10 +15,6 @@ export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$GOBIN:$PATH
 
-# Needed to make wsl work
-LOCAL_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
-export DISPLAY=$LOCAL_IP:0
-
 export SNIPPETS=$HOME/git/dotfiles/snippets
 # export BROWSER=firefox
 export EDITOR=vim
@@ -118,7 +114,7 @@ PROMPT_COMMAND="__ps1"
 # --------------------------- completion ---------------------------
 _have gh && . <(gh completion -s bash)
 _have git && . ~/git/dotfiles/.git-completion.bash
-source /etc/bash_completion
+# source /etc/bash_completion
 
 # --------------------------- cdpath ---------------------------
 export GHREPOS="/home/cherry/git"

@@ -226,109 +226,26 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   " github.com/junegunn/vim-plug
 
   call plug#begin('~/.local/share/vim/plugins')
-  Plug 'prabirshrestha/vim-lsp'
   Plug 'vim-pandoc/vim-pandoc'
   Plug 'rwxrob/vim-pandoc-syntax-simple'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
+  Plug 'prabirshrestha/vim-lsp'
   Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-surround' " Use more ex substitutions instead of this plugin.
   Plug 'morhetz/gruvbox'
   Plug 'prettier/vim-prettier', {
         \ 'do': 'yarn install --frozen-lockfile --production',
         \ 'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'json', 'markdown', 'html'] }
-  Plug 'vim-test/vim-test'
-
   call plug#end()
-
-  " pandoc
-  let g:pandoc#formatting#mode = 'h' " A'
-  let g:pandoc#formatting#textwidth = 72
-
-  " golang
-  let g:go_fmt_fail_silently = 0
-  let g:go_fmt_command = 'goimports'
-  let g:go_fmt_autosave = 1
-  let g:go_gopls_enabled = 1
-  let g:go_highlight_types = 1
-  let g:go_highlight_fields = 1
-  let g:go_highlight_functions = 1
-  let g:go_highlight_function_calls = 1
-  let g:go_highlight_operators = 1
-  let g:go_highlight_extra_types = 1
-  let g:go_highlight_variable_declarations = 1
-  let g:go_highlight_variable_assignments = 1
-  let g:go_highlight_build_constraints = 1
-  let g:go_highlight_diagnostic_errors = 1
-  let g:go_highlight_diagnostic_warnings = 1
-  "let g:go_auto_type_info = 1 " forces 'Press ENTER' too much
-  let g:go_auto_sameids = 0
-  "let g:go_metalinter_command='golangci-lint'
-  "let g:go_metalinter_command='golint'
-  "let g:go_metalinter_autosave=1
-  set updatetime=100
-  "let g:go_gopls_analyses = { 'composites' : v:false }
-  au FileType go nmap <leader>t :GoTest!<CR>
-  au FileType go nmap <leader>v :GoVet!<CR>
-  au FileType go nmap <leader>b :GoBuild!<CR>
-  au FileType go nmap <leader>c :GoCoverageToggle<CR>
-  au FileType go nmap <leader>i :GoInfo<CR>
-  au FileType go nmap <leader>l :GoMetaLinter!<CR>
-  au FileType go nmap <leader>m ilog.Print("made")<CR><ESC>
-  au FileType go nmap <leader>n iif err != nil {return err}<CR><ESC>
-
-  " LSP
-  if executable('typescript-language-server')
-    au User lsp_setup call lsp#register_server({
-          \ 'name': 'typescript-language-server',
-          \ 'cmd': {server_info->['typescript-language-server', '--stdio']},
-          \ 'allowlist': ['typescript', 'typescriptreact', 'javascript', 'javascriptreact'],
-          \ })
-  endif
-	let g:lsp_completion_documentation_enabled = 0
-	let g:lsp_diagnostics_signs_insert_mode_enabled = 0
-	let g:lsp_document_code_action_signs_enabled = 0
-  let g:lsp_document_highlight_enabled = 0
-  function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    imap <buffer> <Tab> <C-x><C-o><C-n>
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> gs <plug>(lsp-document-symbol-search)
-    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
-    nmap <buffer> gR <plug>(lsp-references)
-    nmap <buffer> gi <plug>(lsp-implementation)
-    nmap <buffer> gt <plug>(lsp-type-definition)
-    nmap <buffer> rn <plug>(lsp-rename)
-    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-    nmap <buffer> K <plug>(lsp-hover)
-    " nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
-    " nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
-  endfunction
-
-  augroup lsp_install
-    au!
-    " autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-    autocmd FileType *.ts,*.tsx,*.js,*.jsx call s:on_lsp_buffer_enabled()
-  augroup END
-
-  " let test#strategy = "dispatch"
-  let test#javascript#jest#executable = 'yarn test'
-
-  autocmd FileType *.ts,*.tsx,*.js,*.jsx nmap <buffer> <silent> <leader>tn :TestNearest<CR>
-  autocmd FileType *.ts,*.tsx,*.js,*.jsx nmap <buffer> <silent> <leader>tf :TestFile<CR>
-  autocmd FileType *.ts,*.tsx,*.js,*.jsx nmap <buffer> <silent> <leader>ts :TestSuite<CR>
-  autocmd FileType *.ts,*.tsx,*.js,*.jsx nmap <buffer> <silent> <leader>tl :TestLast<CR>
-  autocmd FileType *.ts,*.tsx,*.js,*.jsx nmap <buffer> <silent> <leader>tv :TestVisit<CR>
 else
   autocmd vimleavepre *.go !gofmt -w % " backup if fatih fails
 endif
 
 " fill in anything beginning with @ with a link to twitch to it
 " autocmd vimleavepre *.md !perl -p -i -e 's, @(\w+), [\\@\1](https://twitch.tv/\1),g' %
-
-" this helps on wrapping the line at 80 characters
-autocmd BufNewFile,BufRead *.md setlocal tw=80
 
 " make Y consitent with D and C (yank til end)
 map Y y$
@@ -343,16 +260,6 @@ nnoremap <C-l> :nohl<CR><C-L>
 set omnifunc=syntaxcomplete#Complete
 
 " force some files to be specific file type
-au bufnewfile,bufRead $SNIPPETS/md/* setlocallocal ft=pandoc
-au bufnewfile,bufRead $SNIPPETS/sh/* setlocal ft=sh
-au bufnewfile,bufRead $SNIPPETS/bash/* setlocal ft=bash
-au bufnewfile,bufRead $SNIPPETS/go/* setlocal ft=go
-au bufnewfile,bufRead $SNIPPETS/c/* setlocal ft=c
-au bufnewfile,bufRead $SNIPPETS/html/* setlocal ft=html
-au bufnewfile,bufRead $SNIPPETS/css/* setlocal ft=css
-au bufnewfile,bufRead $SNIPPETS/js/* setlocal ft=javascript
-au bufnewfile,bufRead $SNIPPETS/python/* setlocal ft=python
-au bufnewfile,bufRead $SNIPPETS/perl/* setlocal ft=perl
 au bufnewfile,bufRead user-data setlocal ft=yaml
 au bufnewfile,bufRead meta-data setlocal ft=yaml
 au bufnewfile,bufRead *.bash* setlocal ft=bash
@@ -419,8 +326,12 @@ nmap <leader>2 :set paste<CR>i
 nnoremap <up> <C-a>
 nnoremap <down> <C-x>
 
-" quicker way to enter V-BlOCK
-vmap v <C-v>
+" disable pane navigation because it's not compatible with vi(just use
+" tmux)
+map <C-w>h :echo "Use tmux!"<cr>
+map <C-w>j :echo "Use tmux!"<cr>
+map <C-w>k :echo "Use tmux!"<cr>
+map <C-w>l :echo "Use tmux!"<cr>
 
 " read personal/private vim configuration (keep last to override)
 set rtp^=~/.vimpersonal

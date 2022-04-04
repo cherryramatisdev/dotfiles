@@ -6,6 +6,9 @@ use warnings;
 use v5.14;
 
 my $target = $ARGV[0];
+
+exit 1 if not defined $target;
+
 # TODO - change this to use proper perl grep.
 my $result = `git ls-files | grep -i $target`;
 
@@ -20,7 +23,7 @@ if ($count > 1) {
 
 	 my @newarr;
 
-	 for my $i (0 .. $#arr) {
+	 for my $i (keys @arr) {
 		 push @newarr, "$i: $arr[$i]\n";
 	 }
 
@@ -28,7 +31,6 @@ if ($count > 1) {
 
 	 print "Select an item: ";
 	 my $item = <STDIN>;
-
 	 chomp $item;
 
 	 my $filepath = $newarr[$item];
