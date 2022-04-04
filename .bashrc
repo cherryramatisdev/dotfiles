@@ -114,7 +114,7 @@ PROMPT_COMMAND="__ps1"
 # --------------------------- completion ---------------------------
 _have gh && . <(gh completion -s bash)
 _have git && . ~/git/dotfiles/.git-completion.bash
-# source /etc/bash_completion
+source /etc/bash_completion
 
 # --------------------------- cdpath ---------------------------
 export GHREPOS="/home/cherry/git"

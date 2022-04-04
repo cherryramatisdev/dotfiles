@@ -240,6 +240,8 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
         \ 'do': 'yarn install --frozen-lockfile --production',
         \ 'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'json', 'markdown', 'html'] }
   call plug#end()
+
+	let g:go_version_warning = 0
 else
   autocmd vimleavepre *.go !gofmt -w % " backup if fatih fails
 endif
