@@ -1,2 +1,14 @@
-#!/bin/sh
-exec git ps "$@"
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use v5.14;
+
+`yarn lint` or die "Linting failed!";
+`yarn build` or die "Build failed!";
+`yarn test` or die "Test failed!";
+
+say "Done 😊! Now it's just git pushing...";
+my $current_branch = `git rev-parse --abbrev-ref HEAD`;
+exec "git push origin $current_branch --no-verify";

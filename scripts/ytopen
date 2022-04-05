@@ -1,4 +1,0 @@
-#!/bin/sh
-
-youtube_url=`xclip -out -selection primary`
-mpv "$youtube_url"

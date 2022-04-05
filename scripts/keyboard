@@ -1,6 +1,0 @@
-#!/bin/sh
-
-sudo chown -R $USER:$USER /dev/uinput
-sudo chown -R $USER:$USER /dev/input
-
-sudo systemctl restart --now kmonad

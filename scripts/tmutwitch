@@ -1,4 +1,0 @@
-#!/bin/sh
-
-tmux new-session -Ad -s "twitch" -c "/home/cherry"
-tmux switch-client -t "twitch"

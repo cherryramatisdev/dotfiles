@@ -39,7 +39,7 @@ set tabstop=2
 " disable visual bell (also disable in .inputrc)
 set t_vb=
 
-let mapleader=","
+" let mapleader=","
 
 set softtabstop=2
 
@@ -232,7 +232,6 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
-  Plug 'prabirshrestha/vim-lsp'
   Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
   Plug 'tpope/vim-surround' " Use more ex substitutions instead of this plugin.
   Plug 'morhetz/gruvbox'

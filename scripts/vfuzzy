@@ -1,9 +1,0 @@
-#!/bin/bash
-
-choice=`git ls-files | fzf`
-
-if [[ -n "$choice" ]]; then
-	$EDITOR $choice
-else
-	exit
-fi

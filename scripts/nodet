@@ -1,0 +1,6 @@
+#!/bin/sh
+
+clear
+yarn test
+onchange yarn test
+
