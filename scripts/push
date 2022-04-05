@@ -6,6 +6,7 @@ use warnings;
 use v5.14;
 
 my $force_flag = $ARGV[0] || "";
+my $no_verify_flag = "--no-verify";
 
 `yarn lint` or die "Linting failed!";
 `yarn build` or die "Build failed!";
@@ -14,4 +15,4 @@ my $force_flag = $ARGV[0] || "";
 say "Done 😊! Now it's just git pushing...";
 my $current_branch = `git rev-parse --abbrev-ref HEAD`;
 
-exec "git push origin $current_branch --no-verify $force_flag";
+exec "git push origin $current_branch $no_verify_flag $force_flag";
