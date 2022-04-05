@@ -8,11 +8,16 @@ use v5.14;
 my $force_flag = $ARGV[0] || "";
 my $no_verify_flag = "--no-verify";
 
-`yarn lint` or die "Linting failed!";
-`yarn build` or die "Build failed!";
-`yarn test` or die "Test failed!";
+exec 'yarn lint' or print STDERR "couldn't exec lint: $!";
+# exec "yarn lint" or die "Linting failed!";
+exec 'yarn build' or print STDERR "couldn't exec build $!";
+# exec "yarn build" or die "Build failed!";
+exec 'yarn test' or print STDERR "couldn't exec test: $!";
+# exec "yarn test" or die "Test failed!";
 
 say "Done 😊! Now it's just git pushing...";
-my $current_branch = "origin " . `git rev-parse --abbrev-ref HEAD`;
+my $current_branch = "origin " . "git rev-parse --abbrev-ref HEAD";
 
-exec "git push $no_verify_flag $force_flag $current_branch";
+say "git push $no_verify_flag $force_flag $current_branch";
+
+# exec "git push $no_verify_flag $force_flag $current_branch";

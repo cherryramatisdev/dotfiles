@@ -23,8 +23,8 @@ set autoread
 " automatically write files when changing when multiple files open
 set autowrite
 
-" deactivate line numbers
-set nonumber
+" activate line numbers
+set number
 
 " turn col and row position on in bottom right
 set ruler " see ruf for formatting
@@ -189,7 +189,7 @@ au FileType * hi StatusLine ctermfg=black ctermbg=NONE
 au FileType * hi StatusLineNC ctermfg=black ctermbg=NONE
 au FileType * hi Normal ctermbg=NONE
 au FileType * hi Special ctermfg=cyan
-au FileType * hi LineNr ctermfg=black ctermbg=NONE
+au FileType * hi LineNr ctermfg=darkgray ctermbg=NONE
 au FileType * hi SpecialKey ctermfg=black ctermbg=NONE
 au FileType * hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE
 au FileType * hi MoreMsg ctermfg=black ctermbg=NONE
@@ -263,7 +263,7 @@ set omnifunc=syntaxcomplete#Complete
 " force some files to be specific file type
 au bufnewfile,bufRead user-data setlocal ft=yaml
 au bufnewfile,bufRead meta-data setlocal ft=yaml
-au bufnewfile,bufRead *.bash* setlocal ft=bash
+au bufnewfile,bufRead *.bash* setlocal ft=sh
 au bufnewfile,bufRead *.{peg,pegn} setlocal ft=config
 au bufnewfile,bufRead *.profile setlocal filetype=sh
 au bufnewfile,bufRead *.crontab setlocal filetype=crontab
@@ -290,7 +290,7 @@ au bufnewfile,bufRead commands.yaml setlocal spell
 if has("eval")  " vim-tiny detection
   fun! s:DetectBash()
     if getline(1) == '#!/usr/bin/bash' || getline(1) == '#!/bin/bash'
-      set ft=bash
+      set ft=sh
       set shiftwidth=2
     endif
   endfun

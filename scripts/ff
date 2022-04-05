@@ -36,9 +36,9 @@ if ($count > 1) {
 	 my $filepath = $newarr[$item];
 	 $filepath =~ tr/[0-9]: //d;
 
-	 exec "vim $filepath";
+	 exec "$ENV{'EDITOR'} $filepath";
 
    exit 1;
 }
 
-exec "vim $result";
+exec "$ENV{'EDITOR'} $result";
