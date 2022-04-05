@@ -13,7 +13,6 @@ my $no_verify_flag = "--no-verify";
 `yarn test` or die "Test failed!";
 
 say "Done 😊! Now it's just git pushing...";
-my $current_branch = "origin" + `git rev-parse --abbrev-ref HEAD`;
-$current_branch =~ tr/\\n//d;
+my $current_branch = "origin " . `git rev-parse --abbrev-ref HEAD`;
 
 exec "git push $no_verify_flag $force_flag $current_branch";
