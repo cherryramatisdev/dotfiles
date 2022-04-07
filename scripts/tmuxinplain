@@ -1,0 +1,3 @@
+#!/bin/sh
+unset TMUX
+exec $(which tmux) -L plain -f ~/git/dotfiles/tmux/.tmux-plain.conf -u "$@"

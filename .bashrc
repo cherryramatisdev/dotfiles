@@ -27,6 +27,7 @@ export NVM_DIR="$HOME/.nvm"
 
 alias :wq=exit
 alias :q=exit
+alias reload="source ~/.bashrc"
 alias '?'=duck
 alias '??'=github
 alias '???'=wiki
@@ -39,15 +40,11 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias vi="vim"
-# alias vim="vim"
-alias dev="yarn start:dev"
 alias y="yarn"
 alias ya="yarn add"
 alias kall="killall"
 alias depupdate="yarn upgrade-interactive --latest"
 alias postgresup="docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e TZ=America/Sao_Paulo -d postgres"
-alias asdf="setxkbmap -layout us -variant dvorak"
-alias aoeu="setxkbmap -layout us"
 
 # ------------------------ bash shell options ------------------------
 
@@ -85,7 +82,7 @@ __ps1() {
   [[ $PWD = / ]] && dir=/
   [[ $PWD = "$HOME" ]] && dir='~'
 
-  B=$(git branch --show-current 2>/dev/null)
+  B=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
   [[ $dir = "$B" ]] && B=.
 
   [[ $B = master || $B = main ]] && b="$r"
@@ -117,3 +114,4 @@ source /etc/bash_completion
 # --------------------------- cdpath ---------------------------
 export GHREPOS="/home/cherry/git"
 export CDPATH=".:$GHREPOS"
+. "$HOME/.cargo/env"

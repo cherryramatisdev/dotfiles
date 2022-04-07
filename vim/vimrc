@@ -248,6 +248,11 @@ endif
 " fill in anything beginning with @ with a link to twitch to it
 " autocmd vimleavepre *.md !perl -p -i -e 's, @(\w+), [\\@\1](https://twitch.tv/\1),g' %
 
+" This fixes the relative file completion only on insert mode(to not
+" mess up with :e command)
+autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
+autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
+
 " make Y consitent with D and C (yank til end)
 map Y y$
 
