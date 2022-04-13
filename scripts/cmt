@@ -7,7 +7,7 @@ use v5.14;
 my $prefix_comment = $ARGV[0] || '#';
 
 while (<STDIN>) { # assigns each line in turn to $_
-	if ($_ =~ qr/$prefix_comment/) {
+	if ($_ =~ qr/^$prefix_comment/) {
 		$_ =~ s/$prefix_comment //;
 		print $_;
 	} else {
