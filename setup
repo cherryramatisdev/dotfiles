@@ -2,11 +2,11 @@
 
 echo "Linking stuff..."
 
-ln -sf "$PWD/.bashrc" "/home/cherry/.bashrc"
-ln -sf "$PWD/scripts" "/home/cherry/bin"
-ln -sf "$PWD/.gitconfig" "/home/cherry/.gitconfig"
+ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
+ln -sf "$PWD/scripts" "$HOME/bin"
+ln -sf "$PWD/.gitconfig" "$HOME/.gitconfig"
 
-mkdir -p "/home/cherry/.local/bin" || true
+mkdir -p "$HOME/.local/bin" || true
 
 for i in vim lynx tmux; do
 	echo $i

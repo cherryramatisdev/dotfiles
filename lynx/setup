@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mkdir /home/cherry/.config/ 2>/dev/null
-rm -rf /home/cherry/.config/lynx 2>/dev/null
-ln -s "$PWD" "/home/cherry/.config/lynx"
-ls -l /home/cherry/.config/lynx
+mkdir $HOME/.config/ 2>/dev/null
+rm -rf $HOME/.config/lynx 2>/dev/null
+ln -s "$PWD" "$HOME/.config/lynx"
+ls -l $HOME/.config/lynx
