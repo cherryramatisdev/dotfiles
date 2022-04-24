@@ -5,4 +5,4 @@ sh ./vimplug
 
 echo "linking"
 
-ln -sf "$PWD/vimrc" "/home/cherry/.vimrc"
+ln -sf "$PWD/vimrc" "$HOME/.vimrc"

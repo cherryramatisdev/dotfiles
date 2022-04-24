@@ -2,6 +2,6 @@
 
 wiki () {
 	url=$(urlencode "$*")
-		/home/cherry/bin/lynx "https://en.wikipedia.org/wiki/Special:Search/$url"
+		$HOME/bin/lynx "https://en.wikipedia.org/wiki/Special:Search/$url"
 }
 wiki $*

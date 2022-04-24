@@ -1,7 +1,7 @@
 #!/bin/sh
 
 github () {
-	/home/cherry/bin/lynx "https://github.com/$*"
+	$HOME/bin/lynx "https://github.com/$*"
 		echo "https://github.com/$*"
 }
 github $*

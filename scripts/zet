@@ -189,7 +189,7 @@ x.today () {
 x.view () {
   zet_title=`x.dex.titles | grep -iP "$*";`
   zet_id=`echo $zet_title | cut -f 1 -d " "`
-  note="/home/cherry/git/zet/$zet_id/README.md"
+  note="$HOME/git/zet/$zet_id/README.md"
 
   echo $note
 

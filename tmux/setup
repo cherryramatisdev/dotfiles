@@ -2,4 +2,4 @@
 
 clear
 echo "linking stuff..."
-ln -sf "$PWD/.tmux.conf" "/home/cherry/.tmux.conf"
+ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"

@@ -1,2 +1,2 @@
 #!/bin/sh
-exec git pl "$@"
+exec git pull origin $(git rev-parse --abbrev-ref HEAD) "$@"

@@ -25,6 +25,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # ------------------------------ aliases -----------------------------
 
+alias c=cherry
 alias :wq=exit
 alias :q=exit
 alias reload="source ~/.bashrc"
@@ -113,6 +114,6 @@ source /etc/bash_completion
 complete -C cherry cherry
 
 # --------------------------- cdpath ---------------------------
-export GHREPOS="/home/cherry/git"
+export GHREPOS="$HOME/git"
 export CDPATH=".:$GHREPOS"
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"

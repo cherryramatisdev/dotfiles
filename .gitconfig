@@ -1,22 +1,5 @@
 [pull]
     rebase = false
-[alias]
-    a = add
-    d = diff
-    co = checkout
-    cb = checkout -b
-    c = commit
-    ci = commit
-    ca = commit -a
-    cm = commit -m
-    ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
-    pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
-    s = status -sb
-    br = branch
-    lg = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count=30
-    unstage = reset HEAD --
-    undo = checkout --
-    rollback = reset --soft HEAD~1
 [user]
 	name = CherryRamatis
 	email = cherry.ramatis@lamimed.it

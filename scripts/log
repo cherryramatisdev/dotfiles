@@ -1,2 +1,2 @@
 #!/bin/sh
-exec git lg "$@"
+exec git log --pretty=format:'%Cred%h%Creset %C(bold)%cr%%Creset%Cgreen<%an>%Creset %s' --max-count=30
