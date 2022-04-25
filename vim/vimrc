@@ -1,30 +1,18 @@
-" designed for vim 8+
-
-if has("eval")                               " vim-tiny lacks 'eval'
+" vim-tiny lacks 'eval'
+if has("eval")
   let skip_defaults_vim = 1
 endif
 
 set nocompatible
 
-"####################### Vi Compatible (~/.exrc) #######################
-
 " automatically indent new lines
 set autoindent
-
-" lsp use this column to display diagnostics, so never show it
-set signcolumn=no
 
 " stop asking me to load file with W11, just load it
 set autoread
 
-" setup clipboard to use system primary
-" set clipboard=unnamedplus
-
 " automatically write files when changing when multiple files open
 set autowrite
-
-" activate line numbers
-set number
 
 " turn col and row position on in bottom right
 set ruler " see ruf for formatting
@@ -32,23 +20,21 @@ set ruler " see ruf for formatting
 " show command and insert mode
 set showmode
 
-set tabstop=2
-
-"#######################################################################
-
 " disable visual bell (also disable in .inputrc)
 set t_vb=
 
-" let mapleader=","
-
-set softtabstop=2
-
 " mostly used with >> and <<
+set tabstop=2
+set softtabstop=2
 set shiftwidth=2
-
 set smartindent
-
 set smarttab
+" replace tabs with spaces automatically
+set expandtab
+
+" Hide Status Line
+set laststatus=0 " For some reason this doesnt work
+autocmd BufRead,BufNewFile * set laststatus=0 " This will work instead
 
 if v:version >= 800
   " stop vim from silently messing with files that it shouldn't
@@ -67,22 +53,15 @@ match IncSearch '\s\+$'
 
 " enough for line numbers + gutter within 80 standard
 set textwidth=72
-"set colorcolumn=73
-
-" replace tabs with spaces automatically
-set expandtab
 
 " disable relative line numbers, remove no to sample it
 set norelativenumber
 
 " makes ~ effectively invisible
-"highlight NonText guifg=bg
+highlight NonText guifg=bg
 
-" turn on default spell checking
-"set spell
-
-" disable spellcapcheck
-set spc=
+" make completion not select the first option
+set completeopt+=noselect
 
 " more risky, but cleaner
 set nobackup
@@ -90,9 +69,6 @@ set noswapfile
 set nowritebackup
 
 set icon
-
-" center the cursor always on the screen
-"set scrolloff=999
 
 " highlight search hits
 set hlsearch
@@ -118,7 +94,6 @@ set wrapscan
 " Most of the utility of all of this has been superceded by the use of
 " modern simplified pandoc for capturing knowledge source instead of
 " arbitrary raw text files.
-
 set fo-=t   " don't auto-wrap text using text width
 set fo+=c   " autowrap comments using textwidth with leader
 set fo-=r   " don't auto-insert comment leader on enter in insert
@@ -137,14 +112,23 @@ set fo+=M   " don't add space before or after multi-byte char
 set fo-=B   " don't add space between two multi-byte chars
 set fo+=1   " don't break a line after a one-letter word
 
-" requires PLATFORM env variable set (in ~/.bashrc)
-if $PLATFORM == 'mac'
-  " required for mac delete to work
-  set backspace=indent,eol,start
-endif
+" required for mac delete to work
+set backspace=indent,eol,start
 
 " stop complaints about switching buffer with changes
 set hidden
+
+" configure path for fuzzy finding like experience
+set path+=**
+set wildignore=**/node_modules/**,**/.git/**,**/dist/**
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --smart-case\ --hidden
+  set grepformat=%f:%l:%c:%m
+endif
+
+" mappings to navigate quickfix list
+nnoremap [q <cmd>cprev<cr>
+nnoremap ]q <cmd>cnext<cr>
 
 " command history
 set history=100
@@ -164,8 +148,9 @@ filetype plugin on
 set background=dark
 
 " base default color changes (gruvbox dark friendly)
-hi StatusLine ctermfg=black ctermbg=NONE
-hi StatusLineNC ctermfg=black ctermbg=NONE
+hi StatusLine ctermbg=black ctermfg=black
+hi StatusLineNC ctermbg=black ctermfg=black
+hi VertSplit ctermbg=black ctermfg=black
 hi Normal ctermbg=NONE
 hi Special ctermfg=cyan
 hi LineNr ctermfg=black ctermbg=NONE
@@ -185,8 +170,9 @@ hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
 hi MatchParen ctermbg=236 ctermfg=darkred
 
 " color overrides
-au FileType * hi StatusLine ctermfg=black ctermbg=NONE
-au FileType * hi StatusLineNC ctermfg=black ctermbg=NONE
+au FileType * hi StatusLine ctermfg=black ctermbg=black
+au FileType * hi StatusLineNC ctermfg=black ctermbg=black
+au FileType * hi VertSplit ctermbg=black ctermfg=black
 au FileType * hi Normal ctermbg=NONE
 au FileType * hi Special ctermfg=cyan
 au FileType * hi LineNr ctermfg=darkgray ctermbg=NONE
@@ -234,14 +220,13 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'mrk21/yaml-vim'
 
   Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-  Plug 'tpope/vim-surround' " Use more ex substitutions instead of this plugin.
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-vinegar'
   Plug 'morhetz/gruvbox'
   Plug 'prettier/vim-prettier', {
         \ 'do': 'yarn install --frozen-lockfile --production',
         \ 'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'json', 'markdown', 'html'] }
   call plug#end()
-
-	let g:go_version_warning = 0
 else
   autocmd vimleavepre *.go !gofmt -w % " backup if fatih fails
 endif
@@ -280,18 +265,6 @@ au bufnewfile,bufRead /tmp/psql.edit.* setlocal syntax=sql
 au bufnewfile,bufRead *.go setlocal spell spellcapcheck=0
 au bufnewfile,bufRead commands.yaml setlocal spell
 
-" format with prettier
-" if has("eval")
-"   fun! s:Prettier() abort
-"     let l:pos = getcurpos()
-"     silent execute "!yarn prettier -w %"
-"     call setpos('.', l:pos)
-"     redraw
-"   endfun
-" 
-"   au BufWritePre *.ts,*.tsx,*.js,*.jsx,*.json call s:Prettier()
-" endif
-
 "fix bork bash detection
 if has("eval")  " vim-tiny detection
   fun! s:DetectBash()
@@ -316,7 +289,6 @@ endif
 
 " start at last place you were editing
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-"au BufWritePost ~/.vimrc so ~/.vimrc
 
 " functions keys
 map <F1> :set number!<CR> :set relativenumber!<CR>
@@ -329,16 +301,66 @@ map <F12> :set fdm=indent<CR>
 
 nmap <leader>2 :set paste<CR>i
 
-" better use of arrow keys, number increment/decrement
-nnoremap <up> <C-a>
-nnoremap <down> <C-x>
+" improve `gf`
+nnoremap <silent> gf :call <sid>open_file_or_create_new()<CR>
 
-" disable pane navigation because it's not compatible with vi(just use
-" tmux)
-map <C-w>h :echo "Use tmux!"<cr>
-map <C-w>j :echo "Use tmux!"<cr>
-map <C-w>k :echo "Use tmux!"<cr>
-map <C-w>l :echo "Use tmux!"<cr>
+function! s:open_file_or_create_new() abort
+  if expand('%:e') == 'ts'
+    let l:path = expand('<cfile>') . '.' . expand('%:e')
+  else
+    let l:path = expand('<cfile>')
+  endif
+
+  if empty(l:path)
+    return
+  endif
+
+  try
+    exe 'norm!gf'
+  catch /.*/
+    echo 'New file.'
+    let l:new_path = fnamemodify(expand('%:p:h') . '/' . l:path, ':p')
+    echo l:new_path
+    if !empty(fnamemodify(l:new_path, ':e')) "Edit immediately if file has extension
+      return execute('edit '.l:new_path)
+    endif
+
+    let l:suffixes = split(&suffixesadd, ',')
+
+    for l:suffix in l:suffixes
+      if filereadable(l:new_path.l:suffix)
+        return execute('edit '.l:new_path.l:suffix)
+      endif
+    endfor
+
+    return execute('edit '.l:new_path.l:suffixes[0])
+  endtry
+endfunction
+
+" The following will map <Tab> to either actually insert a <Tab> if
+" the current line is currently only whitespace, or start/continue a CTRL-N
+" completion operation:
+function! CleverTab()
+  if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+    return "\<Tab>"
+  else
+    return "\<C-N>"
+  endif
+endfunction
+inoremap <Tab> <C-R>=CleverTab()<CR>
+inoremap <S-Tab> <C-p>
+
+inoremap / /<C-x><C-f>
+
+" Navigate splits
+nnoremap gs <C-w>s
+nnoremap gv <C-w>v
+nnoremap go <C-w>o
+
+nnoremap gh <C-w>h
+nnoremap gj <C-w>j
+nnoremap gk <C-w>k
+nnoremap gl <C-w>l
 
 " read personal/private vim configuration (keep last to override)
 set rtp^=~/.vimpersonal
