@@ -1,0 +1,7 @@
+#!/bin/sh
+
+continue() {
+  git add . && git rebase --continue
+}
+
+$@
