@@ -221,13 +221,20 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-vinegar'
+  Plug 'tpope/vim-dispatch'
   Plug 'vim-test/vim-test'
   Plug 'prettier/vim-prettier', {
         \ 'do': 'yarn install --frozen-lockfile --production',
         \ 'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'json', 'markdown', 'html'] }
+
+  Plug 'ludovicchabant/vim-gutentags'
+  Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
   call plug#end()
 
-  let test#strategy = "make"
+  let test#strategy = "dispatch"
+  let g:gutentags_ctags_extra_args=['--exclude=dist']
+
+  set tagfunc=jsfileimport#tagfunc
 else
   autocmd vimleavepre *.go !gofmt -w % " backup if fatih fails
 endif
