@@ -1,3 +1,7 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
 
-yarn format && git push origin $(git rev-parse --abbrev-ref HEAD) $@
+if [[ -f "package.json" ]]; then
+  yarn format
+fi
+
+git push origin $(git rev-parse --abbrev-ref HEAD) $@
