@@ -1,12 +1,29 @@
-#!/bin/bash
+#!/usr/bin/env perl
 
-file="$HOME/bin/$1"
+use strict;
+use warnings;
 
-if [ -f $file ]; then
-	$EDITOR $HOME/bin/$1
-else
-	touch $HOME/bin/$1
-	chmod +x $HOME/bin/$1
+use v5.14;
 
-	$EDITOR $HOME/bin/$1
-fi
+my $filename = $ARGV[0] or die "Please provide a filename to follow on";
+
+my $file = "$ENV{'HOME'}/bin/$filename";
+
+sub create_perl_script_file {
+	open my $script, '>', $filename;
+	print {$script} "#!/usr/bin/env perl" . "\n";
+	print {$script} "\n";
+	print {$script} "use strict;" . "\n";
+	print {$script} "use warnings;" . "\n";
+	print {$script} "\n";
+	print {$script} "use v5.14;" . "\n";
+	close $script;
+}
+
+if (-e $file) {
+  system "$ENV{'EDITOR'} $ENV{'HOME'}/bin/$filename";
+} else {
+  create_perl_script_file();
+  system "chmod +x $filename";
+  system "$ENV{'EDITOR'} $filename";
+}
