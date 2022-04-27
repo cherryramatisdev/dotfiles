@@ -1,8 +1,6 @@
 #!/bin/sh
 
-echo "installing vim plug"
-sh ./vimplug
-
 echo "linking"
 
+ln -sf "$PWD/.vim" "$HOME/.vim"
 ln -sf "$PWD/vimrc" "$HOME/.vimrc"

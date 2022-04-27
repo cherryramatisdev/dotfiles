@@ -1,0 +1,3 @@
+#!/bin/sh
+
+tmux send -t 2 "yarn test" Enter

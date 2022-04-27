@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/anton/git/symptom-checker/src/app/modules/session/use-cases/resolve-session'
+let g:netrw_dirhist_3='/home/anton/git/symptom-checker/src/app/modules/default'
+let g:netrw_dirhist_2='/home/anton/git/symptom-checker/src/app/modules/session/use-cases/resolve-session'
+let g:netrw_dirhist_1='/home/anton/git/symptom-checker/src/app/modules/tip/use-cases/list-tips-by-algorithm-id'
+let g:netrw_dirhist_0='/home/anton/git/symptom-checker/src/app/modules/tip'
+let g:netrw_dirhist_9='/home/anton/git/symptom-checker/src/app/modules/tip/use-cases'
+let g:netrw_dirhist_8='/home/anton/git/symptom-checker/src/app/modules/tip/use-cases/list-tips-by-algorithm-id'
+let g:netrw_dirhist_7='/home/anton/git/symptom-checker/src/app/modules/tip/use-cases'
+let g:netrw_dirhist_6='/home/anton/git/symptom-checker/src/app/modules/tip'
+let g:netrw_dirhist_5='/home/anton/git/symptom-checker/src/app/modules/tip/use-cases/list-tips-by-algorithm-id'

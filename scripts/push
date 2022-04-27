@@ -2,6 +2,8 @@
 
 if [[ -f "package.json" ]]; then
   yarn format
+  git add .
+  git commit --no-verify --amend --no-edit
 fi
 
 git push origin $(git rev-parse --abbrev-ref HEAD) $@

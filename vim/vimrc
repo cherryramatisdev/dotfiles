@@ -32,6 +32,10 @@ set smarttab
 " replace tabs with spaces automatically
 set expandtab
 
+" fix splits
+set splitright
+set splitbelow
+
 " Hide Status Line
 set laststatus=0 " For some reason this doesnt work
 autocmd BufRead,BufNewFile * set laststatus=0 " This will work instead
@@ -62,6 +66,7 @@ highlight NonText guifg=bg
 
 " make completion not select the first option
 set completeopt+=noselect
+set completeopt+=menuone
 
 " more risky, but cleaner
 set nobackup
@@ -144,7 +149,6 @@ set ttyfast
 " allow sensing the filetype
 filetype plugin on
 
-" high contrast for streaming, etc.
 set background=dark
 
 " base default color changes (gruvbox dark friendly)
@@ -208,9 +212,6 @@ set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
 
 " only load plugins if Plug detected
 if filereadable(expand("~/.vim/autoload/plug.vim"))
-
-  " github.com/junegunn/vim-plug
-
   call plug#begin('~/.local/share/vim/plugins')
   Plug 'vim-pandoc/vim-pandoc'
   Plug 'rwxrob/vim-pandoc-syntax-simple'
@@ -218,26 +219,31 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'peitalin/vim-jsx-typescript'
 
   Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-fugitive' " Em obs
+  Plug 'christoomey/vim-conflicted' " Em obs
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-vinegar'
-  Plug 'tpope/vim-dispatch'
-  Plug 'vim-test/vim-test'
   Plug 'prettier/vim-prettier', {
         \ 'do': 'yarn install --frozen-lockfile --production',
         \ 'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'json', 'markdown', 'html'] }
 
+  Plug 'pbrisbin/vim-mkdir'
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
   call plug#end()
 
-  let test#strategy = "dispatch"
   let g:gutentags_ctags_extra_args=['--exclude=dist']
+  let g:diffget_local_map = 'gl'
+  let g:diffget_upstream_map = 'gu'
 
   set tagfunc=jsfileimport#tagfunc
 else
   autocmd vimleavepre *.go !gofmt -w % " backup if fatih fails
 endif
+
+autocmd bufnewfile,bufread *.spec.ts compiler jest
+nnoremap <leader>tf :make %<cr>
+nnoremap <leader>ta :make<cr>
 
 " fill in anything beginning with @ with a link to twitch to it
 " autocmd vimleavepre *.md !perl -p -i -e 's, @(\w+), [\\@\1](https://twitch.tv/\1),g' %
@@ -369,6 +375,9 @@ nnoremap gh <C-w>h
 nnoremap gj <C-w>j
 nnoremap gk <C-w>k
 nnoremap gl <C-w>l
+
+" expand snips
+inoremap <C-l> <esc>:.! snip <C-r><C-w><cr>i
 
 " read personal/private vim configuration (keep last to override)
 set rtp^=~/.vimpersonal
