@@ -1,0 +1,11 @@
+#!/bin/sh
+
+next() {
+  git add . && git rebase --continue
+}
+
+fix() {
+  vim +Conflicted
+}
+
+"$@"

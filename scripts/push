@@ -1,3 +1,9 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
 
-cherry git push
+if [[ -f "package.json" ]]; then
+  yarn format
+  git add .
+  git commit --no-verify --amend --no-edit
+fi
+
+git push origin $(git rev-parse --abbrev-ref HEAD) $@
