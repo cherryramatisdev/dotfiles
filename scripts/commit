@@ -1,2 +1,26 @@
-#!/bin/sh
-exec git commit --no-verify "$@"
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use v5.14;
+
+if(!defined $ARGV[0]){
+	exec "git commit --no-verify";
+	exit 1;
+}
+
+sub amend {
+	exec "git commit --no-verify --amend --no-edit";
+}
+
+my %commands = (
+	amend => \&amend,
+	am => \&amend
+);
+
+if (defined $commands{$ARGV[0]}) {
+	my $command_ref = $commands{$ARGV[0]};
+
+	&$command_ref;
+}
