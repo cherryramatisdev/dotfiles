@@ -380,11 +380,11 @@ x.create() {
   [[ -s "$dir/README.md" ]] || return 1
   line=$(head -1 "$dir/README.md" | sed 's/#\+ *//')
   test -n "$line"
-  git pl -q
+  git pull origin $(git rev-parse --abbrev-ref HEAD) -q
   echo "Committing: $line"
   git add -A "$dir" &>/dev/null
   git commit -m "$line" &>/dev/null
-  git ps &>/dev/null
+  git push origin $(git rev-parse --abbrev-ref HEAD) &>/dev/null
 }
 
 x.edit() {
