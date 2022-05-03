@@ -1,0 +1,16 @@
+#!/bin/sh
+
+start() {
+  VBoxManage.exe startvm anton
+  ssh -p 2522 anton@127.0.0.1
+}
+
+connect() {
+  ssh -p 2522 anton@127.0.0.1
+}
+
+shut() {
+  VBoxManage.exe modifyvm anton savestate
+}
+
+"$@"
