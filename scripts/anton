@@ -10,7 +10,7 @@ connect() {
 }
 
 shut() {
-  VBoxManage.exe modifyvm anton savestate
+  VBoxManage.exe controlvm anton savestate
 }
 
 "$@"
