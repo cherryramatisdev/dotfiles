@@ -3,6 +3,8 @@ if has("eval")
   let skip_defaults_vim = 1
 endif
 
+let mapleader=' '
+
 set nocompatible
 
 " automatically indent new lines
@@ -49,6 +51,13 @@ if v:version >= 800
 
   set foldmethod=indent
   set nofoldenable
+
+  " Toggle fold
+  nnoremap <CR> za
+  vnoremap <CR> za
+
+  " Open all folds
+  nnoremap <leader><CR> zR
 endif
 
 " mark trailing spaces as errors
@@ -85,7 +94,7 @@ set shortmess=aoOtTI
 " prevents truncated yanks, deletes, etc.
 set viminfo='20,<1000,s1000
 
-" not a fan of bracket matching or folding
+" not a fan of bracket matching
 if has("eval") " vim-tiny detection
   let g:loaded_matchparen=1
 endif

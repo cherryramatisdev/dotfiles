@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ -f "package.json" ]]; then
-  yarn format
+	yarn prettier --write \"src/**/*.ts\" \"test/**/*.ts\"
   git add .
   git commit --no-verify --amend --no-edit
 fi

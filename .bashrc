@@ -87,7 +87,7 @@ __ps1() {
   [[ $dir = "$B" ]] && B=.
 
   [[ $B = master || $B = main ]] && b="$r"
-  [[ -n "$B" ]] && B="$g($b$B$g)"
+  [[ -n "$B" ]] && B="$g $b$B$g "
 
 	vim_prefix=""
 
