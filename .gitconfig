@@ -8,4 +8,4 @@
 [init]
 	defaultBranch = main
 [core]
-	excludesfile = /home/cherry/.gitignore
+	excludesfile = /home/anton/.gitignore
