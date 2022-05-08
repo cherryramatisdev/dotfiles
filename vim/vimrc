@@ -231,6 +231,10 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'christoomey/vim-conflicted' " Em obs
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-vinegar'
+  " Ruby stuff
+  Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-endwise'
+
   Plug 'prettier/vim-prettier', {
         \ 'do': 'yarn install --frozen-lockfile --production',
         \ 'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'json', 'markdown', 'html'] }
