@@ -117,3 +117,6 @@ complete -C cherry cherry
 export GHREPOS="$HOME/git"
 export CDPATH=".:$GHREPOS"
 # . "$HOME/.cargo/env"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
