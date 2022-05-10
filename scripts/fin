@@ -19,26 +19,27 @@ if (length($result) == 0) {
 }
 
 if ($count > 1) {
-   my @arr = split(' ', $result);
+  my @arr = split(' ', $result);
 
-	 my @newarr;
+  my @newarr;
 
-	 for my $i (keys @arr) {
-		 push @newarr, "$i: $arr[$i]\n";
-	 }
+  for my $i (keys @arr) {
+    my $index = $i + 1;
+    push @newarr, "$index: $arr[$i]\n";
+  }
 
-	 say @newarr;
+  say @newarr;
 
-	 print "Select an item: ";
-	 my $item = <STDIN>;
-	 chomp $item;
+  print "Select an item: ";
+  my $item = <STDIN>;
+  chomp $item;
 
-	 my $filepath = $newarr[$item];
-	 $filepath =~ tr/[0-9]: //d;
+  my $filepath = $newarr[$item - 1];
+  $filepath =~ tr/[0-9]: //d;
 
-	 exec "$ENV{'EDITOR'} $filepath";
+  exec "$ENV{'EDITOR'} $filepath";
 
-   exit 1;
+  exit 1;
 }
 
 exec "$ENV{'EDITOR'} $result";

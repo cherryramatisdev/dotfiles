@@ -13,6 +13,7 @@ export PATH=$HOME/.npm-global/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$GOBIN:$PATH
 
 export SNIPPETS=$HOME/git/dotfiles/snippets
@@ -117,3 +118,6 @@ complete -C cherry cherry
 export GHREPOS="$HOME/git"
 export CDPATH=".:$GHREPOS"
 # . "$HOME/.cargo/env"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"

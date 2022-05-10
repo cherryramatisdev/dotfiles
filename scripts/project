@@ -4,9 +4,9 @@ db () {
 	read -p "Database name: " dbname
 
   if [[ -n $dbname ]]; then
-    sudo docker exec -it postgres psql -U postgres -d $dbname
+    docker exec -it postgres psql -U postgres -d $dbname
   else
-    sudo docker exec -it postgres psql -U postgres
+    docker exec -it postgres psql -U postgres
   fi
 }
 
