@@ -179,20 +179,23 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   nnoremap gr <cmd>JsFindUsage<cr>
   set tagfunc=jsfileimport#tagfunc
 
-	let g:mucomplete#chains = {
-	    \ 'default' : ['path', 'keyn', 'uspl', 'tags']
-	    \ }
+	set complete-=i
+	set complete-=t
+  let g:mucomplete#chains = {}
+  let g:mucomplete#chains.default = ['omni', 'path', 'c-p', 'tags']
 
   set background=light
   colorscheme PaperColor
 
-  function ColorSwitch()
+  function ColorSwitch() abort
     if &background == 'light'
       set background=dark
     else
       set background=light
     endif
   endfunction
+
+  nnoremap <leader>p <cmd>PrettierAsync<cr>
 else
   autocmd vimleavepre *.go !gofmt -w % " backup if fatih fails
 endif
@@ -203,8 +206,9 @@ nnoremap <leader>ta :make<cr>
 
 " This fixes the relative file completion only on insert mode(to not
 " mess up with :e command)
-autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
-autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
+" NOTE: I'm using mucomplete now, but this is still useful
+" autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
+" autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
 
 " make Y consitent with D and C (yank til end)
 map Y y$
@@ -246,7 +250,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 nmap <leader>2 :set paste<CR>i
 
 " improve `gf`
-nnoremap <silent> gf :call <sid>open_file_or_create_new()<CR>
+autocmd bufnewfile,bufread *.tsx,*.ts nnoremap <silent> gf :call <sid>open_file_or_create_new()<CR>
 
 function! s:open_file_or_create_new() abort
   if expand('%:e') == 'ts'
