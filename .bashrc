@@ -92,15 +92,21 @@ __ps1() {
 
 	vim_prefix=""
 
-  vim_foreground=$(jobs -l 2>/dev/null | grep vim 2>/dev/null)
+  vim_foreground=$(jobs -l 2>/dev/null)
+
+  tmux_prefix=""
 
 	if [[ $VIM ]] || [[ -n "$vim_foreground" ]]; then
 		vim_prefix="VIM "
 	fi
 
+  if [[ $TMUX ]]; then
+    tmux_prefix="TMUX "
+  fi
+
 	user=`whoami`
 
-	short="$r$vim_prefix$u$user$g:$w$dir$B$p$P$x "
+	short="$r$vim_prefix$tmux_prefix$u$user$g:$w$dir$B$p$P$x "
 
 	PS1="$short"
 }
