@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-if [[ -f "package.json" ]]; then
-	yarn prettier --write \"src/**/*.ts\" \"test/**/*.ts\"
+if [[ -f "next-env.d.ts" ]] || [[ -f "nest-cli.json" ]]; then
+  yarn prettier --write "src/**/*.{ts,tsx}" "test/**/*.ts"
   git add .
   git commit --no-verify --amend --no-edit
 fi

@@ -13,11 +13,12 @@ export PATH=$HOME/.npm-global/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$GOBIN:$PATH
 
 export SNIPPETS=$HOME/git/dotfiles/snippets
 # export BROWSER=firefox
-export EDITOR=vim
+export EDITOR=nvim
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -40,7 +41,7 @@ alias c="clear"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias vi="vim"
+alias vi="nvim"
 alias y="yarn"
 alias ya="yarn add"
 alias kall="killall"
@@ -91,7 +92,9 @@ __ps1() {
 
 	vim_prefix=""
 
-	if [[ $VIM ]]; then
+  vim_foreground=$(jobs -l 2>/dev/null | grep vim 2>/dev/null)
+
+	if [[ $VIM ]] || [[ -n "$vim_foreground" ]]; then
 		vim_prefix="VIM "
 	fi
 

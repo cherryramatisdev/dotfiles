@@ -10,7 +10,7 @@ my $filename = $ARGV[0] or die "Please provide a filename to follow on";
 my $file = "$ENV{'HOME'}/bin/$filename";
 
 sub create_perl_script_file {
-	open my $script, '>', $filename;
+	open my $script, '>', $file;
 	print {$script} "#!/usr/bin/env perl" . "\n";
 	print {$script} "\n";
 	print {$script} "use strict;" . "\n";
@@ -21,9 +21,9 @@ sub create_perl_script_file {
 }
 
 if (-e $file) {
-  system "$ENV{'EDITOR'} $ENV{'HOME'}/bin/$filename";
+  system "$ENV{'EDITOR'} $file";
 } else {
   create_perl_script_file();
-  system "chmod +x $filename";
-  system "$ENV{'EDITOR'} $filename";
+  system "chmod +x $file";
+  system "$ENV{'EDITOR'} $file";
 }
