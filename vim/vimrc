@@ -41,6 +41,11 @@ set expandtab
 set splitright
 set splitbelow
 
+" Reset cursor on neovim, why its so annoying
+if has('nvim')
+  set guicursor=
+endif
+
 " Hide Status Line
 set laststatus=0 " For some reason this doesnt work
 autocmd BufRead,BufNewFile * set laststatus=0 " This will work instead
