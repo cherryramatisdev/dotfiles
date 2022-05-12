@@ -46,9 +46,24 @@ if has('nvim')
   set guicursor=
 endif
 
-" Hide Status Line
-set laststatus=0 " For some reason this doesnt work
-autocmd BufRead,BufNewFile * set laststatus=0 " This will work instead
+" Always show the statusline
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+set laststatus=2
+set statusline=\ %f
+set statusline+=%{StatuslineGit()}
+
+" Set the clipboard to globally X server(on neovim)
+if has('nvim')
+  set clipboard=unnamedplus
+endif
 
 if v:version >= 800
   " stop vim from silently messing with files that it shouldn't
