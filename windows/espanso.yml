@@ -2,6 +2,12 @@ matches:
   - trigger: ":aws"
     replace: "https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1#"
 
+  - trigger: "l3"
+    replace: "http://localhost:3000/"
+
+  - trigger: "ldo"
+    replace: "http://localhost:4000/docs"
+
   - trigger: ":b2bfront"
     replace: "https://github.com/lami-health/b2b"
 
