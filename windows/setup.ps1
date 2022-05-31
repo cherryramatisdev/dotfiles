@@ -9,3 +9,7 @@ if (-not(Test-Path -Path 'C:\\Users\\cherr\\AppData\\Roaming\\Microsoft\\Windows
 if (-not(Test-Path -Path 'C:\\Users\\cherr\\AppData\\Roaming\\espanso\\match\\base.yml' -PathType Leaf)) {
     New-Item -ItemType SymbolicLink -Path 'C:\\Users\\cherr\\AppData\\Roaming\\espanso\\match\\base.yml' -Target "D:\\git\\dotfiles\\windows\\espanso.yml"
 }
+
+if (-not(Test-Path -Path 'C:\\Users\\cherr\\Documents\\PowerShell\\Microsoft.PowerShell_profile.ps1' -PathType Leaf)) {
+    New-Item -ItemType SymbolicLink -Path 'C:\\Users\\cherr\\Documents\\PowerShell\\Microsoft.PowerShell_profile.ps1' -Target "D:\\git\\dotfiles\\windows\\profile.ps1"
+}

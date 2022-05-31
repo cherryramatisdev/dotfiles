@@ -3,6 +3,10 @@
 SendMode Input ; Recommended for new scripts due to its superior speed and reliability
 SetWorkingDir %A_ScriptDir% ; Ensures the consistent starting directory.
 
+;; disable Win key behavior of popping up the Start Menu, but don't disable Win+key combination
+~LWin Up::Return
+~RWin Up::Return
+
 #p::
 Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge_proxy.exe"  --profile-directory=Default, , , PID
 WinActivate, ahk_pid %PID%
@@ -27,8 +31,11 @@ else
 return
 
 !Return::
-Send {F11}
+WinMaximize
 return
+
+LWin & l::AltTab
+LWin & h::ShiftAltTab
 
 ^q::
 WinGetTitle, Title, A
