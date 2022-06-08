@@ -1,6 +1,40 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-echo "linking"
+# List of all packages to install.
+# Currently this requires that each package
+# lives on github.com
+PACKAGES=(
+    "tpope/vim-commentary"
+    "tpope/vim-surround"
+    "tpope/vim-vinegar"
+)
 
-ln -sf "$PWD/.vim" "$HOME/.vim"
-ln -sf "$PWD/vimrc" "$HOME/.vimrc"
+if command -v nvim &> /dev/null; then
+  PACKAGES+=("nvim-treesitter/nvim-treesitter" "tjdevries/colorbuddy.nvim" "tjdevries/gruvbuddy.nvim" "Olical/conjure")
+fi
+
+# -----------------------------------------------------------------------------
+# Warning: this will overwrite any existing directories <-- READ THIS
+# -----------------------------------------------------------------------------
+if [[ $1 == "init" ]]
+then
+    # Create the pack/dev/opt directory 
+    # and clone all the plugins into it
+    # also symlink everything to ~/.vim and ~/.vimrc
+    mkdir ~/.vim
+    mkdir -p ~/.vim/pack/dev/opt
+    ln -sf `pwd`/vimrc $HOME/.vimrc
+
+    cd ~/.vim/pack/dev/opt
+    for package in "${PACKAGES[@]}"
+    do
+        git clone "https://github.com/$package"
+    done
+else
+    # Git pull every package in pack/dev/opt
+    for package in `ls ~/.vim/pack/dev/opt`
+    do
+        path="~/.vim/pack/dev/opt/$package"
+        (cd $path && git pull)
+    done
+fi

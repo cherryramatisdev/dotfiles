@@ -17,8 +17,9 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$GOBIN:$PATH
 
 export SNIPPETS=$HOME/git/dotfiles/snippets
-# export BROWSER=firefox
-export EDITOR=nvim
+export BROWSER=google-chrome-stable
+# export EDITOR="emacsclient -c -a ''"
+export EDITOR="nvim"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -33,6 +34,7 @@ alias reload="source ~/.bashrc"
 alias '?'=duck
 alias '??'=github
 alias '???'=wiki
+alias vi="nvim"
 alias ls='ls --color=auto'
 alias dot="cd ~/git/dotfiles"
 alias script="cd ~/bin"
@@ -41,7 +43,7 @@ alias c="clear"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias vi="nvim"
+alias e="emacsclient -t"
 alias y="yarn"
 alias ya="yarn add"
 alias kall="killall"
@@ -126,6 +128,7 @@ complete -C cherry cherry
 export GHREPOS="$HOME/git"
 export CDPATH=".:$GHREPOS"
 # . "$HOME/.cargo/env"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
+# export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
