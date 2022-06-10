@@ -1,13 +1,6 @@
-" Load plugins
-packadd vim-commentary
-packadd vim-surround
-packadd vim-vinegar
-if has('nvim')
-  packadd colorbuddy.nvim
-  packadd gruvbuddy.nvim
-  packadd conjure
-  packadd nvim-treesitter
-endif
+" This vim configuration will server as an zero-dependency portable
+" configuration to carry on with docker or sshs.
+
 " vim-tiny lacks 'eval'
 if has("eval")
   let skip_defaults_vim = 1
@@ -48,6 +41,7 @@ set textwidth=72 " enough for line numbers + gutter within 80 standard
 set completeopt+=noselect " make completion not select the first option
 set completeopt+=noinsert " make completion not select the first option
 set completeopt+=menuone " make completion not select the first option
+set completeopt+=preview " make completion show preview window.
 set nobackup " more risky, but cleaner
 set noswapfile " more risky, but cleaner
 set nowritebackup " more risky, but cleaner
@@ -170,36 +164,6 @@ vim.opt.statusline =
   [[%{get(b:, "branch_name", "")} %{get(b:, "errors", "")} %{get(b:, "wordcount", "")}]]
 EOF
 
-" TREESITTER
-lua << EOF
-local ok, treesitter = pcall(require, 'nvim-treesitter.configs')
-
-if ok then
-  treesitter.setup {
-    ensure_installed = {"lua", "tsx", "typescript", "json", "html", "css"},
-    sync_install = false,
-    highlight = {
-      enable = true,
-      -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-      -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-      -- Using this option may slow down your editor, and you may see some duplicate highlights.
-      -- Instead of true it can also be a list of languages
-      additional_vim_regex_highlighting = false,
-    }
-  }
-end
-EOF
-
-" COLORBUDDY
-lua << EOF
-local ok, colorbuddy = pcall(require, 'colorbuddy')
-
-if ok then
-  colorbuddy.colorscheme('gruvbuddy')
-end
-EOF
-endif
-
 if exists('*matchfuzzy')
   function! FilesPicker(A,L,P) abort
     if stridx(system('git status'), "not in")
@@ -237,7 +201,7 @@ if exists('*matchfuzzy')
     exe 'tabe ' .. a:args
   endfunction
 
-  command! -nargs=1 -bar -complete=customlist,FilesPicker F call FilesEdit(<q-args>)
+  command! -nargs=1 -bar -complete=customlist,FilesPicker E call FilesEdit(<q-args>)
   command! -nargs=1 -bar -complete=customlist,FilesPicker V call FilesVEdit(<q-args>)
   command! -nargs=1 -bar -complete=customlist,FilesPicker S call FilesSEdit(<q-args>)
   command! -nargs=1 -bar -complete=customlist,FilesPicker T call FilesTEdit(<q-args>)

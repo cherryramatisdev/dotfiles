@@ -11,7 +11,6 @@ mkdir -p "$HOME/.local/bin" || true
 cd ./lynx && sh ./setup
 cd ./tmux && sh ./setup
 cd ./git && sh ./setup
-cd ./vim && sh ./setup init
 cd ./nvim && sh ./setup
 
 echo "Finished ! :D"
