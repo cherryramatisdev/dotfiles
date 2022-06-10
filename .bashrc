@@ -49,6 +49,7 @@ alias ya="yarn add"
 alias kall="killall"
 alias depupdate="yarn upgrade-interactive --latest"
 alias postgresup="docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e TZ=America/Sao_Paulo -d postgres"
+alias lg="lazygit"
 
 # ------------------------ bash shell options ------------------------
 
