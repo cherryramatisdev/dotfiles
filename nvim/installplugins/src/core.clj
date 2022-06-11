@@ -4,6 +4,7 @@
             [clojure.string :as str]))
 
 (def packages ["Olical/conjure"
+               "Olical/aniseed"
                "tpope/vim-commentary"
                "tpope/vim-surround"
                "tpope/vim-vinegar"
@@ -12,7 +13,9 @@
                "guns/vim-sexp"
                "tpope/vim-sexp-mappings-for-regular-people"
                "lifepillar/vim-mucomplete"
-               "nvim-treesitter/nvim-treesitter"])
+               "nvim-treesitter/nvim-treesitter"
+               "srcery-colors/srcery-vim"
+               "lewis6991/impatient.nvim"])
 
 (def neovim-package-dir (fs/expand-home "~/.local/share/nvim/site/pack/dev/opt"))
 
