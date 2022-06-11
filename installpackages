@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if command -v yay; then
+  yay -S lynx
+  yay -S lazygit
+  yay -S tmux
+  yay -S google-chrome
+fi
