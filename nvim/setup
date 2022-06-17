@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -sf $PWD/config/ $HOME/.config/nvim
+
+bb ./installplugins/src/core.clj

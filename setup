@@ -8,10 +8,9 @@ ln -sf "$PWD/.gitconfig" "$HOME/.gitconfig"
 
 mkdir -p "$HOME/.local/bin" || true
 
-for i in vim lynx tmux git; do
-	echo $i
-	cd $i && sh ./setup
-	cd -
-done
+cd ./lynx && sh ./setup
+cd ./tmux && sh ./setup
+cd ./git && sh ./setup
+cd ./nvim && sh ./setup
 
 echo "Finished ! :D"

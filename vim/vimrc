@@ -1,278 +1,78 @@
+" This vim configuration will server as an zero-dependency portable
+" configuration to carry on with docker or sshs.
+
 " vim-tiny lacks 'eval'
 if has("eval")
   let skip_defaults_vim = 1
 endif
-
-let mapleader=' '
-
+let maplocalleader=","
 set nocompatible
-
-" automatically indent new lines
-set autoindent
-
-" use 256 colors
-set t_Co=256
-
-" stop asking me to load file with W11, just load it
-set autoread
-
-" automatically write files when changing when multiple files open
-set autowrite
-
-" turn col and row position on in bottom right
+set autoindent " automatically indent new lines
+set t_Co=256 " use 256 colors
+set autoread " stop asking me to load file with W11, just load it
+set autowrite " automatically write files when changing when multiple files open
 set ruler " see ruf for formatting
-
-" show command and insert mode
-set showmode
-
-" disable visual bell (also disable in .inputrc)
-set t_vb=
-
-" mostly used with >> and <<
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set smartindent
-set smarttab
-" replace tabs with spaces automatically
-set expandtab
-
-" fix splits
-set splitright
-set splitbelow
-
-" Reset cursor on neovim, why its so annoying
+set showmode " show command and insert mode
+set t_vb= " disable visual bell (also disable in .inputrc)
+set tabstop=2 " mostly used with >> and <<
+set softtabstop=2 " mostly used with >> and <<
+set shiftwidth=2 " mostly used with >> and <<
+set smartindent " mostly used with >> and <<
+set smarttab " mostly used with >> and <<
+set expandtab " replace tabs with spaces automatically 
+set splitright " fix splits
+set splitbelow " fix splits
+set number " Enable line number
+set relativenumber " Show line numbers based on current one
 if has('nvim')
-  set guicursor=
+  set clipboard=unnamedplus " Set the clipboard to use system.
+  set guicursor= " Reset cursor on neovim, why its so annoying
+  set laststatus=3 " Show statusbar only on bottom
+  set winbar=%f\ %m
 endif
-
-" Always show the statusline
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
-set laststatus=2
-set statusline=\ %f
-set statusline+=%{StatuslineGit()}
-
-" Set the clipboard to globally X server(on neovim)
-if has('nvim')
-  set clipboard=unnamedplus
-endif
-
 if v:version >= 800
-  " stop vim from silently messing with files that it shouldn't
-  set nofixendofline
-
-  " better ascii friendly listchars
-  set listchars=space:*,trail:*,nbsp:*,extends:>,precedes:<,tab:\|>
-
+  set nofixendofline " stop vim from silently messing with files that it shouldn't
+  set listchars=space:*,trail:*,nbsp:*,extends:>,precedes:<,tab:\|> " better ascii friendly listchars
   set foldmethod=indent
   set nofoldenable
-
-  " Toggle fold
-  nnoremap <CR> za
-  vnoremap <CR> za
-
-  " Open all folds
-  nnoremap <leader><CR> zR
 endif
-
-" mark trailing spaces as errors
-match IncSearch '\s\+$'
-
-" enough for line numbers + gutter within 80 standard
-set textwidth=72
-
-" disable relative line numbers, remove no to sample it
-set norelativenumber
-
-" makes ~ effectively invisible
-highlight NonText guifg=bg
-
-" make completion not select the first option
-set completeopt+=noselect
-set completeopt+=noinsert
-set completeopt+=menuone
-
-" more risky, but cleaner
-set nobackup
-set noswapfile
-set nowritebackup
-
-set icon
-
-" highlight search hits
-set hlsearch
-set incsearch
-set linebreak
-
-" avoid most of the 'Hit Enter ...' messages
-set shortmess=aoOtTIc
-
-" prevents truncated yanks, deletes, etc.
-set viminfo='20,<1000,s1000
-
-" not a fan of bracket matching
-if has("eval") " vim-tiny detection
-  let g:loaded_matchparen=1
-endif
-set noshowmatch
-
-" wrap around when searching
-set wrapscan
-
-" required for mac delete to work
-set backspace=indent,eol,start
-
-" stop complaints about switching buffer with changes
-set hidden
-
-" configure path for fuzzy finding like experience
-set path+=**
-set wildignore=**/node_modules/**,**/.git/**,**/dist/**
+match IncSearch '\s\+$' " mark trailing spaces as errors
+set textwidth=72 " enough for line numbers + gutter within 80 standard
+set completeopt+=noselect " make completion not select the first option
+set completeopt+=noinsert " make completion not select the first option
+set completeopt+=menuone " make completion not select the first option
+set completeopt+=preview " make completion show preview window.
+set nobackup " more risky, but cleaner
+set noswapfile " more risky, but cleaner
+set nowritebackup " more risky, but cleaner
+set hlsearch " highlight search hits
+set incsearch " highlight search hits
+set linebreak " highlight search hits
+set shortmess=aoOtTIc " avoid most of the 'Hit Enter ...' messages
+set viminfo='20,<1000,s1000 " prevents truncated yanks, deletes, etc.
+set wrapscan " wrap around when searching
+set backspace=indent,eol,start " required for mac delete to work
+set hidden " stop complaints about switching buffer with changes
 if executable("rg")
   set grepprg=rg\ --vimgrep\ --smart-case\ --hidden
   set grepformat=%f:%l:%c:%m
 endif
-
-" mappings to navigate quickfix list
 nnoremap [q <cmd>cprev<cr>
 nnoremap ]q <cmd>cnext<cr>
-
-" command history
-set history=100
-
-" here because plugins and stuff need it
+set history=100 " command history
 if has("syntax")
-  syntax enable
+  syntax enable " here because plugins and stuff need it
 endif
-
-" faster scrolling
-set ttyfast
-
-" allow sensing the filetype
-filetype plugin on
-
-set cinoptions+=:0
-
-" Edit/Reload vimr configuration file
-nnoremap confe :e $HOME/.vimrc<CR>
-nnoremap confr :source $HOME/.vimrc<CR>
-
-set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
-
-" only load plugins if Plug detected
-if filereadable(expand("~/.vim/autoload/plug.vim"))
-  call plug#begin('~/.local/share/vim/plugins')
-  Plug 'vim-pandoc/vim-pandoc'
-  Plug 'rwxrob/vim-pandoc-syntax-simple'
-  Plug 'leafgarland/typescript-vim'
-  Plug 'peitalin/vim-jsx-typescript'
-
-  Plug 'lifepillar/vim-mucomplete'
-  Plug 'tpope/vim-fugitive' " Em obs
-  Plug 'christoomey/vim-conflicted' " Em obs
-  Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-vinegar'
-  " Ruby stuff
-  Plug 'tpope/vim-rails'
-  Plug 'tpope/vim-endwise'
-
-  Plug 'prettier/vim-prettier', {
-        \ 'do': 'yarn install --frozen-lockfile --production',
-        \ 'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'json', 'markdown', 'html'] }
-
-  Plug 'romainl/vim-qf'
-  Plug 'pbrisbin/vim-mkdir'
-  Plug 'ludovicchabant/vim-gutentags'
-  Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
-  Plug 'NLKNguyen/papercolor-theme'
-  call plug#end()
-
-  let g:gutentags_ctags_extra_args=['--exclude=dist']
-  let g:diffget_local_map = 'gl'
-  let g:diffget_upstream_map = 'gu'
-  let g:qf_mapping_ack_style = 1
-
-  nnoremap gr <cmd>JsFindUsage<cr>
-  set tagfunc=jsfileimport#tagfunc
-
-	set complete-=i
-	set complete-=t
-  let g:mucomplete#chains = {}
-  let g:mucomplete#chains.default = ['omni', 'path', 'c-p', 'tags']
-
-  set background=light
-  colorscheme PaperColor
-
-  function ColorSwitch() abort
-    if &background == 'light'
-      set background=dark
-    else
-      set background=light
-    endif
-  endfunction
-
-  nnoremap <leader>p <cmd>PrettierAsync<cr>
-else
-  autocmd vimleavepre *.go !gofmt -w % " backup if fatih fails
-endif
-
-autocmd bufnewfile,bufread *.spec.ts compiler jest
-nnoremap <leader>tf :make %<cr>
-nnoremap <leader>ta :make<cr>
-
-" This fixes the relative file completion only on insert mode(to not
-" mess up with :e command)
-" NOTE: I'm using mucomplete now, but this is still useful
-" autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
-" autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
-
-" make Y consitent with D and C (yank til end)
+set ttyfast " faster scrolling
+filetype plugin on " allow sensing the filetype
+autocmd InsertEnter * let save_cwd = getcwd() | set autochdir " This fixes the relative file completion only on insert mode(to not mess up with :e command)
+autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd) 
 map Y y$
-
-" better command-line completion
-set wildmenu
-
-" disable search highlighting with <C-L> when refreshing screen
-nnoremap <C-l> :nohl<CR><C-L>
-
-" enable omni-completion
-set omnifunc=syntaxcomplete#Complete
-
-"fix bork bash detection
-if has("eval")  " vim-tiny detection
-  fun! s:DetectBash()
-    if getline(1) == '#!/usr/bin/bash' || getline(1) == '#!/bin/bash' || getline(1) == '#!/bin/sh'
-      set ft=sh
-      set shiftwidth=2
-    endif
-  endfun
-  autocmd BufNewFile,BufRead * call s:DetectBash()
+set wildmenu " better command-line completion
+if !has('nvim')
+  " disable search highlighting with <C-L> when refreshing screen
+  nnoremap <C-l> :nohl<CR><C-L>
 endif
-
-" displays all the syntax rules for current position, useful
-" when writing vimscript syntax plugins
-if has("syntax")
-  function! <SID>SynStack()
-    if !exists("*synstack")
-      return
-    endif
-    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-  endfunc
-endif
-
-" start at last place you were editing
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-nmap <leader>2 :set paste<CR>i
-
 " improve `gf`
 autocmd bufnewfile,bufread *.tsx,*.ts nnoremap <silent> gf :call <sid>open_file_or_create_new()<CR>
 
@@ -309,17 +109,100 @@ function! s:open_file_or_create_new() abort
   endtry
 endfunction
 
-" Navigate splits
-nnoremap gs <C-w>s
-nnoremap gv <C-w>v
-nnoremap go <C-w>o
+if has('nvim')
+" STATUSLINE
+lua << EOF
+local reset_group = vim.api.nvim_create_augroup('reset_group', {
+  clear = false,
+})
+-- ==================
+--     Statusline
+-- ==================
+vim.api.nvim_create_autocmd({ 'BufEnter', 'CursorHold', 'CursorHoldI' }, {
+  desc = 'word count for the statusline',
+  pattern = { '*.md', '*.txt' },
+  callback = function()
+    local wc = vim.fn.wordcount().words
+    if wc == 0 then
+      vim.b.wordcount = ''
+    elseif wc == 1 then
+      vim.b.wordcount = '| ' .. wc .. ' word'
+    else
+      vim.b.wordcount = '| ' .. wc .. ' words'
+    end
+  end,
+  group = init_group,
+})
 
-nnoremap gh <C-w>h
-nnoremap gj <C-w>j
-nnoremap gk <C-w>k
-nnoremap gl <C-w>l
+vim.api.nvim_create_autocmd({ 'BufEnter', 'CursorHold', 'FocusGained' }, {
+  desc = 'git branch and LSP errors for the statusline',
+  callback = function()
+    if vim.fn.isdirectory '.git' ~= 0 then
+      -- always runs in the current directory, rather than in the buffer's directory
+      local branch = vim.fn.system "git branch --show-current | tr -d '\n'"
+      vim.b.branch_name = '  ' .. branch .. ' '
+    end
 
-" read personal/private vim configuration (keep last to override)
-set rtp^=~/.vimpersonal
-set rtp^=~/.vimprivate
-set rtp^=~/.vimwork
+    local num_errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
+    -- if there are any errors only show the error count, don't include the number of warnings
+    if num_errors > 0 then
+      vim.b.errors = '  ' .. num_errors .. ' '
+      return
+    end
+    -- otherwise show amount of warnings, or nothing if there aren't any
+    local num_warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
+    if num_warnings > 0 then
+      vim.b.errors = '  ' .. num_warnings .. ' '
+      return
+    end
+    vim.b.errors = ''
+  end,
+  group = init_group,
+})
+
+vim.opt.statusline =
+  [[%{get(b:, "branch_name", "")} %{get(b:, "errors", "")} %{get(b:, "wordcount", "")}]]
+EOF
+
+if exists('*matchfuzzy')
+  function! FilesPicker(A,L,P) abort
+    if stridx(system('git status'), "not in")
+      if !executable('fd')
+        echoerr "Please install fd for non git repositories"
+        return
+      endif
+
+      let l:cmd = 'fd . -t f'
+    else
+      let l:cmd = 'git ls-files'
+    endif
+
+    let l:items = l:cmd->systemlist()
+    if a:A->len() > 0
+      return l:items->matchfuzzy(a:A)
+    else
+      return l:items
+    endif
+  endfunction
+
+  function! FilesEdit(args) abort
+    exe 'e ' .. a:args
+  endfunction
+
+  function! FilesVEdit(args) abort
+    exe 'vs ' .. a:args
+  endfunction
+
+  function! FilesSEdit(args) abort
+    exe 'sp ' .. a:args
+  endfunction
+
+  function! FilesTEdit(args) abort
+    exe 'tabe ' .. a:args
+  endfunction
+
+  command! -nargs=1 -bar -complete=customlist,FilesPicker E call FilesEdit(<q-args>)
+  command! -nargs=1 -bar -complete=customlist,FilesPicker V call FilesVEdit(<q-args>)
+  command! -nargs=1 -bar -complete=customlist,FilesPicker S call FilesSEdit(<q-args>)
+  command! -nargs=1 -bar -complete=customlist,FilesPicker T call FilesTEdit(<q-args>)
+endif

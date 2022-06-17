@@ -1,6 +1,0 @@
-#!/bin/sh
-
-echo "linking"
-
-ln -sf "$PWD/.vim" "$HOME/.vim"
-ln -sf "$PWD/vimrc" "$HOME/.vimrc"
