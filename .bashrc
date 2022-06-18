@@ -17,7 +17,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$GOBIN:$PATH
 
 export SNIPPETS=$HOME/git/dotfiles/snippets
-export BROWSER=google-chrome-stable
+export BROWSER=firefox
 # export EDITOR="emacsclient -c -a ''"
 export EDITOR="nvim"
 
