@@ -12,12 +12,3 @@ do
 end
 local util = require("dotfiles.util")
 do end (_2amodule_locals_2a)["util"] = util
-util["load-plugin"]("nvim-treesitter")
-do
-  local ok_3f, ts = pcall(require, "nvim-treesitter.configs")
-  if ok_3f then
-    ts.setup({indent = {enable = true}, highlight = {enable = true, additional_vim_regex_highlighting = false}})
-  else
-  end
-end
-return _2amodule_2a
