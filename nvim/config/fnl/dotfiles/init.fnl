@@ -3,6 +3,7 @@
 
 (require :dotfiles.core)
 (require :dotfiles.statusline)
+(require :dotfiles.fuzzy)
 
 (util.load-plugin :vim-commentary)
 (util.load-plugin :vim-surround)

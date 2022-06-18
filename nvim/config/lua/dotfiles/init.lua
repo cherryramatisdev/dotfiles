@@ -14,6 +14,7 @@ local util = require("dotfiles.util")
 do end (_2amodule_locals_2a)["util"] = util
 require("dotfiles.core")
 require("dotfiles.statusline")
+require("dotfiles.fuzzy")
 util["load-plugin"]("vim-commentary")
 util["load-plugin"]("vim-surround")
 util["load-plugin"]("vim-vinegar")
