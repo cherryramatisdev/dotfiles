@@ -6,10 +6,10 @@ if (-not(Test-Path -Path 'C:\\Users\\cherr\\AppData\\Roaming\\Microsoft\\Windows
     New-Item -ItemType SymbolicLink -Path 'C:\\Users\\cherr\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\startup.bat' -Target "D:\\git\\dotfiles\\windows\\startup.bat"
 }
 
-if (-not(Test-Path -Path 'C:\\Users\\cherr\\AppData\\Roaming\\espanso\\match\\base.yml' -PathType Leaf)) {
-    New-Item -ItemType SymbolicLink -Path 'C:\\Users\\cherr\\AppData\\Roaming\\espanso\\match\\base.yml' -Target "D:\\git\\dotfiles\\windows\\espanso.yml"
-}
+# if (-not(Test-Path -Path 'C:\\Users\\cherr\\AppData\\Roaming\\espanso\\match\\base.yml' -PathType Leaf)) {
+    # New-Item -ItemType SymbolicLink -Path 'C:\\Users\\cherr\\AppData\\Roaming\\espanso\\match\\base.yml' -Target "D:\\git\\dotfiles\\windows\\espanso.yml"
+# }
 
-if (-not(Test-Path -Path 'C:\\Users\\cherr\\Documents\\PowerShell\\Microsoft.PowerShell_profile.ps1' -PathType Leaf)) {
-    New-Item -ItemType SymbolicLink -Path 'C:\\Users\\cherr\\Documents\\PowerShell\\Microsoft.PowerShell_profile.ps1' -Target "D:\\git\\dotfiles\\windows\\profile.ps1"
+if (-not(Test-Path -Path 'C:\\Users\\cherr\\OneDrive\\Documents\\PowerShell\\Microsoft.PowerShell_profile.ps1' -PathType Leaf)) {
+    New-Item -ItemType SymbolicLink -Path 'C:\\Users\\cherr\\OneDrive\\Documents\\PowerShell\\Microsoft.PowerShell_profile.ps1' -Target "D:\\git\\dotfiles\\windows\\profile.ps1"
 }

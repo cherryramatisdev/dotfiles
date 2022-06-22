@@ -37,9 +37,9 @@ OpenPersonalBrowser() {
     WinActivate
 }
 
-Numpad2::OpenPersonalBrowser()
-#2::OpenPersonalBrowser()
-RAlt & 2::OpenPersonalBrowser()
+; Numpad2::OpenPersonalBrowser()
+; #2::OpenPersonalBrowser()
+; RAlt & 2::OpenPersonalBrowser()
 
 OpenEditor() {
   if WinExist("ahk_class Emacs")
@@ -49,6 +49,9 @@ OpenEditor() {
     WinActivate
 }
 
+Numpad2::OpenEditor()
+#2::OpenEditor()
+RAlt & 2::OpenEditor()
 Numpad3::OpenEditor()
 #3::OpenEditor()
 RAlt & 3::OpenEditor()
@@ -93,13 +96,14 @@ OpenTerminal() {
   if WinExist("ahk_exe pwsh.exe")
     WinActivate
   else
-    Run "C:\Program Files\WindowsApps\Microsoft.PowerShell_7.2.4.0_x64__8wekyb3d8bbwe\pwsh.exe"
+    Run "C:\Program Files\WindowsApps\Microsoft.PowerShell_7.2.5.0_x64__8wekyb3d8bbwe\pwsh.exe"
     WinActivate
 }
 
 Numpad7::OpenTerminal()
 #7::OpenTerminal()
 RAlt & 7::OpenTerminal()
+#Return::OpenTerminal()
 
 OpenDiscord() {
   if WinExist("ahk_exe Discord.exe")
