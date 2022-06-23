@@ -16,12 +16,28 @@ else
   Send {Esc}
 return
 
+CreateNewNote() {
+  InputBox, NoteTitle, Phone Number, Note title: , , 640, 480
+  Run emacsclientw.exe -t -e "(notes/create-new \"%NoteTitle%\")"
+}
+
+^!Return::CreateNewNote()
+
+FocusWindow() {
+  WinActivate
+  WinMaximize
+}
+
+ExecuteCmd(cmd) {
+  Run %cmd%
+  FocusWindow()
+}
+
 OpenWorkBrowser() {
   if WinExist("ahk_exe msedge.exe")
-    WinActivate
+    FocusWindow()
   else
-    Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-    WinActivate
+    ExecuteCmd("C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
 }
 
 
@@ -31,10 +47,9 @@ RAlt & 1::OpenWorkBrowser()
 
 OpenPersonalBrowser() {
   if WinExist("ahk_exe firefox.exe")
-    WinActivate
+     FocusWindow()
   else
-    Run "C:\Users\cherr\scoop\apps\firefox\current\firefox.exe"
-    WinActivate
+    ExecuteCmd("C:\Users\cherr\scoop\apps\firefox\current\firefox.exe")
 }
 
 ; Numpad2::OpenPersonalBrowser()
@@ -43,10 +58,9 @@ OpenPersonalBrowser() {
 
 OpenEditor() {
   if WinExist("ahk_class Emacs")
-    WinActivate
+     FocusWindow()
   else
-    Run "C:\Users\cherr\scoop\shims\runemacs.exe"
-    WinActivate
+    ExecuteCmd("C:\Users\cherr\scoop\shims\runemacs.exe")
 }
 
 Numpad2::OpenEditor()
@@ -58,10 +72,9 @@ RAlt & 3::OpenEditor()
 
 OpenSlack() {
   if WinExist("ahk_exe slack.exe")
-    WinActivate
+     FocusWindow()
   else
-    Run "C:\Users\cherr\AppData\Local\slack\slack.exe"
-    WinActivate
+    ExecuteCmd("C:\Users\cherr\AppData\Local\slack\slack.exe")
 }
 
 Numpad4::OpenSlack()
@@ -70,10 +83,9 @@ RAlt & 4::OpenSlack()
 
 OpenFigma() {
   if WinExist("ahk_exe Figma.exe")
-    WinActivate
+     FocusWindow()
   else
-    Run "C:\Users\cherr\AppData\Local\Figma\Figma.exe"
-    WinActivate
+    ExecuteCmd("C:\Users\cherr\AppData\Local\Figma\Figma.exe")
 }
 
 Numpad5::OpenFigma()
@@ -82,10 +94,9 @@ RAlt & 5::OpenFigma()
 
 OpenNoteTaking() {
   if WinExist("ahk_exe Mem.exe")
-    WinActivate
+    FocusWindow()
   else
-    Run "C:\Users\cherr\AppData\Local\Programs\@mem-labsdesktop-client\Mem.exe"
-    WinActivate
+    ExecuteCmd("C:\Users\cherr\AppData\Local\Programs\@mem-labsdesktop-client\Mem.exe")
 }
 
 Numpad6::OpenNoteTaking()
@@ -94,10 +105,9 @@ RAlt & 6::OpenNoteTaking()
 
 OpenTerminal() {
   if WinExist("ahk_exe pwsh.exe")
-    WinActivate
+    FocusWindow()
   else
-    Run "C:\Program Files\WindowsApps\Microsoft.PowerShell_7.2.5.0_x64__8wekyb3d8bbwe\pwsh.exe"
-    WinActivate
+    ExecuteCmd("C:\Program Files\WindowsApps\Microsoft.PowerShell_7.2.5.0_x64__8wekyb3d8bbwe\pwsh.exe")
 }
 
 Numpad7::OpenTerminal()
@@ -107,10 +117,9 @@ RAlt & 7::OpenTerminal()
 
 OpenDiscord() {
   if WinExist("ahk_exe Discord.exe")
-    WinActivate
+     FocusWindow()
   else
-    Run "C:\Users\cherr\AppData\Local\Discord\app-1.0.9005\Discord.exe"
-    WinActivate
+    ExecuteCmd("C:\Users\cherr\AppData\Local\Discord\app-1.0.9005\Discord.exe")
 }
 
 Numpad8::OpenDiscord()
