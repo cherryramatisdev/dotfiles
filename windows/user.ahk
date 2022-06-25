@@ -4,8 +4,8 @@ SendMode Input ; Recommended for new scripts due to its superior speed and relia
 SetWorkingDir %A_ScriptDir% ; Ensures the consistent starting directory.
 
 ; AutoHotkey code to swap middle and right buttons
-$RButton::MButton
-$MButton::RButton
+; $RButton::MButton
+; $MButton::RButton
 
 RCtrl::Capslock
 
@@ -152,3 +152,161 @@ WinMinimize, %Title%
 return
 
 ^F11::reload
+
+; NAVIGATION FOR BROWSER
+global insertMode := 0
+global visualMode := 0
+
+#IfWinNotActive ahk_class Emacs
+^l::
+  global insertMode = 1
+  Send ^l
+return
+
+Capslock::
+  if (insertMode = 1) or (visualMode = 1) {
+    global insertMode = 0
+    global visualMode = 0
+  }
+  else
+    Send {Esc}
+return
+
+f::
+  if (insertMode = 1)
+    Send {f}
+  else
+    global insertMode = 1
+return
+
+t::
+  if (insertMode = 1)
+    Send {t}
+  else
+    global visualMode = 1
+return
+
+k::
+  if (insertMode = 1)
+    Send {k}
+  else if (visualMode = 1)
+    Send +{Down}
+  else
+    Send {Down}
+return
+
+j::
+  if (insertMode = 1)
+    Send {j}
+  else if (visualMode = 1)
+    Send +{Left}
+  else
+    Send {Left}
+return
+
+l::
+  if (insertMode = 1)
+    Send {l}
+  else if (visualMode = 1)
+    Send +{Right}
+  else
+    Send {Right}
+return
+
+i::
+  if (insertMode = 1)
+    Send {i}
+  else if (visualMode = 1)
+    Send +{Up}
+  else
+    Send {Up}
+return
+
+c::
+  if (insertMode = 1)
+    Send {c}
+  else
+    Send ^c
+return
+
+x::
+  if (insertMode = 1)
+    Send {x}
+  else {
+    Send ^x
+    global insertMode = 1
+  }
+return
+
+v::
+  if (insertMode = 1)
+    Send {v}
+  else
+    Send ^v
+return
+
+o::
+  if (insertMode = 1)
+    Send {o}
+  else if (visualMode = 1)
+    Send +^{Right}
+  else
+    Send ^{Right}
+return
+
+u::
+  if (insertMode = 1)
+    Send {u}
+  else if (visualMode = 1)
+    Send +^{Left}
+  else
+    Send ^{Left}
+return
+
+`;::
+  if (insertMode = 1)
+    Send {Text};
+  else if (visualMode = 1)
+    Send +{End}
+  else
+    Send {End}
+return
+
+h::
+  if (insertMode = 1)
+    Send {h}
+  else if (visualMode = 1)
+    Send +{Home}
+  else
+    Send {Home}
+return
+
+e::
+  if (insertMode = 1)
+    Send {e}
+  else
+    Send ^{Backspace}
+return
+
+r::
+  if (insertMode = 1)
+    Send {r}
+  else
+    Send ^{Del}
+return
+
+a::
+  if (insertMode = 1)
+    Send {a}
+  else {
+    Send #s
+    global insertMode = 1
+  }
+return
+
+w::
+  if (insertMode = 1)
+    Send {w}
+  else
+    Send ^w
+return
