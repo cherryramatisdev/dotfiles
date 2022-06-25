@@ -18,7 +18,10 @@ return
 
 CreateNewNote() {
   InputBox, NoteTitle, Phone Number, Note title: , , 640, 480
-  Run emacsclientw.exe -t -e "(notes/create-new \"%NoteTitle%\")"
+  titleLen := strLen(NoteTitle)
+
+  if (titleLen > 0)
+    Run emacsclientw.exe -t -e "(notes/create-new \"%NoteTitle%\")"
 }
 
 ^!Return::CreateNewNote()
