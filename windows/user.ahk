@@ -3,9 +3,12 @@
 SendMode Input ; Recommended for new scripts due to its superior speed and reliability
 SetWorkingDir D:/ ; Ensures the consistent starting directory.
 
+global insertMode := 0
+global visualMode := 0
+
 ; AutoHotkey code to swap middle and right buttons
-; $RButton::MButton
-; $MButton::RButton
+$RButton::MButton
+$MButton::RButton
 
 RCtrl::Capslock
 
@@ -107,10 +110,14 @@ Numpad6::OpenNoteTaking()
 RAlt & 6::OpenNoteTaking()
 
 OpenTerminal() {
-  if WinExist("ahk_exe pwsh.exe")
+  if WinExist("ahk_exe pwsh.exe") {
     FocusWindow()
-  else
+    global insertMode = 1
+  }
+  else {
     ExecuteCmd("C:\Program Files\WindowsApps\Microsoft.PowerShell_7.2.5.0_x64__8wekyb3d8bbwe\pwsh.exe")
+    global insertMode = 1    
+  }
 }
 
 Numpad7::OpenTerminal()
@@ -152,10 +159,6 @@ WinMinimize, %Title%
 return
 
 ^F11::reload
-
-; NAVIGATION FOR BROWSER
-global insertMode := 0
-global visualMode := 0
 
 #IfWinActive ahk_exe msedge.exe
 ^l::
@@ -370,6 +373,13 @@ e::
     Send ^{Backspace}
 return
 
+d::
+  if (insertMode = 1)
+    Send {d}
+  else
+    Send {Backspace}
+return
+
 r::
   if (insertMode = 1)
     Send {r}
@@ -391,4 +401,11 @@ w::
     Send {w}
   else
     Send ^w
+return
+
+q::
+  if (insertMode = 1)
+    Send {q}
+  else
+    Send ^q
 return
