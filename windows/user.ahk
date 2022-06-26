@@ -1,7 +1,7 @@
 #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn ; Enable warnings to assist with detecting common errors
 SendMode Input ; Recommended for new scripts due to its superior speed and reliability
-SetWorkingDir %A_ScriptDir% ; Ensures the consistent starting directory.
+SetWorkingDir D:/ ; Ensures the consistent starting directory.
 
 ; AutoHotkey code to swap middle and right buttons
 ; $RButton::MButton
@@ -28,7 +28,7 @@ CreateNewNote() {
 
 FocusWindow() {
   WinActivate
-  WinMaximize
+  ; WinMaximize
 }
 
 ExecuteCmd(cmd) {

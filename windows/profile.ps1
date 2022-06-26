@@ -2,6 +2,7 @@ $env:CDPATH = "d:/git"
 $env:GIT_EDITOR = "emacsclientw.exe -t"
 $env:EDITOR = "emacsclientw.exe -t"
 $env:CONFIG_TARGET = "C:\\Users\\cherr\\AppData\\Roaming\\git"
+$env:PATH = "$env:PATH;C:\Users\cherr\.cargo\bin"
 
 Set-Alias -Name c -Value Clear-Host
 
