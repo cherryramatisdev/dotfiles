@@ -1,14 +1,22 @@
 #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn ; Enable warnings to assist with detecting common errors
 SendMode Input ; Recommended for new scripts due to its superior speed and reliability
-SetWorkingDir D:/ ; Ensures the consistent starting directory.
+SetWorkingDir C:\\Users\\cherr\\AppData\\Roaming\\git ; Ensures the consistent starting directory.
 
 global insertMode := 0
 global visualMode := 0
 
+global modeText := "Normal Mode"
+
+DisplayModeText() {
+  ToolTip, %modeText%, 0, 0
+}
+
+DisplayModeText()
+
 ; AutoHotkey code to swap middle and right buttons
-$RButton::MButton
-$MButton::RButton
+; $RButton::MButton
+; $MButton::RButton
 
 RCtrl::Capslock
 
@@ -163,16 +171,22 @@ return
 #IfWinActive ahk_exe msedge.exe
 ^l::
   global insertMode = 1
+  global modeText = "Insert Mode"
+  DisplayModeText()
   Send ^l
 return
 
 ^t::
   global insertMode = 1
+  global modeText = "Insert Mode"
+  DisplayModeText()
   Send ^t
 return
 
 ,::
   global insertMode = 1
+  global modeText = "Insert Mode"
+  DisplayModeText()
   Send {,}
 return
 
@@ -252,6 +266,8 @@ Capslock::
   if (insertMode = 1) or (visualMode = 1) {
     global insertMode = 0
     global visualMode = 0
+    global modeText := "Normal Mode"
+    DisplayModeText()
   }
   else
     Send {Esc}
@@ -260,15 +276,21 @@ return
 f::
   if (insertMode = 1)
     Send {f}
-  else
+  else {
     global insertMode = 1
+    global modeText := "Insert Mode"
+    DisplayModeText()
+  }
 return
 
 t::
   if (insertMode = 1)
     Send {t}
-  else
+  else {
     global visualMode = 1
+    global modeText := "Visual Mode"
+    DisplayModeText()
+  }
 return
 
 k::
@@ -320,6 +342,8 @@ x::
   else {
     Send ^x
     global insertMode = 1
+    global modeText = "Insert Mode"
+    DisplayModeText()
   }
 return
 
@@ -393,6 +417,8 @@ a::
   else {
     Send #s
     global insertMode = 1
+    global modeText = "Insert Mode"
+    DisplayModeText()
   }
 return
 
