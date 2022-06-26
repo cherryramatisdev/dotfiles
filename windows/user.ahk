@@ -157,11 +157,93 @@ return
 global insertMode := 0
 global visualMode := 0
 
-#IfWinNotActive ahk_class Emacs
+#IfWinActive ahk_exe msedge.exe
 ^l::
   global insertMode = 1
   Send ^l
 return
+
+^t::
+  global insertMode = 1
+  Send ^t
+return
+
+,::
+  global insertMode = 1
+  Send {,}
+return
+
+1::
+  if (insertMode = 1)
+    Send {1}
+  else
+    Send ^{1}
+return
+
+2::
+  if (insertMode = 1)
+    Send {2}
+  else
+    Send ^{2}
+return
+
+3::
+  if (insertMode = 1)
+    Send {3}
+  else
+    Send ^{3}
+return
+
+4::
+  if (insertMode = 1)
+    Send {4}
+  else
+    Send ^{4}
+return
+
+5::
+  if (insertMode = 1)
+    Send {5}
+  else
+    Send ^{5}
+return
+
+6::
+  if (insertMode = 1)
+    Send {6}
+  else
+    Send ^{6}
+return
+
+7::
+  if (insertMode = 1)
+    Send {7}
+  else
+    Send ^{7}
+return
+
+8::
+  if (insertMode = 1)
+    Send {8}
+  else
+    Send ^{8}
+return
+
+9::
+  if (insertMode = 1)
+    Send {9}
+  else
+    Send ^{9}
+return
+
+0::
+  if (insertMode = 1)
+    Send {0}
+  else
+    Send ^{0}
+return
+
+#IfWinNotActive ahk_class Emacs
 
 Capslock::
   if (insertMode = 1) or (visualMode = 1) {
