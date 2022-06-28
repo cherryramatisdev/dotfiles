@@ -6,9 +6,16 @@ SetWorkingDir C:\\Users\\cherr\\AppData\\Roaming\\git ; Ensures the consistent s
 global insertMode := 0
 global visualMode := 0
 
-global modeText := "Normal Mode"
-
 DisplayModeText() {
+  modeText := "Normal Mode"
+  if (insertMode = 1) {
+    modeText := "Insert Mode"
+  } else if (visualMode = 1) {
+    modeText := "Visual Mode"
+  } else {
+    modeText := "Normal Mode"
+  }
+
   ToolTip, %modeText%, 0, 0
 }
 
@@ -171,93 +178,34 @@ return
 #IfWinActive ahk_exe msedge.exe
 ^l::
   global insertMode = 1
-  global modeText = "Insert Mode"
   DisplayModeText()
   Send ^l
 return
 
 ^t::
   global insertMode = 1
-  global modeText = "Insert Mode"
   DisplayModeText()
   Send ^t
 return
 
 ,::
   global insertMode = 1
-  global modeText = "Insert Mode"
   DisplayModeText()
   Send {,}
 return
 
-1::
+Tab::
   if (insertMode = 1)
-    Send {1}
+    Send {Tab}
   else
-    Send ^{1}
+    Send ^{Tab}
 return
 
-2::
++Tab::
   if (insertMode = 1)
-    Send {2}
+    Send +{Tab}
   else
-    Send ^{2}
-return
-
-3::
-  if (insertMode = 1)
-    Send {3}
-  else
-    Send ^{3}
-return
-
-4::
-  if (insertMode = 1)
-    Send {4}
-  else
-    Send ^{4}
-return
-
-5::
-  if (insertMode = 1)
-    Send {5}
-  else
-    Send ^{5}
-return
-
-6::
-  if (insertMode = 1)
-    Send {6}
-  else
-    Send ^{6}
-return
-
-7::
-  if (insertMode = 1)
-    Send {7}
-  else
-    Send ^{7}
-return
-
-8::
-  if (insertMode = 1)
-    Send {8}
-  else
-    Send ^{8}
-return
-
-9::
-  if (insertMode = 1)
-    Send {9}
-  else
-    Send ^{9}
-return
-
-0::
-  if (insertMode = 1)
-    Send {0}
-  else
-    Send ^{0}
+    Send ^+{Tab}
 return
 
 #IfWinNotActive ahk_class Emacs
@@ -266,11 +214,20 @@ Capslock::
   if (insertMode = 1) or (visualMode = 1) {
     global insertMode = 0
     global visualMode = 0
-    global modeText := "Normal Mode"
     DisplayModeText()
   }
   else
     Send {Esc}
+return
+
+2::
+  if (insertMode = 1)
+    Send {2}
+  else {
+    Send {Home}
+    Send +{End}
+    global visualMode = 1
+  }
 return
 
 f::
@@ -278,7 +235,6 @@ f::
     Send {f}
   else {
     global insertMode = 1
-    global modeText := "Insert Mode"
     DisplayModeText()
   }
 return
@@ -288,7 +244,6 @@ t::
     Send {t}
   else {
     global visualMode = 1
-    global modeText := "Visual Mode"
     DisplayModeText()
   }
 return
@@ -342,7 +297,6 @@ x::
   else {
     Send ^x
     global insertMode = 1
-    global modeText = "Insert Mode"
     DisplayModeText()
   }
 return
@@ -350,8 +304,12 @@ return
 v::
   if (insertMode = 1)
     Send {v}
-  else
+  else {
     Send ^v
+    global visualMode = 0
+    global normalMode = 1
+    DisplayModeText()
+  }
 return
 
 o::
@@ -417,7 +375,6 @@ a::
   else {
     Send #s
     global insertMode = 1
-    global modeText = "Insert Mode"
     DisplayModeText()
   }
 return
