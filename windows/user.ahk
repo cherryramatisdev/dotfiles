@@ -392,3 +392,23 @@ q::
   else
     Send ^q
 return
+
+s::
+  if (insertMode = 1)
+    Send {s}
+  else {
+    if WinActive("ahk_exe slack.exe")
+      Send +{Return}
+    else
+      Send {Return}
+  }
+return
+
+p::
+  if (insertMode = 1)
+    Send {p}
+  else {
+    Send {Space}
+  }
+return
+
